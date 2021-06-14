@@ -14,7 +14,20 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark pb-3 fixed-top">
     <div class="container">
-      <a href="#" class="navbar-brand">My Portfolio</a>
+
+      <!-- Navigation -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Bootstrap Framework
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="index.html">Home</a></li>
+          <li><a class="dropdown-item" href="portfolio.html">Portfolio</a></li>
+          <li><a class="dropdown-item" href="#">Test</a></li>
+        </ul>
+      </div>
+
+      <!-- <a href="#" class="navbar-brand">My Portfolio</a> -->
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,110 +36,42 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a href="#aboutme" class="nav-link" aria-current="page">About Me</a>
+            <a href="#about" class="nav-link" aria-current="page">About</a>
           </li>
           <li class="nav-item">
-            <a href="#educationalbg" class="nav-link">Educational Background</a>
-          </li>
-          <li class="nav-item">
-            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#help" class="nav-link">How I can help</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- About Me -->
-  <section class="bg-dark text-light pb-3">
-    <div class="container" id="aboutme">
+  <!-- Website Showcase 1 -->
+  <section class="bg-dark text-light py-5">
+    <div class="container" id="about">
       <div class="d-sm-flex align-items-center justify-content-between">
-        <img class="d-none d-lg-block w-25 mx-auto d-block p-3" src="assets/img/dp.jpg" alt="">
+        <img class="d-none d-lg-block w-25 mx-auto d-block p-3 rounded-circle" src="assets/img/bg_1.jpg" alt="">
         <div>
-          <h1 class="mb-3">Darelle Gochuico (<span class="text-warning">Student</span>)</h1> 
-          <p class="lead">I am an aspiring Web Developer compelled to create responsive and appropriate designs</p>
-          <p class="lead"><span class="fw-bold">Languages:</span> C and Java</p>
-          <h2 class="fw-bold mb-3">Motto: &quot;Failure is a part of success&quot;</h2>
-          <a href="https://twitter.com/gochuicod" target="_blank"><i class="bi bi-twitter text-light mx-1 h4"></i></a>
-          <a href="https://www.facebook.com/gochuicodd/" target="_blank"><i class="bi bi-facebook text-light mx-1 h4"></i></a>
-          <a href="https://www.instagram.com/gochuicod/" target="_blank"><i class="bi bi-instagram text-light mx-1 h4"></i></a>
+          <h1 class="mb-3">What this is about?</h1> 
+          <p class="lead">This website is here to present my works while learning bootstrap on the way. Feel free to explore!</p>
+          <p class="lead"><a href="https://github.com/gochuicod/gochuicod.github.io" class="btn btn-light" target="_blank">Link to Github Repo</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Educational Background -->
-  <section class="mt-3">
-    <div class="container" id="educationalbg">
-      <h2 class="fw-bold text-center p-4">Educational Background</h2>
-      <div class="row">
-        <div class="col-lg-6 col-sm-12 mb-2">
-          <div class="card bg-primary text-light">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-3 fw-bold">Royal Oaks International School</h5>
-              <h6>1 year of Studies</h6>
-            </div>
-          </div>
+  <!-- Website Showcase 2 -->
+  <section class="py-5">
+    <div class="container" id="help">
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <h1 class="mb-3 text-end">How I can help</h1> 
+          <p class="lead text-end">These ideas I got are from the link provided below. Bootstrapping really is fun! I can guarantee that.</p>
+          <p class="lead text-end"><a href="https://www.youtube.com/watch?v=4sosXZsdy-s&list=PL7ya-_gPwVGkiUhdKLe3jsVdkoaaGLI-g&index=12" class="btn btn-danger" target="_blank">Traversy Media on YouTube</a></p>
         </div>
-        <div class="col-lg-6 col-sm-12">
-          <div class="card bg-primary text-light">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-3 fw-bold">Saint Francis of Assisi School</h5>
-              <h6>9 total years of Studies</h6>
-            </div>
-          </div>
-        </div>
+        <img class="d-none d-lg-block w-25 mx-auto d-block p-3 rounded-circle" src="assets/img/bg_2.jpg" alt="">
       </div>
-      <div class="row my-2">
-        <div class="col-lg-4 col-sm-12 mb-2">
-          <div class="card bg-primary text-light">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-3 fw-bold">University of Southern Philippines</h5>
-              <h6>5 total years of Studies</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="card bg-primary text-light mb-2">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-3 fw-bold">Cebu Institute of Technology</h5>
-              <h6>1 year of Secondary Studies</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="card bg-primary text-light">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-3 fw-bold">University of Cebu</h5>
-              <h6>Current</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <section class="bg-dark text-light mt-5">
-    <div class="container">
-      <h2 class="fw-bold text-center pt-5" id="achievements">Achievements</h2>
-      <div class="row align-items-center justify-content-between">
-        <div class="col-lg-6">
-          <img src="assets/img/certificate_1.png" class="d-none d-lg-block w-75 mx-auto" alt="">
-        </div>
-        <div class="col-lg-6 p-5">
-          <h2 class="text-warning">Google IT Support Professional Certificate at <span class="text-primary">Coursera</span></h2>
-          <p class="lead">
-            Modules Taken: Technical Support Fundamentals, System Administration and IT infrastructure Services, IT Security: Defense against the digital dark arts, The Bits and Bytes of Computer Networking, Operating Systems and You: Becoming a Power User
-          </p>
-          <p>
-            Accessed and finished it with the help of DOST - Caraga's Scholarship Grant which was valid only for four months.
-          </p>
-          <a href="https://www.coursera.org/user/fd01ce4dfdf978d2248cfb3d54280182" target="_blank" class="btn btn-light mt-3">
-            <i class="bi bi-chevron"></i>
-            Explore
-          </a>
-        </div>
-      </div>
+      <p class="text-center fw-bold h2 pt-5">Thank you for visiting!</p>
     </div>
   </section>
 
