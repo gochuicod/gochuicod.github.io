@@ -11,4 +11,4 @@ body::before {
 .card-bg-custom { background-color: #ffd31d; }
 .footer-bg-custom { background-color: #eff0f1; }
 .footer-color-custom { color: #989ca0; }
-#backtotop:hover { color: red; }
+.container-fluid > .row > div:nth-child(3) { color: red; }
