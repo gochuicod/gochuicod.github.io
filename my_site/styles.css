@@ -1,3 +1,8 @@
+/* General Custom Classes */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* { font-family: 'Roboto', sans-serif; }
+
 body::before {
     display: block;
     content: '';
@@ -13,3 +18,19 @@ body::before {
 .card-bg-custom { background-color: #ffd31d; }
 .footer-bg-custom { background-color: #eff0f1; }
 .footer-color-custom { color: #989ca0; }
+
+/* Gallery Classes */
+/* Timer */
+.stopwatch-button-color {
+    background-color: #0500E5;
+    color: white;
+}
+.stopwatch-button-color:hover {
+    background-color: #04009A;
+    color: #eff0f1;
+}
+.stopwatch > .container > div:nth-child(2) > div {
+    padding: 1% 10%;
+    border: 5px solid #eff0f1;
+    border-radius: 10px;
+}
