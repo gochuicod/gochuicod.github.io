@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DG</title>
+    <link rel="icon" href="../img/tab_icon.png" class="rounded-circle">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../../styles.css" rel="stylesheet">
+  </head>
+  <body class="showcase-bg-custom text-dark" style="margin: 0">
+
+    <section>
+      <div class="container pt-3 bg-light text-dark rounded-custom shadow" style="width:60%">
+        <div class="d-flex flex-row justify-content-center">
+            <img class="rounded-custom shadow" src="../img/van_halen_album.jpg" alt="A little angel holding a cigarette" width="200" height="150" id="album">
+            <audio src="../audio/Van Halen - Jump.mp3" id="song"></audio>
+        </div>
+        <div class="d-flex flex-row justify-content-center pt-4 pb-2">
+          <span class="fw-light h6">Jump - Van Halen</span>
+        </div>
+        <div class="d-flex flex-row justify-content-center pb-2">
+          <button class="btn btn-dark rounded-circle shadow" onclick="play()"><i class="bi bi-play-fill" id="play_pause"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <script src="../../js/music_player.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
