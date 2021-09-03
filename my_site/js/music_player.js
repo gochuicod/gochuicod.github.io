@@ -1,17 +1,1 @@
-let playing = true;
-function play() {
-    let song = document.querySelector("#song");
-    let play_pause_btn = document.querySelector("#play_pause");
-    let thumbnail = document.querySelector("#album");
-        if(playing){
-            play_pause_btn.setAttribute("class","bi bi-pause-fill");
-            thumbnail.style.transform = "scale(1.05)"
-            song.play();
-            playing = false;
-        } else {
-            play_pause_btn.setAttribute("class","bi bi-play-fill");
-            thumbnail.style.transform = "scale(1)"
-            song.pause();
-            playing = true;
-        }
-}
+(function(_0x4660e8,_0x5206fe){const _0x1f8257=_0x286b,_0x57acca=_0x4660e8();while(!![]){try{const _0x1c031f=parseInt(_0x1f8257(0x10d))/0x1+-parseInt(_0x1f8257(0x10b))/0x2+parseInt(_0x1f8257(0x10a))/0x3*(-parseInt(_0x1f8257(0x10c))/0x4)+parseInt(_0x1f8257(0x10f))/0x5*(parseInt(_0x1f8257(0x10e))/0x6)+-parseInt(_0x1f8257(0x11a))/0x7*(-parseInt(_0x1f8257(0x116))/0x8)+parseInt(_0x1f8257(0x11c))/0x9*(parseInt(_0x1f8257(0x118))/0xa)+-parseInt(_0x1f8257(0x112))/0xb;if(_0x1c031f===_0x5206fe)break;else _0x57acca['push'](_0x57acca['shift']());}catch(_0x35fec7){_0x57acca['push'](_0x57acca['shift']());}}}(_0x3abb,0xcc912));function _0x3abb(){const _0x15f2e9=['28626IlWAsf','690174qWLTji','384pFgyNk','122413MAuSLk','1007418GQluUg','20CepbqX','querySelector','#play_pause','13549063SyIvhJ','class','pause','transform','8924352GCNcAw','bi\x20bi-play-fill','1291990NOVSOU','setAttribute','7NVlwxw','scale(1.05)','99nhtcxj','scale(1)','style'];_0x3abb=function(){return _0x15f2e9;};return _0x3abb();}function _0x286b(_0x191a03,_0x4b276f){const _0x3abb7d=_0x3abb();return _0x286b=function(_0x286bed,_0x18740e){_0x286bed=_0x286bed-0x109;let _0x41d8a2=_0x3abb7d[_0x286bed];return _0x41d8a2;},_0x286b(_0x191a03,_0x4b276f);}let playing=!![];function play(){const _0x2e46e9=_0x286b;let _0x28d77a=document[_0x2e46e9(0x110)]('#song'),_0x2769a9=document['querySelector'](_0x2e46e9(0x111)),_0x26a47b=document[_0x2e46e9(0x110)]('#album');playing?(_0x2769a9[_0x2e46e9(0x119)](_0x2e46e9(0x113),'bi\x20bi-pause-fill'),_0x26a47b[_0x2e46e9(0x109)][_0x2e46e9(0x115)]=_0x2e46e9(0x11b),_0x28d77a['play'](),playing=![]):(_0x2769a9[_0x2e46e9(0x119)](_0x2e46e9(0x113),_0x2e46e9(0x117)),_0x26a47b[_0x2e46e9(0x109)][_0x2e46e9(0x115)]=_0x2e46e9(0x11d),_0x28d77a[_0x2e46e9(0x114)](),playing=!![]);}
