@@ -4,4 +4,5 @@
 - Updated music player design and functionality
 - Added custom styling for the pods
 - Fixed word counter counting bugs
+- Fixed countdown timers minor bug
 - Minor adjustments to overall design
