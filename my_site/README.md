@@ -1,4 +1,4 @@
-#### September 05
+#### September 05, 2021
 ## DG Patch 2.1
 - Redesigned music player pod
 - Added volume slider and mute icon
