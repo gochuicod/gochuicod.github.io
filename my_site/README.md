@@ -1,3 +1,10 @@
+#### September 08, 2021
+## DG Patch 2.2
+- Music player optimizations and bug fixes
+- Added Base 10 Converter pod
+- Adjusted Portfolio and Home breakpoints
+- Updated Navbar links
+
 #### September 05, 2021
 ## DG Patch 2.1
 - Redesigned music player pod
