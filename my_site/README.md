@@ -1,3 +1,11 @@
+#### September 12, 2021
+## DG Patch 2.3
+- Redesigned structuring of all pages
+- Mini-projects optimizations
+- Added calculator pod
+- Color palette update
+- Changed Overall website colors
+
 #### September 08, 2021
 ## DG Patch 2.2
 - Music player optimizations and bug fixes
