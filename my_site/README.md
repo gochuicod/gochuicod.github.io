@@ -1,3 +1,8 @@
+#### September 19, 2021
+## DG Patch 2.4
+- Added Typing Test application
+- Minor visual updates to navigation and What's New? modal
+
 #### September 12, 2021
 ## DG Patch 2.3
 - Redesigned structuring of all pages
