@@ -1,3 +1,7 @@
+#### September 27, 2021
+## DG Patch 2.5.1
+- Fixed and optimized visual bugs.
+
 #### September 26, 2021
 ## DG Patch 2.5
 - Visual update for Typing Test, displays typed correct texts as green and incorrect texts as red.
