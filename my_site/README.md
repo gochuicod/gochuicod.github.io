@@ -1,3 +1,7 @@
+#### September 29, 2021
+## DG Patch 2.6
+- Typing Test Design changes and optimizations
+
 #### September 27, 2021
 ## DG Patch 2.5.1
 - Fixed and optimized visual bugs.
