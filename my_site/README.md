@@ -1,4 +1,8 @@
 #### October 1, 2021
+## DG Patch 2.7.1
+- Adjustments to Typing Test modes' difficulty.
+
+#### October 1, 2021
 ## DG Patch 2.7
 - Typing Test now offers three modes! Easy, medium, and hard! [typing_test.js gallery_page_two.html]
 
