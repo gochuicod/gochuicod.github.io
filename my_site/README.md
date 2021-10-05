@@ -1,3 +1,8 @@
+#### October 5, 2021
+## DG Patch 2.8
+- Added search feature!
+- Adjusted dropdown style sheet
+
 #### October 1, 2021
 ## DG Patch 2.7.1
 - Adjustments to Typing Test modes' difficulty.
