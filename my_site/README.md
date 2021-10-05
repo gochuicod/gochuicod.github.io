@@ -1,4 +1,8 @@
 #### October 5, 2021
+## DG Patch 2.8.2
+- Fixed declaration bug that disallows shortcut keys to activate in typing test page.
+
+#### October 5, 2021
 ## DG Patch 2.8.1
 - Fixed bug when pressing forward slash or question mark is pressed in either to do list or typing test's inputs, it switches focus.
 
