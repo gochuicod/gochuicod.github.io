@@ -2,6 +2,7 @@
 ## DG Patch 2.8
 - Added search feature!
 - Adjusted dropdown style sheet
+- Added modal for Shortcut keys
 
 #### October 1, 2021
 ## DG Patch 2.7.1
