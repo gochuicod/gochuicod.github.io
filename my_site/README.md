@@ -1,4 +1,8 @@
 #### October 7, 2021
+## DG Patch 2.9.1
+- Fixed music player unpause bug
+
+#### October 7, 2021
 ## DG Patch 2.9
 - Added total track length and current track length to Music Player!
 - Updated Modal Design, Keyboard shortcuts modal for music player in gallery section
