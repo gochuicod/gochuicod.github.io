@@ -1,3 +1,13 @@
+#### October 7, 2021
+## DG Patch 2.9
+- Added total track length and current track length to Music Player!
+- Updated Modal Design, Keyboard shortcuts modal for music player in gallery section
+- As well as shortcuts for the basic calculator
+- Adjustments to calculator, lacking a zero button and removed power sign but still usable with the shortcut ^
+- Changed rounded edges pixel size from 30px to 20px
+- Optimized Christmas and New Year Countdowns
+- Fixed To Do List Clear List button bug
+
 #### October 5, 2021
 ## DG Patch 2.8.2
 - Fixed declaration bug that disallows shortcut keys to activate in typing test page.
