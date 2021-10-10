@@ -1,3 +1,8 @@
+#### October ?, 2021
+## DG Patch 2.11
+- Compressed and redesigned a few pods for faster loading times
+- Relocated tasks breadcrumb to a gallery pod
+
 #### October 9, 2021
 ## DG Patch 2.10
 - Improved searching algorithm
