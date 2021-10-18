@@ -1,4 +1,11 @@
-#### October ?, 2021
+#### October 18, 2021
+## DG Patch 2.12
+- Added release notes page
+- Reverted website colors to light to prevent eye strain for readers
+- New feature for tasks, data will remain unless removed. Only stores data through the browser used
+- Updated footer
+
+#### October 10, 2021
 ## DG Patch 2.11
 - Compressed and redesigned a few pods for faster loading times
 - Relocated tasks breadcrumb to a gallery pod
