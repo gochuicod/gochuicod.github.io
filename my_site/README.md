@@ -1,4 +1,8 @@
 #### October 18, 2021
+## DG Patch 2.12.1
+- Fixed typing test enter key prevent default
+
+#### October 18, 2021
 ## DG Patch 2.12
 - Added release notes page
 - Reverted website colors to light to prevent eye strain for readers
