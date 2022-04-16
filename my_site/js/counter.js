@@ -1,1 +1,14 @@
-const _0x1255d0=_0x1433;function _0x1433(_0x39f14c,_0x2953e2){const _0x1b27a8=_0x1b27();return _0x1433=function(_0x1433bc,_0x5a0dcb){_0x1433bc=_0x1433bc-0x18a;let _0x2dc63e=_0x1b27a8[_0x1433bc];return _0x2dc63e;},_0x1433(_0x39f14c,_0x2953e2);}(function(_0x59d8fe,_0x46dfe4){const _0x4350ed=_0x1433,_0x2de954=_0x59d8fe();while(!![]){try{const _0x27e23c=-parseInt(_0x4350ed(0x18d))/0x1+parseInt(_0x4350ed(0x197))/0x2*(-parseInt(_0x4350ed(0x19a))/0x3)+-parseInt(_0x4350ed(0x190))/0x4+parseInt(_0x4350ed(0x198))/0x5+-parseInt(_0x4350ed(0x18e))/0x6+parseInt(_0x4350ed(0x191))/0x7*(parseInt(_0x4350ed(0x18b))/0x8)+parseInt(_0x4350ed(0x193))/0x9*(parseInt(_0x4350ed(0x18f))/0xa);if(_0x27e23c===_0x46dfe4)break;else _0x2de954['push'](_0x2de954['shift']());}catch(_0x22f486){_0x2de954['push'](_0x2de954['shift']());}}}(_0x1b27,0x7403c));function _0x1b27(){const _0x4ace37=['346755lrTfZG','innerText','17672RjzQDX','currentCount','541351ufIBeS','4804560gXFDiu','19020dKgURZ','2996932ECeuhW','1659fdRGyZ','onclick','11007xdgVbo','deduct','getElementById','add','14qVwwxV','2629780lKYpnV','reset'];_0x1b27=function(){return _0x4ace37;};return _0x1b27();}let count=0x0;document[_0x1255d0(0x195)](_0x1255d0(0x196))[_0x1255d0(0x192)]=()=>{const _0x1c6de3=_0x1255d0;count++,document[_0x1c6de3(0x195)]('currentCount')[_0x1c6de3(0x18a)]=''+count;},document['getElementById'](_0x1255d0(0x194))[_0x1255d0(0x192)]=()=>{const _0x1dddd2=_0x1255d0;count--,document[_0x1dddd2(0x195)](_0x1dddd2(0x18c))[_0x1dddd2(0x18a)]=''+count;},document['getElementById'](_0x1255d0(0x199))[_0x1255d0(0x192)]=()=>{const _0x3328d8=_0x1255d0;count=0x0,document[_0x3328d8(0x195)]('currentCount')['innerText']=''+count;};
+let count = 0;
+
+document.getElementById("add").onclick = () => {
+    count++;
+    document.getElementById("currentCount").innerText = `${count}`;
+}
+document.getElementById('deduct').onclick = () => {
+    count--;
+    document.getElementById("currentCount").innerText = `${count}`;
+}
+document.getElementById('reset').onclick = () => {
+    count = 0;
+    document.getElementById("currentCount").innerText = `${count}`;
+}

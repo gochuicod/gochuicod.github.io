@@ -1,6 +1,7 @@
-#### October 18, 2021
-## DG Patch 2.12.1
-- Fixed typing test enter key prevent default
+#### April 16, 2022
+## DG Patch 2.13
+- Added weather pod located in the gallery section!
+- Simplified portfolio design
 
 #### October 18, 2021
 ## DG Patch 2.12
