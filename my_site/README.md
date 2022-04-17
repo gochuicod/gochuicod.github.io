@@ -1,22 +1,9 @@
-#### TBD
+#### April 17, 2022
 ## DG Patch 2.14
-Music to be added to music player
-motorcycle drive by by third eye blind
-kiss the breeze by sticky fingers
-[FILES]
-gallery.html
-styles_pods.css
-weather.js
-weather.html
-programming_calc.html
-programming_calc.js
-word_counter.html
-word_counter.js
-motorcycledriveby.mp3
-kissthebreeze.mp3
-motorcycledriveby.jpg
-kissthebreeze.jpg
-music_player.js
+- Updated and packed initial version of weather pod with more information!
+- Updated word counter
+- Updated base 10 converter pod
+- Adjusted pod placements
 
 #### April 16, 2022
 ## DG Patch 2.13
