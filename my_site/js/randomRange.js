@@ -1,14 +1,1 @@
-let a = document.querySelector("#output");
-
-function generateNumber() {
-    let from = parseInt(document.getElementById("from").value);
-    let to = parseInt(document.getElementById("to").value);
-    if(from < to) {
-        a.setAttribute("class","h1 mt-4 text-center");
-        let test = Math.floor(Math.random() * (to - from + 1) + from);
-        a.innerText = `${test}`;
-    } else {
-        a.setAttribute("class","h5 p-4 text-center");
-        a.innerText = "First value must not be greater than second value";
-    }
-}
+const _0x28c629=_0x2a68;(function(_0x4ed92b,_0x5cf0b5){const _0x2202cd=_0x2a68,_0x396b4f=_0x4ed92b();while(!![]){try{const _0x5d91b3=parseInt(_0x2202cd(0xc6))/0x1+parseInt(_0x2202cd(0xcf))/0x2*(parseInt(_0x2202cd(0xc8))/0x3)+-parseInt(_0x2202cd(0xce))/0x4+parseInt(_0x2202cd(0xc9))/0x5+parseInt(_0x2202cd(0xcb))/0x6+-parseInt(_0x2202cd(0xd4))/0x7*(-parseInt(_0x2202cd(0xcd))/0x8)+-parseInt(_0x2202cd(0xd1))/0x9;if(_0x5d91b3===_0x5cf0b5)break;else _0x396b4f['push'](_0x396b4f['shift']());}catch(_0x5a4e55){_0x396b4f['push'](_0x396b4f['shift']());}}}(_0xdb66,0x97187));let a=document[_0x28c629(0xd5)](_0x28c629(0xcc));function _0x2a68(_0x42eb93,_0x461741){const _0xdb6648=_0xdb66();return _0x2a68=function(_0x2a6895,_0x2ccda4){_0x2a6895=_0x2a6895-0xc6;let _0x597ffb=_0xdb6648[_0x2a6895];return _0x597ffb;},_0x2a68(_0x42eb93,_0x461741);}function generateNumber(){const _0x543024=_0x28c629;let _0x3f4df6=parseInt(document[_0x543024(0xd3)]('from')[_0x543024(0xd6)]),_0x4a2736=parseInt(document['getElementById']('to')['value']);if(_0x3f4df6<_0x4a2736){a[_0x543024(0xc7)](_0x543024(0xd7),'h1\x20mt-4\x20text-center');let _0x2eb5b6=Math[_0x543024(0xd2)](Math[_0x543024(0xca)]()*(_0x4a2736-_0x3f4df6+0x1)+_0x3f4df6);a[_0x543024(0xd0)]=''+_0x2eb5b6;}else a[_0x543024(0xc7)]('class','h5\x20p-4\x20text-center'),a[_0x543024(0xd0)]='First\x20value\x20must\x20not\x20be\x20greater\x20than\x20second\x20value';}function _0xdb66(){const _0x391100=['2576610LDpTKB','random','6533520pZAvQT','#output','88FiXWoF','4722508OUqJUj','70QZwKyF','innerText','13108509OYAjRl','floor','getElementById','638603vUQwkP','querySelector','value','class','195144hRiOZp','setAttribute','38838bLVjEa'];_0xdb66=function(){return _0x391100;};return _0xdb66();}

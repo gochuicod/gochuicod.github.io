@@ -1,3 +1,8 @@
+#### April 18, 2022
+## DG Patch 2.15
+- Added three days weather forecast in weather pod, works with any city!
+- Hid scrollbars on specific pods to maintain aesthetic
+
 #### April 17, 2022
 ## DG Patch 2.14
 - Updated and packed initial version of weather pod with more information!
