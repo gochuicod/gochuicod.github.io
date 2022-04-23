@@ -1,3 +1,14 @@
+#### April 23, 2022
+## DG Patch 2.17
+- Prioritized code optimization
+- Added an earthquake monitoring app!
+- Updated weather app pod
+
+#### April 18, 2022
+## DG Patch 2.16
+- Added hourly weather forecast in weather pod, works with any city!
+- Updated image dragging prevention method
+
 #### April 18, 2022
 ## DG Patch 2.15
 - Added three days weather forecast in weather pod, works with any city!
