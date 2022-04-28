@@ -1,1 +1,29 @@
-const _0x25c77a=_0x3b13;(function(_0x3d3844,_0x3aed79){const _0x3369e3=_0x3b13,_0x4bf4b1=_0x3d3844();while(!![]){try{const _0x4513aa=-parseInt(_0x3369e3(0xf4))/0x1+-parseInt(_0x3369e3(0xf8))/0x2*(-parseInt(_0x3369e3(0x101))/0x3)+-parseInt(_0x3369e3(0x105))/0x4+-parseInt(_0x3369e3(0xef))/0x5*(-parseInt(_0x3369e3(0xfa))/0x6)+parseInt(_0x3369e3(0xed))/0x7+parseInt(_0x3369e3(0xf3))/0x8+-parseInt(_0x3369e3(0xf9))/0x9*(-parseInt(_0x3369e3(0xf0))/0xa);if(_0x4513aa===_0x3aed79)break;else _0x4bf4b1['push'](_0x4bf4b1['shift']());}catch(_0x3468ea){_0x4bf4b1['push'](_0x4bf4b1['shift']());}}}(_0x32bf,0x4c028));let a=document['getElementById']('pr-length'),b=document['getElementById'](_0x25c77a(0xfe)),output=document[_0x25c77a(0xf1)](_0x25c77a(0xee)),err=document[_0x25c77a(0xf1)](_0x25c77a(0x103));window[_0x25c77a(0x100)]=()=>{const _0x1673d0=_0x25c77a;output[_0x1673d0(0xf7)][_0x1673d0(0xfc)]=_0x1673d0(0xff);};function _0x3b13(_0x433b0e,_0x1f3ab3){const _0x32bf64=_0x32bf();return _0x3b13=function(_0x3b13b3,_0x3f8389){_0x3b13b3=_0x3b13b3-0xed;let _0x265fb2=_0x32bf64[_0x3b13b3];return _0x265fb2;},_0x3b13(_0x433b0e,_0x1f3ab3);}function perimeterRectangle(){const _0x16ed4e=_0x25c77a;let _0x221aa1=parseFloat(a[_0x16ed4e(0xfd)]),_0x4b010e=parseFloat(b[_0x16ed4e(0xfd)]),_0x577f83=0x2*(_0x221aa1+_0x4b010e);!isNaN(_0x221aa1)&&!isNaN(_0x4b010e)?_0x221aa1>0x0&&_0x4b010e>0x0?(err[_0x16ed4e(0xf7)][_0x16ed4e(0xfc)]=_0x16ed4e(0xff),output['style'][_0x16ed4e(0xfc)]='block',output[_0x16ed4e(0x102)]=''+_0x577f83):(output[_0x16ed4e(0xf7)][_0x16ed4e(0xfc)]='block',output['innerText']='?',err[_0x16ed4e(0xf7)][_0x16ed4e(0xfc)]=_0x16ed4e(0xf2),err['innerText']=_0x16ed4e(0xfb)):(output['style'][_0x16ed4e(0xfc)]=_0x16ed4e(0xff),err[_0x16ed4e(0xf7)]['display']=_0x16ed4e(0xff));}document[_0x25c77a(0xf6)](_0x25c77a(0xf5),_0x3a5b0b=>{const _0xc1ffad=_0x25c77a;if(a===document['activeElement']||b===document[_0xc1ffad(0x104)])perimeterRectangle();});function _0x32bf(){const _0x1c2d74=['pr-width','none','onload','33999zddTxo','innerText','#errorInfo','activeElement','2245852tphZPe','2077453eLLHFs','#pr-output','385070BrZCTe','6610OVbfan','querySelector','block','380080TMwEIJ','533546GZeVfr','keyup','addEventListener','style','16AhPxSZ','5886DsdmeX','42OhkLAC','Values\x20must\x20be\x20positive!','display','value'];_0x32bf=function(){return _0x1c2d74;};return _0x32bf();}
+let a = document.getElementById("pr-length"), b = document.getElementById("pr-width"), output = document.querySelector("#pr-output"), err = document.querySelector("#errorInfo");
+
+window.onload = () => {
+    output.style.display = "none";
+}
+
+function perimeterRectangle() {
+    let length = parseFloat(a.value), width = parseFloat(b.value);
+    let pr_output = 2 * (length + width);
+    if((!isNaN(length)) && (!isNaN(width))){
+        if(length > 0 && width > 0){
+            err.style.display = "none";
+            output.style.display = "block";
+            output.innerText = `${pr_output}`;
+        } else {
+            output.style.display = "block";
+            output.innerText = "?";
+            err.style.display = "block";
+            err.innerText = "Values must be positive!";
+        }
+    } else {
+        output.style.display = "none";
+        err.style.display = "none";
+    }
+}
+
+document.addEventListener('keyup', (e) => {
+    if(a === document.activeElement || b === document.activeElement) perimeterRectangle();
+});

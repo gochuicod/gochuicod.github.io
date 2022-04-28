@@ -1,1 +1,45 @@
-const _0xad32c1=_0x2164;(function(_0x581789,_0x36fe21){const _0x1cb96f=_0x2164,_0x2757c3=_0x581789();while(!![]){try{const _0xf4c4d4=-parseInt(_0x1cb96f(0x13f))/0x1+parseInt(_0x1cb96f(0x142))/0x2*(parseInt(_0x1cb96f(0x12d))/0x3)+-parseInt(_0x1cb96f(0x132))/0x4*(-parseInt(_0x1cb96f(0x12a))/0x5)+-parseInt(_0x1cb96f(0x134))/0x6*(-parseInt(_0x1cb96f(0x144))/0x7)+parseInt(_0x1cb96f(0x13b))/0x8*(parseInt(_0x1cb96f(0x12f))/0x9)+parseInt(_0x1cb96f(0x139))/0xa+-parseInt(_0x1cb96f(0x137))/0xb*(parseInt(_0x1cb96f(0x133))/0xc);if(_0xf4c4d4===_0x36fe21)break;else _0x2757c3['push'](_0x2757c3['shift']());}catch(_0x518a62){_0x2757c3['push'](_0x2757c3['shift']());}}}(_0x363a,0xe79e2));let a=document['querySelector'](_0xad32c1(0x131)),b=document['querySelector'](_0xad32c1(0x141)),c=document[_0xad32c1(0x136)](_0xad32c1(0x13e)),output=document[_0xad32c1(0x136)](_0xad32c1(0x138)),err=document[_0xad32c1(0x136)]('#errorInfo');window[_0xad32c1(0x128)]=()=>{const _0x1518a2=_0xad32c1;output[_0x1518a2(0x143)][_0x1518a2(0x12b)]=_0x1518a2(0x135);};function _0x363a(){const _0x24ed0b=['6yXXbpV','none','querySelector','121tPcNrM','#pt-output','15482120cpEapz','innerText','68424KfiVuo','Values\x20must\x20be\x20positive!','value','#base','287780FPOIlf','activeElement','#sideb','3532174sclCeM','style','11835929MgaLTx','toFixed','onload','block','1335815BSQWzB','display','keyup','3qNafoP','Side\x20A\x20plus\x20Side\x20B\x20must\x20be\x20greater\x20than\x20Base','1548CsfQZb','Base\x20plus\x20Side\x20B\x20must\x20be\x20greater\x20than\x20Side\x20A','#sidea','20XPMVKo','7173372wJNPbS'];_0x363a=function(){return _0x24ed0b;};return _0x363a();}function perimeterTriangle(){const _0x3ce8b4=_0xad32c1;let _0x58b9e6=parseFloat(a['value']),_0x1d3a85=parseFloat(b['value']),_0x4c4fb8=parseFloat(c['value']);if(isNaN(_0x58b9e6)||a[_0x3ce8b4(0x13d)]==''||(isNaN(_0x1d3a85)||b['value']=='')||(isNaN(_0x4c4fb8)||c[_0x3ce8b4(0x13d)]==''))hideOutput(),hideError();else{if(_0x58b9e6[_0x3ce8b4(0x145)](0x2)<0.01||_0x1d3a85[_0x3ce8b4(0x145)](0x2)<0.01||_0x4c4fb8[_0x3ce8b4(0x145)](0x2)<0.01)showOutput('?'),showError(),err[_0x3ce8b4(0x13a)]=_0x3ce8b4(0x13c);else{let _0x38a8c4=_0x58b9e6+_0x4c4fb8+_0x1d3a85;if(_0x58b9e6+_0x4c4fb8>_0x1d3a85&&_0x4c4fb8+_0x1d3a85>_0x58b9e6&&_0x58b9e6+_0x1d3a85>_0x4c4fb8)showOutput(_0x38a8c4);else showOutput('?'),_0x58b9e6+_0x4c4fb8<=_0x1d3a85&&(showError(),err[_0x3ce8b4(0x13a)]='Side\x20A\x20plus\x20Base\x20must\x20be\x20greater\x20than\x20Side\x20B'),_0x4c4fb8+_0x1d3a85<=_0x58b9e6&&(showError(),err['innerText']=_0x3ce8b4(0x130)),_0x58b9e6+_0x1d3a85<=_0x4c4fb8&&(showError(),err['innerText']=_0x3ce8b4(0x12e));}}}function showError(){const _0x219bf1=_0xad32c1;err[_0x219bf1(0x143)]['display']=_0x219bf1(0x129);}function hideError(){const _0x11946f=_0xad32c1;err[_0x11946f(0x143)][_0x11946f(0x12b)]=_0x11946f(0x135);}function _0x2164(_0x229bfc,_0x297b22){const _0x363a93=_0x363a();return _0x2164=function(_0x21643c,_0x3cefd8){_0x21643c=_0x21643c-0x128;let _0xfa563e=_0x363a93[_0x21643c];return _0xfa563e;},_0x2164(_0x229bfc,_0x297b22);}function showOutput(_0x606bf1){const _0x5fbe2f=_0xad32c1;hideError(),output[_0x5fbe2f(0x143)][_0x5fbe2f(0x12b)]=_0x5fbe2f(0x129),output[_0x5fbe2f(0x13a)]=''+_0x606bf1;}function hideOutput(){const _0x215ca8=_0xad32c1;output['style'][_0x215ca8(0x12b)]='none';}document['addEventListener'](_0xad32c1(0x12c),_0x31851a=>{const _0x3848e2=_0xad32c1;if(a===document[_0x3848e2(0x140)]||b===document[_0x3848e2(0x140)]||c===document[_0x3848e2(0x140)])perimeterTriangle();});
+let a = document.querySelector("#sidea"), b = document.querySelector("#sideb"), c = document.querySelector("#base"), output = document.querySelector("#pt-output"), err = document.querySelector("#errorInfo");
+
+window.onload = () => {
+    output.style.display = "none";
+}
+
+function perimeterTriangle() {
+    let sideA = parseFloat(a.value), sideB = parseFloat(b.value), base = parseFloat(c.value);
+    if((isNaN(sideA) || a.value == "") || (isNaN(sideB) || b.value == "") || (isNaN(base) || c.value == "")){
+        hideOutput(); hideError();
+    } else {
+        if(sideA.toFixed(2) < 0.01 || sideB.toFixed(2) < 0.01 || base.toFixed(2) < 0.01){
+            showOutput("?"); showError(); err.innerText = "Values must be positive!";
+        } else {
+            let pt_output = sideA + base + sideB;
+            if((sideA + base) > sideB && (base + sideB) > sideA && (sideA + sideB) > base) showOutput(pt_output);
+            else {
+                showOutput("?");
+                if((sideA + base) <= sideB){
+                    showError(); err.innerText = "Side A plus Base must be greater than Side B";
+                }
+                if((base + sideB) <= sideA){
+                    showError(); err.innerText = "Base plus Side B must be greater than Side A";
+                }
+                if((sideA + sideB) <= base){
+                    showError(); err.innerText = "Side A plus Side B must be greater than Base";
+                }
+            }
+        }
+    }
+}
+
+function showError() { err.style.display = "block"; }
+function hideError() { err.style.display = "none"; }
+
+function showOutput(item) { 
+    hideError();
+    output.style.display = "block";
+    output.innerText = `${item}`;
+}
+function hideOutput() { output.style.display = "none"; }
+
+document.addEventListener('keyup', (e) => {
+    if(a === document.activeElement || b === document.activeElement || c === document.activeElement) perimeterTriangle();
+});
