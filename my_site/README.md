@@ -1,5 +1,13 @@
-#### ?, 2022
+#### May 3, 2022
+## DG Patch 2.19
+- Added news app pod with search functionality!
+
+#### April 28, 2022
 ## DG Patch 2.18
+- Added Astronomy Picture of the Day!
+- Added Near Earth Object Detection from NASA
+- Minor updates to font sizing
+- Improved code to prevent longer loading times
 
 #### April 23, 2022
 ## DG Patch 2.17
