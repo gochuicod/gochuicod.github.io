@@ -1,3 +1,8 @@
+#### May 14, 2022
+## DG Patch 2.20
+- Added dictionary, advice and covid-19 tracker apps as pods!
+- Minor design changes to select pods
+
 #### May 3, 2022
 ## DG Patch 2.19
 - Added news app pod with search functionality!
