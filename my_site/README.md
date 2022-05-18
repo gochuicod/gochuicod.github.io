@@ -1,3 +1,7 @@
+#### May 18, 2022
+## DG Patch 2.21
+- Added loading as response to user!
+
 #### May 14, 2022
 ## DG Patch 2.20
 - Added dictionary, advice and covid-19 tracker apps as pods!
