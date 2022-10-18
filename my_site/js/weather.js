@@ -86,7 +86,7 @@ let weather = {
                 pop: `Chance of Rain: ${((predictionData.daily[i].pop)*100).toFixed(0)}%`,
                 sunrise: `Sunrise: ${new Date((predictionData.daily[i].sunrise)*1000).toLocaleTimeString()}`,
                 sunset: `Sunset: ${new Date((predictionData.daily[i].sunset)*1000).toLocaleTimeString()}`,
-                // moonphase: `Moon Phase: ${this.defineMoonPhase(predictionData.daily[i].moon_phase)} (${Math.floor(predictionData.daily[i].moon_phase*100)}%)`
+                moonphase: `Moon Phase: ${this.defineMoonPhase(predictionData.daily[i].moon_phase)} (${Math.floor(predictionData.daily[i].moon_phase*100)}%)`
             }); 
         }
 
@@ -100,7 +100,7 @@ let weather = {
             document.querySelector(`.d${index}Pop`).innerText = element.pop;
             document.querySelector(`.d${index}Sunrise`).innerText = element.sunrise;
             document.querySelector(`.d${index}Sunset`).innerText = element.sunset;
-            // document.querySelector(`.d${index}MoonPhase`).innerText = element.moonphase;
+            document.querySelector(`.d${index}MoonPhase`).innerText = element.moonphase;
             
             if(predictionData.daily[index].rain == undefined) document.querySelector(`.d${index}Rain`).innerText = "- -";
             else document.querySelector(`.d${index}Rain`).innerText = element.rain;
@@ -140,11 +140,11 @@ let weather = {
     },
     defineMoonPhase: function(value){
         if(value == 0) return "New Moon";
-        else if(value < 0.25 && value > 0) return "Waxing Crescent";
+        else if(value > 0 && value < 0.25) return "Waxing Crescent";
         else if(value == 0.25) return "First Quarter";
-        else if(value < 0.50 && value > 0.25) return "Waxing Gibbous";
+        else if(value > 0.25 && value < 0.50) return "Waxing Gibbous";
         else if(value == 0.50) return "Full Moon";
-        else if(value < 0.75 && value > 0.50) return "Waning Gibbous";
+        else if(value > 0.50 && value < 0.75) return "Waning Gibbous";
         else if(value == 0.75) return "Last Quarter";
         else return "Waning Crescent";
     },
@@ -243,7 +243,7 @@ let weather = {
         innerDiv8.setAttribute('class','col-6');
         innerDiv9.setAttribute('class','col-6');
         innerDiv10.setAttribute('class','col-6');
-        // innerDiv11.setAttribute('class','col-12 mt-3');
+        innerDiv11.setAttribute('class','col-12 mt-3');
         innerDiv1Img.setAttribute('src',''); innerDiv1Img.setAttribute('alt',''); innerDiv1Img.setAttribute('class',`d${index}Icon unselectable`); innerDiv1Img.setAttribute('oncontextmenu','return false;');
         innerDiv2Span.setAttribute('class',`d${index}DOTW fw-bold`);
         innerDiv3Span.setAttribute('class',`d${index}Temp`);
@@ -254,7 +254,7 @@ let weather = {
         innerDiv8Span.setAttribute('class',`d${index}Pop`);
         innerDiv9Span.setAttribute('class',`d${index}Sunrise`);
         innerDiv10Span.setAttribute('class',`d${index}Sunset`);
-        // innerDiv11Span.setAttribute('class',`d${index}MoonPhase`);
+        innerDiv11Span.setAttribute('class',`d${index}MoonPhase`);
 
         innerDiv1.append(innerDiv1Img);
         innerDiv2.append(innerDiv2Span);
@@ -266,7 +266,7 @@ let weather = {
         innerDiv8.append(innerDiv8Span);
         innerDiv9.append(innerDiv9Span);
         innerDiv10.append(innerDiv10Span);
-        // innerDiv11.append(innerDiv11Span);
+        innerDiv11.append(innerDiv11Span);
         outerDiv.append(innerDiv1);
         outerDiv.append(innerDiv2);
         outerDiv.append(innerDiv3);
@@ -277,7 +277,7 @@ let weather = {
         outerDiv.append(innerDiv8);
         outerDiv.append(innerDiv9);
         outerDiv.append(innerDiv10);
-        // outerDiv.append(innerDiv11);
+        outerDiv.append(innerDiv11);
 
         FD6D.append(outerDiv);
     },
