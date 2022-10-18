@@ -1,1 +1,29 @@
-const _0x54cd7e=_0x1ba5;function _0x1ba5(_0x2919dc,_0x4fbde2){const _0x242fe7=_0x242f();return _0x1ba5=function(_0x1ba5d5,_0x3484c1){_0x1ba5d5=_0x1ba5d5-0x1cb;let _0x2eb4aa=_0x242fe7[_0x1ba5d5];return _0x2eb4aa;},_0x1ba5(_0x2919dc,_0x4fbde2);}function _0x242f(){const _0x1a4063=['196748LWDIWs','#c-radius','addEventListener','5WZqvbW','block','value','onload','10HYjAUT','#pc-output','display','7KnbkAb','#errorInfo','1897956dXwUqD','innerText','334848gmozRY','activeElement','1008952DqDbIl','keyup','style','querySelector','242142ZznHyp','3fcGvFE','1697839SJcGkX','none','682674pPsmme'];_0x242f=function(){return _0x1a4063;};return _0x242f();}(function(_0x15c51c,_0x593d4f){const _0x4dbd8e=_0x1ba5,_0x469c5e=_0x15c51c();while(!![]){try{const _0x443b36=parseInt(_0x4dbd8e(0x1d4))/0x1+parseInt(_0x4dbd8e(0x1ce))/0x2+parseInt(_0x4dbd8e(0x1d5))/0x3*(-parseInt(_0x4dbd8e(0x1d9))/0x4)+-parseInt(_0x4dbd8e(0x1dc))/0x5*(-parseInt(_0x4dbd8e(0x1d8))/0x6)+parseInt(_0x4dbd8e(0x1e3))/0x7*(parseInt(_0x4dbd8e(0x1d0))/0x8)+-parseInt(_0x4dbd8e(0x1cc))/0x9+-parseInt(_0x4dbd8e(0x1e0))/0xa*(parseInt(_0x4dbd8e(0x1d6))/0xb);if(_0x443b36===_0x593d4f)break;else _0x469c5e['push'](_0x469c5e['shift']());}catch(_0x5a758e){_0x469c5e['push'](_0x469c5e['shift']());}}}(_0x242f,0x39624));let a=document[_0x54cd7e(0x1d3)](_0x54cd7e(0x1da)),output=document['querySelector'](_0x54cd7e(0x1e1)),err=document[_0x54cd7e(0x1d3)](_0x54cd7e(0x1cb));window[_0x54cd7e(0x1df)]=()=>{const _0x266d8a=_0x54cd7e;output[_0x266d8a(0x1d2)][_0x266d8a(0x1e2)]=_0x266d8a(0x1d7);};function perimeterCircle(){const _0x509f69=_0x54cd7e;let _0x8373bf=parseFloat(a['value']),_0x8fc6c5=0x2*Math['PI']*_0x8373bf;!isNaN(_0x8373bf)||a[_0x509f69(0x1de)]!==''?_0x8373bf>0x0?(err[_0x509f69(0x1d2)]['display']='none',output['style']['display']=_0x509f69(0x1dd),output[_0x509f69(0x1cd)]=''+_0x8fc6c5):(output[_0x509f69(0x1d2)]['display']=_0x509f69(0x1dd),output[_0x509f69(0x1cd)]='?',err[_0x509f69(0x1cd)]='Values\x20must\x20be\x20positive!',err[_0x509f69(0x1d2)][_0x509f69(0x1e2)]='block'):(err['style'][_0x509f69(0x1e2)]=_0x509f69(0x1d7),output[_0x509f69(0x1d2)][_0x509f69(0x1e2)]=_0x509f69(0x1d7));}document[_0x54cd7e(0x1db)](_0x54cd7e(0x1d1),_0x2aeaaf=>{const _0x2ab21a=_0x54cd7e;if(a===document[_0x2ab21a(0x1cf)])perimeterCircle();});
+let a = document.querySelector("#c-radius"), output = document.querySelector("#pc-output"), err = document.querySelector("#errorInfo");
+
+window.onload = () => {
+    output.style.display = "none";
+}
+
+function perimeterCircle() {
+    let radius = parseFloat(a.value);
+    let pc_output = 2 * Math.PI * radius;
+    if(!isNaN(radius) || a.value !== ""){
+        if(radius > 0){
+            err.style.display = "none";
+            output.style.display = "block";
+            output.innerText = `${pc_output}`;
+        } else {
+            output.style.display = "block";
+            output.innerText = "?";
+            err.innerText = "Values must be positive!";
+            err.style.display = "block";
+        }
+    } else {
+        err.style.display = "none";
+        output.style.display = "none";
+    }
+}
+
+document.addEventListener('keyup', (e) => {
+    if(a === document.activeElement) perimeterCircle();
+});

@@ -1,1 +1,55 @@
-function _0x59cc(){const _0xe2ab34=['20JmsbXD','45yfwjVI','401080HaJpAl','54744WLzQJQ','timer-minute','3558nTbuYN','timer-add5','timer-millisecond','timer-start','737LFTtws','94284vpIHwy','250wJrdGQ','timer-add1','disabled','timer-second','5488274KyjNrS','720lylfHa','1057980PeWfpT','timer-add5-seconds','innerText','getElementById','onclick'];_0x59cc=function(){return _0xe2ab34;};return _0x59cc();}const _0x53142d=_0x1b3e;function _0x1b3e(_0x34a0b4,_0xbe4bc){const _0x59cc23=_0x59cc();return _0x1b3e=function(_0x1b3edc,_0x7635b1){_0x1b3edc=_0x1b3edc-0x184;let _0x13f8b3=_0x59cc23[_0x1b3edc];return _0x13f8b3;},_0x1b3e(_0x34a0b4,_0xbe4bc);}(function(_0x5c6aec,_0x1abf41){const _0x164702=_0x1b3e,_0x4a2f59=_0x5c6aec();while(!![]){try{const _0x3a8966=-parseInt(_0x164702(0x190))/0x1*(parseInt(_0x164702(0x192))/0x2)+parseInt(_0x164702(0x191))/0x3*(-parseInt(_0x164702(0x187))/0x4)+parseInt(_0x164702(0x197))/0x5*(-parseInt(_0x164702(0x18c))/0x6)+parseInt(_0x164702(0x198))/0x7+parseInt(_0x164702(0x18a))/0x8+parseInt(_0x164702(0x188))/0x9*(-parseInt(_0x164702(0x189))/0xa)+parseInt(_0x164702(0x196))/0xb;if(_0x3a8966===_0x1abf41)break;else _0x4a2f59['push'](_0x4a2f59['shift']());}catch(_0x16b044){_0x4a2f59['push'](_0x4a2f59['shift']());}}}(_0x59cc,0x1db78));let timer_minutes=0x0,timer_seconds=0x0,timer_ms=0x0,timer_timer;function timer_start(){const _0x4a4374=_0x1b3e;timer_timer=setInterval(timer_time,0xa),document[_0x4a4374(0x185)](_0x4a4374(0x18f))[_0x4a4374(0x194)]=!![];}function timer_stop(){const _0x5f0865=_0x1b3e;clearInterval(timer_timer),document[_0x5f0865(0x185)](_0x5f0865(0x18f))[_0x5f0865(0x194)]=![];}function timer_reset(){const _0x31f43c=_0x1b3e;clearInterval(timer_timer),timer_minutes=0x0,timer_seconds=0x0,timer_ms=0x0,document[_0x31f43c(0x185)]('timer-start')['disabled']=![],document[_0x31f43c(0x185)]('timer-minute')['innerText']=timer_minutes+'m',document[_0x31f43c(0x185)](_0x31f43c(0x195))[_0x31f43c(0x184)]=timer_seconds+'s',document[_0x31f43c(0x185)]('timer-millisecond')[_0x31f43c(0x184)]=''+timer_ms;}function timer_time(){const _0x22ebad=_0x1b3e;timer_minutes>=0x0?timer_seconds>=0x0?timer_ms>=0x0?(document['getElementById'](_0x22ebad(0x18b))[_0x22ebad(0x184)]=timer_minutes+'m',document['getElementById'](_0x22ebad(0x195))['innerText']=timer_seconds+'s',document[_0x22ebad(0x185)](_0x22ebad(0x18e))[_0x22ebad(0x184)]=''+timer_ms,timer_ms--):(timer_ms=0x64,timer_seconds--):(timer_seconds=0x3b,timer_minutes--):timer_reset();}document[_0x53142d(0x185)](_0x53142d(0x193))[_0x53142d(0x186)]=function(){add_one();},document[_0x53142d(0x185)](_0x53142d(0x18d))[_0x53142d(0x186)]=function(){add_five();},document[_0x53142d(0x185)](_0x53142d(0x199))[_0x53142d(0x186)]=function(){add_five_seconds();};function add_one(){const _0x37360b=_0x53142d;if(timer_minutes>0x3b)timer_minutes=0x0;timer_minutes++,document['getElementById'](_0x37360b(0x18b))['innerText']=timer_minutes+'m',document[_0x37360b(0x185)](_0x37360b(0x195))[_0x37360b(0x184)]=timer_seconds+'s',document[_0x37360b(0x185)](_0x37360b(0x18e))[_0x37360b(0x184)]=''+timer_ms;}function add_five(){const _0x2940d6=_0x53142d;if(timer_minutes>0x3b)timer_minutes=0x0;timer_minutes+=0x5,document[_0x2940d6(0x185)]('timer-minute')['innerText']=timer_minutes+'m',document[_0x2940d6(0x185)](_0x2940d6(0x195))[_0x2940d6(0x184)]=timer_seconds+'s',document[_0x2940d6(0x185)]('timer-millisecond')[_0x2940d6(0x184)]=''+timer_ms;}function add_five_seconds(){const _0xe7bb85=_0x53142d;timer_seconds>0x3b&&(timer_minutes++,timer_seconds=0x0);if(timer_minutes>0x3b)timer_minutes=0x0;timer_seconds+=0x5,document[_0xe7bb85(0x185)](_0xe7bb85(0x18b))[_0xe7bb85(0x184)]=timer_minutes+'m',document[_0xe7bb85(0x185)](_0xe7bb85(0x195))[_0xe7bb85(0x184)]=timer_seconds+'s',document['getElementById'](_0xe7bb85(0x18e))[_0xe7bb85(0x184)]=''+timer_ms;}
+let timer_minutes = 0, timer_seconds = 0, timer_ms = 0;
+let timer_timer;
+function timer_start() {
+    timer_timer = setInterval(timer_time, 10);
+    document.getElementById("timer-start").disabled = true;
+}
+function timer_stop(){
+    clearInterval(timer_timer);
+    document.getElementById("timer-start").disabled = false;
+}
+function timer_reset(){
+    clearInterval(timer_timer);
+    timer_minutes = 0; timer_seconds = 0; timer_ms = 0;
+    document.getElementById("timer-start").disabled = false;
+    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
+    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
+    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+}
+
+function timer_time(){
+    if(timer_minutes >= 0){
+        if(timer_seconds >= 0){
+            if(timer_ms >= 0){
+                document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
+                document.getElementById("timer-second").innerText = `${timer_seconds}s`;
+                document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+                timer_ms--;
+            } else { timer_ms = 100; timer_seconds--; }
+        } else { timer_seconds = 59; timer_minutes--; }
+    } else { timer_reset(); }
+}
+
+document.getElementById("timer-add1").onclick = function() { add_one(); }
+document.getElementById("timer-add5").onclick = function() { add_five(); }
+document.getElementById("timer-add5-seconds").onclick = function() { add_five_seconds(); }
+function add_one() {
+    if(timer_minutes > 59) timer_minutes = 0; timer_minutes++;
+    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
+    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
+    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+}
+function add_five() {
+    if(timer_minutes > 59) timer_minutes = 0; timer_minutes += 5;
+    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
+    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
+    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+}
+function add_five_seconds() {
+    if(timer_seconds > 59) { timer_minutes++; timer_seconds = 0; }
+    if(timer_minutes > 59) timer_minutes = 0; 
+    timer_seconds += 5;
+    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
+    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
+    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+}

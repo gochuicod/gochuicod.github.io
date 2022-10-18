@@ -1,3 +1,7 @@
+weather.html | 
+nasaAPOD.js | weather.js
+styles_pods.css
+
 #### May 18, 2022
 ## DG Patch 2.21
 - Added loading as response to user!

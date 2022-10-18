@@ -1,1 +1,91 @@
-const _0x20d465=_0x3965;(function(_0x1ef6f4,_0x3c635a){const _0x175b90=_0x3965,_0x5285ce=_0x1ef6f4();while(!![]){try{const _0x33c7f3=parseInt(_0x175b90(0xb6))/0x1+-parseInt(_0x175b90(0xe0))/0x2*(-parseInt(_0x175b90(0xf1))/0x3)+-parseInt(_0x175b90(0xd1))/0x4+-parseInt(_0x175b90(0xf5))/0x5+-parseInt(_0x175b90(0xf2))/0x6+parseInt(_0x175b90(0xb5))/0x7*(parseInt(_0x175b90(0xf8))/0x8)+parseInt(_0x175b90(0xca))/0x9;if(_0x33c7f3===_0x3c635a)break;else _0x5285ce['push'](_0x5285ce['shift']());}catch(_0x58ab24){_0x5285ce['push'](_0x5285ce['shift']());}}}(_0x136b,0xaa53f));function _0x136b(){const _0x493051=['querySelector','json','\x20km','relative_velocity','innerText','append','div','close_approach_data','186teSJXe','.neoAsteroidHazardous','getFullYear','.neoAsteroidEstDiameter','close_approach_date_full','d-flex\x20flex-row\x20justify-content-start','Miss\x20Distance:\x20','Close\x20Approach:\x20','.neoAsteroidMissDistance','removeAllChildNodes','neoAsteroidMissDistance','neoAsteroidName','&end_date=','\x20shadow\x20rounded-custom\x20mb-3\x20ps-4\x20py-3','Name:\x20','neoAsteroidEstDiameter','style','4068oKZNyA','4528974ETWzVF','.neoAsteroidRelativeVelocity','fetchNasaData','4411830wJJwPq','firstChild','push','2064760FuLzGm','class','element_count','35EuLYXJ','641165ZCOZFG','removeChild','display','toFixed','apiKey','eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS','displayNasaNEO','span','getMonth2Digits','Estimated\x20Maximum\x20Diameter\x20','neoAsteroidCloseApproach','Relative\x20Velocity\x20','near_earth_objects','estimated_diameter','neoAsteroid','estimated_diameter_max','name','https://api.nasa.gov/neo/rest/v1/feed?start_date=','.dataField','then','8898156ejQjaQ','createElement','.loader','none','prepareNEOData','setAttribute','&api_key=','2846296MwgdXE','Yes','block','\x20km/h','forEach','is_potentially_hazardous_asteroid','getUTCMonth'];_0x136b=function(){return _0x493051;};return _0x136b();}function _0x3965(_0x38282e,_0x54f13a){const _0x136ba3=_0x136b();return _0x3965=function(_0x396592,_0x5ecb65){_0x396592=_0x396592-0xb5;let _0x440b6a=_0x136ba3[_0x396592];return _0x440b6a;},_0x3965(_0x38282e,_0x54f13a);}let todaysDate=new Date(),tyear=todaysDate[_0x20d465(0xe2)](),tmonth=todaysDate[_0x20d465(0xd7)]()+0x1,tdate=todaysDate['getUTCDate'](),loader=document[_0x20d465(0xd8)](_0x20d465(0xcc)),nasaNEO={'apiKey':_0x20d465(0xbb),'fetchNasaData':function(){const _0x46f560=_0x20d465;document[_0x46f560(0xd8)](_0x46f560(0xc8))[_0x46f560(0xf0)][_0x46f560(0xb8)]='none',loader['style'][_0x46f560(0xb8)]=_0x46f560(0xd3),fetch(_0x46f560(0xc7)+tyear+'-'+tmonth+'-'+tdate+_0x46f560(0xec)+tyear+'-'+tmonth+'-'+tdate+_0x46f560(0xd0)+this[_0x46f560(0xba)])[_0x46f560(0xc9)](_0x43dec6=>_0x43dec6[_0x46f560(0xd9)]())[_0x46f560(0xc9)](_0x10a3b2=>this[_0x46f560(0xbc)](_0x10a3b2));},'displayNasaNEO':function(_0x251ea6){const _0x3020cb=_0x20d465;this[_0x3020cb(0xe9)](document[_0x3020cb(0xd8)](_0x3020cb(0xc8)));let _0x289315=tyear+'-'+this[_0x3020cb(0xbe)](tmonth)+'-'+this['getDay2Digits'](tdate),_0x7cb54b=[];for(let _0x394203=0x0;_0x394203<_0x251ea6['element_count'];this[_0x3020cb(0xce)](_0x394203),_0x394203++);for(let _0x78d853=0x0;_0x78d853<_0x251ea6[_0x3020cb(0xfa)];_0x7cb54b[_0x3020cb(0xf7)](_0x251ea6[_0x3020cb(0xc2)][_0x289315][_0x78d853]),_0x78d853++);_0x7cb54b[_0x3020cb(0xd5)]((_0x2b8392,_0x1ecaf0,_0x57aa49)=>{const _0xd8cb27=_0x3020cb;document[_0xd8cb27(0xd8)]('.neoAsteroidName'+_0x1ecaf0)['innerText']=_0xd8cb27(0xee)+_0x7cb54b[_0x1ecaf0][_0xd8cb27(0xc6)],document[_0xd8cb27(0xd8)]('.neoAsteroidCloseApproach'+_0x1ecaf0)[_0xd8cb27(0xdc)]=_0xd8cb27(0xe7)+_0x7cb54b[_0x1ecaf0]['close_approach_data'][0x0][_0xd8cb27(0xe4)],document['querySelector'](_0xd8cb27(0xe8)+_0x1ecaf0)[_0xd8cb27(0xdc)]=_0xd8cb27(0xe6)+parseFloat(_0x7cb54b[_0x1ecaf0][_0xd8cb27(0xdf)][0x0]['miss_distance']['kilometers'])[_0xd8cb27(0xb9)](0x2)+_0xd8cb27(0xda),document[_0xd8cb27(0xd8)](_0xd8cb27(0xf3)+_0x1ecaf0)['innerText']=_0xd8cb27(0xc1)+parseFloat(_0x7cb54b[_0x1ecaf0]['close_approach_data'][0x0][_0xd8cb27(0xdb)]['kilometers_per_second'])['toFixed'](0x2)+_0xd8cb27(0xd4),document[_0xd8cb27(0xd8)](_0xd8cb27(0xe3)+_0x1ecaf0)['innerText']=_0xd8cb27(0xbf)+parseFloat(_0x7cb54b[_0x1ecaf0][_0xd8cb27(0xc3)]['kilometers'][_0xd8cb27(0xc5)])[_0xd8cb27(0xb9)](0x2)+'\x20km',document[_0xd8cb27(0xd8)](_0xd8cb27(0xe1)+_0x1ecaf0)[_0xd8cb27(0xdc)]='Hazardous:\x20'+(_0x7cb54b[_0x1ecaf0][_0xd8cb27(0xd6)]?_0xd8cb27(0xd2):'No');}),loader[_0x3020cb(0xf0)][_0x3020cb(0xb8)]=_0x3020cb(0xcd),document['querySelector']('.dataField')[_0x3020cb(0xf0)][_0x3020cb(0xb8)]='block';},'removeAllChildNodes':_0x127a35=>{const _0x307fb3=_0x20d465;while(_0x127a35[_0x307fb3(0xf6)])_0x127a35[_0x307fb3(0xb7)](_0x127a35['firstChild']);},'prepareNEOData':_0x1d2c79=>{const _0x1d7a78=_0x20d465;let _0x27ba2b=document[_0x1d7a78(0xd8)]('.dataField'),_0x26d91f=document[_0x1d7a78(0xcb)](_0x1d7a78(0xde));_0x26d91f[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xc4)+_0x1d2c79+_0x1d7a78(0xed));let _0x1dafa8=document[_0x1d7a78(0xcb)](_0x1d7a78(0xde)),_0x1aede7=document[_0x1d7a78(0xcb)](_0x1d7a78(0xde)),_0x4538ee=document[_0x1d7a78(0xcb)](_0x1d7a78(0xde)),_0x38f97b=document[_0x1d7a78(0xcb)]('div'),_0x362907=document[_0x1d7a78(0xcb)](_0x1d7a78(0xde)),_0x3525c9=document['createElement'](_0x1d7a78(0xde));_0x1dafa8[_0x1d7a78(0xcf)]('class',_0x1d7a78(0xe5)),_0x1aede7[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xe5)),_0x4538ee[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xe5)),_0x38f97b[_0x1d7a78(0xcf)]('class','d-flex\x20flex-row\x20justify-content-start'),_0x362907[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xe5)),_0x3525c9[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),'d-flex\x20flex-row\x20justify-content-start');let _0xbc074=document[_0x1d7a78(0xcb)]('span'),_0x3f3d3b=document[_0x1d7a78(0xcb)](_0x1d7a78(0xbd)),_0x19e644=document['createElement'](_0x1d7a78(0xbd)),_0x1f5765=document['createElement'](_0x1d7a78(0xbd)),_0x2e0c65=document['createElement'](_0x1d7a78(0xbd)),_0x1cb4d1=document[_0x1d7a78(0xcb)](_0x1d7a78(0xbd));_0xbc074[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xeb)+_0x1d2c79),_0x3f3d3b[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xc0)+_0x1d2c79),_0x19e644[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),_0x1d7a78(0xea)+_0x1d2c79),_0x1f5765[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),'neoAsteroidRelativeVelocity'+_0x1d2c79),_0x2e0c65[_0x1d7a78(0xcf)]('class',_0x1d7a78(0xef)+_0x1d2c79),_0x1cb4d1[_0x1d7a78(0xcf)](_0x1d7a78(0xf9),'neoAsteroidHazardous'+_0x1d2c79),_0x1dafa8['append'](_0xbc074),_0x1aede7['append'](_0x3f3d3b),_0x4538ee[_0x1d7a78(0xdd)](_0x19e644),_0x38f97b['append'](_0x1f5765),_0x362907['append'](_0x2e0c65),_0x3525c9[_0x1d7a78(0xdd)](_0x1cb4d1),_0x26d91f[_0x1d7a78(0xdd)](_0x1dafa8),_0x26d91f['append'](_0x1aede7),_0x26d91f['append'](_0x4538ee),_0x26d91f['append'](_0x38f97b),_0x26d91f[_0x1d7a78(0xdd)](_0x362907),_0x26d91f[_0x1d7a78(0xdd)](_0x3525c9),_0x27ba2b[_0x1d7a78(0xdd)](_0x26d91f);},'getMonth2Digits':_0x4de2c9=>{if(_0x4de2c9<0xa)return'0'+_0x4de2c9;return _0x4de2c9;},'getDay2Digits':_0x5c81f3=>{if(_0x5c81f3<0xa)return'0'+_0x5c81f3;return _0x5c81f3;}};nasaNEO[_0x20d465(0xf4)]();
+let todaysDate = new Date(), tyear = todaysDate.getFullYear(), tmonth = todaysDate.getUTCMonth()+1, tdate = todaysDate.getUTCDate();
+let loader = document.querySelector(".loader");
+
+let nasaNEO = {
+    "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
+    fetchNasaData: function() {
+        document.querySelector(".dataField").style.display = "none";
+        loader.style.display = "block";
+        fetch(
+            `https://api.nasa.gov/neo/rest/v1/feed?start_date=${tyear}-${tmonth}-${tdate}&end_date=${tyear}-${tmonth}-${tdate}&api_key=${this.apiKey}`
+        ).then((response) => response.json()).then((data) => this.displayNasaNEO(data));
+    },
+    displayNasaNEO: function(data){
+        this.removeAllChildNodes(document.querySelector(".dataField"));
+        let NEOTodaysDate = `${tyear}-${this.getMonth2Digits(tmonth)}-${this.getDay2Digits(tdate)}`;
+        let instances = [];
+        
+        for(let j = 0; j < data.element_count; this.prepareNEOData(j), j++);
+        for(let i = 0; i < data.element_count; instances.push(data.near_earth_objects[NEOTodaysDate][i]), i++);
+        
+        instances.forEach((element,index,array) => {
+            document.querySelector(`.neoAsteroidName${index}`).innerText = `Name: ${instances[index].name}`;
+            document.querySelector(`.neoAsteroidCloseApproach${index}`).innerText = `Close Approach: ${instances[index].close_approach_data[0].close_approach_date_full}`;
+            document.querySelector(`.neoAsteroidMissDistance${index}`).innerText = `Miss Distance: ${parseFloat(instances[index].close_approach_data[0].miss_distance.kilometers).toFixed(2)} km`
+            document.querySelector(`.neoAsteroidRelativeVelocity${index}`).innerText = `Relative Velocity ${parseFloat(instances[index].close_approach_data[0].relative_velocity.kilometers_per_second).toFixed(2)} km/h`;
+            document.querySelector(`.neoAsteroidEstDiameter${index}`).innerText = `Estimated Maximum Diameter ${parseFloat(instances[index].estimated_diameter.kilometers.estimated_diameter_max).toFixed(2)} km`;
+            document.querySelector(`.neoAsteroidHazardous${index}`).innerText = `Hazardous: ${(instances[index].is_potentially_hazardous_asteroid) ? "Yes" : "No"}`;
+        });
+        loader.style.display = "none";
+        document.querySelector(".dataField").style.display = "block";
+    },
+    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    prepareNEOData: (index) => {
+        let dataField = document.querySelector(".dataField");
+
+        let outerDiv = document.createElement("div");
+        outerDiv.setAttribute('class',`neoAsteroid${index} shadow rounded-custom mb-3 ps-4 py-3`);
+
+        let innerDiv1 = document.createElement("div");
+        let innerDiv2 = document.createElement("div");
+        let innerDiv3 = document.createElement("div");
+        let innerDiv4 = document.createElement("div");
+        let innerDiv5 = document.createElement("div");
+        let innerDiv6 = document.createElement("div");
+        innerDiv1.setAttribute('class','d-flex flex-row justify-content-start');
+        innerDiv2.setAttribute('class','d-flex flex-row justify-content-start');
+        innerDiv3.setAttribute('class','d-flex flex-row justify-content-start');
+        innerDiv4.setAttribute('class','d-flex flex-row justify-content-start');
+        innerDiv5.setAttribute('class','d-flex flex-row justify-content-start');
+        innerDiv6.setAttribute('class','d-flex flex-row justify-content-start');
+
+        let innerDiv1Span = document.createElement("span");
+        let innerDiv2Span = document.createElement("span");
+        let innerDiv3Span = document.createElement("span");
+        let innerDiv4Span = document.createElement("span");
+        let innerDiv5Span = document.createElement("span");
+        let innerDiv6Span = document.createElement("span");
+        innerDiv1Span.setAttribute('class',`neoAsteroidName${index}`);
+        innerDiv2Span.setAttribute('class',`neoAsteroidCloseApproach${index}`);
+        innerDiv3Span.setAttribute('class',`neoAsteroidMissDistance${index}`);
+        innerDiv4Span.setAttribute('class',`neoAsteroidRelativeVelocity${index}`);
+        innerDiv5Span.setAttribute('class',`neoAsteroidEstDiameter${index}`);
+        innerDiv6Span.setAttribute('class',`neoAsteroidHazardous${index}`);
+        
+        innerDiv1.append(innerDiv1Span);
+        innerDiv2.append(innerDiv2Span);
+        innerDiv3.append(innerDiv3Span);
+        innerDiv4.append(innerDiv4Span);
+        innerDiv5.append(innerDiv5Span);
+        innerDiv6.append(innerDiv6Span);
+
+        outerDiv.append(innerDiv1);
+        outerDiv.append(innerDiv2);
+        outerDiv.append(innerDiv3);
+        outerDiv.append(innerDiv4);
+        outerDiv.append(innerDiv5);
+        outerDiv.append(innerDiv6);
+
+        dataField.append(outerDiv);
+    },
+    getMonth2Digits: (month) => {
+        if(month < 10) return `0${month}`;
+        return month;
+    },
+    getDay2Digits: (date) => {
+        if(date < 10) return `0${date}`;
+        return date;
+    }
+}
+
+nasaNEO.fetchNasaData();

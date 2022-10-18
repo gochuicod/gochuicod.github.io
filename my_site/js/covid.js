@@ -1,1 +1,115 @@
-const _0x3d32b8=_0xb15d;(function(_0x37f092,_0x513ca4){const _0x52f62c=_0xb15d,_0x87ce1e=_0x37f092();while(!![]){try{const _0x527668=-parseInt(_0x52f62c(0xb7))/0x1*(-parseInt(_0x52f62c(0x91))/0x2)+-parseInt(_0x52f62c(0x89))/0x3*(-parseInt(_0x52f62c(0x9c))/0x4)+-parseInt(_0x52f62c(0xb9))/0x5+-parseInt(_0x52f62c(0xa4))/0x6*(-parseInt(_0x52f62c(0xac))/0x7)+parseInt(_0x52f62c(0x8b))/0x8+parseInt(_0x52f62c(0xa7))/0x9+-parseInt(_0x52f62c(0xc3))/0xa*(parseInt(_0x52f62c(0x79))/0xb);if(_0x527668===_0x513ca4)break;else _0x87ce1e['push'](_0x87ce1e['shift']());}catch(_0x37bb24){_0x87ce1e['push'](_0x87ce1e['shift']());}}}(_0x289c,0x7f3d7));function _0x289c(){const _0x275f64=['replace','span','10hMjgiS','forEach','.covidTotalFatRatio','display','none','.covidGlobalFatality','global','capitalize','.covidDeaths','.covidTotalConf','deaths','toFixed','querySelector','createElement','confirmed','class','covidLoc','9411941mbXXRO','activeElement','d-flex\x20flex-row\x20justify-content-center\x20mb-3\x20text-center','Combined_Key','covidLUpdate','addItems','setAttribute','style','search','covidDeaths','ctrlKey','Country_Region','update','d-flex\x20flex-row\x20justify-content-between','philippines','div','58458RdIcbi','Confirmed','1294960evijkn','\x20Covid-19\x20Cases','altKey','d-flex\x20flex-row\x20justify-content-center\x20mt-3','.search','removeAllChildNodes','473292XkRIEY','key','.covidConf','push','Deaths','\x20fw-lighter\x20fs-8','then','value','toString','.clearSearchButton','Enter','44XNYNmy','displayCovidData','covidData0\x20shadow\x20rounded-custom\x20p-2\x20fw-light\x20fs-7\x20mb-3','incidentrate','.covidLocTotal','block','https://coronavirus.m.pipedream.net/','append','189432OZXidh','\x20fw-bold\x20fs-6','.covidDataField','8971713fRrXEm','fetchCovidData','.covidTotalDeaths','.covidInci','focus','49svtiDs','addEventListener','.covidGlobalDeaths','Incident_Rate','innerText','.covidLoc','numberWithCommas','length','Case_Fatality_Ratio','.covidLUpdate','rawData','3PajiXd','fatalityratio','4636045cUnPcl','covidFat','summaryStats','firstChild','.covidFat','Fatality\x20Ratio:\x20','floor','blur'];_0x289c=function(){return _0x275f64;};return _0x289c();}function _0xb15d(_0x1c0a58,_0x5944d4){const _0x289c8f=_0x289c();return _0xb15d=function(_0xb15dc3,_0x33e64c){_0xb15dc3=_0xb15dc3-0x74;let _0xae1728=_0x289c8f[_0xb15dc3];return _0xae1728;},_0xb15d(_0x1c0a58,_0x5944d4);}let query=()=>covid[_0x3d32b8(0x81)](),clearSearch=()=>{const _0x533a59=_0x3d32b8;search['value']='',search[_0x533a59(0xab)](),csb[_0x533a59(0x80)][_0x533a59(0xc6)]='none';},csb=document[_0x3d32b8(0x74)](_0x3d32b8(0x9a)),search=document['querySelector'](_0x3d32b8(0x8f)),loader=document[_0x3d32b8(0x74)]('.loader'),covid={'fetchCovidData':function(_0x57c5db){const _0x2de599=_0x3d32b8;fetch(_0x2de599(0xa2))[_0x2de599(0x97)](_0x3abf3d=>_0x3abf3d['json']())[_0x2de599(0x97)](_0x57ee61=>this[_0x2de599(0x9d)](_0x57ee61,this[_0x2de599(0xca)](_0x57c5db)));},'displayCovidData':function(_0x3dd3c7,_0x56cca4){const _0x541f22=_0x3d32b8;this[_0x541f22(0x90)](document[_0x541f22(0x74)](_0x541f22(0xa6)));let _0x153766=[],_0x3b9b7b=[],_0x4ce129=0x0,_0x158613=0x0;for(let _0x4bc51a=0x0;_0x4bc51a<_0x3dd3c7[_0x541f22(0xb6)]['length'];_0x4bc51a++){if(_0x3dd3c7[_0x541f22(0xb6)][_0x4bc51a][_0x541f22(0x84)]==_0x56cca4)_0x153766[_0x541f22(0x94)](_0x3dd3c7[_0x541f22(0xb6)][_0x4bc51a]);}for(let _0x272155=0x0;_0x272155<_0x153766[_0x541f22(0xb3)];_0x4ce129+=parseInt(_0x153766[_0x272155][_0x541f22(0x8a)]),_0x272155++);for(let _0x1e75f1=0x0;_0x1e75f1<_0x153766[_0x541f22(0xb3)];_0x158613+=parseInt(_0x153766[_0x1e75f1][_0x541f22(0x95)]),_0x1e75f1++);document[_0x541f22(0x74)]('.covidGlobalConf')[_0x541f22(0xb0)]=''+this[_0x541f22(0xb2)](_0x3dd3c7['summaryStats'][_0x541f22(0xc9)][_0x541f22(0x76)]),document['querySelector'](_0x541f22(0xae))[_0x541f22(0xb0)]=''+this['numberWithCommas'](_0x3dd3c7[_0x541f22(0xbb)][_0x541f22(0xc9)][_0x541f22(0xcd)]),document[_0x541f22(0x74)](_0x541f22(0xc8))[_0x541f22(0xb0)]=(_0x3dd3c7[_0x541f22(0xbb)][_0x541f22(0xc9)][_0x541f22(0xcd)]/_0x3dd3c7[_0x541f22(0xbb)][_0x541f22(0xc9)][_0x541f22(0x76)]*0x64)[_0x541f22(0xce)](0x2)+'%',document[_0x541f22(0x74)](_0x541f22(0xb1))[_0x541f22(0xb0)]=_0x153766[0x0]['Country_Region']+_0x541f22(0x8c),document[_0x541f22(0x74)](_0x541f22(0xcc))[_0x541f22(0xb0)]=''+this['numberWithCommas'](_0x4ce129[_0x541f22(0x99)]()),document['querySelector'](_0x541f22(0xa9))[_0x541f22(0xb0)]=''+this[_0x541f22(0xb2)](_0x158613['toString']()),document['querySelector'](_0x541f22(0xc5))[_0x541f22(0xb0)]=this['numberWithCommas']((_0x158613/_0x4ce129*0x64)[_0x541f22(0xce)](0x2))+'%',document[_0x541f22(0x74)](_0x541f22(0xa0))[_0x541f22(0x80)][_0x541f22(0xc6)]='block';if(_0x153766[_0x541f22(0xb3)]!=0x1){for(let _0x1c2771=0x0;_0x1c2771<_0x153766[_0x541f22(0xb3)];this[_0x541f22(0x7e)](_0x1c2771),_0x1c2771++);for(let _0x210cce=0x0;_0x210cce<_0x153766[_0x541f22(0xb3)];_0x210cce++){_0x3b9b7b['push']({'loc':_0x153766[_0x210cce][_0x541f22(0x7c)],'confirmed':'Confirmed:\x20'+this[_0x541f22(0xb2)](_0x153766[_0x210cce][_0x541f22(0x8a)]),'deaths':'Deaths:\x20'+this[_0x541f22(0xb2)](_0x153766[_0x210cce][_0x541f22(0x95)]),'fatalityratio':_0x541f22(0xbe)+(_0x153766[_0x210cce][_0x541f22(0xb4)]*0x1)[_0x541f22(0xce)](0x2)+'%','incidentrate':'Incident\x20Rate:\x20'+this['numberWithCommas'](Math[_0x541f22(0xbf)](_0x153766[_0x210cce][_0x541f22(0xaf)])),'update':'Update\x20as\x20of\x20'+_0x153766[0x0]['Last_Update']});}_0x3b9b7b[_0x541f22(0xc4)]((_0x18bcf8,_0x44331e,_0x1f2451)=>{const _0x9a46c2=_0x541f22;document[_0x9a46c2(0x74)](_0x9a46c2(0xb1)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8['loc'],document[_0x9a46c2(0x74)](_0x9a46c2(0x93)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8[_0x9a46c2(0x76)],document['querySelector'](_0x9a46c2(0xcb)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8[_0x9a46c2(0xcd)],document[_0x9a46c2(0x74)](_0x9a46c2(0xbd)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8[_0x9a46c2(0xb8)],document['querySelector'](_0x9a46c2(0xaa)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8[_0x9a46c2(0x9f)],document[_0x9a46c2(0x74)](_0x9a46c2(0xb5)+_0x44331e)[_0x9a46c2(0xb0)]=_0x18bcf8[_0x9a46c2(0x85)];});}loader['style'][_0x541f22(0xc6)]=_0x541f22(0xc7),document['querySelector'](_0x541f22(0xa0))[_0x541f22(0x80)][_0x541f22(0xc6)]=_0x541f22(0xa1);},'search':function(){const _0x5949a9=_0x3d32b8;this[_0x5949a9(0xa8)](search[_0x5949a9(0x98)]),document['querySelector'](_0x5949a9(0xa0))[_0x5949a9(0x80)][_0x5949a9(0xc6)]=_0x5949a9(0xc7),loader['style'][_0x5949a9(0xc6)]='block';},'removeAllChildNodes':_0x1df36f=>{const _0x4e123c=_0x3d32b8;while(_0x1df36f[_0x4e123c(0xbc)])_0x1df36f['removeChild'](_0x1df36f[_0x4e123c(0xbc)]);},'numberWithCommas':_0x43d3ae=>{const _0xed6f42=_0x3d32b8;return _0x43d3ae[_0xed6f42(0x99)]()[_0xed6f42(0xc1)](/\B(?=(\d{3})+(?!\d))/g,',');},'addItems':_0x541bcd=>{const _0x217600=_0x3d32b8;let _0x3b83f6=document[_0x217600(0x74)]('.covidDataField'),_0x221f40=document[_0x217600(0x75)](_0x217600(0x88));_0x221f40[_0x217600(0x7f)]('class',_0x217600(0x9e));let _0x40b7f1=document['createElement'](_0x217600(0x88));_0x40b7f1[_0x217600(0x7f)](_0x217600(0x77),_0x217600(0x7b));let _0x235e7d=document['createElement']('span');_0x235e7d[_0x217600(0x7f)](_0x217600(0x77),_0x217600(0x78)+_0x541bcd+_0x217600(0xa5)),_0x40b7f1['append'](_0x235e7d);let _0xc102fb=document[_0x217600(0x75)](_0x217600(0x88));_0xc102fb[_0x217600(0x7f)]('class',_0x217600(0x86));let _0x2d24df=document[_0x217600(0x75)](_0x217600(0xc2)),_0x3f2ed3=document[_0x217600(0x75)](_0x217600(0xc2));_0x2d24df[_0x217600(0x7f)](_0x217600(0x77),'covidConf'+_0x541bcd),_0x3f2ed3[_0x217600(0x7f)](_0x217600(0x77),_0x217600(0x82)+_0x541bcd),_0xc102fb['append'](_0x2d24df),_0xc102fb[_0x217600(0xa3)](_0x3f2ed3);let _0x30abac=document['createElement']('div');_0x30abac[_0x217600(0x7f)]('class',_0x217600(0x86));let _0x311166=document['createElement'](_0x217600(0xc2)),_0x14029d=document['createElement'](_0x217600(0xc2));_0x311166[_0x217600(0x7f)](_0x217600(0x77),_0x217600(0xba)+_0x541bcd),_0x14029d[_0x217600(0x7f)](_0x217600(0x77),'covidInci'+_0x541bcd),_0x30abac['append'](_0x311166),_0x30abac[_0x217600(0xa3)](_0x14029d);let _0x4f516a=document[_0x217600(0x75)](_0x217600(0x88));_0x4f516a[_0x217600(0x7f)]('class',_0x217600(0x8e));let _0x1571e7=document[_0x217600(0x75)](_0x217600(0xc2));_0x1571e7['setAttribute'](_0x217600(0x77),_0x217600(0x7d)+_0x541bcd+_0x217600(0x96)),_0x4f516a[_0x217600(0xa3)](_0x1571e7),_0x221f40[_0x217600(0xa3)](_0x40b7f1),_0x221f40[_0x217600(0xa3)](_0xc102fb),_0x221f40['append'](_0x30abac),_0x221f40['append'](_0x4f516a),_0x3b83f6[_0x217600(0xa3)](_0x221f40);},'capitalize':_0x41ed6f=>{return _0x41ed6f['replace'](/\b\w/g,_0xccf8a2=>{return _0xccf8a2['toUpperCase']();});}};search[_0x3d32b8(0xad)]('keyup',_0x26afc9=>{const _0x208095=_0x3d32b8;let _0x48e561=_0x26afc9['key']===_0x208095(0x9b)?covid['search']():'';}),document[_0x3d32b8(0xad)]('keyup',_0x1bb2ab=>{const _0xdc9516=_0x3d32b8;if(_0x1bb2ab[_0xdc9516(0x83)]&&_0x1bb2ab[_0xdc9516(0x8d)]&&_0x1bb2ab[_0xdc9516(0x92)]=='/')search[_0xdc9516(0xab)]();if(search[_0xdc9516(0x98)]['length']>0x0)csb[_0xdc9516(0x80)][_0xdc9516(0xc6)]='block';if(search[_0xdc9516(0x98)][_0xdc9516(0xb3)]==0x0)csb[_0xdc9516(0x80)][_0xdc9516(0xc6)]=_0xdc9516(0xc7);if(_0x1bb2ab[_0xdc9516(0x92)]==='Escape'&&document[_0xdc9516(0x7a)])search[_0xdc9516(0xc0)]();}),document[_0x3d32b8(0x74)]('.covidLocTotal')[_0x3d32b8(0x80)]['display']='none',covid['fetchCovidData'](_0x3d32b8(0x87)),csb[_0x3d32b8(0x80)][_0x3d32b8(0xc6)]=_0x3d32b8(0xc7);
+let query = () => covid.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
+let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
+let loader = document.querySelector(".loader");
+
+let covid = {
+    fetchCovidData: function(country){
+        fetch(
+            `https://coronavirus.m.pipedream.net/`
+        ).then((response) => response.json()).then((data) => this.displayCovidData(data,this.capitalize(country.toLowerCase())));
+    },
+    displayCovidData: function(data,country){
+        this.removeAllChildNodes(document.querySelector(".covidDataField"));
+        let countryData = [], countryDataSpecificLoc = [], totalConfirmed = 0, totalDeaths = 0;
+        
+        for(let i = 0; i < data.rawData.length; i++){
+            if(data.rawData[i].Country_Region == country) countryData.push(data.rawData[i]);
+        }
+        for(let i = 0; i < countryData.length; totalConfirmed += parseInt(countryData[i].Confirmed), i++);
+        for(let i = 0; i < countryData.length; totalDeaths += parseInt(countryData[i].Deaths), i++);
+
+        document.querySelector(".covidGlobalConf").innerText = `${this.numberWithCommas(data.summaryStats.global.confirmed)}`;
+        document.querySelector(".covidGlobalDeaths").innerText = `${this.numberWithCommas(data.summaryStats.global.deaths)}`;
+        document.querySelector(".covidGlobalFatality").innerText = `${((data.summaryStats.global.deaths/data.summaryStats.global.confirmed) * 100).toFixed(2)}%`;
+
+        document.querySelector(".covidLoc").innerText = `${countryData[0].Country_Region} Covid-19 Cases`;
+        document.querySelector(".covidTotalConf").innerText = `${this.numberWithCommas(totalConfirmed.toString())}`;
+        document.querySelector(".covidTotalDeaths").innerText = `${this.numberWithCommas(totalDeaths.toString())}`;
+        document.querySelector(".covidTotalFatRatio").innerText = `${this.numberWithCommas(((totalDeaths/totalConfirmed) * 100).toFixed(2))}%`;
+        document.querySelector(".covidLocTotal").style.display = "block";
+
+        if(countryData.length != 1){
+            for(let i = 0; i < countryData.length; this.addItems(i), i++);
+            for(let i = 0; i < countryData.length; i++){
+                countryDataSpecificLoc.push({
+                    loc: countryData[i].Combined_Key,
+                    confirmed: `Confirmed: ${this.numberWithCommas(countryData[i].Confirmed)}`,
+                    deaths: `Deaths: ${this.numberWithCommas(countryData[i].Deaths)}`,
+                    fatalityratio: `Fatality Ratio: ${(countryData[i].Case_Fatality_Ratio * 1).toFixed(2)}%`,
+                    incidentrate: `Incident Rate: ${this.numberWithCommas(Math.floor(countryData[i].Incident_Rate))}`,
+                    update: `Update as of ${countryData[0].Last_Update}`
+                });
+            }
+
+            countryDataSpecificLoc.forEach((element,index,array) => {
+                document.querySelector(`.covidLoc${index}`).innerText = element.loc;
+                document.querySelector(`.covidConf${index}`).innerText = element.confirmed;
+                document.querySelector(`.covidDeaths${index}`).innerText = element.deaths;
+                document.querySelector(`.covidFat${index}`).innerText = element.fatalityratio;
+                document.querySelector(`.covidInci${index}`).innerText = element.incidentrate;
+                document.querySelector(`.covidLUpdate${index}`).innerText = element.update;
+            });
+        }
+        loader.style.display = "none";
+        document.querySelector(".covidLocTotal").style.display = "block";
+    },
+    search: function() {
+        this.fetchCovidData(search.value);
+        document.querySelector(".covidLocTotal").style.display = "none";
+        loader.style.display = "block";
+    },
+    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    numberWithCommas: (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    addItems: (index) => {
+        let cdf = document.querySelector(".covidDataField");
+
+        let mainDiv = document.createElement("div");
+        mainDiv.setAttribute('class','covidData0 shadow rounded-custom p-2 fw-light fs-7 mb-3');
+
+        let div1 = document.createElement("div");
+        div1.setAttribute('class','d-flex flex-row justify-content-center mb-3 text-center');
+        let span1 = document.createElement("span");
+        span1.setAttribute('class',`covidLoc${index} fw-bold fs-6`);
+        div1.append(span1);
+
+        let div2 = document.createElement("div");
+        div2.setAttribute('class','d-flex flex-row justify-content-between');
+        let span2 = document.createElement("span"), span3 = document.createElement("span");
+        span2.setAttribute('class',`covidConf${index}`); span3.setAttribute('class',`covidDeaths${index}`);
+        div2.append(span2); div2.append(span3);
+
+        let div3 = document.createElement("div");
+        div3.setAttribute('class','d-flex flex-row justify-content-between');
+        let span4 = document.createElement("span"), span5 = document.createElement("span");
+        span4.setAttribute('class',`covidFat${index}`); span5.setAttribute('class',`covidInci${index}`);
+        div3.append(span4); div3.append(span5);
+
+        let div4 = document.createElement("div");
+        div4.setAttribute('class','d-flex flex-row justify-content-center mt-3');
+        let span6 = document.createElement("span");
+        span6.setAttribute('class',`covidLUpdate${index} fw-lighter fs-8`);
+        div4.append(span6);
+
+        mainDiv.append(div1); mainDiv.append(div2);
+        mainDiv.append(div3); mainDiv.append(div4);
+
+        cdf.append(mainDiv);
+    },
+    capitalize: (text) => {
+        return text.replace(/\b\w/g , (m) => { return m.toUpperCase(); } );
+    }
+}
+
+search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? covid.search() : ""; });
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
+    if(search.value.length > 0) csb.style.display = "block";
+    if(search.value.length == 0) csb.style.display = "none";
+    if(e.key === "Escape" && document.activeElement) search.blur();
+});
+
+document.querySelector(".covidLocTotal").style.display = "none";
+covid.fetchCovidData("philippines");
+csb.style.display = "none";

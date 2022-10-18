@@ -1,1 +1,67 @@
-const _0x526734=_0x2307;function _0x2307(_0x2b492f,_0x4a1019){const _0x40b038=_0x40b0();return _0x2307=function(_0x2307c0,_0x148464){_0x2307c0=_0x2307c0-0x176;let _0x8c6fe8=_0x40b038[_0x2307c0];return _0x8c6fe8;},_0x2307(_0x2b492f,_0x4a1019);}(function(_0x22a832,_0x34be50){const _0x46b5d2=_0x2307,_0x18c618=_0x22a832();while(!![]){try{const _0x45aaab=parseInt(_0x46b5d2(0x1b6))/0x1*(-parseInt(_0x46b5d2(0x181))/0x2)+parseInt(_0x46b5d2(0x1b1))/0x3*(parseInt(_0x46b5d2(0x18c))/0x4)+parseInt(_0x46b5d2(0x18b))/0x5*(parseInt(_0x46b5d2(0x196))/0x6)+-parseInt(_0x46b5d2(0x1b0))/0x7+-parseInt(_0x46b5d2(0x19b))/0x8*(parseInt(_0x46b5d2(0x1bc))/0x9)+-parseInt(_0x46b5d2(0x1a0))/0xa+parseInt(_0x46b5d2(0x17a))/0xb*(parseInt(_0x46b5d2(0x197))/0xc);if(_0x45aaab===_0x34be50)break;else _0x18c618['push'](_0x18c618['shift']());}catch(_0x19af5f){_0x18c618['push'](_0x18c618['shift']());}}}(_0x40b0,0xb4dd3));function _0x40b0(){const _0x1ae8b0=['then','.search','ctrlKey','Escape','json','altKey','.clearSearchButton','addEventListener','https://api.nasa.gov/planetary/apod?api_key=','.APODTitle','.loader','April','getDay','6699357yKnraa','3845253KgxDqX','June','getFullYear','Tues','July','68461KqmrvM','November','explanation','value','December','displayNasaAPOD','130194VYbvCV','style','.nasaAPOD','August','key','url','March','5627501UIifhn','&date=','blur','keyup','msg','January','.APODExplanation','28jCYITd','defineDay','Mon','Thurs','length','.APODDate','none','.APODImg','February','copyright','48610eSsGhg','4YwOiJJ','innerText','apiKey','eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS','getUTCMonth','date','October','Fri','focus','title','90sOAHlh','36JcAgtq','fetchNasaData','getMonth','.APODCopyright','16HBBIbJ','code','display','block','querySelector','2770980VxfLgr','src','Sun'];_0x40b0=function(){return _0x1ae8b0;};return _0x40b0();}let title=document[_0x526734(0x19f)](_0x526734(0x1ac)),date=document[_0x526734(0x19f)](_0x526734(0x186)),desc=document[_0x526734(0x19f)](_0x526734(0x180)),img=document['querySelector'](_0x526734(0x188)),copyright=document[_0x526734(0x19f)](_0x526734(0x19a)),search=document['querySelector'](_0x526734(0x1a4)),csb=document[_0x526734(0x19f)](_0x526734(0x1a9)),query=()=>nasaAPOD[_0x526734(0x198)](search[_0x526734(0x1b9)]),todaysDate=new Date(),clearSearch=()=>{const _0x580f67=_0x526734;search[_0x580f67(0x1b9)]='',search[_0x580f67(0x194)](),csb[_0x580f67(0x1bd)]['display']=_0x580f67(0x187);},loader=document['querySelector'](_0x526734(0x1ad)),nasaAPOD={'apiKey':_0x526734(0x18f),'fetchNasaData':function(_0x2441e5){const _0x1a4f39=_0x526734;document['querySelector'](_0x1a4f39(0x1be))[_0x1a4f39(0x1bd)]['display']='none',loader['style']['display']='block',fetch(_0x1a4f39(0x1ab)+this[_0x1a4f39(0x18e)]+_0x1a4f39(0x17b)+_0x2441e5)[_0x1a4f39(0x1a3)](_0xc19d3a=>_0xc19d3a[_0x1a4f39(0x1a7)]())[_0x1a4f39(0x1a3)](_0x319ebe=>this[_0x1a4f39(0x1bb)](_0x319ebe));},'displayNasaAPOD':function(_0xe890b){const _0xe2b362=_0x526734;if(_0xe890b[_0xe2b362(0x19c)]==0x194)title[_0xe2b362(0x18d)]=''+_0xe890b[_0xe2b362(0x17e)],desc['style'][_0xe2b362(0x19d)]=_0xe2b362(0x187),date['style'][_0xe2b362(0x19d)]=_0xe2b362(0x187),img[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]='none';else{if(_0xe890b[_0xe2b362(0x195)]==undefined)title['innerText']='Invalid\x20Date\x20Format',date[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x187),desc[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x187),img[_0xe2b362(0x1bd)]['display']=_0xe2b362(0x187),copyright[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x187);else{let _0x21dcb1=new Date(_0xe890b[_0xe2b362(0x191)]);date[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x19e),desc[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x19e),img[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x19e),title[_0xe2b362(0x18d)]=_0xe890b[_0xe2b362(0x195)],desc['innerText']=_0xe890b[_0xe2b362(0x1b8)],img[_0xe2b362(0x1a1)]=_0xe890b[_0xe2b362(0x178)],date[_0xe2b362(0x18d)]=this['defineMonth'](_0x21dcb1[_0xe2b362(0x199)]())+'\x20'+_0x21dcb1['getDate']()+'\x20'+this[_0xe2b362(0x182)](_0x21dcb1[_0xe2b362(0x1af)]())+'\x20'+_0x21dcb1['getFullYear'](),copyright[_0xe2b362(0x18d)]=_0xe890b[_0xe2b362(0x18a)],copyright['style'][_0xe2b362(0x19d)]=_0xe2b362(0x19e);}}loader[_0xe2b362(0x1bd)]['display']=_0xe2b362(0x187),document[_0xe2b362(0x19f)](_0xe2b362(0x1be))[_0xe2b362(0x1bd)][_0xe2b362(0x19d)]=_0xe2b362(0x19e);},'defineDay':function(_0x179325){const _0x4aaeb4=_0x526734;let _0x857d15=[_0x4aaeb4(0x1a2),_0x4aaeb4(0x183),_0x4aaeb4(0x1b4),'Wed',_0x4aaeb4(0x184),_0x4aaeb4(0x193),'Sat'];for(let _0x3f1924=0x0;_0x3f1924<_0x857d15[_0x4aaeb4(0x185)];_0x3f1924++){if(_0x179325==_0x3f1924){return _0x857d15[_0x3f1924];break;}}},'defineMonth':function(_0xe0eda5){const _0x1f148c=_0x526734;let _0x308559=[_0x1f148c(0x17f),_0x1f148c(0x189),_0x1f148c(0x179),_0x1f148c(0x1ae),'May',_0x1f148c(0x1b2),_0x1f148c(0x1b5),_0x1f148c(0x176),'September',_0x1f148c(0x192),_0x1f148c(0x1b7),_0x1f148c(0x1ba)];for(let _0x504625=0x0;_0x504625<_0x308559['length'];_0x504625++){if(_0xe0eda5==_0x504625){return _0x308559[_0x504625];break;}}}};search['addEventListener'](_0x526734(0x17d),_0x11d772=>{const _0x354497=_0x526734;let _0x4f4935=_0x11d772[_0x354497(0x177)]==='Enter'?nasaAPOD[_0x354497(0x198)](search[_0x354497(0x1b9)]):'';}),document[_0x526734(0x1aa)]('keyup',_0x243d2a=>{const _0x1ef7ff=_0x526734;if(_0x243d2a[_0x1ef7ff(0x1a5)]&&_0x243d2a[_0x1ef7ff(0x1a8)]&&_0x243d2a[_0x1ef7ff(0x177)]=='/')search[_0x1ef7ff(0x194)]();if(search[_0x1ef7ff(0x1b9)]['length']>0x0)csb[_0x1ef7ff(0x1bd)][_0x1ef7ff(0x19d)]='block';if(search[_0x1ef7ff(0x1b9)][_0x1ef7ff(0x185)]==0x0)csb[_0x1ef7ff(0x1bd)][_0x1ef7ff(0x19d)]=_0x1ef7ff(0x187);if(_0x243d2a[_0x1ef7ff(0x177)]===_0x1ef7ff(0x1a6)&&document['activeElement'])search[_0x1ef7ff(0x17c)]();}),nasaAPOD['fetchNasaData'](todaysDate[_0x526734(0x1b3)]()+'-'+(todaysDate[_0x526734(0x190)]()+0x1)+'-'+todaysDate['getUTCDate']()),img['style'][_0x526734(0x19d)]=_0x526734(0x187),csb[_0x526734(0x1bd)][_0x526734(0x19d)]=_0x526734(0x187);
+let title = document.querySelector(".APODTitle"), date = document.querySelector(".APODDate"), desc = document.querySelector(".APODExplanation"), img = document.querySelector(".APODImg");
+let copyright = document.querySelector(".APODCopyright");
+let search = document.querySelector(".search"), csb = document.querySelector(".clearSearchButton");
+let query = () => nasaAPOD.fetchNasaData(search.value), todaysDate = new Date();
+let clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
+let loader = document.querySelector(".loader");
+
+let nasaAPOD = {
+    "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
+    fetchNasaData: function(inputDate) {
+        document.querySelector(".nasaAPOD").style.display = "none";
+        loader.style.display = "block";
+        fetch(
+            `https://api.nasa.gov/planetary/apod?api_key=${this.apiKey}&date=${inputDate}`
+        ).then((response) => response.json()).then((data) => this.displayNasaAPOD(data)); 
+    },
+    displayNasaAPOD: function(data) {
+        if(data.code == 404) {
+            title.innerText = `${data.msg}`; desc.style.display = "none";
+            date.style.display = "none"; img.style.display = "none";
+        } else {
+            if(data.title == undefined){
+                title.innerText = "Invalid Date Format"; date.style.display = "none"; desc.style.display = "none"; img.style.display = "none"; copyright.style.display = "none";
+            } else {
+                let apodDate = new Date(data.date);
+                date.style.display = "block"; desc.style.display = "block"; img.style.display = "block";
+                title.innerText = data.title; desc.innerText = data.explanation; img.src = data.url;
+                date.innerText = `${this.defineMonth(apodDate.getMonth())} ${apodDate.getDate()} ${this.defineDay(apodDate.getDay())} ${apodDate.getFullYear()}`;
+                copyright.innerText = data.copyright;
+                copyright.style.display = "block";
+            }
+        }
+        loader.style.display = "none";
+        document.querySelector(".nasaAPOD").style.display = "block";
+    },
+    defineDay: function(APODDay) {
+        let days = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+        for(let i = 0; i < days.length; i++){
+            if(APODDay == i){
+                return days[i];
+                break;
+            }
+        }
+    },
+    defineMonth: function(APODMonth) {
+        let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        for(let i = 0; i < months.length; i++){
+            if(APODMonth == i) {
+                return months[i];
+                break;
+            }
+        }
+    }
+}
+
+search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? nasaAPOD.fetchNasaData(search.value) : ""; });
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
+    if(search.value.length > 0) csb.style.display = "block";
+    if(search.value.length == 0) csb.style.display = "none";
+    if(e.key === "Escape" && document.activeElement) search.blur();
+});
+
+nasaAPOD.fetchNasaData(`${todaysDate.getFullYear()}-${todaysDate.getUTCMonth()+1}-${todaysDate.getUTCDate()}`);
+
+img.style.display = "none";
+csb.style.display = "none";

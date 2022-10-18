@@ -1,1 +1,61 @@
-const _0x1d7a22=_0x3d9e;(function(_0x103f3b,_0x268baf){const _0x3d1d27=_0x3d9e,_0x536ea6=_0x103f3b();while(!![]){try{const _0x504180=parseInt(_0x3d1d27(0x17c))/0x1+parseInt(_0x3d1d27(0x18a))/0x2*(-parseInt(_0x3d1d27(0x175))/0x3)+parseInt(_0x3d1d27(0x179))/0x4*(-parseInt(_0x3d1d27(0x17f))/0x5)+-parseInt(_0x3d1d27(0x18e))/0x6+parseInt(_0x3d1d27(0x17e))/0x7+parseInt(_0x3d1d27(0x188))/0x8+parseInt(_0x3d1d27(0x183))/0x9;if(_0x504180===_0x268baf)break;else _0x536ea6['push'](_0x536ea6['shift']());}catch(_0x5d2fd1){_0x536ea6['push'](_0x536ea6['shift']());}}}(_0x3ef7,0x4c671));let binary=document['querySelector'](_0x1d7a22(0x176)),octal=document[_0x1d7a22(0x185)](_0x1d7a22(0x178)),hex=document['querySelector'](_0x1d7a22(0x18b)),input=document[_0x1d7a22(0x185)](_0x1d7a22(0x181)),max=document['querySelector'](_0x1d7a22(0x182));const hexCharacters={'a':'A','b':'B','c':'C','d':'D','e':'E','f':'F'};function _0x3d9e(_0x4eac64,_0x5b2bca){const _0x3ef768=_0x3ef7();return _0x3d9e=function(_0x3d9ef3,_0x4d7b9a){_0x3d9ef3=_0x3d9ef3-0x174;let _0x33c2c0=_0x3ef768[_0x3d9ef3];return _0x33c2c0;},_0x3d9e(_0x4eac64,_0x5b2bca);}function convert(){const _0xbf8062=_0x1d7a22;let _0x4c7f7a=parseInt(input[_0xbf8062(0x17b)]);if(_0x4c7f7a>0xfff)max['innerText']=_0xbf8062(0x189);else max['innerText']='',binary['innerText']=_0xbf8062(0x177)+DecimalToBinary(_0x4c7f7a),octal[_0xbf8062(0x18c)]='Octal:\x20'+DecimalToOctal(_0x4c7f7a),hex[_0xbf8062(0x18c)]=_0xbf8062(0x18d)+DecimalToHex(_0x4c7f7a);}function DecimalToBinary(_0x1d5c73){const _0x21f0d2=_0x1d7a22;let _0x24aba1=[];for(let _0xe67fbe=_0x1d5c73,_0x288a3c=0x0;_0xe67fbe!=0x0;_0xe67fbe/=0x2,_0x288a3c++){if(_0xe67fbe<0x1)break;if(_0x288a3c%0x4==0x0)_0x24aba1[_0x21f0d2(0x17d)]('\x20');if(Math[_0x21f0d2(0x174)](_0xe67fbe%0x2)==0x0)_0x24aba1[_0x21f0d2(0x17d)]('0');else _0x24aba1[_0x21f0d2(0x17d)]('1');}return _0x24aba1[_0x21f0d2(0x184)]()[_0x21f0d2(0x187)]('');}function DecimalToOctal(_0x5b39ef){const _0x5458f7=_0x1d7a22;let _0x4b729e=[];for(let _0x10b1fd=_0x5b39ef;_0x10b1fd!=0x0;_0x10b1fd/=0x8){if(_0x10b1fd<0x1)break;_0x4b729e[_0x5458f7(0x17d)](Math[_0x5458f7(0x174)](_0x10b1fd%0x8));}return _0x4b729e[_0x5458f7(0x184)]()[_0x5458f7(0x187)]('');}function DecimalToHex(_0x108273){const _0x3d1ed3=_0x1d7a22;let _0x233188=[];for(let _0x1bb0d2=_0x108273;_0x1bb0d2!=0x0;_0x1bb0d2/=0x10){if(_0x1bb0d2<0x1)break;_0x233188['push'](Math[_0x3d1ed3(0x174)](_0x1bb0d2%0x10));}for(let _0x78e187=0x0;_0x78e187<_0x233188[_0x3d1ed3(0x180)];_0x78e187++){if(_0x233188[_0x78e187]==0xf)_0x233188[_0x78e187]=hexCharacters['f'];if(_0x233188[_0x78e187]==0xe)_0x233188[_0x78e187]=hexCharacters['e'];if(_0x233188[_0x78e187]==0xd)_0x233188[_0x78e187]=hexCharacters['d'];if(_0x233188[_0x78e187]==0xc)_0x233188[_0x78e187]=hexCharacters['c'];if(_0x233188[_0x78e187]==0xb)_0x233188[_0x78e187]=hexCharacters['b'];if(_0x233188[_0x78e187]==0xa)_0x233188[_0x78e187]=hexCharacters['a'];}return _0x233188[_0x3d1ed3(0x184)]()[_0x3d1ed3(0x187)]('');}$(document)[_0x1d7a22(0x17a)](function(){const _0x34b6cc=_0x1d7a22;$(window)[_0x34b6cc(0x186)](function(_0x38d570){if(_0x38d570['keyCode']==0xd)return _0x38d570['preventDefault'](),![];});});function _0x3ef7(){const _0x323608=['.octal','190780WYmmdJ','ready','value','463204MOcSRd','push','2698276fUWSJB','5eolIrT','length','.convert','.max','2912328dErXfS','reverse','querySelector','keydown','join','1318216PNhghk','Only\x20accepts\x2012-bit\x20values!','5346FoUfQY','.hex','innerText','Hex:\x20','3629124aantzy','floor','417FrxSMm','.binary','Binary:\x20'];_0x3ef7=function(){return _0x323608;};return _0x3ef7();}
+let binary = document.querySelector(".binary");
+let octal = document.querySelector(".octal");
+let hex = document.querySelector(".hex");
+let input = document.querySelector(".convert");
+let max = document.querySelector(".max");
+const hexCharacters = {a: "A", b: "B", c: "C", d: "D", e: "E", f: "F"}
+
+function convert(){
+    let val = parseInt(input.value);
+    if(val > 4095) max.innerText = `Only accepts 12-bit values!`;
+    else {
+        max.innerText = ``;
+        binary.innerText = `Binary: ${DecimalToBinary(val)}`;
+        octal.innerText = `Octal: ${DecimalToOctal(val)}`;
+        hex.innerText = `Hex: ${DecimalToHex(val)}`;
+    }
+}
+function DecimalToBinary(input){
+    let empty = [];
+    for(let i = input, j = 0; i != 0; i /= 2, j++){
+        if(i < 1) break;
+        if(j % 4 == 0) empty.push(' ');
+        if(Math.floor(i % 2) == 0) empty.push("0");
+        else empty.push("1");
+    }
+    return empty.reverse().join('');
+}
+function DecimalToOctal(input){
+    let empty = [];
+    for(let i = input; i != 0; i /= 8){
+        if(i < 1) break;
+        empty.push(Math.floor(i%8));
+    }
+    return empty.reverse().join('')
+}
+function DecimalToHex(input){
+    let empty = [];
+    for(let i = input; i != 0; i /= 16){
+        if(i < 1) break;
+        empty.push(Math.floor(i%16));
+    }
+    for(let j = 0; j < empty.length; j++){
+        if(empty[j] == 15) empty[j] = hexCharacters.f;
+        if(empty[j] == 14) empty[j] = hexCharacters.e;
+        if(empty[j] == 13) empty[j] = hexCharacters.d;
+        if(empty[j] == 12) empty[j] = hexCharacters.c;
+        if(empty[j] == 11) empty[j] = hexCharacters.b;
+        if(empty[j] == 10) empty[j] = hexCharacters.a;
+    }
+    return empty.reverse().join('');
+}
+
+// Prevents enter key to freeze the entire page
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});

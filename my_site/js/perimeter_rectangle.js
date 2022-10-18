@@ -1,1 +1,29 @@
-const _0x2e212d=_0x549e;function _0x549e(_0x1664f8,_0x492fce){const _0x595163=_0x5951();return _0x549e=function(_0x549e94,_0x15a536){_0x549e94=_0x549e94-0x1ed;let _0x4a0375=_0x595163[_0x549e94];return _0x4a0375;},_0x549e(_0x1664f8,_0x492fce);}function _0x5951(){const _0x17d48a=['184yfABfN','style','220IhGXHM','getElementById','1198984TfYUQU','addEventListener','keyup','Values\x20must\x20be\x20positive!','3294JusRGr','pr-length','437360VZxAwF','none','pr-width','activeElement','display','querySelector','110MqhcLJ','block','value','99005SUdnXe','928260XpbsZq','#pr-output','130779eTaeFl','innerText','14BjfLgs','onload','2414gLJvkm'];_0x5951=function(){return _0x17d48a;};return _0x5951();}(function(_0x468b8a,_0x351134){const _0x1d1ab6=_0x549e,_0x281f22=_0x468b8a();while(!![]){try{const _0x43842a=parseInt(_0x1d1ab6(0x1f6))/0x1*(parseInt(_0x1d1ab6(0x1f5))/0x2)+parseInt(_0x1d1ab6(0x1fe))/0x3*(-parseInt(_0x1d1ab6(0x1f8))/0x4)+parseInt(_0x1d1ab6(0x1ee))/0x5+parseInt(_0x1d1ab6(0x1ef))/0x6+-parseInt(_0x1d1ab6(0x1f3))/0x7*(parseInt(_0x1d1ab6(0x1fa))/0x8)+parseInt(_0x1d1ab6(0x1f1))/0x9*(parseInt(_0x1d1ab6(0x206))/0xa)+-parseInt(_0x1d1ab6(0x200))/0xb;if(_0x43842a===_0x351134)break;else _0x281f22['push'](_0x281f22['shift']());}catch(_0x47ce2b){_0x281f22['push'](_0x281f22['shift']());}}}(_0x5951,0x26380));let a=document[_0x2e212d(0x1f9)](_0x2e212d(0x1ff)),b=document[_0x2e212d(0x1f9)](_0x2e212d(0x202)),output=document[_0x2e212d(0x205)](_0x2e212d(0x1f0)),err=document[_0x2e212d(0x205)]('#errorInfo');window[_0x2e212d(0x1f4)]=()=>{const _0x463d0e=_0x2e212d;output[_0x463d0e(0x1f7)][_0x463d0e(0x204)]=_0x463d0e(0x201);};function perimeterRectangle(){const _0x108cf4=_0x2e212d;let _0x23045a=parseFloat(a['value']),_0x8ec6de=parseFloat(b[_0x108cf4(0x1ed)]),_0x4cee58=0x2*(_0x23045a+_0x8ec6de);!isNaN(_0x23045a)&&!isNaN(_0x8ec6de)?_0x23045a>0x0&&_0x8ec6de>0x0?(err[_0x108cf4(0x1f7)][_0x108cf4(0x204)]=_0x108cf4(0x201),output[_0x108cf4(0x1f7)][_0x108cf4(0x204)]=_0x108cf4(0x207),output[_0x108cf4(0x1f2)]=''+_0x4cee58):(output['style'][_0x108cf4(0x204)]=_0x108cf4(0x207),output['innerText']='?',err[_0x108cf4(0x1f7)][_0x108cf4(0x204)]=_0x108cf4(0x207),err['innerText']=_0x108cf4(0x1fd)):(output[_0x108cf4(0x1f7)][_0x108cf4(0x204)]=_0x108cf4(0x201),err[_0x108cf4(0x1f7)][_0x108cf4(0x204)]='none');}document[_0x2e212d(0x1fb)](_0x2e212d(0x1fc),_0x2bac57=>{const _0x43d570=_0x2e212d;if(a===document[_0x43d570(0x203)]||b===document[_0x43d570(0x203)])perimeterRectangle();});
+let a = document.getElementById("pr-length"), b = document.getElementById("pr-width"), output = document.querySelector("#pr-output"), err = document.querySelector("#errorInfo");
+
+window.onload = () => {
+    output.style.display = "none";
+}
+
+function perimeterRectangle() {
+    let length = parseFloat(a.value), width = parseFloat(b.value);
+    let pr_output = 2 * (length + width);
+    if((!isNaN(length)) && (!isNaN(width))){
+        if(length > 0 && width > 0){
+            err.style.display = "none";
+            output.style.display = "block";
+            output.innerText = `${pr_output}`;
+        } else {
+            output.style.display = "block";
+            output.innerText = "?";
+            err.style.display = "block";
+            err.innerText = "Values must be positive!";
+        }
+    } else {
+        output.style.display = "none";
+        err.style.display = "none";
+    }
+}
+
+document.addEventListener('keyup', (e) => {
+    if(a === document.activeElement || b === document.activeElement) perimeterRectangle();
+});

@@ -1,1 +1,90 @@
-const _0x25d4e1=_0x24b0;function _0x24b0(_0x3a198f,_0x1695e6){const _0x3aaa8a=_0x3aaa();return _0x24b0=function(_0x24b033,_0x1a39f5){_0x24b033=_0x24b033-0x195;let _0x4b000b=_0x3aaa8a[_0x24b033];return _0x4b000b;},_0x24b0(_0x3a198f,_0x1695e6);}(function(_0x21abe4,_0x187801){const _0x2ccdd6=_0x24b0,_0x8f1350=_0x21abe4();while(!![]){try{const _0x34b525=parseInt(_0x2ccdd6(0x199))/0x1+parseInt(_0x2ccdd6(0x1af))/0x2*(-parseInt(_0x2ccdd6(0x1d6))/0x3)+parseInt(_0x2ccdd6(0x1c9))/0x4*(-parseInt(_0x2ccdd6(0x1a0))/0x5)+parseInt(_0x2ccdd6(0x1bc))/0x6+parseInt(_0x2ccdd6(0x1d4))/0x7*(-parseInt(_0x2ccdd6(0x1c3))/0x8)+-parseInt(_0x2ccdd6(0x1d1))/0x9+parseInt(_0x2ccdd6(0x1dc))/0xa;if(_0x34b525===_0x187801)break;else _0x8f1350['push'](_0x8f1350['shift']());}catch(_0x40429a){_0x8f1350['push'](_0x8f1350['shift']());}}}(_0x3aaa,0xdd796));let query=()=>earthquake[_0x25d4e1(0x1c7)](),clearSearch=()=>{const _0x3d9dd3=_0x25d4e1;search[_0x3d9dd3(0x1cd)]='',search['focus'](),csb[_0x3d9dd3(0x1c8)][_0x3d9dd3(0x1a2)]='none';},csb=document['querySelector'](_0x25d4e1(0x1a9)),search=document[_0x25d4e1(0x1b7)](_0x25d4e1(0x1b2)),loader=document[_0x25d4e1(0x1b7)](_0x25d4e1(0x1b4)),earthquake={'fetchEarthquakeData':function(_0x1645c6){const _0x32619c=_0x25d4e1;let _0x241d46=new Date();_0x241d46[_0x32619c(0x1a6)](_0x241d46[_0x32619c(0x1be)]()-0x1);let _0x52abf5=new Date();end_date_input=_0x52abf5[_0x32619c(0x1bf)]()[_0x32619c(0x1ca)]('T')[0x0],fetch(_0x32619c(0x1a1)+_0x241d46[_0x32619c(0x1bf)]()[_0x32619c(0x1ca)]('T')[0x0]+'&endtime='+end_date_input+_0x32619c(0x1bd)+_0x1645c6)[_0x32619c(0x19e)](_0xdce59a=>_0xdce59a[_0x32619c(0x1d8)]())['then'](_0x2c4821=>this['displayEarthquakeData'](_0x2c4821));},'displayEarthquakeData':function(_0x27f0a0){const _0x3ea9fc=_0x25d4e1;this[_0x3ea9fc(0x1c4)](document['querySelector'](_0x3ea9fc(0x1b0)));let _0x266810=_0x3ea9fc(0x1ad),_0x4854ee='Magnitude:\x20',_0x20452e='Intensity:\x20';var _0x55821a=[];for(let _0x56d040=0x0;_0x56d040<_0x27f0a0[_0x3ea9fc(0x1da)]['length'];this['addItems'](_0x56d040),_0x56d040++);for(let _0x8ab4cb=0x0;_0x8ab4cb<_0x27f0a0[_0x3ea9fc(0x1da)][_0x3ea9fc(0x1b9)];_0x8ab4cb++){_0x55821a[_0x3ea9fc(0x1b3)]({'time':''+new Date(_0x27f0a0[_0x3ea9fc(0x1da)][_0x8ab4cb][_0x3ea9fc(0x1ce)][_0x3ea9fc(0x1cc)])[_0x3ea9fc(0x1ba)](),'loc':''+this['isNull'](_0x27f0a0[_0x3ea9fc(0x1da)][_0x8ab4cb][_0x3ea9fc(0x1ce)]['place']),'alertType':''+_0x266810+this[_0x3ea9fc(0x1c6)](_0x27f0a0[_0x3ea9fc(0x1da)][_0x8ab4cb][_0x3ea9fc(0x1ce)][_0x3ea9fc(0x1b5)]),'magnitude':''+_0x4854ee+this[_0x3ea9fc(0x1c6)](_0x27f0a0[_0x3ea9fc(0x1da)][_0x8ab4cb][_0x3ea9fc(0x1ce)]['mag']),'intensity':''+_0x20452e+this[_0x3ea9fc(0x1c6)](_0x27f0a0[_0x3ea9fc(0x1da)][_0x8ab4cb][_0x3ea9fc(0x1ce)][_0x3ea9fc(0x19d)])});}_0x55821a[_0x3ea9fc(0x1c1)]((_0x641d04,_0x377957)=>_0x641d04[_0x3ea9fc(0x197)]['localeCompare'](_0x377957[_0x3ea9fc(0x197)])),_0x55821a['forEach']((_0x1b5ddc,_0x46d5b7,_0x322714)=>{const _0x1dd091=_0x3ea9fc;document[_0x1dd091(0x1b7)]('.eq'+_0x46d5b7+_0x1dd091(0x1b1))[_0x1dd091(0x1c0)]=_0x1b5ddc['loc'],document[_0x1dd091(0x1b7)](_0x1dd091(0x19f)+_0x46d5b7+_0x1dd091(0x19c))[_0x1dd091(0x1c0)]=_0x1b5ddc['time'],document[_0x1dd091(0x1b7)](_0x1dd091(0x19f)+_0x46d5b7+_0x1dd091(0x1d5))[_0x1dd091(0x1c0)]=_0x1b5ddc['alertType'],document[_0x1dd091(0x1b7)](_0x1dd091(0x19f)+_0x46d5b7+'Magnitude')[_0x1dd091(0x1c0)]=_0x1b5ddc[_0x1dd091(0x197)],document[_0x1dd091(0x1b7)](_0x1dd091(0x19f)+_0x46d5b7+'Intensity')[_0x1dd091(0x1c0)]=_0x1b5ddc[_0x1dd091(0x1a8)];}),loader[_0x3ea9fc(0x1c8)][_0x3ea9fc(0x1a2)]=_0x3ea9fc(0x19a),document[_0x3ea9fc(0x1b7)](_0x3ea9fc(0x1b0))[_0x3ea9fc(0x1c8)][_0x3ea9fc(0x1a2)]=_0x3ea9fc(0x1b8);},'isNull':_0x154022=>{if(_0x154022!=null)return _0x154022;return'--';},'addItems':_0x44d5f2=>{const _0xfe0b81=_0x25d4e1;let _0x41101b=document['createElement']('div');_0x41101b['setAttribute']('class',_0xfe0b81(0x1c2)+_0x44d5f2+_0xfe0b81(0x196));let _0x4bac2b=document[_0xfe0b81(0x1cf)]('div'),_0x33951f=document[_0xfe0b81(0x1cf)](_0xfe0b81(0x198));_0x4bac2b[_0xfe0b81(0x1bb)](_0xfe0b81(0x1ac),_0xfe0b81(0x1ae)),_0x33951f[_0xfe0b81(0x1bb)](_0xfe0b81(0x1ac),'eq'+_0x44d5f2+_0xfe0b81(0x1b6));let _0x151d12=document[_0xfe0b81(0x1cf)](_0xfe0b81(0x1a7)),_0x2b3f96=document[_0xfe0b81(0x1cf)]('span'),_0x15fa63=document['createElement'](_0xfe0b81(0x198));_0x151d12[_0xfe0b81(0x1bb)](_0xfe0b81(0x1ac),_0xfe0b81(0x1a3)),_0x2b3f96[_0xfe0b81(0x1bb)]('class','eq'+_0x44d5f2+_0xfe0b81(0x19c)),_0x15fa63['setAttribute'](_0xfe0b81(0x1ac),'eq'+_0x44d5f2+'AlertType\x20description');let _0x4bd518=document[_0xfe0b81(0x1cf)]('div'),_0x1b92c3=document[_0xfe0b81(0x1cf)](_0xfe0b81(0x198)),_0x4772a0=document[_0xfe0b81(0x1cf)]('span');_0x4bd518['setAttribute'](_0xfe0b81(0x1ac),'d-flex\x20flex-row\x20justify-content-evenly'),_0x1b92c3['setAttribute'](_0xfe0b81(0x1ac),'eq'+_0x44d5f2+_0xfe0b81(0x1aa)),_0x4772a0[_0xfe0b81(0x1bb)](_0xfe0b81(0x1ac),'eq'+_0x44d5f2+'Intensity'),_0x4bac2b[_0xfe0b81(0x1c5)](_0x33951f),_0x151d12[_0xfe0b81(0x1c5)](_0x2b3f96),_0x151d12[_0xfe0b81(0x1c5)](_0x15fa63),_0x4bd518[_0xfe0b81(0x1c5)](_0x1b92c3),_0x4bd518[_0xfe0b81(0x1c5)](_0x4772a0),_0x41101b[_0xfe0b81(0x1c5)](_0x4bac2b),_0x41101b['append'](_0x151d12),_0x41101b[_0xfe0b81(0x1c5)](_0x4bd518);let _0x258479=document['querySelector'](_0xfe0b81(0x1b0));_0x258479['append'](_0x41101b);},'search':function(){const _0xeba792=_0x25d4e1;this[_0xeba792(0x195)](search['value']),document[_0xeba792(0x1b7)](_0xeba792(0x1b0))['style'][_0xeba792(0x1a2)]=_0xeba792(0x19a),loader[_0xeba792(0x1c8)][_0xeba792(0x1a2)]=_0xeba792(0x1b8);},'removeAllChildNodes':_0x2c5eca=>{const _0x4af433=_0x25d4e1;while(_0x2c5eca[_0x4af433(0x19b)])_0x2c5eca[_0x4af433(0x1d9)](_0x2c5eca[_0x4af433(0x19b)]);}};function _0x3aaa(){const _0xbe00f3=['fetchEarthquakeData','\x20shadow\x20rounded-custom\x20mb-3\x20p-3\x20fw-light\x20fs-7','magnitude','span','1561365gEalUF','none','firstChild','Time','mmi','then','.eq','64220bCUiRn','https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=','display','d-flex\x20flex-row\x20justify-content-evenly','Enter','addEventListener','setDate','div','intensity','.clearSearchButton','Magnitude','key','class','Alert\x20Level:\x20','d-flex\x20flex-row\x20justify-content-center\x20text-center','1616430dgbwZM','.dataField','Location','.search','push','.loader','alert','Location\x20fw-bold','querySelector','block','length','toLocaleString','setAttribute','4152498ZQZkRR','&minmagnitude=','getDate','toISOString','innerText','sort','group','8872zCeAwV','removeAllChildNodes','append','isNull','search','style','272TXAkHT','split','ctrlKey','time','value','properties','createElement','activeElement','13899456UZZzmA','keyup','focus','8813nokISD','AlertType','3zLnJHS','blur','json','removeChild','features','altKey','32759320MsIvgs'];_0x3aaa=function(){return _0xbe00f3;};return _0x3aaa();}earthquake[_0x25d4e1(0x195)](0x4),search[_0x25d4e1(0x1a5)](_0x25d4e1(0x1d2),_0x19cb36=>{const _0x5e66b5=_0x25d4e1;let _0x13e131=_0x19cb36[_0x5e66b5(0x1ab)]===_0x5e66b5(0x1a4)?earthquake[_0x5e66b5(0x1c7)]():'';}),document[_0x25d4e1(0x1a5)](_0x25d4e1(0x1d2),_0x2d3ff7=>{const _0x38a6a8=_0x25d4e1;if(_0x2d3ff7[_0x38a6a8(0x1cb)]&&_0x2d3ff7[_0x38a6a8(0x1db)]&&_0x2d3ff7[_0x38a6a8(0x1ab)]=='/')search[_0x38a6a8(0x1d3)]();if(search[_0x38a6a8(0x1cd)]['length']>0x0)csb[_0x38a6a8(0x1c8)][_0x38a6a8(0x1a2)]=_0x38a6a8(0x1b8);if(search['value'][_0x38a6a8(0x1b9)]==0x0)csb[_0x38a6a8(0x1c8)][_0x38a6a8(0x1a2)]=_0x38a6a8(0x19a);if(_0x2d3ff7[_0x38a6a8(0x1ab)]==='Escape'&&document[_0x38a6a8(0x1d0)])search[_0x38a6a8(0x1d7)]();}),csb['style']['display']=_0x25d4e1(0x19a);
+let query = () => earthquake.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
+let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
+let loader = document.querySelector(".loader");
+
+let earthquake = {
+    fetchEarthquakeData: function(magnitude){
+        let pastSevenDaysDate = new Date(); pastSevenDaysDate.setDate(pastSevenDaysDate.getDate() - 1);
+        let presentDayDate = new Date(); end_date_input = presentDayDate.toISOString().split('T')[0];
+        fetch(
+            `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${pastSevenDaysDate.toISOString().split('T')[0]}&endtime=${end_date_input}&minmagnitude=${magnitude}`
+        ).then((response) => response.json()).then((data) => this.displayEarthquakeData(data));
+    },
+    displayEarthquakeData: function(data){
+        this.removeAllChildNodes(document.querySelector(".dataField"));
+        let alertLevelInf = "Alert Level: ", magnitudeInf = "Magnitude: ", intensityInf = "Intensity: ";
+        var dailyData = [];
+
+        for(let i = 0; i < data.features.length; this.addItems(i), i++);
+        for(let i = 0; i < data.features.length; i++){
+            dailyData.push({
+                time: `${new Date(data.features[i].properties.time).toLocaleString()}`,
+                loc: `${this.isNull(data.features[i].properties.place)}`,
+                alertType: `${alertLevelInf}${this.isNull(data.features[i].properties.alert)}`,
+                magnitude: `${magnitudeInf}${this.isNull(data.features[i].properties.mag)}`,
+                intensity: `${intensityInf}${this.isNull(data.features[i].properties.mmi)}`
+            });
+        }
+        
+        dailyData.sort((a,b) => a.magnitude.localeCompare(b.magnitude));
+
+        dailyData.forEach((element, index, array) => {
+            document.querySelector(`.eq${index}Location`).innerText = element.loc;
+            document.querySelector(`.eq${index}Time`).innerText = element.time;
+            document.querySelector(`.eq${index}AlertType`).innerText = element.alertType;
+            document.querySelector(`.eq${index}Magnitude`).innerText = element.magnitude;
+            document.querySelector(`.eq${index}Intensity`).innerText = element.intensity;
+        });
+        loader.style.display = "none";
+        document.querySelector(".dataField").style.display = "block";
+    },
+    isNull: (item) => { if(item != null) return item; return "--"; },
+    addItems: (index) => {
+        let group = document.createElement("div");
+        group.setAttribute('class',`group${index} shadow rounded-custom mb-3 p-3 fw-light fs-7`);
+
+        let outerDiv1 = document.createElement("div"), loc = document.createElement("span");
+        outerDiv1.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        loc.setAttribute('class',`eq${index}Location fw-bold`);
+        
+        let outerDiv2 = document.createElement("div"), time = document.createElement("span"), alertType = document.createElement("span");
+        outerDiv2.setAttribute('class','d-flex flex-row justify-content-evenly');
+        time.setAttribute('class',`eq${index}Time`);
+        alertType.setAttribute('class',`eq${index}AlertType description`)
+        
+        let outerDiv3 = document.createElement("div"), magnitude = document.createElement("span"), intensity = document.createElement("span");
+        outerDiv3.setAttribute('class','d-flex flex-row justify-content-evenly');
+        magnitude.setAttribute('class',`eq${index}Magnitude`)
+        intensity.setAttribute('class',`eq${index}Intensity`)
+
+        outerDiv1.append(loc);
+        outerDiv2.append(time);
+        outerDiv2.append(alertType);
+        outerDiv3.append(magnitude);
+        outerDiv3.append(intensity);
+
+        group.append(outerDiv1);
+        group.append(outerDiv2);
+        group.append(outerDiv3);
+
+        let dataField = document.querySelector(".dataField");
+        dataField.append(group);
+    },
+    search: function() {
+        this.fetchEarthquakeData(search.value);
+        document.querySelector(".dataField").style.display = "none";
+        loader.style.display = "block";
+    },
+    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+}
+
+earthquake.fetchEarthquakeData(4);
+search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? earthquake.search() : ""; });
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
+    if(search.value.length > 0) csb.style.display = "block";
+    if(search.value.length == 0) csb.style.display = "none";
+    if(e.key === "Escape" && document.activeElement) search.blur();
+});
+
+csb.style.display = "none";

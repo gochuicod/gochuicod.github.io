@@ -1,1 +1,151 @@
-const _0x476b06=_0x1615;function _0x1615(_0x265435,_0xdb4826){const _0x48b7cc=_0x48b7();return _0x1615=function(_0x1615c0,_0x375cf5){_0x1615c0=_0x1615c0-0xd1;let _0x2040c9=_0x48b7cc[_0x1615c0];return _0x2040c9;},_0x1615(_0x265435,_0xdb4826);}(function(_0x2dab49,_0x6a9d7){const _0x31a3d0=_0x1615,_0x1fd622=_0x2dab49();while(!![]){try{const _0x5a8be7=parseInt(_0x31a3d0(0xf6))/0x1+parseInt(_0x31a3d0(0xe4))/0x2*(parseInt(_0x31a3d0(0xd1))/0x3)+-parseInt(_0x31a3d0(0xd4))/0x4+-parseInt(_0x31a3d0(0xf4))/0x5*(-parseInt(_0x31a3d0(0xdc))/0x6)+-parseInt(_0x31a3d0(0x103))/0x7*(parseInt(_0x31a3d0(0xd9))/0x8)+parseInt(_0x31a3d0(0x10c))/0x9+-parseInt(_0x31a3d0(0xd3))/0xa*(-parseInt(_0x31a3d0(0xed))/0xb);if(_0x5a8be7===_0x6a9d7)break;else _0x1fd622['push'](_0x1fd622['shift']());}catch(_0x12fe9d){_0x1fd622['push'](_0x1fd622['shift']());}}}(_0x48b7,0x60913));let total_characters=0x0,time=0x3c,counter_start,toggle=0x0,lblChars=0x0,lblWpm=0x0,lblAccuracy=0x64['toFixed'](0x2),lblErrors=0x0,paragraph=[_0x476b06(0xd7),_0x476b06(0xda),_0x476b06(0xf0)],texts=[],givenTexts=[],items=[],txtarea=document[_0x476b06(0xd5)](_0x476b06(0xe2)),startBtn=document['querySelector']('.start'),characters=document['querySelector']('.characters'),wordsperminute=document[_0x476b06(0xd5)](_0x476b06(0x10d)),lblTime=document['querySelector'](_0x476b06(0xfb)),follow=document[_0x476b06(0xd5)](_0x476b06(0x105)),cError=document[_0x476b06(0xd5)](_0x476b06(0xfd)),accuracy=document[_0x476b06(0xd5)]('.accuracy'),difficulty=document['querySelector'](_0x476b06(0xe1)),text;startBtn['style']['cursor']=_0x476b06(0xf9),difficulty[_0x476b06(0xf7)][_0x476b06(0x101)]=_0x476b06(0xf9),(function(){text=paragraph[0x0],generateTexts();}());function generateTexts(){const _0x4ed198=_0x476b06;extractGiven();for(let _0x369600=0x0;_0x369600<givenTexts[_0x4ed198(0xde)];_0x369600++){let _0x2ac0bf=document[_0x4ed198(0xee)]('span');_0x2ac0bf[_0x4ed198(0x107)](_0x4ed198(0xfe),_0x4ed198(0xf5)),_0x2ac0bf[_0x4ed198(0xec)](givenTexts[_0x369600]+'\x20'),items[_0x4ed198(0xe7)](_0x2ac0bf),follow[_0x4ed198(0xec)](items[_0x369600]);}}function removeTexts(_0x50b25b){const _0x342a11=_0x476b06;while(_0x50b25b['firstChild'])_0x50b25b[_0x342a11(0x102)](_0x50b25b[_0x342a11(0xe5)]);givenTexts['splice'](0x0,givenTexts[_0x342a11(0xde)]),items[_0x342a11(0xdb)](0x0,items['length']),reset();}function difficultyToggle(){const _0x5af859=_0x476b06;toggle++;toggle==0x0&&(removeTexts(follow),difficulty['innerText']='Easy',difficulty[_0x5af859(0x107)]('class',_0x5af859(0xe6)),text=paragraph[0x0],generateTexts());toggle==0x1&&(removeTexts(follow),difficulty[_0x5af859(0xd8)]='Medium',difficulty[_0x5af859(0x107)](_0x5af859(0xfe),_0x5af859(0xdd)),text=paragraph[0x1],generateTexts());toggle==0x2&&(removeTexts(follow),difficulty[_0x5af859(0xd8)]=_0x5af859(0xe8),difficulty[_0x5af859(0x107)]('class',_0x5af859(0xfa)),text=paragraph[0x2],generateTexts());if(toggle>=0x2)toggle=-0x1;}function updateWord(){const _0x83cb29=_0x476b06;let _0x4d375a=0x0;for(let _0x162f75=0x0;_0x162f75<txtarea[_0x83cb29(0xfc)][_0x83cb29(0xde)];total_characters++,_0x162f75++);getErrors(),visualAspectOn(),characters['innerText']=''+(lblChars=total_characters),wordsperminute[_0x83cb29(0xd8)]=''+(lblWpm=texts[_0x83cb29(0xde)]-lblErrors),cError[_0x83cb29(0xd8)]=''+lblErrors,accuracy[_0x83cb29(0xd8)]=''+(lblAccuracy=((texts[_0x83cb29(0xde)]-lblErrors)/texts['length']*0x64)[_0x83cb29(0xf8)](0x2)),total_characters=0x0,lblErrors=0x0,texts[_0x83cb29(0xdb)](0x0,texts[_0x83cb29(0xde)]),givenTexts[_0x83cb29(0xdb)](0x0,givenTexts[_0x83cb29(0xde)]);}function _0x48b7(){const _0x375abc=['blur','onclick','click','4772610pLBUMv','.wpm','start()','39RSBYsu','val','970CWincE','1661164ijOUqu','querySelector','col-2\x20fw-bold\x20link-danger\x20start','lie\x20grasp\x20fine\x20write\x20close\x20teach\x20tuck\x20sum\x20fire\x20feed\x20live\x20cheer\x20deal\x20sign\x20mount\x20sort\x20cry\x20kill\x20crush\x20trust\x20love\x20cheer\x20fit\x20shut\x20grant\x20seem\x20bang\x20hurt\x20enter\x20keep\x20shoot\x20suit\x20need\x20state\x20shout\x20show\x20round\x20dip\x20imply\x20snap\x20pin\x20kiss\x20turn\x20urge\x20flee\x20crack\x20peer\x20take\x20shine\x20allow\x20show\x20slip\x20clean\x20lead\x20rush\x20curl\x20term\x20call\x20vote\x20limit\x20break\x20play\x20clear\x20plant\x20sense\x20grip\x20claim\x20born\x20abuse\x20sound\x20wipe\x20creep\x20give\x20ship\x20throw\x20enjoy\x20meet\x20lack\x20go\x20ease\x20ship\x20drag\x20drink\x20equip\x20cater\x20peer\x20scan\x20hunt\x20treat\x20fall\x20fire\x20knock\x20use\x20tend\x20move\x20label\x20weigh\x20point\x20bend\x20build\x20laugh\x20buy\x20marry\x20fetch\x20halt\x20knock\x20get\x20tip\x20fade\x20guard\x20fail\x20sigh\x20cater\x20bid\x20name\x20greet\x20spot\x20spell\x20teach\x20suit\x20last\x20free\x20crush\x20dream\x20know\x20save\x20end\x20spoil\x20state\x20part\x20seal\x20base\x20drain\x20tap\x20solve\x20hire\x20guard\x20crack\x20count\x20deny\x20laugh\x20smash\x20merge\x20nod\x20do\x20be\x20teach','innerText','88nhPLjp','Once,\x20there\x20was\x20an\x20old\x20man\x20who\x20had\x20four\x20sons.\x20All\x20four\x20of\x20them\x20were\x20very\x20lazy.\x20One\x20day,\x20the\x20old\x20man\x20fell\x20sick\x20and\x20was\x20counting\x20his\x20last\x20days\x20in\x20bed.\x20He\x20worried\x20a\x20lot\x20about\x20his\x20sons\x27\x20future\x20as\x20the\x20young\x20men\x20hesitated\x20a\x20lot\x20to\x20work.\x20The\x20sons\x20believed\x20that\x20luck\x20would\x20favour\x20them.\x20The\x20old\x20man\x27s\x20health\x20deteriorated\x20every\x20day\x20and\x20he\x20decided\x20to\x20talk\x20to\x20his\x20sons\x20about\x20their\x20future.\x20However,\x20his\x20sons\x20did\x20not\x20listen\x20to\x20him.\x20Finally,\x20the\x20old\x20man\x20decided\x20to\x20play\x20a\x20trick\x20to\x20let\x20his\x20sons\x20realize\x20the\x20importance\x20of\x20work.\x20He\x20called\x20all\x20his\x20sons\x20and\x20let\x20them\x20sit\x20near\x20him\x20on\x20his\x20bed.\x20He\x20said\x20that\x20he\x20had\x20a\x20treasure\x20box\x20with\x20gold\x20coins\x20and\x20expensive\x20gems\x20for\x20them\x20and\x20wanted\x20to\x20share\x20the\x20treasure\x20equally\x20among\x20the\x20four\x20of\x20them.\x20The\x20young\x20men\x20were\x20very\x20happy\x20and\x20asked\x20where\x20his\x20father\x20had','splice','924954PamrNh','fw-bold\x20link-warning','length','toLowerCase','text-success\x20p-1','.difficulty','.txtarea','reset()','15396SHxQtu','firstChild','fw-bold\x20link-success','push','Hard','disabled','key','preventDefault','append','50072kOYdDW','createElement','ctrlKey','Most\x20programming\x20languages\x20support\x20Linux\x20either\x20directly\x20or\x20through\x20third-party\x20community\x20based\x20ports.\x20The\x20original\x20development\x20tools\x20used\x20for\x20building\x20both\x20Linux\x20applications\x20and\x20operating\x20system\x20programs\x20are\x20found\x20within\x20the\x20GNU\x20toolchain,\x20which\x20includes\x20the\x20GNU\x20Compiler\x20Collection\x20(GCC)\x20and\x20the\x20GNU\x20Build\x20System.\x20Amongst\x20others,\x20GCC\x20provides\x20compilers\x20for\x20Ada,\x20C,\x20C++,\x20Go\x20and\x20Fortran.\x20Many\x20programming\x20languages\x20have\x20a\x20cross-platform\x20reference\x20implementation\x20that\x20supports\x20Linux,\x20for\x20example\x20PHP,\x20Perl,\x20Ruby,\x20Python,\x20Java,\x20Go,\x20Rust\x20and\x20Haskell.\x20First\x20released\x20in\x202003,\x20the\x20LLVM\x20project\x20provides\x20an\x20alternative\x20cross-platform\x20open-source\x20compiler\x20for\x20many\x20languages.\x20Proprietary\x20compilers\x20for\x20Linux\x20include\x20the\x20Intel\x20C++\x20Compiler,\x20Sun\x20Studio,\x20and\x20IBM\x20XL\x20C/C++\x20Compiler.','addEventListener','focus','text-danger\x20p-1','5dOEhjN','p-1','53451JtneMQ','style','toFixed','pointer','fw-bold\x20link-danger','.time','value','.cErrors','class','Click\x20to\x20Start','altKey','cursor','removeChild','298256dfRopq','Enter','#follow','col-2\x20fw-bold\x20link-warning\x20start','setAttribute','test'];_0x48b7=function(){return _0x375abc;};return _0x48b7();}function visualAspectOn(){const _0xc1798d=_0x476b06;if(texts[texts[_0xc1798d(0xde)]]==givenTexts[givenTexts[_0xc1798d(0xde)]])items[texts[_0xc1798d(0xde)]-0x1][_0xc1798d(0x107)](_0xc1798d(0xfe),'bg-dark\x20text-light\x20rounded-3\x20p-1');for(let _0x1dae80=0x0;_0x1dae80<texts[_0xc1798d(0xde)]-0x1;_0x1dae80++){texts[_0x1dae80]==givenTexts[_0x1dae80]?items[_0x1dae80][_0xc1798d(0x107)](_0xc1798d(0xfe),_0xc1798d(0xe0)):items[_0x1dae80][_0xc1798d(0x107)](_0xc1798d(0xfe),_0xc1798d(0xf3));}for(let _0x4adb81=items[_0xc1798d(0xde)];_0x4adb81>=texts['length'];_0x4adb81--){if(items[_0x4adb81]!=texts[_0x4adb81])items[_0x4adb81][_0xc1798d(0x107)](_0xc1798d(0xfe),_0xc1798d(0xf5));}}function visualAspectOff(){const _0x271645=_0x476b06;for(let _0x279cb9=0x0;_0x279cb9<items[_0x271645(0xde)];items[_0x279cb9][_0x271645(0x107)](_0x271645(0xfe),'p-1'),_0x279cb9++);}function getErrors(){const _0x4b3d9c=_0x476b06;extractTextArea(),extractGiven();for(let _0x129a39=0x0;_0x129a39<texts[_0x4b3d9c(0xde)];_0x129a39++){if(texts[_0x129a39]!=givenTexts[_0x129a39])lblErrors++;}}function extractTextArea(){const _0x4d8178=_0x476b06;let _0xae3c62=$(txtarea)[_0x4d8178(0xd2)]()['split'](/\s/);for(let _0xe727d=0x0;_0xe727d<_0xae3c62['length'];_0xe727d++){if(/\S/[_0x4d8178(0x108)](_0xae3c62[_0xe727d]))texts['push'](_0xae3c62[_0xe727d]['trim']());}}function extractGiven(){const _0xc0aab5=_0x476b06;let _0x362830=text['split'](/\s/);for(let _0x11ab1f=0x0;_0x11ab1f<_0x362830[_0xc0aab5(0xde)];_0x11ab1f++){if(/\S/[_0xc0aab5(0x108)](_0x362830[_0x11ab1f]))givenTexts[_0xc0aab5(0xe7)](_0x362830[_0x11ab1f]['trim']());}}function timer(){const _0x3907dd=_0x476b06;time==0x0&&(clearInterval(counter_start),txtarea[_0x3907dd(0xe9)]=!![],updateWord());if(time<0x6)lblTime['setAttribute']('class','fw-bold\x20text-danger');lblTime[_0x3907dd(0xd8)]=time--+'s';}function start(){const _0x13776a=_0x476b06;counter_start=setInterval(timer,0x3e8),txtarea[_0x13776a(0xe9)]=![],txtarea[_0x13776a(0xf2)](),txtarea['select'](),startBtn[_0x13776a(0x107)](_0x13776a(0xfe),_0x13776a(0xd6)),startBtn[_0x13776a(0xd8)]='Click\x20to\x20Reset',startBtn[_0x13776a(0x107)]('onclick',_0x13776a(0xe3));}function reset(){const _0x369826=_0x476b06;startBtn[_0x369826(0x107)](_0x369826(0xfe),_0x369826(0x106)),startBtn[_0x369826(0xd8)]=_0x369826(0xff),startBtn['setAttribute'](_0x369826(0x10a),_0x369826(0x10e)),txtarea[_0x369826(0xfc)]='',txtarea[_0x369826(0xe9)]=!![],visualAspectOff(),time=0x3c,lblTime['setAttribute'](_0x369826(0xfe),'fw-bold\x20dark-mode-color-1'),characters[_0x369826(0xd8)]=''+(total_characters=0x0),wordsperminute['innerText']=''+(lblWpm=0x0),lblTime[_0x369826(0xd8)]=(time=0x3c)+'s',accuracy['innerText']=''+(lblAccuracy=0x64[_0x369826(0xf8)](0x2)),cError[_0x369826(0xd8)]=''+(lblErrors=0x0),lblTime[_0x369826(0x107)]('class','fw-bold\x20dark-mode-color-1'),clearInterval(counter_start);}txtarea[_0x476b06(0xf1)]('keyup',_0xa1ecbf=>{const _0x2b20cd=_0x476b06;if(_0xa1ecbf['key']==='Escape')txtarea[_0x2b20cd(0x109)]();if(_0xa1ecbf[_0x2b20cd(0xea)]===_0x2b20cd(0x104))_0xa1ecbf[_0x2b20cd(0xeb)]();updateWord();}),document[_0x476b06(0xf1)]('keyup',_0x281330=>{const _0x425970=_0x476b06;if(_0x281330[_0x425970(0xef)]&&_0x281330[_0x425970(0x100)]&&_0x281330[_0x425970(0xea)][_0x425970(0xdf)]()=='s')startBtn[_0x425970(0x10b)]();if(_0x281330['ctrlKey']&&_0x281330[_0x425970(0x100)]&&_0x281330['key'][_0x425970(0xdf)]()=='m')difficultyToggle();});
+let total_characters = 0, time = 60, counter_start, toggle = 0;
+let lblChars = 0, lblWpm = 0, lblAccuracy = (100).toFixed(2), lblErrors = 0;
+let paragraph = [
+"lie grasp fine write close teach tuck sum fire feed live cheer deal sign mount sort cry kill crush trust love cheer fit shut grant seem bang hurt enter keep shoot suit need state shout show round dip imply snap pin kiss turn urge flee crack peer take shine allow show slip clean lead rush curl term call vote limit break play clear plant sense grip claim born abuse sound wipe creep give ship throw enjoy meet lack go ease ship drag drink equip cater peer scan hunt treat fall fire knock use tend move label weigh point bend build laugh buy marry fetch halt knock get tip fade guard fail sigh cater bid name greet spot spell teach suit last free crush dream know save end spoil state part seal base drain tap solve hire guard crack count deny laugh smash merge nod do be teach",
+"Once, there was an old man who had four sons. All four of them were very lazy. One day, the old man fell sick and was counting his last days in bed. He worried a lot about his sons' future as the young men hesitated a lot to work. The sons believed that luck would favour them. The old man's health deteriorated every day and he decided to talk to his sons about their future. However, his sons did not listen to him. Finally, the old man decided to play a trick to let his sons realize the importance of work. He called all his sons and let them sit near him on his bed. He said that he had a treasure box with gold coins and expensive gems for them and wanted to share the treasure equally among the four of them. The young men were very happy and asked where his father had",
+"Most programming languages support Linux either directly or through third-party community based ports. The original development tools used for building both Linux applications and operating system programs are found within the GNU toolchain, which includes the GNU Compiler Collection (GCC) and the GNU Build System. Amongst others, GCC provides compilers for Ada, C, C++, Go and Fortran. Many programming languages have a cross-platform reference implementation that supports Linux, for example PHP, Perl, Ruby, Python, Java, Go, Rust and Haskell. First released in 2003, the LLVM project provides an alternative cross-platform open-source compiler for many languages. Proprietary compilers for Linux include the Intel C++ Compiler, Sun Studio, and IBM XL C/C++ Compiler."
+], texts = [], givenTexts = [], items = [];
+let txtarea = document.querySelector(".txtarea"), startBtn = document.querySelector(".start");
+let characters = document.querySelector(".characters"), wordsperminute = document.querySelector(".wpm");
+let lblTime = document.querySelector(".time"), follow = document.querySelector("#follow");
+let cError = document.querySelector(".cErrors"), accuracy = document.querySelector(".accuracy");
+let difficulty = document.querySelector(".difficulty"), text;
+startBtn.style.cursor = `pointer`; difficulty.style.cursor = `pointer`;
+
+(function(){
+    text = paragraph[0];
+    generateTexts();
+})();
+
+function generateTexts() {
+    extractGiven();
+    for(let i = 0; i < givenTexts.length; i++){
+        let span = document.createElement("span");
+        span.setAttribute("class","p-1");
+        span.append(givenTexts[i] + " ");
+        items.push(span);
+        follow.append(items[i]);
+    }
+}
+
+function removeTexts(parent) {
+    while(parent.firstChild) parent.removeChild(parent.firstChild);
+    givenTexts.splice(0,givenTexts.length); items.splice(0,items.length);
+    reset();
+}
+
+function difficultyToggle() {
+    toggle++;
+    if(toggle == 0){
+        removeTexts(follow);
+        difficulty.innerText = `Easy`;
+        difficulty.setAttribute("class","fw-bold link-success");
+        text = paragraph[0];
+        generateTexts();
+    }
+    if(toggle == 1){
+        removeTexts(follow);
+        difficulty.innerText = `Medium`;
+        difficulty.setAttribute("class","fw-bold link-warning");
+        text = paragraph[1];
+        generateTexts();
+    }
+    if(toggle == 2){
+        removeTexts(follow);
+        difficulty.innerText = `Hard`;
+        difficulty.setAttribute("class","fw-bold link-danger");
+        text = paragraph[2];
+        generateTexts();
+    }
+    if(toggle >= 2) toggle = -1;
+}
+
+function updateWord() {
+    let newline_count = 0;
+    for(let i = 0; i < txtarea.value.length; total_characters++, i++);
+    getErrors(); visualAspectOn();
+    characters.innerText = `${lblChars = total_characters}`;
+    wordsperminute.innerText = `${lblWpm = texts.length - lblErrors}`;
+    cError.innerText = `${lblErrors}`;
+    accuracy.innerText = `${lblAccuracy = (((texts.length - lblErrors) / texts.length) * 100).toFixed(2)}`;
+    total_characters = 0; lblErrors = 0;
+    texts.splice(0,texts.length); givenTexts.splice(0,givenTexts.length);
+}
+
+function visualAspectOn() {
+    if(texts[texts.length] == givenTexts[givenTexts.length]) items[texts.length - 1].setAttribute("class","bg-dark text-light rounded-3 p-1");
+    for(let i = 0; i < texts.length - 1; i++){
+        (texts[i] == givenTexts[i]) ? items[i].setAttribute("class","text-success p-1") : items[i].setAttribute("class","text-danger p-1");
+    }
+    for(let j = items.length; j >= texts.length; j--){
+        if(items[j] != texts[j]) items[j].setAttribute("class","p-1");
+    }
+}
+
+function visualAspectOff() {
+    for(let i = 0; i < items.length; items[i].setAttribute("class","p-1"), i++);
+}
+
+function getErrors() {
+    extractTextArea(); extractGiven();
+    for(let i = 0; i < texts.length; i++){
+        if(texts[i] != givenTexts[i]) lblErrors++;
+    }
+}
+
+function extractTextArea(){
+    /* Code below finds all words in a text area string*/
+    /* \s represents as a whitespace character it starts to split words once a whitespace is found */
+    let lines = $(txtarea).val().split(/\s/);
+    for(let i = 0; i < lines.length; i++){
+        if(/\S/.test(lines[i])) texts.push((lines[i]).trim());
+    }
+}
+
+function extractGiven() {
+    let givenText = text.split(/\s/);
+    for(let i = 0; i < givenText.length; i++){
+        if(/\S/.test(givenText[i])) givenTexts.push((givenText[i]).trim());
+    }
+}
+
+function timer() {
+    if(time == 0){
+        clearInterval(counter_start);
+        txtarea.disabled = true;
+        updateWord();
+    }
+    if(time < 6) lblTime.setAttribute("class","fw-bold text-danger");
+    lblTime.innerText = `${time--}s`;
+}
+
+function start() {
+    counter_start = setInterval(timer,1000);
+    txtarea.disabled = false;
+    txtarea.focus(); txtarea.select();
+    startBtn.setAttribute("class","col-2 fw-bold link-danger start");
+    startBtn.innerText = `Click to Reset`; startBtn.setAttribute("onclick","reset()");
+}
+
+function reset() {
+    startBtn.setAttribute("class","col-2 fw-bold link-warning start");
+    startBtn.innerText = `Click to Start`; startBtn.setAttribute("onclick","start()");
+    txtarea.value = ""; txtarea.disabled = true; visualAspectOff(); 
+    time = 60; lblTime.setAttribute("class","fw-bold dark-mode-color-1");
+    characters.innerText = `${total_characters = 0}`;
+    wordsperminute.innerText = `${lblWpm = 0}`; lblTime.innerText = `${time = 60}s`;
+    accuracy.innerText = `${lblAccuracy = (100).toFixed(2)}`; cError.innerText = `${lblErrors = 0}`;
+    lblTime.setAttribute("class","fw-bold dark-mode-color-1");
+    clearInterval(counter_start);
+}
+
+txtarea.addEventListener('keyup', (e) => {
+    if(e.key === "Escape") txtarea.blur();
+    if(e.key === "Enter") e.preventDefault();
+    updateWord();
+});
+
+document.addEventListener('keyup', (e) => {
+    if(e.ctrlKey && e.altKey && (e.key).toLowerCase() == "s") startBtn.click();
+    if(e.ctrlKey && e.altKey && (e.key).toLowerCase() == "m") difficultyToggle();
+});

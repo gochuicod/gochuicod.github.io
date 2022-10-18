@@ -1,1 +1,31 @@
-const _0x20bf16=_0x2dec;function _0x1dc1(){const _0x307f22=['1821358sOpjil','200ShMUbh','643578Dtksbh','2007PpVtyB','getHours','getYear','length','onload','2767mCoBHS','querySelector','getSeconds','8rTsztn','2128340TXnVHV','getDate','58940wNQaev','innerText','1949280eToTlk','3617600yxHerM'];_0x1dc1=function(){return _0x307f22;};return _0x1dc1();}(function(_0x1973f3,_0x213abe){const _0x396a57=_0x2dec,_0x374a28=_0x1973f3();while(!![]){try{const _0xcec3d2=parseInt(_0x396a57(0x18c))/0x1*(parseInt(_0x396a57(0x197))/0x2)+parseInt(_0x396a57(0x198))/0x3+parseInt(_0x396a57(0x18f))/0x4*(-parseInt(_0x396a57(0x190))/0x5)+-parseInt(_0x396a57(0x194))/0x6+parseInt(_0x396a57(0x196))/0x7+-parseInt(_0x396a57(0x195))/0x8+parseInt(_0x396a57(0x199))/0x9*(parseInt(_0x396a57(0x192))/0xa);if(_0xcec3d2===_0x213abe)break;else _0x374a28['push'](_0x374a28['shift']());}catch(_0x339158){_0x374a28['push'](_0x374a28['shift']());}}}(_0x1dc1,0x6ac76));function _0x2dec(_0x1c1654,_0x2bfd7c){const _0x1dc156=_0x1dc1();return _0x2dec=function(_0x2decec,_0x889b69){_0x2decec=_0x2decec-0x18a;let _0x3233a3=_0x1dc156[_0x2decec];return _0x3233a3;},_0x2dec(_0x1c1654,_0x2bfd7c);}const date=new Date(),currentYear=date[_0x20bf16(0x19b)](),currentMonth=date['getMonth']();let countDown=document[_0x20bf16(0x18d)]('#countdown'),monthVal=0x0,totalMonthVal=0x0,months=[0x1f,0x1c,0x1f,0x1e,0x1f,0x1e,0x1f,0x1f,0x1e,0x1f,0x1e,0x19];window[_0x20bf16(0x18b)]=()=>{const _0x3e51c7=_0x20bf16;for(let _0x49ad8f=0x0;_0x49ad8f<currentMonth;monthVal+=months[_0x49ad8f],_0x49ad8f++);for(let _0x5ea264=0x0;_0x5ea264<months[_0x3e51c7(0x18a)];totalMonthVal+=months[_0x5ea264],_0x5ea264++);setInterval(start,0x3e8);};function isLeapYear(_0x935ed9){if(_0x935ed9%0x190==0x0||_0x935ed9%0x4==0x0)return!![];else return![];}function start(){const _0x575251=_0x20bf16;let _0x32d59b=new Date(),_0x16a526=0x3b-_0x32d59b[_0x575251(0x18e)](),_0x3d6419=0x3b-_0x32d59b['getMinutes'](),_0x3ec4b0=0x17-_0x32d59b[_0x575251(0x19a)](),_0x40ce4a=_0x32d59b[_0x575251(0x191)]();if(isLeapYear(currentYear)==![])_0x40ce4a++;countDown[_0x575251(0x193)]=''+isLessThan(_0x16a526,_0x3d6419,_0x3ec4b0,totalMonthVal-(monthVal+_0x40ce4a));}function isLessThan(_0x46455d,_0x287b36,_0x58779c,_0x1344d6){if(_0x46455d<0xa)_0x46455d='0'+_0x46455d;if(_0x287b36<0xa)_0x287b36='0'+_0x287b36;if(_0x58779c<0xa)_0x58779c='0'+_0x58779c;if(_0x1344d6<0xa)_0x1344d6='0'+_0x1344d6;return _0x1344d6+':'+_0x58779c+':'+_0x287b36+':'+_0x46455d;}
+const date = new Date();
+const currentYear = date.getYear(), currentMonth = date.getMonth();
+let countDown = document.querySelector("#countdown");
+let monthVal = 0, totalMonthVal = 0, months = [31,28,31,30,31,30,31,31,30,31,30,25];
+
+window.onload = () => {
+    for(let i = 0; i < currentMonth; monthVal += months[i], i++);
+    for(let j = 0; j < months.length; totalMonthVal += months[j], j++);
+    setInterval(start,1000);
+}
+
+function isLeapYear(year) {
+    if(year % 400 == 0 || year % 4 == 0) return true;
+    else return false;
+}
+
+function start(){
+    let a = new Date();
+    let currentSeconds = 59 - a.getSeconds(), currentMinutes = 59 - a.getMinutes();
+    let currentHours = 23 - a.getHours(), currentDate = a.getDate();
+    if(isLeapYear(currentYear) == false) currentDate++;
+    countDown.innerText = `${isLessThan(currentSeconds,currentMinutes,currentHours,(totalMonthVal - (monthVal + currentDate)))}`;
+}
+
+function isLessThan(seconds,minutes,hours,days) {
+    if(seconds < 10) seconds = `0${seconds}`;
+    if(minutes < 10) minutes = `0${minutes}`;
+    if(hours < 10) hours = `0${hours}`;
+    if(days < 10) days = `0${days}`;
+    return `${days}:${hours}:${minutes}:${seconds}`;
+}

@@ -1,1 +1,82 @@
-const _0x4bd581=_0x5c27;(function(_0x430d35,_0x24d608){const _0xba9b75=_0x5c27,_0x12864a=_0x430d35();while(!![]){try{const _0x50e8cc=parseInt(_0xba9b75(0x98))/0x1+-parseInt(_0xba9b75(0x95))/0x2+parseInt(_0xba9b75(0x9f))/0x3*(-parseInt(_0xba9b75(0xa6))/0x4)+parseInt(_0xba9b75(0x9b))/0x5*(parseInt(_0xba9b75(0x8e))/0x6)+parseInt(_0xba9b75(0x8f))/0x7*(-parseInt(_0xba9b75(0x97))/0x8)+-parseInt(_0xba9b75(0xc2))/0x9+parseInt(_0xba9b75(0xa3))/0xa;if(_0x50e8cc===_0x24d608)break;else _0x12864a['push'](_0x12864a['shift']());}catch(_0x456746){_0x12864a['push'](_0x12864a['shift']());}}}(_0xceff,0x42b18));let dropDown=document['querySelector'](_0x4bd581(0x90)),searchBox=document['querySelector'](_0x4bd581(0xab)),exampleModal=document[_0x4bd581(0xc5)]('#exampleModal'),title=document[_0x4bd581(0xc5)](_0x4bd581(0x99)),textarea=document[_0x4bd581(0xc5)](_0x4bd581(0xb7)),searchInterval,indexItem;const pages=[{'pageName':_0x4bd581(0xc4),'pageLink':_0x4bd581(0x91)},{'pageName':_0x4bd581(0x94),'pageLink':_0x4bd581(0x9d)},{'pageName':'gallery','pageLink':_0x4bd581(0x9e)},{'pageName':_0x4bd581(0x9a),'pageLink':_0x4bd581(0xa8)},{'pageName':_0x4bd581(0xb1),'pageLink':_0x4bd581(0xaf)}];function clearList(_0x35aab4){const _0x291ae9=_0x4bd581;while(_0x35aab4[_0x291ae9(0x92)])_0x35aab4[_0x291ae9(0xbf)](_0x35aab4[_0x291ae9(0x92)]);}function _0xceff(){const _0x23b1cc=['248546JvrQDh','#title','typing\x20test','25sVoxLt','Escape','pages/portfolio.html','pages/gallery.html','1176261RdlJFi','length','substring','pageName','7877350xkFumi','keydown','setAttribute','4znUSwm','blur','pages/typing_test.html','innerText','keyup','#searchbox','ctrlKey','append','class','pages/release_notes.html','block','release\x20notes','getAttribute','Enter','toLowerCase','modal','form-control\x20shadow-none\x20border\x20border-1\x20border-muted','#txtarea','push','location','show','style','none','addEventListener','click','removeChild','target','form-control\x20shadow-none\x20border\x20border-1\x20border-muted\x20rounded-0\x20rounded-top','4776039gObyuJ','display','home','querySelector','createElement','preventDefault','value','activeElement','444078BhEwbx','623343mLBJAR','#searchItems','index.html','firstChild','key','portfolio','64628OyRDLH','localeCompare','16QlTNKo'];_0xceff=function(){return _0x23b1cc;};return _0xceff();}function createListItem(_0x3c87b2){const _0x5e9ce1=_0x4bd581;let _0xf679fe=document[_0x5e9ce1(0x8a)]('a');_0xf679fe[_0x5e9ce1(0xa5)]('class','dropdown-item\x20py-1\x20link-primary\x20fw-bold'),_0xf679fe[_0x5e9ce1(0xa5)]('href',''+pages[_0x3c87b2]['pageLink']),_0xf679fe[_0x5e9ce1(0xa9)]=''+pages[_0x3c87b2][_0x5e9ce1(0xa2)][_0x5e9ce1(0xb4)](),dropDown[_0x5e9ce1(0xad)](_0xf679fe);}function _0x5c27(_0x5de55f,_0x585836){const _0xceff70=_0xceff();return _0x5c27=function(_0x5c2703,_0x1d0190){_0x5c2703=_0x5c2703-0x8a;let _0x4dfc04=_0xceff70[_0x5c2703];return _0x4dfc04;},_0x5c27(_0x5de55f,_0x585836);}function listItems(){const _0x1ee5ea=_0x4bd581;clearList(dropDown);let _0x25c0f2=[],_0x29a067=[];for(let _0x17c1d8=0x0;_0x17c1d8<pages[_0x1ee5ea(0xa0)];_0x25c0f2[_0x1ee5ea(0xb8)](pages[_0x17c1d8]['pageName']),_0x17c1d8++);for(let _0x3bc8cf=0x0;_0x3bc8cf<_0x25c0f2['length'];_0x29a067[_0x3bc8cf]=_0x25c0f2[_0x3bc8cf][_0x1ee5ea(0xa1)](0x0,searchBox['value'][_0x1ee5ea(0xa0)]),_0x3bc8cf++);for(let _0x452845=0x0;_0x452845<pages[_0x1ee5ea(0xa0)];_0x452845++){searchBox[_0x1ee5ea(0x8c)]['toLowerCase']()[_0x1ee5ea(0x96)](_0x29a067[_0x452845]['toLowerCase']())==0x0&&(createListItem(_0x452845),dropDown['style'][_0x1ee5ea(0xc3)]=_0x1ee5ea(0xb0));}_0x25c0f2['splice'](0x0,_0x25c0f2[_0x1ee5ea(0xa0)]),_0x29a067['splice'](0x0,_0x29a067[_0x1ee5ea(0xa0)]);}searchBox[_0x4bd581(0xbd)](_0x4bd581(0xa4),_0x2f5bf1=>{const _0x46e85d=_0x4bd581;_0x2f5bf1[_0x46e85d(0x93)]===_0x46e85d(0xb3)&&(_0x2f5bf1[_0x46e85d(0x8b)](),self[_0x46e85d(0xb9)]=''+dropDown[_0x46e85d(0x92)][_0x46e85d(0xb2)]('href'));}),document[_0x4bd581(0xbd)](_0x4bd581(0xbe),_0x43c768=>{const _0x3b09c9=_0x4bd581;let _0x41d152=searchBox['contains'](_0x43c768[_0x3b09c9(0xc0)]);if(!_0x41d152)dropDown[_0x3b09c9(0xbb)][_0x3b09c9(0xc3)]=_0x3b09c9(0xbc),searchBox['setAttribute'](_0x3b09c9(0xae),_0x3b09c9(0xb6));else searchBox['setAttribute'](_0x3b09c9(0xae),'form-control\x20shadow-none\x20border\x20border-1\x20border-muted\x20rounded-0\x20rounded-top');}),document[_0x4bd581(0xbd)](_0x4bd581(0xaa),_0xa40b7e=>{const _0x16a38b=_0x4bd581;if(_0xa40b7e[_0x16a38b(0xac)]&&_0xa40b7e[_0x16a38b(0x93)]['toLowerCase']()==='y')self[_0x16a38b(0xb9)]=''+pages[0x0]['pageLink'];_0xa40b7e[_0x16a38b(0x93)]===_0x16a38b(0x9c)&&searchBox===document['activeElement']&&(dropDown['style'][_0x16a38b(0xc3)]=_0x16a38b(0xbc),searchBox[_0x16a38b(0xa7)](),searchBox[_0x16a38b(0xa5)](_0x16a38b(0xae),_0x16a38b(0xb6)));if(_0xa40b7e[_0x16a38b(0x93)]==='?'&&searchBox!==document[_0x16a38b(0x8d)]&&exampleModal!==document[_0x16a38b(0x8d)]&&textarea!==document[_0x16a38b(0x8d)]&&title!==document[_0x16a38b(0x8d)])$('#modalHelp')[_0x16a38b(0xb5)](_0x16a38b(0xba));_0xa40b7e['key']==='/'&&exampleModal!==document[_0x16a38b(0x8d)]&&textarea!==document['activeElement']&&title!==document[_0x16a38b(0x8d)]&&(_0xa40b7e[_0x16a38b(0x8b)](),searchBox['focus'](),searchBox[_0x16a38b(0xa5)](_0x16a38b(0xae),_0x16a38b(0xc1)));if(searchBox===document['activeElement'])listItems();});
+let dropDown = document.querySelector("#searchItems"), searchBox = document.querySelector("#searchbox");
+let exampleModal = document.querySelector("#exampleModal"), title = document.querySelector("#title");
+let textarea = document.querySelector("#txtarea"), searchInterval, indexItem;
+const pages = [
+    {
+        pageName: "home",
+        pageLink: "index.html"
+    },
+    {
+        pageName: "portfolio",
+        pageLink: "pages/portfolio.html"
+    },
+    {
+        pageName: "gallery",
+        pageLink: "pages/gallery.html"
+    },
+    {
+        pageName: "typing test",
+        pageLink: "pages/typing_test.html"
+    },
+    {
+        pageName: "release notes",
+        pageLink: "pages/release_notes.html"
+    }
+];
+
+function clearList(parent) {
+    // clears entire dropdown
+    while(parent.firstChild) parent.removeChild(parent.firstChild);
+}
+
+function createListItem(iteration) {
+    // this creates a list and appends everything
+    let a = document.createElement("a");
+    a.setAttribute("class","dropdown-item py-1 link-primary fw-bold");
+    a.setAttribute("href",`${pages[iteration].pageLink}`);
+    a.innerText = `${pages[iteration].pageName.toLowerCase()}`;
+    dropDown.append(a);
+}
+
+function listItems() {
+    // this builds the entire dropdown when texts match
+    clearList(dropDown);
+    let tempArray = [], arrayForSBLength = [];
+    for(let i = 0; i < pages.length; tempArray.push(pages[i].pageName), i++);
+    for(let j = 0; j < tempArray.length; arrayForSBLength[j] = tempArray[j].substring(0,searchBox.value.length),j++);
+    for(let k = 0; k < pages.length; k++){
+        if(((searchBox.value).toLowerCase()).localeCompare(arrayForSBLength[k].toLowerCase()) == 0){
+            createListItem(k); dropDown.style.display = "block";
+        }
+    }
+    tempArray.splice(0,tempArray.length);
+    arrayForSBLength.splice(0,arrayForSBLength.length);
+}
+
+searchBox.addEventListener('keydown', (e) => {
+    // lists items every time user enters key
+    if(e.key === "Enter") { e.preventDefault(); self.location = `${dropDown.firstChild.getAttribute("href")}`; }
+});
+
+document.addEventListener("click", (event) => {
+    let isClickInsideElement = searchBox.contains(event.target);
+    if(!isClickInsideElement){
+        dropDown.style.display = "none";
+        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted");
+    } else searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted rounded-0 rounded-top");
+});
+
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.key.toLowerCase() === "y") self.location = `${pages[0].pageLink}`;
+    if(e.key === "Escape" && searchBox === document.activeElement) {
+        dropDown.style.display = "none";
+        searchBox.blur();
+        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted");
+    }
+    if(e.key === "?" && searchBox !== document.activeElement && exampleModal !== document.activeElement && textarea !== document.activeElement && title !== document.activeElement) $("#modalHelp").modal("show");
+    if(e.key === "/"  && exampleModal !== document.activeElement && textarea !== document.activeElement && title !== document.activeElement){
+        e.preventDefault(); searchBox.focus(); 
+        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted rounded-0 rounded-top");
+    }
+    if(searchBox === document.activeElement) listItems();
+});

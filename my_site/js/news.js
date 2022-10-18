@@ -1,1 +1,124 @@
-const _0x3de609=_0x4523;(function(_0xf7613,_0x16676c){const _0x54f716=_0x4523,_0x6e9d84=_0xf7613();while(!![]){try{const _0x3370ef=-parseInt(_0x54f716(0x212))/0x1*(-parseInt(_0x54f716(0x220))/0x2)+parseInt(_0x54f716(0x22a))/0x3+-parseInt(_0x54f716(0x20c))/0x4*(parseInt(_0x54f716(0x1fa))/0x5)+parseInt(_0x54f716(0x1de))/0x6*(parseInt(_0x54f716(0x1dd))/0x7)+-parseInt(_0x54f716(0x21c))/0x8*(-parseInt(_0x54f716(0x22d))/0x9)+-parseInt(_0x54f716(0x1d7))/0xa*(-parseInt(_0x54f716(0x228))/0xb)+-parseInt(_0x54f716(0x211))/0xc*(parseInt(_0x54f716(0x1f9))/0xd);if(_0x3370ef===_0x16676c)break;else _0x6e9d84['push'](_0x6e9d84['shift']());}catch(_0x4b563a){_0x6e9d84['push'](_0x6e9d84['shift']());}}}(_0x26ec,0x290b1));function _0x26ec(){const _0x5a4d96=['description','apiKey','135miOwbU','\x20text-justify\x20lh-lg','newsImg','key','265680hDIaqr','newsCountry','container\x20d-flex\x20flex-row\x20justify-content-center\x20mt-2','length','No\x20Description','d-flex\x20flex-row\x20justify-content-center','21yNqClr','149970UnVNQZ','https://newsdata.io/api/1/news?apikey=','.loader','addEventListener','removeAllChildNodes','firstChild','country','newsPublished','img','search','_blank','pub_70389bf171921c24be39e3edb3a22947157f','class','newsSource','querySelector','&q=','addNewsSection','95%','.newsCreator','setAttribute','.newsDesc','none','then','published','block','.clearSearchButton','fetchNewsData','5401292SaiwQk','193005ltWUeS','\x20rounded-custom\x20shadow\x20py-3\x20mb-4','createElement','results','push','display','Enter','style','altKey','displayNewsData','newsTitle','removeChild','div','creator','activeElement','\x20description\x20fs-8','height','Escape','16BRRLuq','src','Author:\x20','value','append','12GETmpX','66241iwFSVB','focus','.newsImg','.newsSource','title','News\x20Origin:\x20','innerText','width','target','d-flex\x20flex-row\x20justify-content-center\x20text-center','177704zxxJVv','.search','keyup','\x20fs-8','6WKGCWx','link','forEach','.newsField','\x20rounded-custom\x20shadow\x20my-3','image_url','span','90%','33puOEKA','Date\x20Published:\x20','154182dkQoNn'];_0x26ec=function(){return _0x5a4d96;};return _0x26ec();}let query=()=>news['search'](),clearSearch=()=>{const _0x42e20c=_0x4523;search[_0x42e20c(0x20f)]='',search['focus'](),csb[_0x42e20c(0x201)]['display']=_0x42e20c(0x1f3);},csb=document[_0x3de609(0x1ec)](_0x3de609(0x1f7)),search=document[_0x3de609(0x1ec)](_0x3de609(0x21d)),loader=document[_0x3de609(0x1ec)](_0x3de609(0x1e0)),news={'apiKey':_0x3de609(0x1e9),'noDesc':_0x3de609(0x1db),'fetchNewsData':function(_0x387bba){const _0x211982=_0x3de609;fetch(_0x211982(0x1df)+this[_0x211982(0x22c)]+_0x211982(0x1ed)+_0x387bba+'&language=en')[_0x211982(0x1f4)](_0x17700a=>_0x17700a['json']())[_0x211982(0x1f4)](_0x57ab34=>this[_0x211982(0x203)](_0x57ab34));},'displayNewsData':function(_0x237dd6){const _0xcf1e47=_0x3de609;for(let _0x32c64a=0x0;_0x32c64a<_0x237dd6['results'][_0xcf1e47(0x1da)];this[_0xcf1e47(0x1ee)](_0x32c64a),_0x32c64a++);let _0x5116a8=[];for(let _0xb7ed8a=0x0;_0xb7ed8a<_0x237dd6['results'][_0xcf1e47(0x1da)];_0xb7ed8a++){_0x5116a8[_0xcf1e47(0x1fe)]({'title':''+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a][_0xcf1e47(0x216)],'img':''+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a][_0xcf1e47(0x225)],'creator':_0xcf1e47(0x20e)+_0x237dd6['results'][_0xb7ed8a]['creator'],'published':_0xcf1e47(0x229)+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a]['pubDate'],'country':_0xcf1e47(0x217)+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a][_0xcf1e47(0x1e4)][0x0],'desc':''+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a]['description'],'link':''+_0x237dd6[_0xcf1e47(0x1fd)][_0xb7ed8a]['link']});}loader[_0xcf1e47(0x201)][_0xcf1e47(0x1ff)]=_0xcf1e47(0x1f3),_0x5116a8[_0xcf1e47(0x222)]((_0x46f972,_0x2156eb,_0xd47ee5)=>{const _0x284b3f=_0xcf1e47;document[_0x284b3f(0x1ec)]('.newsTitle'+_0x2156eb)['innerText']=_0x46f972[_0x284b3f(0x216)];if(_0x237dd6['results'][_0x2156eb][_0x284b3f(0x225)]==null)document[_0x284b3f(0x1ec)](_0x284b3f(0x214)+_0x2156eb)[_0x284b3f(0x201)][_0x284b3f(0x1ff)]=_0x284b3f(0x1f3);else document[_0x284b3f(0x1ec)](_0x284b3f(0x214)+_0x2156eb)['style'][_0x284b3f(0x1ff)]=_0x284b3f(0x1f6),document[_0x284b3f(0x1ec)](_0x284b3f(0x214)+_0x2156eb)[_0x284b3f(0x20d)]=_0x46f972[_0x284b3f(0x1e6)];if(_0x237dd6['results'][_0x2156eb][_0x284b3f(0x207)]==null)document[_0x284b3f(0x1ec)](_0x284b3f(0x1f0)+_0x2156eb)['innerText']='Author:\x20--';else document[_0x284b3f(0x1ec)](_0x284b3f(0x1f0)+_0x2156eb)['innerText']=_0x46f972['creator'];document[_0x284b3f(0x1ec)]('.newsPublished'+_0x2156eb)[_0x284b3f(0x218)]=_0x46f972[_0x284b3f(0x1f5)],document[_0x284b3f(0x1ec)]('.newsCountry'+_0x2156eb)[_0x284b3f(0x218)]=_0x46f972[_0x284b3f(0x1e4)];if(_0x237dd6[_0x284b3f(0x1fd)][_0x2156eb][_0x284b3f(0x22b)]==null)document['querySelector'](_0x284b3f(0x1f2)+_0x2156eb)[_0x284b3f(0x218)]=this['noDesc'];else document['querySelector'](_0x284b3f(0x1f2)+_0x2156eb)[_0x284b3f(0x218)]=_0x46f972['desc'];document[_0x284b3f(0x1ec)](_0x284b3f(0x215)+_0x2156eb)['innerText']='News\x20Source',document[_0x284b3f(0x1ec)](_0x284b3f(0x215)+_0x2156eb)['href']=_0x46f972[_0x284b3f(0x221)];});},'search':function(){const _0x367b8f=_0x3de609;this['fetchNewsData'](search['value']),this[_0x367b8f(0x1e2)](document['querySelector'](_0x367b8f(0x223))),loader[_0x367b8f(0x201)][_0x367b8f(0x1ff)]=_0x367b8f(0x1f6);},'removeAllChildNodes':_0x4f10e9=>{const _0x385be5=_0x3de609;while(_0x4f10e9[_0x385be5(0x1e3)])_0x4f10e9[_0x385be5(0x205)](_0x4f10e9[_0x385be5(0x1e3)]);},'addNewsSection':_0xe48c7f=>{const _0x282721=_0x3de609;let _0x214566=document[_0x282721(0x1ec)](_0x282721(0x223)),_0x24db4b=document[_0x282721(0x1fc)](_0x282721(0x206)),_0xda761c=document['createElement'](_0x282721(0x206)),_0x29b19d=document[_0x282721(0x1fc)](_0x282721(0x206)),_0x3697bf=document[_0x282721(0x1fc)]('div'),_0x57c8a6=document['createElement'](_0x282721(0x206)),_0x432b92=document[_0x282721(0x1fc)](_0x282721(0x206)),_0x97fb14=document[_0x282721(0x1fc)]('div'),_0x2f6c46=document[_0x282721(0x1fc)](_0x282721(0x206)),_0x233627=document[_0x282721(0x1fc)](_0x282721(0x226)),_0x23bd37=document[_0x282721(0x1fc)](_0x282721(0x1e6)),_0x185627=document[_0x282721(0x1fc)]('span'),_0x3742e2=document['createElement'](_0x282721(0x226)),_0x2d8da5=document[_0x282721(0x1fc)](_0x282721(0x226)),_0x500c49=document[_0x282721(0x1fc)]('p'),_0x3f072b=document[_0x282721(0x1fc)]('a');_0x24db4b[_0x282721(0x1f1)](_0x282721(0x1ea),'news'+_0xe48c7f+_0x282721(0x1fb)),_0xda761c[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x21b)),_0x29b19d[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x1dc)),_0x3697bf[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x21b)),_0x57c8a6[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x21b)),_0x432b92[_0x282721(0x1f1)]('class',_0x282721(0x21b)),_0x97fb14[_0x282721(0x1f1)]('class',_0x282721(0x1d9)),_0x97fb14['style'][_0x282721(0x219)]=_0x282721(0x227),_0x2f6c46[_0x282721(0x1f1)]('class','d-flex\x20flex-row\x20justify-content-center\x20mx-2\x20mt-2'),_0x233627['setAttribute']('class',_0x282721(0x204)+_0xe48c7f+'\x20fw-bold'),_0x23bd37[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x22f)+_0xe48c7f+_0x282721(0x224)),_0x23bd37['style'][_0x282721(0x219)]=_0x282721(0x227),_0x23bd37[_0x282721(0x201)][_0x282721(0x20a)]=_0x282721(0x1ef),_0x185627[_0x282721(0x1f1)](_0x282721(0x1ea),'newsCreator'+_0xe48c7f+_0x282721(0x21f)),_0x3742e2[_0x282721(0x1f1)]('class',_0x282721(0x1e5)+_0xe48c7f+_0x282721(0x21f)),_0x2d8da5[_0x282721(0x1f1)]('class',_0x282721(0x1d8)+_0xe48c7f+_0x282721(0x209)),_0x500c49[_0x282721(0x1f1)](_0x282721(0x1ea),'newsDesc'+_0xe48c7f+_0x282721(0x22e)),_0x3f072b[_0x282721(0x1f1)](_0x282721(0x1ea),_0x282721(0x1eb)+_0xe48c7f),_0x3f072b[_0x282721(0x1f1)]('href',''),_0x3f072b['setAttribute'](_0x282721(0x21a),_0x282721(0x1e8)),_0xda761c[_0x282721(0x210)](_0x233627),_0x29b19d[_0x282721(0x210)](_0x23bd37),_0x3697bf[_0x282721(0x210)](_0x185627),_0x57c8a6[_0x282721(0x210)](_0x3742e2),_0x432b92['append'](_0x2d8da5),_0x97fb14['append'](_0x500c49),_0x2f6c46[_0x282721(0x210)](_0x3f072b),_0x24db4b[_0x282721(0x210)](_0xda761c),_0x24db4b[_0x282721(0x210)](_0x29b19d),_0x24db4b[_0x282721(0x210)](_0x3697bf),_0x24db4b['append'](_0x57c8a6),_0x24db4b[_0x282721(0x210)](_0x432b92),_0x24db4b['append'](_0x97fb14),_0x24db4b[_0x282721(0x210)](_0x2f6c46),_0x214566[_0x282721(0x210)](_0x24db4b);}};function _0x4523(_0x158836,_0x23c8b7){const _0x26ec58=_0x26ec();return _0x4523=function(_0x4523d8,_0x2cdc78){_0x4523d8=_0x4523d8-0x1d6;let _0x2a8d65=_0x26ec58[_0x4523d8];return _0x2a8d65;},_0x4523(_0x158836,_0x23c8b7);}search[_0x3de609(0x1e1)](_0x3de609(0x21e),_0x30f741=>{const _0x2b6546=_0x3de609;let _0x3d4ada=_0x30f741[_0x2b6546(0x1d6)]===_0x2b6546(0x200)?news[_0x2b6546(0x1e7)]():'';}),document['addEventListener'](_0x3de609(0x21e),_0x3457fb=>{const _0xd1dd44=_0x3de609;if(_0x3457fb['ctrlKey']&&_0x3457fb[_0xd1dd44(0x202)]&&_0x3457fb['key']=='/')search[_0xd1dd44(0x213)]();if(search['value'][_0xd1dd44(0x1da)]>0x0)csb[_0xd1dd44(0x201)][_0xd1dd44(0x1ff)]='block';if(search[_0xd1dd44(0x20f)][_0xd1dd44(0x1da)]==0x0)csb['style'][_0xd1dd44(0x1ff)]=_0xd1dd44(0x1f3);if(_0x3457fb['key']===_0xd1dd44(0x20b)&&document[_0xd1dd44(0x208)])search['blur']();}),news[_0x3de609(0x1f8)]('Philippines'),csb[_0x3de609(0x201)]['display']=_0x3de609(0x1f3);
+let query = () => news.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
+let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
+let loader = document.querySelector(".loader");
+
+let news = {
+    "apiKey" : "pub_70389bf171921c24be39e3edb3a22947157f",
+    "noDesc" : "No Description",
+    fetchNewsData: function(keyword){
+        fetch(
+            `https://newsdata.io/api/1/news?apikey=${this.apiKey}&q=${keyword}&language=en`
+        ).then((response) => response.json()).then((data) => this.displayNewsData(data));
+    },
+    displayNewsData: function(data){
+        console.log(data);
+        for(let i = 0; i < data.results.length; this.addNewsSection(i), i++);
+
+        let dataNodes = [];
+
+        for(let i = 0; i < data.results.length; i++){
+            dataNodes.push({
+                title: `${data.results[i].title}`,
+                img: `${data.results[i].image_url}`,
+                creator: `Author: ${data.results[i].creator}`,
+                published: `Date Published: ${data.results[i].pubDate}`,
+                country: `News Origin: ${data.results[i].country[0]}`,
+                desc: `${data.results[i].description}`,
+                link: `${data.results[i].link}`
+            });
+        }
+        
+        loader.style.display = "none";
+
+        dataNodes.forEach((element,index,array) => {
+            document.querySelector(`.newsTitle${index}`).innerText = element.title;
+            if(data.results[index].image_url == null) document.querySelector(`.newsImg${index}`).style.display = "none";
+            else {
+                document.querySelector(`.newsImg${index}`).style.display = "block";
+                document.querySelector(`.newsImg${index}`).src = element.img;
+            }
+
+            if(data.results[index].creator == null) document.querySelector(`.newsCreator${index}`).innerText = "Author: --";
+            else document.querySelector(`.newsCreator${index}`).innerText = element.creator;
+
+            document.querySelector(`.newsPublished${index}`).innerText = element.published;
+            document.querySelector(`.newsCountry${index}`).innerText = element.country;
+            if(data.results[index].description == null) document.querySelector(`.newsDesc${index}`).innerText = this.noDesc;
+            else document.querySelector(`.newsDesc${index}`).innerText = element.desc;
+
+            document.querySelector(`.newsSource${index}`).innerText = "News Source";
+            document.querySelector(`.newsSource${index}`).href = element.link;
+        });
+    },
+    search: function() {
+        this.fetchNewsData(search.value);
+        this.removeAllChildNodes(document.querySelector(".newsField"));
+        loader.style.display = "block";
+    },
+    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    addNewsSection: (index) => {
+        let newsField = document.querySelector(".newsField");
+
+        let outerDiv = document.createElement("div");
+        let innerDiv1 = document.createElement("div");
+        let innerDiv2 = document.createElement("div");
+        let innerDiv3 = document.createElement("div");
+        let innerDiv4 = document.createElement("div");
+        let innerDiv5 = document.createElement("div");
+        let innerDiv6 = document.createElement("div");
+        let innerDiv7 = document.createElement("div");
+        let innerDiv1Span = document.createElement("span");
+        let innerDiv2Img = document.createElement("img");
+        let innerDiv3Span = document.createElement("span");
+        let innerDiv4Span = document.createElement("span");
+        let innerDiv5Span = document.createElement("span");
+        let innerDiv6Paragraph = document.createElement("p");
+        let innerDiv7Link = document.createElement("a");
+
+        outerDiv.setAttribute('class',`news${index} rounded-custom shadow py-3 mb-4`);
+        innerDiv1.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        innerDiv2.setAttribute('class','d-flex flex-row justify-content-center');
+        innerDiv3.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        innerDiv4.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        innerDiv5.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        innerDiv6.setAttribute('class','container d-flex flex-row justify-content-center mt-2'); innerDiv6.style.width = "90%";
+        innerDiv7.setAttribute('class','d-flex flex-row justify-content-center mx-2 mt-2');
+        innerDiv1Span.setAttribute('class',`newsTitle${index} fw-bold`);
+        innerDiv2Img.setAttribute('class',`newsImg${index} rounded-custom shadow my-3`);
+        innerDiv2Img.style.width = "90%"; innerDiv2Img.style.height = "95%";
+        innerDiv3Span.setAttribute('class',`newsCreator${index} fs-8`);
+        innerDiv4Span.setAttribute('class',`newsPublished${index} fs-8`);
+        innerDiv5Span.setAttribute('class',`newsCountry${index} description fs-8`);
+        innerDiv6Paragraph.setAttribute('class',`newsDesc${index} text-justify lh-lg`);
+        innerDiv7Link.setAttribute('class',`newsSource${index}`);
+        innerDiv7Link.setAttribute('href',''); innerDiv7Link.setAttribute('target','_blank');
+
+        innerDiv1.append(innerDiv1Span);
+        innerDiv2.append(innerDiv2Img);
+        innerDiv3.append(innerDiv3Span);
+        innerDiv4.append(innerDiv4Span);
+        innerDiv5.append(innerDiv5Span);
+        innerDiv6.append(innerDiv6Paragraph);
+        innerDiv7.append(innerDiv7Link);
+        outerDiv.append(innerDiv1);
+        outerDiv.append(innerDiv2);
+        outerDiv.append(innerDiv3);
+        outerDiv.append(innerDiv4);
+        outerDiv.append(innerDiv5);
+        outerDiv.append(innerDiv6);
+        outerDiv.append(innerDiv7);
+
+        newsField.append(outerDiv);
+    }
+}
+
+search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? news.search() : ""; });
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
+    if(search.value.length > 0) csb.style.display = "block";
+    if(search.value.length == 0) csb.style.display = "none";
+    if(e.key === "Escape" && document.activeElement) search.blur();
+});
+
+news.fetchNewsData("Philippines");
+csb.style.display = "none";

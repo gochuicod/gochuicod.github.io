@@ -1,1 +1,40 @@
-const _0x40cdfe=_0x4374;(function(_0x2b35d4,_0x16c535){const _0x9580f7=_0x4374,_0x2988b8=_0x2b35d4();while(!![]){try{const _0x121258=-parseInt(_0x9580f7(0xc0))/0x1+-parseInt(_0x9580f7(0xc2))/0x2*(parseInt(_0x9580f7(0xd1))/0x3)+-parseInt(_0x9580f7(0xc5))/0x4*(parseInt(_0x9580f7(0xcd))/0x5)+parseInt(_0x9580f7(0xd4))/0x6*(parseInt(_0x9580f7(0xd0))/0x7)+parseInt(_0x9580f7(0xca))/0x8+parseInt(_0x9580f7(0xce))/0x9+-parseInt(_0x9580f7(0xc1))/0xa*(parseInt(_0x9580f7(0xbf))/0xb);if(_0x121258===_0x16c535)break;else _0x2988b8['push'](_0x2988b8['shift']());}catch(_0x37abd4){_0x2988b8['push'](_0x2988b8['shift']());}}}(_0xe73c,0x3e0bd));let txtArea=[],temp=[],output=document[_0x40cdfe(0xcc)](_0x40cdfe(0xc9));output[_0x40cdfe(0xd2)]=!![];function one(){const _0x3c2cbf=_0x40cdfe;txtArea[_0x3c2cbf(0xc7)]('1'),updateTextArea();}function two(){const _0x2804fc=_0x40cdfe;txtArea[_0x2804fc(0xc7)]('2'),updateTextArea();}function three(){const _0x335585=_0x40cdfe;txtArea[_0x335585(0xc7)]('3'),updateTextArea();}function divide(){txtArea['push']('/'),updateTextArea();}function four(){txtArea['push']('4'),updateTextArea();}function _0xe73c(){const _0x2fc47c=['116eiopdT','length','push','value','#txtArea','3725360MBKgWj','join','querySelector','17070VIzpBt','699444ayoHjz','addEventListener','560rzdcQW','3807jDuHwx','disabled','Backspace','31128dwTWKu','Enter','key','88RWeQQl','470095YZsHjg','4010PnRMFS','208ixjxPN','return\x20','splice'];_0xe73c=function(){return _0x2fc47c;};return _0xe73c();}function five(){const _0x26b2c4=_0x40cdfe;txtArea[_0x26b2c4(0xc7)]('5'),updateTextArea();}function six(){const _0x18b738=_0x40cdfe;txtArea[_0x18b738(0xc7)]('6'),updateTextArea();}function plus(){const _0x522bee=_0x40cdfe;txtArea[_0x522bee(0xc7)]('+'),updateTextArea();}function seven(){const _0x40745e=_0x40cdfe;txtArea[_0x40745e(0xc7)]('7'),updateTextArea();}function eight(){const _0x59db33=_0x40cdfe;txtArea[_0x59db33(0xc7)]('8'),updateTextArea();}function nine(){txtArea['push']('9'),updateTextArea();}function minus(){txtArea['push']('-'),updateTextArea();}function back(){txtArea['pop'](),updateTextArea();}function clearArea(){const _0x549ee8=_0x40cdfe;txtArea[_0x549ee8(0xc4)](0x0,txtArea[_0x549ee8(0xc6)]),updateTextArea();}function zero(){txtArea['push']('0'),updateTextArea();}function times(){const _0x3e67c1=_0x40cdfe;txtArea[_0x3e67c1(0xc7)]('*'),updateTextArea();}function power(){const _0x27d7ac=_0x40cdfe;txtArea[_0x27d7ac(0xc7)]('**'),updateTextArea();}function equals(){const _0x386adf=_0x40cdfe;output[_0x386adf(0xc8)]=''+evaluate(txtArea[_0x386adf(0xcb)](''));}function _0x4374(_0x1564ca,_0x1c4455){const _0xe73c9b=_0xe73c();return _0x4374=function(_0x4374ed,_0x69eec6){_0x4374ed=_0x4374ed-0xbe;let _0x3ae064=_0xe73c9b[_0x4374ed];return _0x3ae064;},_0x4374(_0x1564ca,_0x1c4455);}function updateTextArea(){const _0x15f6c8=_0x40cdfe;output[_0x15f6c8(0xc8)]=''+txtArea[_0x15f6c8(0xcb)]('');}function evaluate(_0x4d40b3){const _0x5db05a=_0x40cdfe;return new Function(_0x5db05a(0xc3)+_0x4d40b3)();}document[_0x40cdfe(0xcf)]('keydown',_0x1649b7=>{const _0x1dc9ec=_0x40cdfe;if(_0x1649b7[_0x1dc9ec(0xbe)]===_0x1dc9ec(0xd3))back();if(_0x1649b7[_0x1dc9ec(0xbe)]===_0x1dc9ec(0xd5))equals();if(_0x1649b7[_0x1dc9ec(0xbe)]==='c')clearArea();if(_0x1649b7[_0x1dc9ec(0xbe)]==='/')divide();if(_0x1649b7[_0x1dc9ec(0xbe)]==='+')plus();if(_0x1649b7[_0x1dc9ec(0xbe)]==='-')minus();if(_0x1649b7[_0x1dc9ec(0xbe)]==='*'||_0x1649b7[_0x1dc9ec(0xbe)]==='x')times();if(_0x1649b7['key']==='^')power();if(_0x1649b7[_0x1dc9ec(0xbe)]==='1')one();if(_0x1649b7[_0x1dc9ec(0xbe)]==='0')zero();if(_0x1649b7[_0x1dc9ec(0xbe)]==='2')two();if(_0x1649b7['key']==='3')three();if(_0x1649b7[_0x1dc9ec(0xbe)]==='4')four();if(_0x1649b7[_0x1dc9ec(0xbe)]==='5')five();if(_0x1649b7[_0x1dc9ec(0xbe)]==='6')six();if(_0x1649b7['key']==='7')seven();if(_0x1649b7[_0x1dc9ec(0xbe)]==='8')eight();if(_0x1649b7[_0x1dc9ec(0xbe)]==='9')nine();});
+let txtArea = [], temp = [], output = document.querySelector("#txtArea");
+output.disabled = true;
+
+function one() { txtArea.push("1"); updateTextArea(); }
+function two() { txtArea.push("2"); updateTextArea(); }
+function three() { txtArea.push("3"); updateTextArea(); }
+function divide() { txtArea.push("/"); updateTextArea(); }
+
+function four() { txtArea.push("4"); updateTextArea(); }
+function five() { txtArea.push("5"); updateTextArea(); }
+function six() { txtArea.push("6"); updateTextArea(); }
+function plus() { txtArea.push("+"); updateTextArea(); }
+
+function seven() { txtArea.push("7"); updateTextArea(); }
+function eight() { txtArea.push("8"); updateTextArea(); }
+function nine() { txtArea.push("9"); updateTextArea(); }
+function minus() { txtArea.push("-"); updateTextArea(); }
+
+function back() { txtArea.pop(); updateTextArea(); }
+
+function clearArea() { txtArea.splice(0,txtArea.length); updateTextArea(); }
+function zero() { txtArea.push("0"); updateTextArea(); }
+function times() { txtArea.push("*"); updateTextArea(); }
+function power() { txtArea.push("**"); updateTextArea(); }
+
+function equals() { output.value = `${evaluate(txtArea.join(""))}`; }
+function updateTextArea() { output.value = `${txtArea.join("")}`; }
+function evaluate(fn) { return new Function('return ' + fn)(); }
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Backspace") back(); if(e.key === "Enter") equals();
+    if(e.key === "c") clearArea(); if(e.key === "/") divide();
+    if(e.key === "+") plus(); if(e.key === "-") minus();
+    if(e.key === "*" || e.key === "x") times(); if(e.key === "^") power();
+    if(e.key === "1") one(); if(e.key === "0") zero();
+    if(e.key === "2") two(); if(e.key === "3") three();
+    if(e.key === "4") four(); if(e.key === "5") five();
+    if(e.key === "6") six(); if(e.key === "7") seven();
+    if(e.key === "8") eight(); if(e.key === "9") nine();
+});

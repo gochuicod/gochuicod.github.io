@@ -1,1 +1,91 @@
-const _0x36cd1a=_0x266e;function _0x266e(_0x157fbf,_0x3c3322){const _0xb9f9a4=_0xb9f9();return _0x266e=function(_0x266e1b,_0x90ed91){_0x266e1b=_0x266e1b-0x131;let _0x40d4ad=_0xb9f9a4[_0x266e1b];return _0x40d4ad;},_0x266e(_0x157fbf,_0x3c3322);}(function(_0x1c4196,_0x5c1e7e){const _0x1385a5=_0x266e,_0x506a23=_0x1c4196();while(!![]){try{const _0x5886de=parseInt(_0x1385a5(0x13b))/0x1+-parseInt(_0x1385a5(0x162))/0x2+parseInt(_0x1385a5(0x13f))/0x3+parseInt(_0x1385a5(0x145))/0x4+-parseInt(_0x1385a5(0x13e))/0x5*(parseInt(_0x1385a5(0x164))/0x6)+parseInt(_0x1385a5(0x157))/0x7+-parseInt(_0x1385a5(0x15a))/0x8;if(_0x5886de===_0x5c1e7e)break;else _0x506a23['push'](_0x506a23['shift']());}catch(_0x53c706){_0x506a23['push'](_0x506a23['shift']());}}}(_0xb9f9,0x2fcfa));let query=()=>news[_0x36cd1a(0x159)](),clearSearch=()=>{const _0x3661cf=_0x36cd1a;search['value']='',search[_0x3661cf(0x14f)](),csb[_0x3661cf(0x15e)][_0x3661cf(0x139)]=_0x3661cf(0x140);},csb=document[_0x36cd1a(0x137)](_0x36cd1a(0x131)),search=document[_0x36cd1a(0x137)](_0x36cd1a(0x132)),loader=document[_0x36cd1a(0x137)]('.loader'),dictionary={'fetchDictionaryData':function(_0x17c7c1){const _0x465e8f=_0x36cd1a;fetch(_0x465e8f(0x147)+_0x17c7c1)['then'](_0x109a1f=>_0x109a1f[_0x465e8f(0x14a)]())['then'](_0x7936c=>this['displayDictionaryData'](_0x7936c));},'displayDictionaryData':function(_0x576cca){const _0x46b907=_0x36cd1a;let _0x34e7dd=document[_0x46b907(0x137)](_0x46b907(0x14e)),_0x2afc89=document[_0x46b907(0x137)](_0x46b907(0x154)),_0x3f6e80=document[_0x46b907(0x137)](_0x46b907(0x138)),_0x1bdfd3=document[_0x46b907(0x137)](_0x46b907(0x142)),_0x36c65b=document['querySelector'](_0x46b907(0x14d)),_0x5b841d=document[_0x46b907(0x137)](_0x46b907(0x155)),_0x3ca7d3=document[_0x46b907(0x137)](_0x46b907(0x156)),_0x3b95d4=document[_0x46b907(0x137)]('.dictionaryPOSVerbExample'),_0x2ae30a=document['querySelector'](_0x46b907(0x158)),_0xee2a54=document[_0x46b907(0x137)](_0x46b907(0x146)),_0x20802e=document[_0x46b907(0x137)](_0x46b907(0x135)),_0x17301a=document['querySelector'](_0x46b907(0x15c)),_0x5d29c3=document['querySelector']('.dictionaryWarning');if(_0x576cca[_0x46b907(0x134)])_0x5d29c3[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x5d29c3[_0x46b907(0x144)]=_0x576cca[_0x46b907(0x134)],_0x34e7dd[_0x46b907(0x15e)]['display']=_0x46b907(0x140),_0x2afc89[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x3f6e80['style'][_0x46b907(0x139)]='none',_0x1bdfd3[_0x46b907(0x15e)]['display']=_0x46b907(0x140),_0x5b841d[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x3ca7d3[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x3b95d4[_0x46b907(0x15e)][_0x46b907(0x139)]='none',_0x2ae30a[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0xee2a54[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x20802e['style'][_0x46b907(0x139)]=_0x46b907(0x140),_0x17301a[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140);else{_0x5d29c3['style']['display']=_0x46b907(0x140),_0x3f6e80['style'][_0x46b907(0x139)]=_0x46b907(0x150),_0x1bdfd3['style'][_0x46b907(0x139)]=_0x46b907(0x150),_0x5b841d[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x3ca7d3['style']['display']=_0x46b907(0x150),_0x2ae30a[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0xee2a54[_0x46b907(0x15e)]['display']=_0x46b907(0x150),_0x17301a[_0x46b907(0x15e)]['display']=_0x46b907(0x150),_0x34e7dd[_0x46b907(0x144)]=_0x576cca[0x0][_0x46b907(0x141)],_0x34e7dd[_0x46b907(0x15e)][_0x46b907(0x139)]='block';if(_0x576cca[0x0][_0x46b907(0x14b)]==undefined)document[_0x46b907(0x137)](_0x46b907(0x154))[_0x46b907(0x15e)]['display']=_0x46b907(0x140);else _0x2afc89[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x2afc89[_0x46b907(0x144)]='(\x20'+_0x576cca[0x0][_0x46b907(0x14b)]+'\x20)';_0x3f6e80[_0x46b907(0x144)]=''+_0x576cca[0x0][_0x46b907(0x133)][0x0][_0x46b907(0x136)],_0x1bdfd3[_0x46b907(0x144)]='-\x20'+_0x576cca[0x0][_0x46b907(0x133)][0x0][_0x46b907(0x15b)][0x0][_0x46b907(0x148)];if(_0x576cca[0x0]['meanings'][0x0][_0x46b907(0x15b)][0x0][_0x46b907(0x163)]==undefined)_0x36c65b[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140);else _0x36c65b[_0x46b907(0x15e)]['display']=_0x46b907(0x150),_0x36c65b['innerText']='\x22'+_0x576cca[0x0][_0x46b907(0x133)][0x0]['definitions'][0x0][_0x46b907(0x163)]+'\x22';if(_0x576cca[0x0][_0x46b907(0x133)][_0x46b907(0x14c)]>0x1){_0x5b841d[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x3ca7d3['style']['display']='block',_0x5b841d[_0x46b907(0x144)]=''+_0x576cca[0x0]['meanings'][0x1]['partOfSpeech'],_0x3ca7d3[_0x46b907(0x144)]='-\x20'+_0x576cca[0x0][_0x46b907(0x133)][0x1][_0x46b907(0x15b)][0x0][_0x46b907(0x148)];if(_0x576cca[0x0][_0x46b907(0x133)][0x1][_0x46b907(0x15b)][0x0][_0x46b907(0x163)]==undefined)_0x3b95d4[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140);else _0x3b95d4[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x3b95d4[_0x46b907(0x144)]='\x22'+_0x576cca[0x0][_0x46b907(0x133)][0x1][_0x46b907(0x15b)][0x0]['example']+'\x22';}else _0x5b841d[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x3ca7d3[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),_0x3b95d4['style'][_0x46b907(0x139)]=_0x46b907(0x140);if(_0x576cca[0x0][_0x46b907(0x133)][_0x46b907(0x14c)]>0x2){_0x2ae30a['style']['display']=_0x46b907(0x150),_0xee2a54[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x2ae30a[_0x46b907(0x144)]=''+_0x576cca[0x0][_0x46b907(0x133)][0x2][_0x46b907(0x136)],_0xee2a54[_0x46b907(0x144)]='-\x20'+_0x576cca[0x0][_0x46b907(0x133)][0x2][_0x46b907(0x15b)][0x0][_0x46b907(0x148)];if(_0x576cca[0x0][_0x46b907(0x133)][0x2]['definitions'][0x0][_0x46b907(0x163)]==undefined)document[_0x46b907(0x137)]('.dictionaryPOSAdjExample')[_0x46b907(0x15e)]['display']='none';else _0x20802e[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150),_0x20802e['innerText']='\x22'+_0x576cca[0x0][_0x46b907(0x133)][0x2][_0x46b907(0x15b)][0x0][_0x46b907(0x163)]+'\x22';}else _0x2ae30a['style'][_0x46b907(0x139)]=_0x46b907(0x140),_0xee2a54[_0x46b907(0x15e)][_0x46b907(0x139)]='none',_0x20802e[_0x46b907(0x15e)]['display']=_0x46b907(0x140);_0x17301a[_0x46b907(0x144)]='Source',_0x17301a[_0x46b907(0x152)]=''+_0x576cca[0x0][_0x46b907(0x13a)][0x0];}loader[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x140),document['querySelector']('.dictionaryField')[_0x46b907(0x15e)][_0x46b907(0x139)]=_0x46b907(0x150);},'search':function(){const _0x3ebacc=_0x36cd1a;this['fetchDictionaryData'](search[_0x3ebacc(0x160)]),document['querySelector'](_0x3ebacc(0x151))[_0x3ebacc(0x15e)][_0x3ebacc(0x139)]=_0x3ebacc(0x140),loader[_0x3ebacc(0x15e)][_0x3ebacc(0x139)]='block';},'removeAllChildNodes':_0x491809=>{const _0x33fe79=_0x36cd1a;while(_0x491809[_0x33fe79(0x165)])_0x491809['removeChild'](_0x491809[_0x33fe79(0x165)]);}};function _0xb9f9(){const _0x4f8cf1=['style','fetchDictionaryData','value','dictionary','170946IJHYfR','example','60ICRyGF','firstChild','.clearSearchButton','.search','meanings','title','.dictionaryPOSAdjExample','partOfSpeech','querySelector','.dictionaryPOSNoun','display','sourceUrls','213304SkPBcK','Escape','altKey','33970pkdMYh','1140087iptIbw','none','word','.dictionaryPOSNounMeaning','key','innerText','195740UJlvdL','.dictionaryPOSAdjMeaning','https://api.dictionaryapi.dev/api/v2/entries/en/','definition','Enter','json','phonetic','length','.dictionaryPOSNounExample','.dictionaryWord','focus','block','.dictionaryField','href','keyup','.dictionaryWordPhonetic','.dictionaryPOSVerb','.dictionaryPOSVerbMeaning','765149CvqYLo','.dictionaryPOSAdj','search','3218624IwWklp','definitions','.dictionarySource','activeElement'];_0xb9f9=function(){return _0x4f8cf1;};return _0xb9f9();}search['addEventListener'](_0x36cd1a(0x153),_0x4a010b=>{const _0x410055=_0x36cd1a;let _0x4b90f5=_0x4a010b[_0x410055(0x143)]===_0x410055(0x149)?dictionary['search']():'';}),document['addEventListener']('keyup',_0x4e25d9=>{const _0x1a5852=_0x36cd1a;if(_0x4e25d9['ctrlKey']&&_0x4e25d9[_0x1a5852(0x13d)]&&_0x4e25d9[_0x1a5852(0x143)]=='/')search[_0x1a5852(0x14f)]();if(search[_0x1a5852(0x160)][_0x1a5852(0x14c)]>0x0)csb['style'][_0x1a5852(0x139)]=_0x1a5852(0x150);if(search['value'][_0x1a5852(0x14c)]==0x0)csb[_0x1a5852(0x15e)][_0x1a5852(0x139)]=_0x1a5852(0x140);if(_0x4e25d9[_0x1a5852(0x143)]===_0x1a5852(0x13c)&&document[_0x1a5852(0x15d)])search['blur']();}),dictionary[_0x36cd1a(0x15f)](_0x36cd1a(0x161)),csb[_0x36cd1a(0x15e)][_0x36cd1a(0x139)]=_0x36cd1a(0x140);
+let query = () => news.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
+let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
+let loader = document.querySelector(".loader");
+
+let dictionary = {
+    fetchDictionaryData: function(word){
+        fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+        ).then((response) => response.json()).then((data) => this.displayDictionaryData(data));
+    },
+    displayDictionaryData: function(data){
+        let dWord = document.querySelector(".dictionaryWord"), dWordPhonetic = document.querySelector(".dictionaryWordPhonetic");
+        let dPOSNoun = document.querySelector(".dictionaryPOSNoun"), dPOSNounMeaning = document.querySelector(".dictionaryPOSNounMeaning");
+        let dPOSNounExample = document.querySelector(".dictionaryPOSNounExample"), dPOSVerb = document.querySelector(".dictionaryPOSVerb");
+        let dPOSVerbMeaning = document.querySelector(".dictionaryPOSVerbMeaning"), dPOSVerbExample = document.querySelector(".dictionaryPOSVerbExample");
+        let dPOSAdj = document.querySelector(".dictionaryPOSAdj"), dPOSAdjMeaning = document.querySelector(".dictionaryPOSAdjMeaning");
+        let dPOSAdjExample = document.querySelector(".dictionaryPOSAdjExample"), dSource = document.querySelector(".dictionarySource");
+        let dWarning = document.querySelector(".dictionaryWarning");
+        
+        if(data.title){
+            dWarning.style.display = "block";
+            dWarning.innerText = data.title; dWord.style.display = "none";
+            dWordPhonetic.style.display = "none"; dPOSNoun.style.display = "none";
+            dPOSNounMeaning.style.display = "none"; dPOSVerb.style.display = "none";
+            dPOSVerbMeaning.style.display = "none"; dPOSVerbExample.style.display = "none";
+            dPOSAdj.style.display = "none"; dPOSAdjMeaning.style.display = "none";
+            dPOSAdjExample.style.display = "none"; dSource.style.display = "none";
+        } else {
+            dWarning.style.display = "none";
+            dPOSNoun.style.display = "block"; dPOSNounMeaning.style.display = "block";
+            dPOSVerb.style.display = "block"; dPOSVerbMeaning.style.display = "block"; 
+            dPOSAdj.style.display = "block"; dPOSAdjMeaning.style.display = "block";
+            dSource.style.display = "block";
+
+            dWord.innerText = data[0].word; dWord.style.display = "block";
+            if(data[0].phonetic == undefined) document.querySelector(".dictionaryWordPhonetic").style.display = "none";
+            else {
+                dWordPhonetic.style.display = "block";
+                dWordPhonetic.innerText = `( ${data[0].phonetic} )`;
+            }
+            dPOSNoun.innerText = `${data[0].meanings[0].partOfSpeech}`;
+            dPOSNounMeaning.innerText = `- ${data[0].meanings[0].definitions[0].definition}`;
+            if(data[0].meanings[0].definitions[0].example == undefined) dPOSNounExample.style.display = "none";
+            else {
+                dPOSNounExample.style.display = "block";
+                dPOSNounExample.innerText = `"${data[0].meanings[0].definitions[0].example}"`;
+            }
+            if(data[0].meanings.length > 1){
+                dPOSVerb.style.display = "block"; dPOSVerbMeaning.style.display = "block";
+                dPOSVerb.innerText = `${data[0].meanings[1].partOfSpeech}`; dPOSVerbMeaning.innerText = `- ${data[0].meanings[1].definitions[0].definition}`;
+                if(data[0].meanings[1].definitions[0].example == undefined) dPOSVerbExample.style.display = "none";
+                else {
+                    dPOSVerbExample.style.display = "block"; dPOSVerbExample.innerText = `"${data[0].meanings[1].definitions[0].example}"`;
+                }
+            } else {
+                dPOSVerb.style.display = "none"; dPOSVerbMeaning.style.display = "none"; dPOSVerbExample.style.display = "none";
+            }
+
+            if(data[0].meanings.length > 2){
+                dPOSAdj.style.display = "block"; dPOSAdjMeaning.style.display = "block";
+                dPOSAdj.innerText = `${data[0].meanings[2].partOfSpeech}`; dPOSAdjMeaning.innerText = `- ${data[0].meanings[2].definitions[0].definition}`;
+                if(data[0].meanings[2].definitions[0].example == undefined) document.querySelector(".dictionaryPOSAdjExample").style.display = "none";
+                else {
+                    dPOSAdjExample.style.display = "block"; dPOSAdjExample.innerText = `"${data[0].meanings[2].definitions[0].example}"`;
+                }
+            } else {
+                dPOSAdj.style.display = "none"; dPOSAdjMeaning.style.display = "none"; dPOSAdjExample.style.display = "none";
+            }
+            dSource.innerText = "Source"; dSource.href = `${data[0].sourceUrls[0]}`;
+        }
+        loader.style.display = "none";
+        document.querySelector(".dictionaryField").style.display = "block";
+    },
+    search: function() {
+        this.fetchDictionaryData(search.value);
+        document.querySelector(".dictionaryField").style.display = "none";
+        loader.style.display = "block";
+    },
+    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); }
+}
+
+search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? dictionary.search() : ""; });
+document.addEventListener("keyup", (e) => {
+    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
+    if(search.value.length > 0) csb.style.display = "block";
+    if(search.value.length == 0) csb.style.display = "none";
+    if(e.key === "Escape" && document.activeElement) search.blur();
+});
+
+dictionary.fetchDictionaryData("dictionary");
+csb.style.display = "none";

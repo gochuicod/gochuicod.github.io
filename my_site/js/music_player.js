@@ -1,1 +1,170 @@
-const _0x397833=_0x3ac2;(function(_0x1e6549,_0x2b07f0){const _0x2dd467=_0x3ac2,_0xf776d5=_0x1e6549();while(!![]){try{const _0x25c138=-parseInt(_0x2dd467(0xf3))/0x1*(parseInt(_0x2dd467(0xf8))/0x2)+-parseInt(_0x2dd467(0x109))/0x3+parseInt(_0x2dd467(0xd3))/0x4+parseInt(_0x2dd467(0xde))/0x5+parseInt(_0x2dd467(0xf0))/0x6*(parseInt(_0x2dd467(0x10a))/0x7)+-parseInt(_0x2dd467(0x108))/0x8*(parseInt(_0x2dd467(0xe4))/0x9)+-parseInt(_0x2dd467(0xe0))/0xa;if(_0x25c138===_0x2b07f0)break;else _0xf776d5['push'](_0xf776d5['shift']());}catch(_0x221a4d){_0xf776d5['push'](_0xf776d5['shift']());}}}(_0x57ee,0x6ed37));let song=document[_0x397833(0xfd)](_0x397833(0xe7)),seekBar=document[_0x397833(0xfd)](_0x397833(0xd9)),play_pause_icon=document['querySelector'](_0x397833(0xe8)),play_pause_btn=document[_0x397833(0xfd)](_0x397833(0xd4)),thumbnail=document[_0x397833(0xfd)](_0x397833(0xfc)),title=document['querySelector']('#title'),vol=document[_0x397833(0xfd)](_0x397833(0x105)),vol_icon=document['querySelector']('#volume_icon'),TotalTrackTime=document['querySelector'](_0x397833(0x10b)),TrackTime=document[_0x397833(0xfd)]('#trackTime'),track=[{'image':'../img/van_halen_album.jpg','audio':'../audio/Van\x20Halen\x20-\x20Jump.mp3','title':_0x397833(0xe6)},{'image':_0x397833(0xdc),'audio':_0x397833(0xdf),'title':_0x397833(0xfb)},{'image':_0x397833(0xe2),'audio':_0x397833(0xf4),'title':_0x397833(0x103)},{'image':_0x397833(0xdb),'audio':_0x397833(0xd1),'title':'Kiss\x20the\x20Breeze'},{'image':_0x397833(0xd2),'audio':'../audio/Third\x20Eye\x20Blind\x20-\x20Motorcycle\x20Drive\x20By.mp3','title':_0x397833(0x104)}],current_track=0x0,seek,temp=!![],toggle=![],volToggle=![],refresh=window[_0x397833(0xff)](function(){const _0x5cf8fa=_0x397833;seekBar[_0x5cf8fa(0x107)]('max',''+Math[_0x5cf8fa(0x10f)](song[_0x5cf8fa(0xf5)])),trackLength();},0x3e8),volt=document[_0x397833(0xfd)](_0x397833(0xd7));function volume(_0x4c5686){const _0x2fa2e1=_0x397833;song[_0x2fa2e1(0xe9)]=parseInt(_0x4c5686)/0x64,vol['value']=parseInt(_0x4c5686),volt[_0x2fa2e1(0xdd)]=''+vol[_0x2fa2e1(0xf7)];}function _0x57ee(){const _0x122218=['../img/motorcycle_drive_by_album.jpeg','1739092bLdBSp','#playPause','onclick','play()','#volTracker','unmute()','#seek_bar','bi\x20bi-play-fill','../img/kiss_the_breeze_album.jpg','../img/save_your_tears_album.png','innerText','4145235JzeXMM','../audio/The\x20Weeknd\x20-\x20Save\x20Your\x20Tears.mp3','730920YiCyCN','bi\x20bi-volume-mute-fill','../img/malibu_nights_album.png','title','170631GXFrJk','bi\x20bi-volume-down-fill','Jump','#song','#play_pause','volume','floor','keypress','currentTime','style','pause()','scale(1)','2430glRhaW','addEventListener','play','16mREXxs','../audio/Lany\x20-\x20Thick\x20and\x20Thin.mp3','duration','scale(1.05)','value','39980FJBWjx','src','bi\x20bi-volume-off-fill','Save\x20Your\x20Tears','#album','querySelector','bi\x20bi-pause-fill','setInterval','transform','muted','key','Thick\x20and\x20Thin','Motorcycle\x20Drive\x20By','#volume','audio','setAttribute','104LJZkHR','619569NJyrNE','623OcmMiX','#totalTrackTime','class','mute()','toLowerCase','ceil','../audio/Sticky\x20Fingers\x20-\x20Kiss\x20the\x20Breeze.mp3'];_0x57ee=function(){return _0x122218;};return _0x57ee();}function volumeUp(){const _0x1963f5=_0x397833;song['volume']>0.9&&(song[_0x1963f5(0xe9)]+=0x1-song[_0x1963f5(0xe9)],vol[_0x1963f5(0xf7)]=song['volume']*0x64,volt[_0x1963f5(0xdd)]=''+vol[_0x1963f5(0xf7)],soundIcon()),song[_0x1963f5(0xe9)]+=0.1,vol[_0x1963f5(0xf7)]=song['volume']*0x64,volt['innerText']=''+vol[_0x1963f5(0xf7)],soundIcon();}function volumeDown(){const _0xbee4ba=_0x397833;song[_0xbee4ba(0xe9)]<0.1&&(song[_0xbee4ba(0xe9)]=0x0,vol[_0xbee4ba(0xf7)]=song[_0xbee4ba(0xe9)]*0x64,volt['innerText']=''+vol['value'],soundIcon()),song[_0xbee4ba(0xe9)]-=0.1,vol[_0xbee4ba(0xf7)]=song['volume']*0x64,volt['innerText']=''+vol[_0xbee4ba(0xf7)],soundIcon();}function seekfw(){const _0x113af8=_0x397833;song['currentTime']+=0xa,seekBar[_0x113af8(0xf7)]=song[_0x113af8(0xec)],sec+=0xa,currentLength();}function seekbw(){const _0x45467b=_0x397833;song['currentTime']-=0xa,seekBar['value']=song[_0x45467b(0xec)],sec-=0xa,currentLength();}function muteToggle(){volToggle==![]?(mute(),volToggle=!![]):(unmute(),volToggle=![]);}function mute(){const _0x34b5b0=_0x397833;song[_0x34b5b0(0x101)]=!![],vol_icon[_0x34b5b0(0x107)]('onclick',_0x34b5b0(0xd8)),vol_icon['setAttribute']('class','bi\x20bi-volume-mute-fill');}function unmute(){const _0x34d401=_0x397833;song['muted']=![],soundIcon(),vol_icon[_0x34d401(0x107)](_0x34d401(0xd5),_0x34d401(0x10d));}function _0x3ac2(_0x5b60fb,_0x558b3e){const _0x57eed3=_0x57ee();return _0x3ac2=function(_0x3ac217,_0x1d61c2){_0x3ac217=_0x3ac217-0xd1;let _0x57d30f=_0x57eed3[_0x3ac217];return _0x57d30f;},_0x3ac2(_0x5b60fb,_0x558b3e);}function soundIcon(){const _0x62eee6=_0x397833;if(song[_0x62eee6(0x101)]==![]){if(song[_0x62eee6(0xe9)]>0.6&&song['volume']<1.1)vol_icon[_0x62eee6(0x107)](_0x62eee6(0x10c),'bi\x20bi-volume-up-fill');else{if(song[_0x62eee6(0xe9)]>0.3&&song['volume']<0.7)vol_icon[_0x62eee6(0x107)]('class',_0x62eee6(0xe5));else{if(song[_0x62eee6(0xe9)]<0.1)vol_icon[_0x62eee6(0x107)](_0x62eee6(0x10c),_0x62eee6(0xe1));else vol_icon[_0x62eee6(0x107)](_0x62eee6(0x10c),_0x62eee6(0xfa));}}}else vol_icon[_0x62eee6(0x107)](_0x62eee6(0x10c),_0x62eee6(0xe1));}function player(_0x4981a6){song['currentTime']=_0x4981a6;}function currentSeek(){const _0x1961d7=_0x397833;let _0x5720bd=song[_0x1961d7(0xec)];seekBar[_0x1961d7(0xf7)]=_0x5720bd,_0x5720bd++;if(song[_0x1961d7(0xec)]==song[_0x1961d7(0xf5)])forward();currentLength();}function trackLength(){const _0x53b879=_0x397833;let _0x2ea611=parseInt(Math[_0x53b879(0xea)](song[_0x53b879(0xf5)])['toString']()),_0xc8a08d=Math[_0x53b879(0xea)](_0x2ea611/0x3c),_0x4e7984=Math['floor'](_0x2ea611-Math[_0x53b879(0xea)](_0x2ea611/0x3c)*0x3c);if(_0x4e7984<0xa)TotalTrackTime[_0x53b879(0xdd)]=_0xc8a08d+':0'+_0x4e7984;else TotalTrackTime[_0x53b879(0xdd)]=_0xc8a08d+':'+_0x4e7984;}function currentLength(){const _0x6e6abc=_0x397833;let _0x1b915d=Math['floor'](song['currentTime']),_0x48adf1=Math[_0x6e6abc(0xea)](_0x1b915d/0x3c);sec=_0x1b915d-Math['floor'](_0x1b915d/0x3c)*0x3c;if(sec<0xa)TrackTime[_0x6e6abc(0xdd)]=_0x48adf1+':0'+sec;else TrackTime[_0x6e6abc(0xdd)]=_0x48adf1+':'+sec;}function play(){const _0x4bc9fc=_0x397833;seek=setInterval(currentSeek,0x3e8),play_pause_icon['setAttribute'](_0x4bc9fc(0x10c),_0x4bc9fc(0xfe)),play_pause_btn[_0x4bc9fc(0x107)](_0x4bc9fc(0xd5),_0x4bc9fc(0xee)),thumbnail['style'][_0x4bc9fc(0x100)]='scale(1.05)',song[_0x4bc9fc(0xf2)]();}function pause(){const _0x10f3fb=_0x397833;play_pause_icon[_0x10f3fb(0x107)](_0x10f3fb(0x10c),_0x10f3fb(0xda)),play_pause_btn[_0x10f3fb(0x107)](_0x10f3fb(0xd5),_0x10f3fb(0xd6)),thumbnail['style'][_0x10f3fb(0x100)]=_0x10f3fb(0xef),song['pause'](),clearInterval(seek);}function forward(){const _0xcdfecb=_0x397833;if(current_track!=track['length']-0x1){if(!seek)seek=setInterval(currentSeek,0x3e8);play_pause_btn[_0xcdfecb(0x107)]('onclick',_0xcdfecb(0xee)),current_track++,fw_bw_feature();}}function backward(){const _0x1e677d=_0x397833;if(current_track!=0x0){if(!seek)seek=setInterval(currentSeek,0x3e8);play_pause_btn[_0x1e677d(0x107)](_0x1e677d(0xd5),_0x1e677d(0xee)),current_track--,fw_bw_feature();}}function fw_bw_feature(){const _0xe3e00b=_0x397833;thumbnail['setAttribute'](_0xe3e00b(0xf9),''+track[current_track]['image']),song['setAttribute'](_0xe3e00b(0xf9),''+track[current_track][_0xe3e00b(0x106)]),title[_0xe3e00b(0xdd)]=''+track[current_track][_0xe3e00b(0xe3)],play_pause_icon[_0xe3e00b(0x107)](_0xe3e00b(0x10c),_0xe3e00b(0xfe)),thumbnail[_0xe3e00b(0xed)][_0xe3e00b(0x100)]=_0xe3e00b(0xf6),play(),seekBar[_0xe3e00b(0xf7)]=0x1;}document[_0x397833(0xf1)](_0x397833(0xeb),_0x313e2b=>{const _0x45d27c=_0x397833;_0x313e2b[_0x45d27c(0x102)]==='\x20'&&(toggle==![]?(play(),toggle=!![]):(pause(),toggle=![]));if(_0x313e2b['key'][_0x45d27c(0x10e)]()==='b')forward();if(_0x313e2b[_0x45d27c(0x102)][_0x45d27c(0x10e)]()==='z')backward();if(_0x313e2b['key']==='['&&song[_0x45d27c(0xe9)]>0x0)volumeDown();if(_0x313e2b[_0x45d27c(0x102)]===']'&&song[_0x45d27c(0xe9)]<0x1)volumeUp();if(_0x313e2b['key']==='>')seekfw();if(_0x313e2b[_0x45d27c(0x102)]==='<')seekbw();if(_0x313e2b[_0x45d27c(0x102)][_0x45d27c(0x10e)]()==='m')muteToggle();});
+let song = document.querySelector("#song"), seekBar = document.querySelector("#seek_bar");
+let play_pause_icon = document.querySelector("#play_pause"), play_pause_btn = document.querySelector("#playPause");
+let thumbnail = document.querySelector("#album"), title = document.querySelector("#title");
+let vol = document.querySelector("#volume"), vol_icon = document.querySelector("#volume_icon");
+let TotalTrackTime = document.querySelector("#totalTrackTime"), TrackTime = document.querySelector("#trackTime");
+let track = [{
+    image: "../img/van_halen_album.jpg",
+    audio: "../audio/Van Halen - Jump.mp3",
+    title: "Jump"
+},
+{
+    image: "../img/save_your_tears_album.png",
+    audio: "../audio/The Weeknd - Save Your Tears.mp3",
+    title: "Save Your Tears"
+},
+{
+    image: "../img/malibu_nights_album.png",
+    audio: "../audio/Lany - Thick and Thin.mp3",
+    title: "Thick and Thin"
+},
+{
+    image: "../img/kiss_the_breeze_album.jpg",
+    audio: "../audio/Sticky Fingers - Kiss the Breeze.mp3",
+    title: "Kiss the Breeze"
+},
+{
+    image: "../img/motorcycle_drive_by_album.jpeg",
+    audio: "../audio/Third Eye Blind - Motorcycle Drive By.mp3",
+    title: "Motorcycle Drive By"
+}
+];
+let current_track = 0, seek, temp = true, toggle = false, volToggle = false;
+
+let refresh = window.setInterval(function(){
+    seekBar.setAttribute("max",`${Math.ceil(song.duration)}`);
+    trackLength();
+},1000);
+
+let volt = document.querySelector("#volTracker");
+
+function volume(Value) {
+    song.volume = parseInt(Value)/100;
+    vol.value = parseInt(Value);
+    volt.innerText = `${vol.value}`;
+}
+
+function volumeUp() {
+    if(song.volume > 0.9) { song.volume += (1.0 - song.volume); vol.value = song.volume * 100; volt.innerText = `${vol.value}`; soundIcon(); }
+    song.volume += 0.1; vol.value = song.volume * 100; volt.innerText = `${vol.value}`; soundIcon();
+}
+
+function volumeDown() {
+    if(song.volume < 0.10) { song.volume = 0; vol.value = song.volume * 100; volt.innerText = `${vol.value}`; soundIcon(); }
+    song.volume -= 0.1; vol.value = song.volume * 100; volt.innerText = `${vol.value}`; soundIcon();
+}
+
+function seekfw() {
+    song.currentTime += 10; seekBar.value = song.currentTime;
+    sec += 10; currentLength();
+}
+
+function seekbw() {
+    song.currentTime -= 10; seekBar.value = song.currentTime;
+    sec -= 10; currentLength();
+}
+
+function muteToggle() {
+    if(volToggle == false) { mute(); volToggle = true; }
+    else { unmute(); volToggle = false; }
+}
+
+function mute() {
+    song.muted = true;
+    vol_icon.setAttribute("onclick","unmute()");
+    vol_icon.setAttribute("class","bi bi-volume-mute-fill");
+}
+
+function unmute() {
+    song.muted = false; soundIcon();
+    vol_icon.setAttribute("onclick","mute()");
+}
+
+function soundIcon() {
+    if(song.muted == false){
+        if(song.volume > 0.6 && song.volume < 1.1) vol_icon.setAttribute("class","bi bi-volume-up-fill");
+        else if(song.volume > 0.3 && song.volume < 0.7) vol_icon.setAttribute("class","bi bi-volume-down-fill");
+        else if(song.volume < 0.1) vol_icon.setAttribute("class","bi bi-volume-mute-fill");
+        else vol_icon.setAttribute("class","bi bi-volume-off-fill");
+    } else vol_icon.setAttribute("class","bi bi-volume-mute-fill");
+}
+
+function player(value) {
+    song.currentTime = value;
+}
+
+function currentSeek() {
+    let temp = song.currentTime;
+    seekBar.value = temp; temp++;
+    if(song.currentTime == song.duration) forward();
+    currentLength();
+}
+
+function trackLength() {
+    let x = parseInt((Math.floor(song.duration)).toString());
+    let durationInMinutes = Math.floor(x/60), durationInSeconds = Math.floor(x - ((Math.floor(x/60))*60));
+    if(durationInSeconds < 10) TotalTrackTime.innerText = `${durationInMinutes}:0${durationInSeconds}`;
+    else TotalTrackTime.innerText = `${durationInMinutes}:${durationInSeconds}`;
+}
+
+function currentLength() {
+    let sCurrentTime = Math.floor(song.currentTime);
+    let min = Math.floor(sCurrentTime/60); sec = (sCurrentTime - ((Math.floor(sCurrentTime/60))*60));
+    if(sec < 10) TrackTime.innerText = `${min}:0${sec}`;
+    else TrackTime.innerText = `${min}:${sec}`;
+}
+
+function play() {
+    seek = setInterval(currentSeek, 1000);
+    play_pause_icon.setAttribute("class","bi bi-pause-fill");
+    play_pause_btn.setAttribute("onclick","pause()");
+    thumbnail.style.transform = "scale(1.05)";
+    song.play();
+}
+
+function pause() {
+    play_pause_icon.setAttribute("class","bi bi-play-fill");
+    play_pause_btn.setAttribute("onclick","play()");
+    thumbnail.style.transform = "scale(1)";
+    song.pause();
+    clearInterval(seek);
+}
+
+function forward() {
+    if(current_track != track.length-1){
+        if(!seek) seek = setInterval(currentSeek, 1000);
+        play_pause_btn.setAttribute("onclick","pause()");
+        current_track++; fw_bw_feature();
+    }
+}
+function backward() {
+    if(current_track != 0){
+        if(!seek) seek = setInterval(currentSeek, 1000);
+        play_pause_btn.setAttribute("onclick","pause()");
+        current_track--; fw_bw_feature();
+    }
+}
+
+function fw_bw_feature() {
+    thumbnail.setAttribute("src",`${track[current_track].image}`);
+    song.setAttribute("src",`${track[current_track].audio}`);
+    title.innerText = `${track[current_track].title}`;
+    play_pause_icon.setAttribute("class","bi bi-pause-fill");
+    thumbnail.style.transform = "scale(1.05)";
+    play();
+    seekBar.value = 1;
+}
+
+document.addEventListener("keypress", (e) => {
+    if(e.key === " "){
+        if(toggle == false) { play(); toggle = true; }
+        else { pause(); toggle = false; }
+    }
+    if(e.key.toLowerCase() === "b") forward();
+    if(e.key.toLowerCase() === "z") backward();
+    if(e.key === "[" && song.volume > 0) volumeDown();
+    if(e.key === "]" && song.volume < 1) volumeUp();
+    if(e.key === ">") seekfw();
+    if(e.key === "<") seekbw();
+    if(e.key.toLowerCase() === "m") muteToggle();
+});

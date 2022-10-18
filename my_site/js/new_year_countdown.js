@@ -1,1 +1,32 @@
-function _0x2a92(_0x5814d3,_0x48f056){const _0x6e6f7a=_0x6e6f();return _0x2a92=function(_0x2a9246,_0x3db86c){_0x2a9246=_0x2a9246-0x1b4;let _0x467fce=_0x6e6f7a[_0x2a9246];return _0x467fce;},_0x2a92(_0x5814d3,_0x48f056);}const _0x4156f9=_0x2a92;(function(_0x1b7e59,_0x1319a0){const _0x143faa=_0x2a92,_0x120f43=_0x1b7e59();while(!![]){try{const _0x385321=parseInt(_0x143faa(0x1b5))/0x1*(parseInt(_0x143faa(0x1b7))/0x2)+parseInt(_0x143faa(0x1b4))/0x3*(parseInt(_0x143faa(0x1bc))/0x4)+parseInt(_0x143faa(0x1be))/0x5*(-parseInt(_0x143faa(0x1bf))/0x6)+parseInt(_0x143faa(0x1c6))/0x7+parseInt(_0x143faa(0x1c2))/0x8*(parseInt(_0x143faa(0x1c5))/0x9)+parseInt(_0x143faa(0x1c4))/0xa+parseInt(_0x143faa(0x1c0))/0xb*(-parseInt(_0x143faa(0x1bd))/0xc);if(_0x385321===_0x1319a0)break;else _0x120f43['push'](_0x120f43['shift']());}catch(_0x13098a){_0x120f43['push'](_0x120f43['shift']());}}}(_0x6e6f,0xd73b2));const date=new Date(),currentYear=date['getYear'](),currentMonth=date[_0x4156f9(0x1bb)]();let countDownNewYear=document[_0x4156f9(0x1b6)](_0x4156f9(0x1b8)),leapOrNot,monthVal=0x0,totalMonthVal=0x0,months=[0x1f,0x1c,0x1f,0x1e,0x1f,0x1e,0x1f,0x1f,0x1e,0x1f,0x1e,0x1f];window[_0x4156f9(0x1c1)]=()=>{const _0x215316=_0x4156f9;for(let _0xc3207c=0x0;_0xc3207c<currentMonth;monthVal+=months[_0xc3207c],_0xc3207c++);for(let _0xb59874=0x0;_0xb59874<months[_0x215316(0x1c3)];totalMonthVal+=months[_0xb59874],_0xb59874++);setInterval(start,0x3e8);};function isLeapYear(_0x5e1519){if(_0x5e1519%0x190==0x0||_0x5e1519%0x4==0x0)return!![];else return![];}function _0x6e6f(){const _0x301500=['201444gCdLwx','160WhbAmK','135624fTSTwb','1122YvIYWn','onload','296LUvbSX','length','713840efTeQo','30942nGUZuo','5186328SkEXjO','getDate','555ZkGGMy','41062QzYjKg','querySelector','74hlewGF','#countdown-new-year','getSeconds','getHours','getMonth','18560pnwkaE'];_0x6e6f=function(){return _0x301500;};return _0x6e6f();}function start(){const _0x7069d2=_0x4156f9;let _0x2bf8bd=new Date(),_0x8a7f00=0x3b-_0x2bf8bd[_0x7069d2(0x1b9)](),_0x5e332d=0x3b-_0x2bf8bd['getMinutes'](),_0x2e5b7a=0x17-_0x2bf8bd[_0x7069d2(0x1ba)](),_0x7bd8c8=_0x2bf8bd[_0x7069d2(0x1c7)]();if(isLeapYear(currentYear)==!![])_0x7bd8c8--;countDownNewYear['innerText']=''+isLessThan(_0x8a7f00,_0x5e332d,_0x2e5b7a,totalMonthVal-(monthVal+_0x7bd8c8));}function isLessThan(_0x42e26b,_0x4934d2,_0x2dc8ff,_0x425173){if(_0x42e26b<0xa)_0x42e26b='0'+_0x42e26b;if(_0x4934d2<0xa)_0x4934d2='0'+_0x4934d2;if(_0x2dc8ff<0xa)_0x2dc8ff='0'+_0x2dc8ff;if(_0x425173<0xa)_0x425173='0'+_0x425173;return _0x425173+':'+_0x2dc8ff+':'+_0x4934d2+':'+_0x42e26b;}
+const date = new Date();
+const currentYear = date.getYear();
+const currentMonth = date.getMonth();
+let countDownNewYear = document.querySelector("#countdown-new-year");
+let leapOrNot, monthVal = 0, totalMonthVal = 0, months = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+window.onload = () => {
+    for(let i = 0; i < currentMonth; monthVal += months[i], i++);
+    for(let j = 0; j < months.length; totalMonthVal += months[j], j++);
+    setInterval(start,1000);
+}
+
+function isLeapYear(year) {
+    if(year % 400 == 0 || year % 4 == 0) return true;
+    else return false;
+}
+
+function start(){
+    let a = new Date();
+    let currentSeconds = 59 - a.getSeconds(), currentMinutes = 59 - a.getMinutes();
+    let currentHours = 23 - a.getHours(), currentDate = a.getDate();
+    if(isLeapYear(currentYear) == true) currentDate--;
+    countDownNewYear.innerText = `${isLessThan(currentSeconds,currentMinutes,currentHours,(totalMonthVal - (monthVal + currentDate)))}`;
+}
+
+function isLessThan(seconds,minutes,hours,days) {
+    if(seconds < 10) seconds = `0${seconds}`;
+    if(minutes < 10) minutes = `0${minutes}`;
+    if(hours < 10) hours = `0${hours}`;
+    if(days < 10) days = `0${days}`;
+    return `${days}:${hours}:${minutes}:${seconds}`;
+}

@@ -1,1 +1,14 @@
-function _0x103d(_0x127841,_0x14cd6e){const _0x35ba9a=_0x35ba();return _0x103d=function(_0x103dc9,_0x67c05){_0x103dc9=_0x103dc9-0x126;let _0x57d3a6=_0x35ba9a[_0x103dc9];return _0x57d3a6;},_0x103d(_0x127841,_0x14cd6e);}function _0x35ba(){const _0x2a6e51=['class','598110RnGYby','getElementById','floor','h5\x20p-4\x20text-center','innerText','143WiQncX','random','80uJSJnh','12358035RXlDdP','735519TlTfPm','2WueOIR','setAttribute','8036728XUeIzc','610671WFLjPG','336aVXsEU','276780McaSak','querySelector','value','20426vCTAuh','from'];_0x35ba=function(){return _0x2a6e51;};return _0x35ba();}const _0x105344=_0x103d;(function(_0x428f59,_0x5d682a){const _0x4136f7=_0x103d,_0x57cb13=_0x428f59();while(!![]){try{const _0x3142c1=-parseInt(_0x4136f7(0x130))/0x1*(parseInt(_0x4136f7(0x131))/0x2)+-parseInt(_0x4136f7(0x134))/0x3+parseInt(_0x4136f7(0x136))/0x4*(parseInt(_0x4136f7(0x12e))/0x5)+parseInt(_0x4136f7(0x135))/0x6*(parseInt(_0x4136f7(0x139))/0x7)+parseInt(_0x4136f7(0x133))/0x8+-parseInt(_0x4136f7(0x12f))/0x9+parseInt(_0x4136f7(0x127))/0xa*(parseInt(_0x4136f7(0x12c))/0xb);if(_0x3142c1===_0x5d682a)break;else _0x57cb13['push'](_0x57cb13['shift']());}catch(_0x421ac1){_0x57cb13['push'](_0x57cb13['shift']());}}}(_0x35ba,0xb4c77));let a=document[_0x105344(0x137)]('#output');function generateNumber(){const _0x3a6dac=_0x105344;let _0x487422=parseInt(document[_0x3a6dac(0x128)](_0x3a6dac(0x13a))['value']),_0x3390d5=parseInt(document[_0x3a6dac(0x128)]('to')[_0x3a6dac(0x138)]);if(_0x487422<_0x3390d5){a[_0x3a6dac(0x132)](_0x3a6dac(0x126),'h1\x20mt-4\x20text-center');let _0x3dbd89=Math[_0x3a6dac(0x129)](Math[_0x3a6dac(0x12d)]()*(_0x3390d5-_0x487422+0x1)+_0x487422);a[_0x3a6dac(0x12b)]=''+_0x3dbd89;}else a[_0x3a6dac(0x132)](_0x3a6dac(0x126),_0x3a6dac(0x12a)),a[_0x3a6dac(0x12b)]='First\x20value\x20must\x20not\x20be\x20greater\x20than\x20second\x20value';}
+let a = document.querySelector("#output");
+
+function generateNumber() {
+    let from = parseInt(document.getElementById("from").value);
+    let to = parseInt(document.getElementById("to").value);
+    if(from < to) {
+        a.setAttribute("class","h1 mt-4 text-center");
+        let test = Math.floor(Math.random() * (to - from + 1) + from);
+        a.innerText = `${test}`;
+    } else {
+        a.setAttribute("class","h5 p-4 text-center");
+        a.innerText = "First value must not be greater than second value";
+    }
+}

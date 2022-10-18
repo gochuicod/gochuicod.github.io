@@ -1,1 +1,57 @@
-(function(_0x414ba5,_0x1108b1){const _0x5d1cc9=_0x140f,_0xfb2136=_0x414ba5();while(!![]){try{const _0x19812b=-parseInt(_0x5d1cc9(0x99))/0x1+parseInt(_0x5d1cc9(0x95))/0x2+-parseInt(_0x5d1cc9(0x90))/0x3*(parseInt(_0x5d1cc9(0x8d))/0x4)+parseInt(_0x5d1cc9(0x96))/0x5+-parseInt(_0x5d1cc9(0xa1))/0x6+parseInt(_0x5d1cc9(0x97))/0x7+parseInt(_0x5d1cc9(0x9d))/0x8;if(_0x19812b===_0x1108b1)break;else _0xfb2136['push'](_0xfb2136['shift']());}catch(_0x14c56b){_0xfb2136['push'](_0xfb2136['shift']());}}}(_0xab6e,0x4a5af));function roll(){const _0x3a73e4=_0x140f;let _0x45a2f7=Math[_0x3a73e4(0x92)](Math[_0x3a73e4(0x94)]()*0x6)+0x1;document[_0x3a73e4(0xa2)](_0x3a73e4(0x9f))[_0x3a73e4(0x9a)]=''+_0x45a2f7;}function _0x140f(_0xd9a18d,_0x49d9e9){const _0xab6e7b=_0xab6e();return _0x140f=function(_0x140fdf,_0x5ae95f){_0x140fdf=_0x140fdf-0x8d;let _0xdc40ab=_0xab6e7b[_0x140fdf];return _0xdc40ab;},_0x140f(_0xd9a18d,_0x49d9e9);}let sample={'execute':function(_0x3d73f1){const _0x3977da=_0x140f;let _0x155744=!![];if(_0x3d73f1===0x1)console['log'](_0x3977da(0x8f));else{if(_0x3d73f1>0x1){for(let _0x342b5e=0x2;_0x342b5e<_0x3d73f1;_0x342b5e++){console['log'](_0x3d73f1/_0x342b5e);if(_0x3d73f1%_0x342b5e==0x0){_0x155744=![];break;}}_0x155744?console[_0x3977da(0x8e)](_0x3d73f1+_0x3977da(0x91)):console[_0x3977da(0x8e)](_0x3d73f1+_0x3977da(0x98));}else console[_0x3977da(0x8e)](_0x3977da(0x9e));}}},problem3={'p3':(_0x4e1668,_0x32e59b,_0x1f6013)=>{const _0x303a58=_0x140f;let _0xe4b0f5,_0x4e4471,_0x247ccc=0x0,_0x2e33d0=0x0,_0x4a1ed3=0x0;for(let _0x3c0357=0x32;_0x3c0357>0x0;_0x3c0357--,_0x4e1668+=_0x32e59b){_0xe4b0f5=_0x3c0357*_0x4e1668,_0x2e33d0=_0x3c0357*_0x1f6013,_0x4e4471=_0xe4b0f5-_0x2e33d0,_0x4e4471>_0x247ccc&&(_0x247ccc=_0x4e4471,_0x4a1ed3=_0x3c0357),console[_0x303a58(0x8e)](_0x303a58(0x93)+_0x3c0357+_0x303a58(0x9b)+_0xe4b0f5+_0x303a58(0xa0)+_0x2e33d0+',\x20Profit:\x20'+_0x4e4471+_0x303a58(0x9c)+_0x247ccc);}}};function _0xab6e(){const _0x3c70af=['83185hGRuQN','3546998YCxWNv','\x20is\x20a\x20not\x20prime\x20number','456838jcCVNT','innerText',',\x20Income:\x20',',\x20MaxProfit:\x20','3606608oWtzfD','The\x20number\x20is\x20not\x20a\x20prime\x20number.','dice',',\x20Maintenance:\x20','789678KSLPMs','getElementById','9276wNhTsI','log','1\x20is\x20neither\x20prime\x20nor\x20composite\x20number.','183YppfaD','\x20is\x20a\x20prime\x20number','floor','Unit:\x20','random','120584MhcLsu'];_0xab6e=function(){return _0x3c70af;};return _0xab6e();}
+function roll(){
+    let output = Math.floor(Math.random() * 6) + 1;
+    document.getElementById("dice").innerText = `${output}`;
+}
+
+let sample = {
+    execute: function(number){
+        // program to check if a number is prime or not
+        // take input from the user
+        let isPrime = true;
+
+        // check if number is equal to 1
+        if (number === 1) {
+            console.log("1 is neither prime nor composite number.");
+        }
+
+        // check if number is greater than 1
+        else if (number > 1) {
+
+            // looping through 2 to number-1
+            for (let i = 2; i < number; i++) {
+                console.log(number / i);
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                console.log(`${number} is a prime number`);
+            } else {
+                console.log(`${number} is a not prime number`);
+            }
+        }
+
+        // check if number is less than 1
+        else {
+            console.log("The number is not a prime number.");
+        }
+    }
+}
+
+let problem3 = {
+    p3: (dRFAU,dVUIA,dMC) => {
+        let income, profit, maxProfit = 0, maintenance = 0, n = 0;
+        for(let units = 50; units > 0; units--, dRFAU += dVUIA){
+            income = units * dRFAU;
+            maintenance = units * dMC;
+            profit = income - maintenance;
+            if(profit > maxProfit){
+                maxProfit = profit;
+                n = units;
+            }
+            console.log(`Unit: ${units}, Income: ${income}, Maintenance: ${maintenance}, Profit: ${profit}, MaxProfit: ${maxProfit}`);
+        }
+    }
+}

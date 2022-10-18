@@ -1,1 +1,84 @@
-function _0x2dde(_0x4c3411,_0x132fa3){const _0x11647f=_0x1164();return _0x2dde=function(_0x2dde2a,_0x1823de){_0x2dde2a=_0x2dde2a-0x69;let _0x133c8c=_0x11647f[_0x2dde2a];return _0x133c8c;},_0x2dde(_0x4c3411,_0x132fa3);}const _0x115a1a=_0x2dde;(function(_0x239bd1,_0x29acc7){const _0x15ff0d=_0x2dde,_0x3966cd=_0x239bd1();while(!![]){try{const _0x5d2fe4=-parseInt(_0x15ff0d(0x83))/0x1*(-parseInt(_0x15ff0d(0x6c))/0x2)+parseInt(_0x15ff0d(0x74))/0x3+-parseInt(_0x15ff0d(0x88))/0x4*(-parseInt(_0x15ff0d(0x8b))/0x5)+parseInt(_0x15ff0d(0x70))/0x6+parseInt(_0x15ff0d(0x90))/0x7+-parseInt(_0x15ff0d(0x8e))/0x8*(parseInt(_0x15ff0d(0x7c))/0x9)+-parseInt(_0x15ff0d(0x7b))/0xa;if(_0x5d2fe4===_0x29acc7)break;else _0x3966cd['push'](_0x3966cd['shift']());}catch(_0x2ea062){_0x3966cd['push'](_0x3966cd['shift']());}}}(_0x1164,0xb49b8));let count=0x0,inputTitle=document[_0x115a1a(0x8d)](_0x115a1a(0x79)),allNotes=document[_0x115a1a(0x8d)](_0x115a1a(0x91));window['onload']=()=>allStorage();function _0x1164(){const _0x1ac3c4=['getElementById','button','2564keGjym','length','\x22));\x20localStorage.removeItem(\x22','10490ScACUi','blur','querySelector','1855144eRmbyO','addEventListener','2906848mqhSij','#notes','onclick','keys','value','615830yzUKdf','firstChild','push','class','313392SIvPgA','span','createElement','div','3603537dEiZnD','document.getElementById(\x22notes\x22).removeChild(document.getElementById(\x22','key','title','m-2','#title','keyup','28097060gBgjIn','27UYxuDv','btn\x20fw-light\x20fs-small\x20me-2\x20text-dark','Enter','innerText','append','setAttribute','d-flex\x20flex-row\x20justify-content-between\x20p-1\x20bg-white\x20text-dark\x20rounded-custom\x20mb-2\x20border\x20border-2\x20border-muted\x20fs-small','4ukQSlX','removeChild','notes'];_0x1164=function(){return _0x1ac3c4;};return _0x1164();}function allStorage(){const _0x3dfb79=_0x115a1a;let _0x2867f5=[],_0x469e01=Object[_0x3dfb79(0x6a)](localStorage),_0x23008d=_0x469e01[_0x3dfb79(0x89)];while(_0x23008d--)_0x2867f5[_0x3dfb79(0x6e)](localStorage['getItem'](_0x469e01[_0x23008d]));for(let _0x367e11=0x0;_0x367e11<_0x2867f5['length'];addLocalItem(_0x2867f5[_0x367e11]),_0x367e11++);}function addLocalItem(_0x321b8b){const _0x4c5e8f=_0x115a1a;let _0x43af8d=_0x321b8b,_0x4ec418=document[_0x4c5e8f(0x72)](_0x4c5e8f(0x73)),_0x4827fe=document[_0x4c5e8f(0x72)](_0x4c5e8f(0x71)),_0x113254=document['createElement'](_0x4c5e8f(0x87));_0x4ec418['setAttribute'](_0x4c5e8f(0x6f),_0x4c5e8f(0x82)),_0x4ec418[_0x4c5e8f(0x81)]('id',''+_0x321b8b),_0x4827fe[_0x4c5e8f(0x81)]('class',_0x4c5e8f(0x78)),_0x113254['setAttribute']('class',_0x4c5e8f(0x7d)),_0x113254[_0x4c5e8f(0x81)](_0x4c5e8f(0x69),_0x4c5e8f(0x75)+_0x321b8b+'\x22));\x20localStorage.removeItem(\x22'+_0x321b8b+'\x22)'),_0x4827fe[_0x4c5e8f(0x7f)]=_0x321b8b,_0x113254[_0x4c5e8f(0x7f)]='x',_0x4ec418[_0x4c5e8f(0x80)](_0x4827fe),_0x4ec418[_0x4c5e8f(0x80)](_0x113254),notes[_0x4c5e8f(0x80)](_0x4ec418);}function addItem(){const _0x5d6c44=_0x115a1a,_0x327216=document['getElementById'](_0x5d6c44(0x85));if(inputTitle[_0x5d6c44(0x6b)]!=''){let _0x1b5ba0=document[_0x5d6c44(0x86)](_0x5d6c44(0x77)),_0x4bd5b6=document[_0x5d6c44(0x72)](_0x5d6c44(0x73)),_0x3b3070=document[_0x5d6c44(0x72)](_0x5d6c44(0x71)),_0x43891e=document[_0x5d6c44(0x72)](_0x5d6c44(0x87));_0x4bd5b6[_0x5d6c44(0x81)](_0x5d6c44(0x6f),_0x5d6c44(0x82)),_0x4bd5b6[_0x5d6c44(0x81)]('id',''+_0x1b5ba0[_0x5d6c44(0x6b)]),_0x3b3070[_0x5d6c44(0x81)](_0x5d6c44(0x6f),_0x5d6c44(0x78)),_0x43891e[_0x5d6c44(0x81)]('class','btn\x20fw-light\x20fs-small\x20me-2\x20text-dark'),_0x43891e[_0x5d6c44(0x81)](_0x5d6c44(0x69),_0x5d6c44(0x75)+_0x1b5ba0['value']+_0x5d6c44(0x8a)+_0x1b5ba0['value']+'\x22)'),_0x3b3070[_0x5d6c44(0x7f)]=_0x1b5ba0[_0x5d6c44(0x6b)],_0x43891e[_0x5d6c44(0x7f)]='x',_0x4bd5b6[_0x5d6c44(0x80)](_0x3b3070),_0x4bd5b6['append'](_0x43891e),localStorage['setItem'](''+_0x1b5ba0[_0x5d6c44(0x6b)],''+_0x1b5ba0[_0x5d6c44(0x6b)]),_0x327216[_0x5d6c44(0x80)](_0x4bd5b6),count++,_0x1b5ba0[_0x5d6c44(0x6b)]='';}}function removeAllChildNodes(_0x3799fa){const _0x566a4f=_0x115a1a;while(_0x3799fa[_0x566a4f(0x6d)])_0x3799fa[_0x566a4f(0x84)](_0x3799fa[_0x566a4f(0x6d)]);localStorage['clear']();}inputTitle[_0x115a1a(0x8f)](_0x115a1a(0x7a),function(_0x52dfcf){const _0x447bae=_0x115a1a;if(_0x52dfcf[_0x447bae(0x76)]===_0x447bae(0x7e))addItem();if(_0x52dfcf[_0x447bae(0x76)]==='Escape')inputTitle[_0x447bae(0x8c)]();});
+let count = 0, inputTitle = document.querySelector("#title"), allNotes = document.querySelector("#notes");
+
+window.onload = () => allStorage();
+
+function allStorage() {
+    let values = [], keys = Object.keys(localStorage), i = keys.length;
+
+    // pushes key strings into values array
+    while (i--) values.push(localStorage.getItem(keys[i]));
+
+    // remembers and restores data unremoved
+    for(let j = 0; j < values.length; addLocalItem(values[j]), j++);
+}
+
+function addLocalItem(value) {
+    let title = value;
+    let outer_div = document.createElement("div");
+    let toDo = document.createElement("span");
+    let button_exit = document.createElement("button");
+
+    outer_div.setAttribute('class','d-flex flex-row justify-content-between p-1 bg-white text-dark rounded-custom mb-2 border border-2 border-muted fs-small');
+    outer_div.setAttribute('id',`${value}`);
+    
+    toDo.setAttribute('class','m-2');
+    button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
+    button_exit.setAttribute('onclick',`document.getElementById("notes").removeChild(document.getElementById("${value}")); localStorage.removeItem("${value}")`);
+    
+    toDo.innerText = value;
+    button_exit.innerText = 'x';
+    
+    outer_div.append(toDo);
+    outer_div.append(button_exit);
+        
+    notes.append(outer_div);
+}
+
+function addItem() {
+    // Declarations
+    const notes = document.getElementById("notes");
+
+    if(inputTitle.value != ""){
+        let title = document.getElementById("title");
+        let outer_div = document.createElement("div");
+        let toDo = document.createElement("span");
+        let button_exit = document.createElement("button");
+
+        // Setting outer div attributes
+        outer_div.setAttribute('class','d-flex flex-row justify-content-between p-1 bg-white text-dark rounded-custom mb-2 border border-2 border-muted fs-small');
+        outer_div.setAttribute('id',`${title.value}`);
+
+        // Setting outer div children attributes
+        toDo.setAttribute('class','m-2');
+        button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
+        button_exit.setAttribute('onclick',`document.getElementById("notes").removeChild(document.getElementById("${title.value}")); localStorage.removeItem("${title.value}")`);
+
+        // Setting values
+        toDo.innerText = title.value;
+        button_exit.innerText = 'x';
+
+        // Appending elements to div
+        outer_div.append(toDo);
+        outer_div.append(button_exit);
+        
+        localStorage.setItem(`${title.value}`,`${title.value}`);
+
+        // Appending everything
+        notes.append(outer_div);
+        count++;
+
+        // Resetting form values
+        title.value = "";
+    }
+}
+
+// This section clears the current list
+function removeAllChildNodes(parent){
+    while(parent.firstChild) parent.removeChild(parent.firstChild);
+    localStorage.clear();
+}
+
+inputTitle.addEventListener('keyup', function (e) {
+    if(e.key === 'Enter') addItem();
+    if(e.key === "Escape") inputTitle.blur();
+});

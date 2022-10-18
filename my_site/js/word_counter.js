@@ -1,1 +1,17 @@
-const _0x1e3131=_0x32e9;(function(_0x444169,_0x2c93e6){const _0xbee837=_0x32e9,_0x988d9a=_0x444169();while(!![]){try{const _0x4caca7=-parseInt(_0xbee837(0x1c1))/0x1+-parseInt(_0xbee837(0x1c0))/0x2+-parseInt(_0xbee837(0x1b8))/0x3+parseInt(_0xbee837(0x1bf))/0x4*(parseInt(_0xbee837(0x1c9))/0x5)+parseInt(_0xbee837(0x1bc))/0x6+-parseInt(_0xbee837(0x1ca))/0x7*(parseInt(_0xbee837(0x1c7))/0x8)+-parseInt(_0xbee837(0x1c2))/0x9*(-parseInt(_0xbee837(0x1c3))/0xa);if(_0x4caca7===_0x2c93e6)break;else _0x988d9a['push'](_0x988d9a['shift']());}catch(_0xd67fe0){_0x988d9a['push'](_0x988d9a['shift']());}}}(_0xbbf8,0xb0f39));let total_characters=-0x1,words=[],txtarea=document['querySelector'](_0x1e3131(0x1b5));function updateWord(){const _0x37217e=_0x1e3131;let _0x27da5d=txtarea[_0x37217e(0x1be)][_0x37217e(0x1bd)](/\s/),_0xc18b96=txtarea[_0x37217e(0x1be)];for(let _0x4b32cf=0x0;_0x4b32cf<_0x27da5d[_0x37217e(0x1c5)];_0x4b32cf++){if(/\S/['test'](_0x27da5d[_0x4b32cf]))words[_0x37217e(0x1bb)]($[_0x37217e(0x1c6)](_0x27da5d[_0x4b32cf]));}for(let _0x2dbb8a=0x0;_0x2dbb8a<_0xc18b96[_0x37217e(0x1c5)];_0x2dbb8a++)total_characters++;document[_0x37217e(0x1b7)]('.words')[_0x37217e(0x1c4)]=words[_0x37217e(0x1c5)],document[_0x37217e(0x1b7)](_0x37217e(0x1ba))[_0x37217e(0x1c4)]=total_characters+0x1,words[_0x37217e(0x1b6)](0x0,words[_0x37217e(0x1c5)]),total_characters=-0x1;}function _0x32e9(_0x1ff411,_0x29d443){const _0xbbf8d5=_0xbbf8();return _0x32e9=function(_0x32e97c,_0x76094a){_0x32e97c=_0x32e97c-0x1b5;let _0x46736d=_0xbbf8d5[_0x32e97c];return _0x46736d;},_0x32e9(_0x1ff411,_0x29d443);}function _0xbbf8(){const _0x703f03=['24DKjcqC','keyup','1375805fOaGqY','1566411aAIBiR','.txtarea','splice','querySelector','4109397qrPPqz','addEventListener','.characters','push','7031400RbRAGW','split','value','8LfVQvq','348380JIfGss','320016wmHYSZ','9fJhEeZ','15378950aLORGs','innerText','length','trim'];_0xbbf8=function(){return _0x703f03;};return _0xbbf8();}txtarea[_0x1e3131(0x1b9)](_0x1e3131(0x1c8),_0x3d6582=>updateWord());
+let total_characters = -1, words = [];
+let txtarea = document.querySelector(".txtarea");
+
+function updateWord() {
+    let lines = txtarea.value.split(/\s/), x = txtarea.value;
+
+    for(let i = 0; i < lines.length; i++){ if(/\S/.test(lines[i])) words.push($.trim(lines[i])); }
+    for(let j = 0; j < x.length; j++) total_characters++;
+
+    document.querySelector(".words").innerText = words.length;
+    document.querySelector(".characters").innerText = total_characters + 1;
+    
+    words.splice(0,words.length); // empties / resets the array length
+    total_characters = -1; // reset total character length
+}
+
+txtarea.addEventListener("keyup", (e) => updateWord());

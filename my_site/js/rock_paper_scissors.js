@@ -1,1 +1,17 @@
-const _0x1c836f=_0x10bc;(function(_0xc1aaec,_0x52b34d){const _0x170d07=_0x10bc,_0x16dd9e=_0xc1aaec();while(!![]){try{const _0x1b0e78=-parseInt(_0x170d07(0x131))/0x1*(-parseInt(_0x170d07(0x132))/0x2)+parseInt(_0x170d07(0x135))/0x3+-parseInt(_0x170d07(0x128))/0x4+-parseInt(_0x170d07(0x12a))/0x5+parseInt(_0x170d07(0x129))/0x6+-parseInt(_0x170d07(0x130))/0x7*(parseInt(_0x170d07(0x137))/0x8)+-parseInt(_0x170d07(0x12c))/0x9;if(_0x1b0e78===_0x52b34d)break;else _0x16dd9e['push'](_0x16dd9e['shift']());}catch(_0x358748){_0x16dd9e['push'](_0x16dd9e['shift']());}}}(_0x47ea,0x1a494));let choices=[_0x1c836f(0x138),'Paper','Scissors'];function rock(){const _0x3917a5=_0x1c836f;let _0x2c4df2=Math[_0x3917a5(0x12b)](Math['random']()*0x3);document[_0x3917a5(0x133)](_0x3917a5(0x12f))['innerText']='Rock',document[_0x3917a5(0x133)]('computer')[_0x3917a5(0x127)]=''+choices[_0x2c4df2];}function paper(){const _0x3a3af5=_0x1c836f;let _0x46173d=Math[_0x3a3af5(0x12b)](Math[_0x3a3af5(0x136)]()*0x3);document[_0x3a3af5(0x133)](_0x3a3af5(0x12f))['innerText']=_0x3a3af5(0x12e),document[_0x3a3af5(0x133)](_0x3a3af5(0x134))['innerText']=''+choices[_0x46173d];}function _0x10bc(_0x370b72,_0x556402){const _0x47eabe=_0x47ea();return _0x10bc=function(_0x10bcae,_0x455cc6){_0x10bcae=_0x10bcae-0x127;let _0x295926=_0x47eabe[_0x10bcae];return _0x295926;},_0x10bc(_0x370b72,_0x556402);}function scissors(){const _0x46f96b=_0x1c836f;let _0xcb2a95=Math[_0x46f96b(0x12b)](Math[_0x46f96b(0x136)]()*0x3);document[_0x46f96b(0x133)](_0x46f96b(0x12f))[_0x46f96b(0x127)]=_0x46f96b(0x12d),document['getElementById'](_0x46f96b(0x134))[_0x46f96b(0x127)]=''+choices[_0xcb2a95];}function _0x47ea(){const _0x104fe0=['Paper','player','357959FHwpvG','2XsYvZk','207756TTEefE','getElementById','computer','345756vkSAIJ','random','8sqjUWb','Rock','innerText','328968CMOFnr','1053798kLbLcX','933290OPAOVm','floor','638424BjKHVq','Scissors'];_0x47ea=function(){return _0x104fe0;};return _0x47ea();}
+let choices = ["Rock","Paper","Scissors"];
+
+function rock() {
+    let choice = Math.floor(Math.random() * 3);
+    document.getElementById("player").innerText = `Rock`;
+    document.getElementById("computer").innerText = `${choices[choice]}`;
+}
+function paper() {
+    let choice = Math.floor(Math.random() * 3);
+    document.getElementById("player").innerText = `Paper`;
+    document.getElementById("computer").innerText = `${choices[choice]}`;
+}
+function scissors() {
+    let choice = Math.floor(Math.random() * 3);
+    document.getElementById("player").innerText = `Scissors`;
+    document.getElementById("computer").innerText = `${choices[choice]}`;
+}
