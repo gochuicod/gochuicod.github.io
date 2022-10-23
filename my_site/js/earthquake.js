@@ -38,7 +38,7 @@ let earthquake = {
         loader.style.display = "none";
         document.querySelector(".dataField").style.display = "block";
     },
-    isNull: (item) => { if(item != null) return item; return "--"; },
+    isNull: (item) => (item != null) ? item : '--',
     addItems: (index) => {
         let group = document.createElement("div");
         group.setAttribute('class',`group${index} shadow rounded-custom mb-3 p-3 fw-light fs-7`);

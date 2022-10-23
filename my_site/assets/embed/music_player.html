@@ -13,27 +13,30 @@
   <body class="light-mode-bg-1 light-mode-color-1">
     <section>
       <div class="container w-75">
-        <div class="d-flex flex-row justify-content-center">
-          <img class="rounded-custom shadow unselectable" src="../img/van_halen_album.jpg" width="200" height="150" id="album" oncontextmenu="return false;">
-          <audio src="../audio/Van Halen - Jump.mp3" id="song"></audio>
+        <div class="d-flex justify-content-center">
+          <img class="imgAlbumCover rounded shadow-sm" src="../img/save_your_tears_album.png" height="130" width="180">
+          <audio class="audioInput" src="../audio/The Weeknd - Save Your Tears.mp3"></audio>
         </div>
-        <div class="d-flex flex-row justify-content-center py-2">
-          <span class="fw-normal fs-5" id="title">Jump</span>
+        <div class="d-flex justify-content-center mt-2">
+          <span class="musicTitle fs-5">Save Your Tears</span>
         </div>
-        <div class="d-flex flex-row justify-content-center pb-3">
-          <button class="btn shadow-sm rounded-circle" onclick="backward()"><i class="bi bi-skip-backward-fill" id="backward"></i></button>
-          <button class="btn shadow-sm rounded-circle mx-2" onclick="play()" id="playPause"><i class="bi bi-play-fill" id="play_pause"></i></button>
-          <button class="btn shadow-sm rounded-circle" onclick="forward()"><i class="bi bi-skip-forward-fill" id="forward"></i></button>
+        <div class="d-flex justify-content-center">
+          <span class="musicArtist fs-6 fw-light">The Weeknd</span>
         </div>
-        <div class="d-flex flex-row justify-content-center">
-          <span id="trackTime">0:00</span>
-          <input class="form-range mx-2" type="range" min="1" max="241" value="1" id="seek_bar" onchange="player(this.value)"></input>
-          <span id="totalTrackTime">0:00</span>
+        <div class="d-flex justify-content-center my-3">
+          <button class="btn btn-sm btn-dark rounded-circle" onclick="musicPlayer.handleSkipBackward()"><i class="bi bi-skip-backward-fill"></i></button>
+          <button class="btn btn-sm btn-dark rounded-circle mx-2 btnPlayPause" onclick="musicPlayer.handlePlayPause()"><i class="iconPlayPause bi bi-play-fill"></i></button>
+          <button class="btn btn-sm btn-dark rounded-circle" onclick="musicPlayer.handleSkipForward()"><i class="bi bi-skip-forward-fill"></i></button>
         </div>
-        <div class="d-flex flex-row justify-content-center pb-2">
-          <i class="bi bi-volume-up-fill" style="cursor: pointer" id="volume_icon" onclick="muteToggle()"></i>
-          <input class="form-range ms-2 m-auto" type="range" min="0" max="100" value="100" id="volume" onchange="volume(this.value)"></input>
-          <span class="ms-2" id="volTracker">100</span>
+        <div class="d-flex justify-content-center align-items-center">
+          <span class="trackLength">00:00</span>
+          <input class="trackSeek form-range mx-2" type="range" value="0" min="0" max="0" onchange="musicPlayer.handleSeek(this.value)">
+          <span class="trackCurrentLength">00:00</span>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <a class="text-dark" onclick="musicPlayer.handleVolumeMute()"><i class="trackVolIcon bi bi-volume-up-fill"></i></a>
+          <input class="form-range mx-2" type="range" value="100" min="0" max="100" onchange="musicPlayer.handleVolume(audio.volume = this.value/100)">
+          <span class="trackVolText">100</span>
         </div>
       </div>
     </section>

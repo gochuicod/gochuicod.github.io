@@ -17,14 +17,13 @@
       </div>
       <div class="container">
           <div class="d-flex flex-row justify-content-center mb-3">
-            <p class="fw-bold h1 p-5 rounded-custom shadow" id="dice">1</p>
+            <p class="fw-bold h1 p-5 rounded-custom shadow dice">1</p>
           </div>
           <div class="d-flex flex-row justify-content-center mb-3">
-            <button class="btn btn-primary mx-1" onclick="roll()">Roll</button>
+            <button class="btn btn-primary mx-1 roll" onclick="document.querySelector('.dice').innerHTML = Math.floor(Math.random() * 6) + 1">Roll</button>
           </div>
       </div>
     </section>
-    <script src="../../js/dice.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>

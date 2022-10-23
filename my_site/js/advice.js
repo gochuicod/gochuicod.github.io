@@ -3,12 +3,12 @@ let csb = document.querySelector(".clearSearchButton"), search = document.queryS
 let loader = document.querySelector(".loader");
 
 let advice = {
-    fetchAdviceData: function(query){
+    fetchAdviceData: query => {
         fetch(
             `https://api.adviceslip.com/advice/search/${query}`
         ).then((response) => response.json()).then((data) => this.displayAdviceData(data));
     },
-    displayAdviceData: function(data){
+    displayAdviceData: data => {
         this.removeAllChildNodes(document.querySelector(".adviceField"));
         for(let i = 0; i < data.slips.length; this.addAdvice(i), i++);
 
@@ -28,13 +28,13 @@ let advice = {
         loader.style.display = "none";
         document.querySelector(".adviceField").style.display = "block";
     },
-    search: function() {
+    search: () => {
         this.fetchAdviceData(search.value);
         document.querySelector(".adviceField").style.display = "none";
         loader.style.display = "block";
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    addAdvice: (index) => {
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    addAdvice: index => {
         let adviceField = document.querySelector(".adviceField");
 
         let outerDiv = document.createElement("div");
@@ -58,8 +58,8 @@ let advice = {
     }
 }
 
-search.addEventListener("keyup", (e) => advice.search());
-document.addEventListener("keyup", (e) => {
+search.addEventListener("keyup", e => advice.search());
+document.addEventListener("keyup", e => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
     if(search.value.length > 0) csb.style.display = "block";
     if(search.value.length == 0) csb.style.display = "none";

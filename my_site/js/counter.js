@@ -1,14 +1,5 @@
 let count = 0;
 
-document.getElementById("add").onclick = () => {
-    count++;
-    document.getElementById("currentCount").innerText = `${count}`;
-}
-document.getElementById('deduct').onclick = () => {
-    count--;
-    document.getElementById("currentCount").innerText = `${count}`;
-}
-document.getElementById('reset').onclick = () => {
-    count = 0;
-    document.getElementById("currentCount").innerText = `${count}`;
-}
+document.querySelector(".add").onclick = () => document.querySelector(".currentCount").innerText = count++;
+document.querySelector('.deduct').onclick = () => document.querySelector(".currentCount").innerText = count--;
+document.querySelector('.reset').onclick = () => document.querySelector(".currentCount").innerText = count = 0;
