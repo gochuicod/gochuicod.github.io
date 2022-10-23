@@ -87,9 +87,9 @@ let musicPlayer = {
         trackSeek.setAttribute('max',`${Math.floor(audio.duration)}`); trackSeek.value = Math.floor(time);
         
         let durationMin = Math.floor(audio.duration / 60), durationExtraSeconds = Math.floor(audio.duration % 60);
-        trackCurrentLength.innerText = `${durationMin < 10 ? '0' + durationMin : durationMin}${durationExtraSeconds < 10 ? ':0' + durationExtraSeconds : ':' + durationExtraSeconds}`;
+        trackCurrentLength.innerText = `${durationMin < 10 ? durationMin : durationMin}${durationExtraSeconds < 10 ? ':0' + durationExtraSeconds : ':' + durationExtraSeconds}`;
         
-        return `${minutes < 10 ? '0' + minutes : minutes}${extraSeconds < 10 ? ':0' + extraSeconds : ':' + extraSeconds}`;
+        return `${minutes < 10 ? minutes : minutes}${extraSeconds < 10 ? ':0' + extraSeconds : ':' + extraSeconds}`;
     },
     
     handleSeek: value => audio.currentTime = value,
