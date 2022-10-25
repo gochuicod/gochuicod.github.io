@@ -3,12 +3,12 @@ let csb = document.querySelector(".clearSearchButton"), search = document.queryS
 let loader = document.querySelector(".loader");
 
 let advice = {
-    fetchAdviceData: query => {
+    fetchAdviceData: function(query){
         fetch(
             `https://api.adviceslip.com/advice/search/${query}`
         ).then((response) => response.json()).then((data) => this.displayAdviceData(data));
     },
-    displayAdviceData: data => {
+    displayAdviceData: function(data){
         this.removeAllChildNodes(document.querySelector(".adviceField"));
         for(let i = 0; i < data.slips.length; this.addAdvice(i), i++);
 

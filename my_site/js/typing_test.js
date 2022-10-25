@@ -61,7 +61,6 @@ function difficultyToggle() {
 }
 
 function updateWord() {
-    let newline_count = 0;
     for(let i = 0; i < txtarea.value.length; total_characters++, i++);
     getErrors(); visualAspectOn();
     characters.innerText = `${lblChars = total_characters}`;
@@ -74,39 +73,27 @@ function updateWord() {
 
 function visualAspectOn() {
     if(texts[texts.length] == givenTexts[givenTexts.length]) items[texts.length - 1].setAttribute("class","bg-dark text-light rounded-3 p-1");
-    for(let i = 0; i < texts.length - 1; i++){
-        (texts[i] == givenTexts[i]) ? items[i].setAttribute("class","text-success p-1") : items[i].setAttribute("class","text-danger p-1");
-    }
-    for(let j = items.length; j >= texts.length; j--){
-        if(items[j] != texts[j]) items[j].setAttribute("class","p-1");
-    }
+    for(let i = 0; i < texts.length - 1; texts[i] == givenTexts[i] ? items[i].setAttribute("class","text-success p-1") : items[i].setAttribute("class","text-danger p-1"), i++);
+    for(let j = items.length; j >= texts.length; (items[j] != texts[j]) ? items[j].setAttribute("class","p-1") : false, j--);
 }
 
-function visualAspectOff() {
-    for(let i = 0; i < items.length; items[i].setAttribute("class","p-1"), i++);
-}
+function visualAspectOff() { for(let i = 0; i < items.length; items[i].setAttribute("class","p-1"), i++); }
 
 function getErrors() {
     extractTextArea(); extractGiven();
-    for(let i = 0; i < texts.length; i++){
-        if(texts[i] != givenTexts[i]) lblErrors++;
-    }
+    for(let i = 0; i < texts.length; (texts[i] != givenTexts[i]) ? lblErrors++ : false, i++);
 }
 
 function extractTextArea(){
     /* Code below finds all words in a text area string*/
     /* \s represents as a whitespace character it starts to split words once a whitespace is found */
     let lines = $(txtarea).val().split(/\s/);
-    for(let i = 0; i < lines.length; i++){
-        if(/\S/.test(lines[i])) texts.push((lines[i]).trim());
-    }
+    for(let i = 0; i < lines.length; /\S/.test(lines[i]) ? texts.push((lines[i]).trim()) : false, i++);
 }
 
 function extractGiven() {
     let givenText = text.split(/\s/);
-    for(let i = 0; i < givenText.length; i++){
-        if(/\S/.test(givenText[i])) givenTexts.push((givenText[i]).trim());
-    }
+    for(let i = 0; i < givenText.length; (/\S/.test(givenText[i])) ? givenTexts.push((givenText[i]).trim()) : false, i++);
 }
 
 function timer() {
