@@ -29,8 +29,8 @@ let nasaNEO = {
         loader.style.display = "none";
         document.querySelector(".dataField").style.display = "block";
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    prepareNEOData: (index) => {
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    prepareNEOData: index => {
         let dataField = document.querySelector(".dataField");
 
         let outerDiv = document.createElement("div");
@@ -78,11 +78,11 @@ let nasaNEO = {
 
         dataField.append(outerDiv);
     },
-    getMonth2Digits: (month) => {
+    getMonth2Digits: month => {
         if(month < 10) return `0${month}`;
         return month;
     },
-    getDay2Digits: (date) => {
+    getDay2Digits: date => {
         if(date < 10) return `0${date}`;
         return date;
     }

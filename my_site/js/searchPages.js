@@ -1,6 +1,6 @@
-let dropDown = document.querySelector("#searchItems"), searchBox = document.querySelector("#searchbox");
-let exampleModal = document.querySelector("#exampleModal"), title = document.querySelector("#title");
-let textarea = document.querySelector("#txtarea"), searchInterval, indexItem;
+let dropDown = document.querySelector(".searchItems"), searchBox = document.querySelector(".searchbox");
+let exampleModal = document.querySelector(".exampleModal"), title = document.querySelector(".title");
+let textarea = document.querySelector(".txtarea"), searchInterval, indexItem;
 const pages = [
     {
         pageName: "home",

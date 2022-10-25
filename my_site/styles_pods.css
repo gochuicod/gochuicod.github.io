@@ -1,7 +1,7 @@
 body::before {
     display: block;
     content: '';
-    height: 35px;
+    height: 20px;
 }
 .navbar-bg-custom { background-color: white; }
 .showcase-bg-custom { background-color: #eff0f1; }

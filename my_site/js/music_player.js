@@ -5,7 +5,7 @@ let imgAlbumCover = document.querySelector('.imgAlbumCover');
 let musicTitle = document.querySelector('.musicTitle'), musicArtist = document.querySelector('.musicArtist');
 let trackCurrentLength = document.querySelector('.trackCurrentLength'), trackSeek = document.querySelector('.trackSeek');
 let trackVolIcon = document.querySelector('.trackVolIcon'), trackLength = document.querySelector('.trackLength');
-let trackVolText = document.querySelector('.trackVolText');
+let trackVolText = document.querySelector('.trackVolText'), trackVol = document.querySelector('.trackVol');
 let current_track = 0, currentTimeTracker, mute = false;
 
 let playlist = [
@@ -105,12 +105,29 @@ let musicPlayer = {
             else if(value < 1 && value > 0) trackVolIcon.setAttribute('class','trackVolIcon bi bi-volume-down-fill')
             else trackVolIcon.setAttribute('class','trackVolIcon bi bi-volume-off-fill')
         } else trackVolIcon.setAttribute('class','trackVolIcon bi bi-volume-mute-fill')
+    },
+
+    handleVolumeShortcut: key => {
+        if(key === "]"){
+            if(audio.volume > 0.9 && audio.volume < 1) audio.volume += (1-audio.volume)
+            if(audio.volume != 1) trackVol.value = (audio.volume += 0.1)
+        }
+        if(key === "["){
+            if(audio.volume > 0 && audio.volume < 0.1) audio.volume = 0
+            if(audio.volume != 0) trackVol.value = (audio.volume -= 0.1)
+        }
+        trackVol.value = Math.round(audio.volume*100)
+        trackVolText.innerText = Math.round(audio.volume*100)
     }
 }
 
 document.addEventListener("keypress", (e) => {
-    if(e.key == " ") musicPlayer.handlePlayPause();
+    if(e.key == " ") musicPlayer.handlePlayPause()
     if(e.key.toLowerCase() === "b") musicPlayer.handleSkipForward()
     if(e.key.toLowerCase() === "z") musicPlayer.handleSkipBackward()
     if(e.key.toLowerCase() === "m") musicPlayer.handleVolumeMute()
+    if(e.key === ">") audio.currentTime += 10
+    if(e.key === "<") audio.currentTime -= 10
+    if(e.key === "]") { musicPlayer.handleVolumeShortcut(e.key) }
+    if(e.key === "[") { musicPlayer.handleVolumeShortcut(e.key) }
 });

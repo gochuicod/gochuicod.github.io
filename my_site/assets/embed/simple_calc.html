@@ -7,7 +7,7 @@
     <title>DG</title>
     <link rel="icon" href="../img/tab_icon.png" class="rounded-circle">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link href="../../styles_pods.css" rel="stylesheet">
   </head>
   <body class="light-mode-bg-1 light-mode-color-1">
@@ -15,31 +15,31 @@
       <div class="container w-75">
         <div class="d-flex flex-row justify-content-center input-group">
           <input class="form-control rounded-custom ms-3 bg-light border-0 text-end shadow-sm" type="text" value="" id="txtArea" placeholder="0"></input>
-          <button class="btn rounded-custom fw-bold bg-danger text-light shadow-sm" onclick="back()">⌫</button>
+          <button class="btn rounded-custom fw-bold bg-danger text-light shadow-sm" onclick="txtArea.pop()">⌫</button>
         </div>
         <div class="d-flex flex-row justify-content-center mt-4">
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="one()">1</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="two()">2</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="three()">3</button> 
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3" onclick="divide()">/</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('1')">1</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('2')">2</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('3')">3</button> 
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3" onclick="txtArea.push('/')">/</button>
         </div>
         <div class="d-flex flex-row justify-content-center mt-3">
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="four()">4</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="five()">5</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="six()">6</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3" onclick="plus()">+</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('4')">4</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('5')">5</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('6')">6</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3" onclick="txtArea.push('+')">+</button>
         </div>
         <div class="d-flex flex-row justify-content-center mt-3">
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="seven()">7</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="eight()">8</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="nine()">9</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 fw-bold" onclick="minus()">-</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('7')">7</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('8')">8</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('9')">9</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 fw-bold" onclick="txtArea.push('-')">-</button>
         </div>
         <div class="d-flex flex-row justify-content-center mt-3">
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2 shadow-sm fw-bold" onclick="clearArea()">C</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="zero()">0</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="times()">x</button>
-          <button class="btn d-flex flex-row justify-content-center py-2 px-3 shadow-none border border-2 border-info rounded-3 bg-info fw-bold" onclick="equals()">=</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2 shadow-sm fw-bold" onclick="txtArea.push('C')">C</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('0')">0</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-muted rounded-3 me-2" onclick="txtArea.push('*')">x</button>
+          <button class="btn py-2 px-3 shadow-none border border-2 border-info rounded-3 bg-info fw-bold" onclick="txtArea.push('=')">=</button>
         </div>
       </div>
     </section>

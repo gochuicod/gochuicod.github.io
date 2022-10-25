@@ -1,15 +1,15 @@
 // Stopwatch
-let stopwatch_minutes = 0, stopwatch_seconds = 0, stopwatch_ms = 0;
-let stopwatch_stopwatch;
-function stopwatch_start() {
-    stopwatch_stopwatch = setInterval(stopwatch_time, 12);
+let stopwatch_minutes = 0, stopwatch_seconds = 0, stopwatch_ms = 0, stopwatch_stopwatch;
+
+let stopwatch_start = () => {
+    stopwatch_stopwatch = setInterval(stopwatch_time, 10);
     document.getElementById("stopwatch-start").disabled = true;
 }
-function stopwatch_stop(){
+let stopwatch_stop = () => {
     clearInterval(stopwatch_stopwatch);
     document.getElementById("stopwatch-start").disabled = false;
 }
-function stopwatch_reset(){
+let stopwatch_reset = () => {
     clearInterval(stopwatch_stopwatch);
     stopwatch_minutes = 0; stopwatch_seconds = 0; stopwatch_ms = 0;
     document.getElementById("stopwatch-minute").innerText = `${stopwatch_minutes}m`;
@@ -18,7 +18,7 @@ function stopwatch_reset(){
     document.getElementById("stopwatch-start").disabled = false;
 }
 
-function stopwatch_time(){
+let stopwatch_time = () => {
     if(stopwatch_minutes === 60){
         stopwatch_minutes = 0; stopwatch_seconds = 0;
     } else {

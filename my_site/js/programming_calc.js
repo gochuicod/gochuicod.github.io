@@ -5,8 +5,8 @@ let input = document.querySelector(".convert");
 let max = document.querySelector(".max");
 const hexCharacters = {a: "A", b: "B", c: "C", d: "D", e: "E", f: "F"}
 
-function convert(){
-    let val = parseInt(input.value);
+let convert = () => {
+    let val = +(input.value);
     if(val > 4095) max.innerText = `Only accepts 12-bit values!`;
     else {
         max.innerText = ``;
@@ -15,7 +15,7 @@ function convert(){
         hex.innerText = `Hex: ${DecimalToHex(val)}`;
     }
 }
-function DecimalToBinary(input){
+let DecimalToBinary = input => {
     let empty = [];
     for(let i = input, j = 0; i != 0; i /= 2, j++){
         if(i < 1) break;
@@ -25,7 +25,7 @@ function DecimalToBinary(input){
     }
     return empty.reverse().join('');
 }
-function DecimalToOctal(input){
+let DecimalToOctal = input => {
     let empty = [];
     for(let i = input; i != 0; i /= 8){
         if(i < 1) break;
@@ -33,7 +33,7 @@ function DecimalToOctal(input){
     }
     return empty.reverse().join('')
 }
-function DecimalToHex(input){
+let DecimalToHex = input => {
     let empty = [];
     for(let i = input; i != 0; i /= 16){
         if(i < 1) break;
@@ -52,7 +52,7 @@ function DecimalToHex(input){
 
 // Prevents enter key to freeze the entire page
 $(document).ready(function() {
-  $(window).keydown(function(event){
+  $(window).keydown(event => {
     if(event.keyCode == 13) {
       event.preventDefault();
       return false;

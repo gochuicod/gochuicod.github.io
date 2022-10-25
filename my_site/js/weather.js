@@ -108,13 +108,13 @@ let weather = {
         this.hideElement(loader);
         this.showElement(document.querySelector(".weather"));
     },
-    search: function(){
+    search: () => {
         this.fetchWeather(document.querySelector(".search").value);
         this.hideElement(document.querySelector(".weather"));
         this.showElement(loader);
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    defineDay: function(predictionDataDay){
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    defineDay: predictionDataDay => {
         let days = ["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"];
         for(let i = 0; i < days.length; i++){
             if(predictionDataDay == i){
@@ -123,14 +123,14 @@ let weather = {
             }
         }
     },
-    defineUVIQuality: function(value){
+    defineUVIQuality: value => {
         if(value < 3) return "Low";
         else if(value > 2 && value < 6) return "Moderate";
         else if(value > 5 && value < 8) return "High";
         else if(value > 7 && value < 11) return "Very High";
         else if(value > 10) return "Extreme";
     },
-    definePollutionQuality: function(airPollutionData){
+    definePollutionQuality: airPollutionData => {
         const { o3 } = airPollutionData.list[0].components;
         if(o3 > -1 && o3 < 61) return "Good";
         else if(o3 > 59 && o3 < 121) return "Fair";
@@ -138,7 +138,7 @@ let weather = {
         else if(o3 > 179 && o3 < 241) return "Poor";
         else if(o3 > 240) return "Very Poor";
     },
-    defineMoonPhase: function(value){
+    defineMoonPhase: value => {
         if(value == 0) return "New Moon";
         else if(value > 0 && value < 0.25) return "Waxing Crescent";
         else if(value == 0.25) return "First Quarter";
@@ -148,7 +148,7 @@ let weather = {
         else if(value == 0.75) return "Last Quarter";
         else return "Waning Crescent";
     },
-    addThreeHrForecast: (index) => {
+    addThreeHrForecast: index => {
         let ThreeHF = document.querySelector(".forecastDataThreeHrs");
 
         let outerDiv = document.createElement("div");
@@ -206,7 +206,7 @@ let weather = {
 
         ThreeHF.append(outerDiv);
     },
-    addSixDayForecast: (index) => {
+    addSixDayForecast: index => {
         let FD6D = document.querySelector(".forecastDataSixDays");
         let outerDiv = document.createElement("div");
         let innerDiv1 = document.createElement("div");
@@ -244,7 +244,12 @@ let weather = {
         innerDiv9.setAttribute('class','col-6');
         innerDiv10.setAttribute('class','col-6');
         innerDiv11.setAttribute('class','col-12 mt-3');
-        innerDiv1Img.setAttribute('src',''); innerDiv1Img.setAttribute('alt',''); innerDiv1Img.setAttribute('class',`d${index}Icon unselectable`); innerDiv1Img.setAttribute('oncontextmenu','return false;');
+
+        innerDiv1Img.setAttribute('src','');
+        innerDiv1Img.setAttribute('alt','');
+        innerDiv1Img.setAttribute('class',`d${index}Icon unselectable`);
+        innerDiv1Img.setAttribute('oncontextmenu','return false;');
+        
         innerDiv2Span.setAttribute('class',`d${index}DOTW fw-bold`);
         innerDiv3Span.setAttribute('class',`d${index}Temp`);
         innerDiv4Span.setAttribute('class',`d${index}Humidity`);
@@ -281,11 +286,11 @@ let weather = {
 
         FD6D.append(outerDiv);
     },
-    hideElement: (tag) => { tag.style.display = "none"; },
-    showElement: (tag) => { tag.style.display = "block"; }
+    hideElement: tag => tag.style.display = "none",
+    showElement: tag => tag.style.display = "block"
 }
 
-function showHourly(){
+let showHourly = () => {
     if(document.querySelector(".forecasttitle").innerText == "24 Hour"){
         document.querySelector(".forecastDataThreeHrs").style.display="none";
         document.querySelector(".forecastDataSixDays").style.display="block";

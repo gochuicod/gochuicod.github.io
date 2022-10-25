@@ -1,17 +1,14 @@
 let choices = ["Rock","Paper","Scissors"];
 
-function rock() {
-    let choice = Math.floor(Math.random() * 3);
-    document.getElementById("player").innerText = `Rock`;
-    document.getElementById("computer").innerText = `${choices[choice]}`;
+let rock = () => {
+    document.querySelector(".player").innerText = `Rock`;
+    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
 }
-function paper() {
-    let choice = Math.floor(Math.random() * 3);
-    document.getElementById("player").innerText = `Paper`;
-    document.getElementById("computer").innerText = `${choices[choice]}`;
+let paper = () => {
+    document.querySelector(".player").innerText = `Paper`;
+    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
 }
-function scissors() {
-    let choice = Math.floor(Math.random() * 3);
-    document.getElementById("player").innerText = `Scissors`;
-    document.getElementById("computer").innerText = `${choices[choice]}`;
+let scissors = () => {
+    document.querySelector(".player").innerText = `Scissors`;
+    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
 }

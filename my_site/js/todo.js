@@ -1,84 +1,65 @@
-let count = 0, inputTitle = document.querySelector("#title"), allNotes = document.querySelector("#notes");
+let inputTitle = document.querySelector("#title"), allNotes = document.querySelector("#notes");
 
-window.onload = () => allStorage();
+window.onload = () => todo.allStorage();
 
-function allStorage() {
-    let values = [], keys = Object.keys(localStorage), i = keys.length;
-
-    // pushes key strings into values array
-    while (i--) values.push(localStorage.getItem(keys[i]));
-
-    // remembers and restores data unremoved
-    for(let j = 0; j < values.length; addLocalItem(values[j]), j++);
-}
-
-function addLocalItem(value) {
-    let title = value;
-    let outer_div = document.createElement("div");
-    let toDo = document.createElement("span");
-    let button_exit = document.createElement("button");
-
-    outer_div.setAttribute('class','d-flex flex-row justify-content-between p-1 bg-white text-dark rounded-custom mb-2 border border-2 border-muted fs-small');
-    outer_div.setAttribute('id',`${value}`);
+let todo = {
+    allStorage: () => {
+        let values = [], keys = Object.keys(localStorage), i = keys.length;
+        while (i--) values.push(localStorage.getItem(keys[i])); // pushes key strings into values array
+        for(let j = 0; j < values.length; todo.addLocalItem(values[j]), j++); // remembers and restores data unremoved
+    },
     
-    toDo.setAttribute('class','m-2');
-    button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
-    button_exit.setAttribute('onclick',`document.getElementById("notes").removeChild(document.getElementById("${value}")); localStorage.removeItem("${value}")`);
+    addLocalItem: value => {
+        let outer_div = document.createElement("div"), toDo = document.createElement("span"), button_exit = document.createElement("button");
     
-    toDo.innerText = value;
-    button_exit.innerText = 'x';
-    
-    outer_div.append(toDo);
-    outer_div.append(button_exit);
-        
-    notes.append(outer_div);
-}
-
-function addItem() {
-    // Declarations
-    const notes = document.getElementById("notes");
-
-    if(inputTitle.value != ""){
-        let title = document.getElementById("title");
-        let outer_div = document.createElement("div");
-        let toDo = document.createElement("span");
-        let button_exit = document.createElement("button");
-
-        // Setting outer div attributes
         outer_div.setAttribute('class','d-flex flex-row justify-content-between p-1 bg-white text-dark rounded-custom mb-2 border border-2 border-muted fs-small');
-        outer_div.setAttribute('id',`${title.value}`);
-
-        // Setting outer div children attributes
+        outer_div.setAttribute('id',`${value}`);
+        
         toDo.setAttribute('class','m-2');
         button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
-        button_exit.setAttribute('onclick',`document.getElementById("notes").removeChild(document.getElementById("${title.value}")); localStorage.removeItem("${title.value}")`);
-
-        // Setting values
-        toDo.innerText = title.value;
+        button_exit.setAttribute('onclick',`document.querySelector("#notes").removeChild(document.querySelector("$${value}")); localStorage.removeItem("${value}")`);
+        
+        toDo.innerText = value;
         button_exit.innerText = 'x';
-
-        // Appending elements to div
+        
         outer_div.append(toDo);
         outer_div.append(button_exit);
-        
-        localStorage.setItem(`${title.value}`,`${title.value}`);
+            
+        allNotes.append(outer_div);
+    },
 
-        // Appending everything
-        notes.append(outer_div);
-        count++;
+    addItem: () => {
+        if(inputTitle.value != ""){
+            let outer_div = document.createElement("div"), toDo = document.createElement("span"), button_exit = document.createElement("button");
+    
+            // Setting outer div attributes
+            outer_div.setAttribute('class',`${inputTitle.value} d-flex flex-row justify-content-between p-1 bg-white text-dark rounded-custom mb-2 border border-2 border-muted fs-small`);
+    
+            // Setting outer div children attributes
+            toDo.setAttribute('class','m-2');
+            button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
+            button_exit.setAttribute('onclick',`document.querySelector("#notes").removeChild(document.querySelector("#${inputTitle.value}")); localStorage.removeItem("${inputTitle.value}")`);
+    
+            // Setting values
+            toDo.innerText = inputTitle.value;
+            button_exit.innerText = 'x';
+    
+            // Appending elements to div
+            outer_div.append(toDo);
+            outer_div.append(button_exit);
+            
+            localStorage.setItem(inputTitle.value,inputTitle.value);
+    
+            allNotes.append(outer_div); // Appending everything
+    
+            inputTitle.value = ""; // Resetting form values
+        }
+    },
 
-        // Resetting form values
-        title.value = "";
-    }
+    removeAllChildNodes: parent => {for(;parent.firstChild;){ parent.removeChild(parent.firstChild); localStorage.clear() }}, // This section clears the current list
 }
 
-// This section clears the current list
-function removeAllChildNodes(parent){
-    while(parent.firstChild) parent.removeChild(parent.firstChild);
-    localStorage.clear();
-}
-
-inputTitle.addEventListener('keyup', function (e) {
-    if(e.key === 'Enter') addItem();
+inputTitle.addEventListener('keyup', e => {
+    if(e.key === 'Enter') todo.addItem();
     if(e.key === "Escape") inputTitle.blur();
 });

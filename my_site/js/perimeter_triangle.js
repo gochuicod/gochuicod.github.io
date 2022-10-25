@@ -1,10 +1,10 @@
-let a = document.querySelector("#sidea"), b = document.querySelector("#sideb"), c = document.querySelector("#base"), output = document.querySelector("#pt-output"), err = document.querySelector("#errorInfo");
+let a = document.querySelector(".sidea"), b = document.querySelector(".sideb"), c = document.querySelector(".base"), output = document.querySelector(".pt-output"), err = document.querySelector(".errorInfo");
 
 window.onload = () => {
     output.style.display = "none";
 }
 
-function perimeterTriangle() {
+let perimeterTriangle = () => {
     let sideA = parseFloat(a.value), sideB = parseFloat(b.value), base = parseFloat(c.value);
     if((isNaN(sideA) || a.value == "") || (isNaN(sideB) || b.value == "") || (isNaN(base) || c.value == "")){
         hideOutput(); hideError();
@@ -30,15 +30,15 @@ function perimeterTriangle() {
     }
 }
 
-function showError() { err.style.display = "block"; }
-function hideError() { err.style.display = "none"; }
+let showError = () => err.style.display = "block";
+let hideError = () => err.style.display = "none";
 
-function showOutput(item) { 
+let showOutput = item => { 
     hideError();
     output.style.display = "block";
     output.innerText = `${item}`;
 }
-function hideOutput() { output.style.display = "none"; }
+let hideOutput = () => output.style.display = "none";
 
 document.addEventListener('keyup', (e) => {
     if(a === document.activeElement || b === document.activeElement || c === document.activeElement) perimeterTriangle();

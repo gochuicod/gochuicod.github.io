@@ -1,10 +1,10 @@
-let a = document.getElementById("pr-length"), b = document.getElementById("pr-width"), output = document.querySelector("#pr-output"), err = document.querySelector("#errorInfo");
+let a = document.querySelector(".pr-length"), b = document.querySelector(".pr-width"), output = document.querySelector(".pr-output"), err = document.querySelector(".errorInfo");
 
 window.onload = () => {
     output.style.display = "none";
 }
 
-function perimeterRectangle() {
+let perimeterRectangle = () => {
     let length = parseFloat(a.value), width = parseFloat(b.value);
     let pr_output = 2 * (length + width);
     if((!isNaN(length)) && (!isNaN(width))){

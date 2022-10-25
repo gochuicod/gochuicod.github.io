@@ -50,13 +50,13 @@ let news = {
             document.querySelector(`.newsSource${index}`).href = element.link;
         });
     },
-    search: function() {
+    search: () => {
         this.fetchNewsData(search.value);
         this.removeAllChildNodes(document.querySelector(".newsField"));
         loader.style.display = "block";
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    addNewsSection: (index) => {
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    addNewsSection: index => {
         let newsField = document.querySelector(".newsField");
 
         let outerDiv = document.createElement("div");

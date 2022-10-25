@@ -1,6 +1,6 @@
-let dropDown = document.querySelector("#searchItems"), searchBox = document.querySelector("#searchbox");
-let exampleModal = document.querySelector("#exampleModal"), title = document.querySelector("#title");
-let textarea = document.querySelector("#txtarea"), searchInterval, indexItem;
+let dropDown = document.querySelector(".searchItems"), searchBox = document.querySelector(".searchbox");
+let exampleModal = document.querySelector(".exampleModal"), title = document.querySelector(".title");
+let textarea = document.querySelector(".txtarea"), searchInterval, indexItem;
 const pages = [
     {
         pageName: "home",
@@ -24,12 +24,12 @@ const pages = [
     }
 ];
 
-function clearList(parent) {
+let clearList = parent => {
     // clears entire dropdown
     while(parent.firstChild) parent.removeChild(parent.firstChild);
 }
 
-function createListItem(iteration) {
+let createListItem = iteration => {
     // this creates a list and appends everything
     let a = document.createElement("a");
     a.setAttribute("class","dropdown-item py-1 link-primary fw-bold");
@@ -38,7 +38,7 @@ function createListItem(iteration) {
     dropDown.append(a);
 }
 
-function listItems() {
+let listItems = () => {
     // this builds the entire dropdown when texts match
     clearList(dropDown);
     let tempArray = [], arrayForSBLength = [];

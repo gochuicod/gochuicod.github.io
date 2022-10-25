@@ -33,7 +33,7 @@ let nasaAPOD = {
         loader.style.display = "none";
         document.querySelector(".nasaAPOD").style.display = "block";
     },
-    defineDay: function(APODDay) {
+    defineDay: APODDay => {
         let days = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
         for(let i = 0; i < days.length; i++){
             if(APODDay == i){
@@ -42,7 +42,7 @@ let nasaAPOD = {
             }
         }
     },
-    defineMonth: function(APODMonth) {
+    defineMonth: APODMonth => {
         let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         for(let i = 0; i < months.length; i++){
             if(APODMonth == i) {
