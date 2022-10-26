@@ -5,11 +5,11 @@ let weather = {
     invalidKeyword: document.querySelector(".invalidKeyword"),
     fetchWeather: function(city){
         fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
-        ).then((response) => response.json()).then((data) => this.displayWeather(data)).catch((error) => {
-            this.showElement(this.invalidKeyword); this.invalidKeyword.innerText = "Invalid Keyword";
-            this.hideElement(document.querySelector(".weather"));
-            this.hideElement(loader);
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weather.apiKey}`
+        ).then((response) => response.json()).then((data) => weather.displayWeather(data)).catch((error) => {
+            weather.showElement(weather.invalidKeyword); weather.invalidKeyword.innerText = "Invalid Keyword";
+            weather.hideElement(document.querySelector(".weather"));
+            weather.hideElement(loader);
         });
     },
     displayWeather: function(data){
@@ -18,7 +18,7 @@ let weather = {
         const { speed } = data.wind;
         const { lat, lon } = data.coord;
         let sunrise = new Date(sys.sunrise*1000), sunset = new Date(sys.sunset*1000), ct = new Date(dt*1000);
-        this.invalidKeyword.style.display = "none";
+        weather.invalidKeyword.style.display = "none";
         document.querySelector(".city").innerText = name;
         document.querySelector(".temperature").innerText = `${temp}°C`;
         document.querySelector(".description").innerText = data.weather[0].description;
@@ -33,20 +33,20 @@ let weather = {
         document.querySelector(".current_time").innerText = `As of ${ct.toLocaleTimeString()}`;
         
         fetch(
-            `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${this.apiKey}`
-        ).then(response => response.json()).then(airPollutionData => this.displayPollutionData(airPollutionData));
+            `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${weather.apiKey}`
+        ).then(response => response.json()).then(airPollutionData => weather.displayPollutionData(airPollutionData));
         fetch(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${this.apiKey}`
-        ).then(response => response.json()).then(predictionData => this.displayPredictionData(predictionData));
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${weather.apiKey}`
+        ).then(response => response.json()).then(predictionData => weather.displayPredictionData(predictionData));
     },
-    displayPollutionData: function(airPollutionData){ document.querySelector(".airquality").innerText = `Air Quality: ${this.definePollutionQuality(airPollutionData)}`; },
+    displayPollutionData: function(airPollutionData){ document.querySelector(".airquality").innerText = `Air Quality: ${weather.definePollutionQuality(airPollutionData)}`; },
     displayPredictionData: function(predictionData){
         console.log(predictionData);
-        this.removeAllChildNodes(document.querySelector(".forecastDataThreeHrs"));
-        this.removeAllChildNodes(document.querySelector(".forecastDataSixDays"));
+        weather.removeAllChildNodes(document.querySelector(".forecastDataThreeHrs"));
+        weather.removeAllChildNodes(document.querySelector(".forecastDataSixDays"));
         document.querySelector(".forecastDataSixDays").style.display = "none";
-        for(let i = 0; i < 24; this.addThreeHrForecast(i), i++);
-        for(let i = 0; i < 7; this.addSixDayForecast(i), i++);
+        for(let i = 0; i < 24; weather.addThreeHrForecast(i), i++);
+        for(let i = 0; i < 7; weather.addSixDayForecast(i), i++);
         
         let hourlyData = [], dates = [];
 
@@ -59,7 +59,7 @@ let weather = {
                 temp: `${predictionData.hourly[i].temp}°C`,
                 clouds: `Cloud Cover: ${predictionData.hourly[i].clouds}%`,
                 pop: `Chance of Rain: ${((predictionData.hourly[i].pop)*100).toFixed(0)}%`,
-                uvi: `UV Index: ${this.defineUVIQuality(predictionData.hourly[i].uvi)}`,
+                uvi: `UV Index: ${weather.defineUVIQuality(predictionData.hourly[i].uvi)}`,
                 humidity: `Humidity: ${predictionData.hourly[i].humidity}%`
             });
         }
@@ -76,7 +76,7 @@ let weather = {
         
         for(let i = 0; i < 7; i++){
             dates.push({
-                dotw: this.defineDay(`${new Date((predictionData.daily[i].dt)*1000).getDay()}`),
+                dotw: weather.defineDay(`${new Date((predictionData.daily[i].dt)*1000).getDay()}`),
                 icon: `https://openweathermap.org/img/wn/${predictionData.daily[i].weather[0].icon}@2x.png`,
                 desc: `${predictionData.daily[i].weather[0].description}`,
                 temp: `${predictionData.daily[i].temp.max}°C`,
@@ -86,7 +86,7 @@ let weather = {
                 pop: `Chance of Rain: ${((predictionData.daily[i].pop)*100).toFixed(0)}%`,
                 sunrise: `Sunrise: ${new Date((predictionData.daily[i].sunrise)*1000).toLocaleTimeString()}`,
                 sunset: `Sunset: ${new Date((predictionData.daily[i].sunset)*1000).toLocaleTimeString()}`,
-                moonphase: `Moon Phase: ${this.defineMoonPhase(predictionData.daily[i].moon_phase)} (${Math.floor(predictionData.daily[i].moon_phase*100)}%)`
+                moonphase: `Moon Phase: ${weather.defineMoonPhase(predictionData.daily[i].moon_phase)} (${Math.floor(predictionData.daily[i].moon_phase*100)}%)`
             }); 
         }
 
@@ -105,13 +105,13 @@ let weather = {
             if(predictionData.daily[index].rain == undefined) document.querySelector(`.d${index}Rain`).innerText = "- -";
             else document.querySelector(`.d${index}Rain`).innerText = element.rain;
         });
-        this.hideElement(loader);
-        this.showElement(document.querySelector(".weather"));
+        weather.hideElement(loader);
+        weather.showElement(document.querySelector(".weather"));
     },
     search: () => {
-        this.fetchWeather(document.querySelector(".search").value);
-        this.hideElement(document.querySelector(".weather"));
-        this.showElement(loader);
+        weather.fetchWeather(document.querySelector(".search").value);
+        weather.hideElement(document.querySelector(".weather"));
+        weather.showElement(loader);
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     defineDay: predictionDataDay => {
