@@ -1,6 +1,5 @@
 let init, initiate = () => init = setInterval(timer.start,10)
-
-let timer = {
+const timer = {
     timerMinute: document.querySelector(".timer-minute"),
     timerSecond: document.querySelector(".timer-second"),
     timerMillisecond: document.querySelector(".timer-millisecond"),
@@ -9,7 +8,7 @@ let timer = {
     timerReset: document.querySelector(".timer-reset"),
     minutes: 0,
     seconds: 0,
-    milliseconds: 100,
+    milliseconds: 0,
     disableToggle: true,
     
     start: () => {

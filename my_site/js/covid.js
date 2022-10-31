@@ -1,6 +1,5 @@
-let search = document.querySelector(".search");
-
-let covid = {
+const search = document.querySelector(".search");
+const covid = {
     csb: document.querySelector(".clearSearchButton"),
     loader: document.querySelector(".loader"),
     covidLocTotal: document.querySelector(".covidLocTotal"),

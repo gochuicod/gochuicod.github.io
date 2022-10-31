@@ -1,6 +1,5 @@
-let search = document.querySelector(".search");
-
-let advice = {
+const search = document.querySelector(".search");
+const advice = {
     adviceField: document.querySelector(".adviceField"),
     invalidSearch: document.querySelector(".invalidSearch"),
     csb: document.querySelector(".clearSearchButton"),

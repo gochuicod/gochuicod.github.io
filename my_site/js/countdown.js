@@ -1,6 +1,4 @@
-window.onload = () => setInterval(christmasCountdown.start,1000);
-
-let christmasCountdown = {
+const christmasCountdown = {
     countDown: document.querySelector(".countDown"),
     countDownText: document.querySelector(".countDownText"),
     monthVal: 0,
@@ -43,3 +41,5 @@ let christmasCountdown = {
         }
     }
 }
+
+window.onload = () => setInterval(christmasCountdown.start,1000);

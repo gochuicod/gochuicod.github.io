@@ -1,8 +1,8 @@
-let txtarea = document.querySelector(".txtarea");
-let words = document.querySelector(".words"), characters = document.querySelector(".characters");
-let paragraphs = document.querySelector(".paragraphs"), sentences = document.querySelector(".sentences");
+const txtarea = document.querySelector(".txtarea");
+const words = document.querySelector(".words"), characters = document.querySelector(".characters");
+const paragraphs = document.querySelector(".paragraphs"), sentences = document.querySelector(".sentences");
 
-let wordCounter = {
+const wordCounter = {
     handleWordCount: string => words.innerText = `${string.split(/[\s,]+/).filter(word => word !== '').length}`,
     handleCharacterCount: string => characters.innerText = string.length,
     handleSentenceCount: string => sentences.innerText = `${string.split(/[.?!]+/).length-1}`,

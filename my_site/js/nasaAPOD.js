@@ -1,5 +1,5 @@
-let search = document.querySelector(".search");
-let nasaAPOD = {
+const search = document.querySelector(".search");
+const nasaAPOD = {
     copyright: document.querySelector(".APODCopyright"),
     loader: document.querySelector(".loader"),
     csb: document.querySelector(".clearSearchButton"),
@@ -66,6 +66,5 @@ document.addEventListener("keyup", (e) => {
 });
 
 nasaAPOD.fetchNasaData(`${new Date().getFullYear()}-${new Date().getUTCMonth()+1}-${new Date().getUTCDate()}`);
-
 nasaAPOD.img.style.display = "none";
 nasaAPOD.csb.style.display = "none";

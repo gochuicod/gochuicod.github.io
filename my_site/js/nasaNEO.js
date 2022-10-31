@@ -1,6 +1,5 @@
-let todaysDate = new Date(), tyear = todaysDate.getFullYear(), tmonth = todaysDate.getUTCMonth()+1, tdate = todaysDate.getUTCDate();
-
-let nasaNEO = {
+const todaysDate = new Date(), tyear = todaysDate.getFullYear(), tmonth = todaysDate.getUTCMonth()+1, tdate = todaysDate.getUTCDate();
+const nasaNEO = {
     loader: document.querySelector(".loader"),
     dataField: document.querySelector(".dataField"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",

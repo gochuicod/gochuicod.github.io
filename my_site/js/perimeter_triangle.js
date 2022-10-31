@@ -1,9 +1,4 @@
 let a = document.querySelector(".sidea"), b = document.querySelector(".sideb"), c = document.querySelector(".base"), output = document.querySelector(".pt-output"), err = document.querySelector(".errorInfo");
-
-window.onload = () => {
-    output.style.display = "none";
-}
-
 let perimeterTriangle = () => {
     let sideA = parseFloat(a.value), sideB = parseFloat(b.value), base = parseFloat(c.value);
     if((isNaN(sideA) || a.value == "") || (isNaN(sideB) || b.value == "") || (isNaN(base) || c.value == "")){
@@ -32,7 +27,6 @@ let perimeterTriangle = () => {
 
 let showError = () => err.style.display = "block";
 let hideError = () => err.style.display = "none";
-
 let showOutput = item => { 
     hideError();
     output.style.display = "block";
@@ -40,6 +34,5 @@ let showOutput = item => {
 }
 let hideOutput = () => output.style.display = "none";
 
-document.addEventListener('keyup', (e) => {
-    if(a === document.activeElement || b === document.activeElement || c === document.activeElement) perimeterTriangle();
-});
+window.onload = () => output.style.display = "none";
+document.addEventListener('keyup', () => a === document.activeElement || b === document.activeElement || c === document.activeElement ? perimeterTriangle() : false);

@@ -1,13 +1,13 @@
 let init, initiate = () => init = setInterval(stopwatch.start,10);
-let stopwatch = {
+const stopwatch = {
     stopwatchMinute: document.querySelector(".stopwatch-minute"),
     stopwatchSecond: document.querySelector(".stopwatch-second"),
     stopwatchMillisecond: document.querySelector(".stopwatch-millisecond"),
     stopwatchStart: document.querySelector(".stopwatch-start"),
     stopwatchStop: document.querySelector(".stopwatch-stop"),
     stopwatchReset: document.querySelector(".stopwatch-reset"),
-    minutes: 60,
-    seconds: 55,
+    minutes: 0,
+    seconds: 0,
     milliseconds: 0,
 
     start: () => {

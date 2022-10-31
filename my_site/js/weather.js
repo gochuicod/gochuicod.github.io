@@ -1,6 +1,5 @@
-let loader = document.querySelector(".loader");
-
-let weather = {
+const loader = document.querySelector(".loader");
+const weather = {
     "apiKey": "f61cce078be10fc170921eecbec33440",
     invalidKeyword: document.querySelector(".invalidKeyword"),
     fetchWeather: function(city){

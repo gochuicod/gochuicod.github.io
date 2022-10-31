@@ -1,8 +1,5 @@
-let inputTitle = document.querySelector("#title"), allNotes = document.querySelector("#notes");
-
-window.onload = () => todo.allStorage();
-
-let todo = {
+const inputTitle = document.querySelector("#title"), allNotes = document.querySelector("#notes");
+const todo = {
     allStorage: () => {
         let values = [], keys = Object.keys(localStorage), i = keys.length;
         while (i--) values.push(localStorage.getItem(keys[i])); // pushes key strings into values array
@@ -17,7 +14,7 @@ let todo = {
         
         toDo.setAttribute('class','m-2');
         button_exit.setAttribute('class','btn fw-light fs-small me-2 text-dark');
-        button_exit.setAttribute('onclick',`document.querySelector("#notes").removeChild(document.querySelector("$${value}")); localStorage.removeItem("${value}")`);
+        button_exit.setAttribute('onclick',`document.querySelector("#notes").removeChild(document.querySelector("#${value}")); localStorage.removeItem("${value}")`);
         
         toDo.innerText = value;
         button_exit.innerText = 'x';
@@ -59,6 +56,7 @@ let todo = {
     removeAllChildNodes: parent => {for(;parent.firstChild;){ parent.removeChild(parent.firstChild); localStorage.clear() }}, // This section clears the current list
 }
 
+window.onload = () => todo.allStorage();
 inputTitle.addEventListener('keyup', e => {
     if(e.key === 'Enter') todo.addItem();
     if(e.key === "Escape") inputTitle.blur();

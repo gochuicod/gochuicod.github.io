@@ -1,14 +1,14 @@
-let audio = document.querySelector('.audioInput');
-let btnPlayPause = document.querySelector('.btnPlayPause');
-let iconPlayPause = document.querySelector('.iconPlayPause');
-let imgAlbumCover = document.querySelector('.imgAlbumCover');
-let musicTitle = document.querySelector('.musicTitle'), musicArtist = document.querySelector('.musicArtist');
-let trackCurrentLength = document.querySelector('.trackCurrentLength'), trackSeek = document.querySelector('.trackSeek');
-let trackVolIcon = document.querySelector('.trackVolIcon'), trackLength = document.querySelector('.trackLength');
-let trackVolText = document.querySelector('.trackVolText'), trackVol = document.querySelector('.trackVol');
+const audio = document.querySelector('.audioInput');
+const btnPlayPause = document.querySelector('.btnPlayPause');
+const iconPlayPause = document.querySelector('.iconPlayPause');
+const imgAlbumCover = document.querySelector('.imgAlbumCover');
+const musicTitle = document.querySelector('.musicTitle'), musicArtist = document.querySelector('.musicArtist');
+const trackCurrentLength = document.querySelector('.trackCurrentLength'), trackSeek = document.querySelector('.trackSeek');
+const trackVolIcon = document.querySelector('.trackVolIcon'), trackLength = document.querySelector('.trackLength');
+const trackVolText = document.querySelector('.trackVolText'), trackVol = document.querySelector('.trackVol');
 let current_track = 0, currentTimeTracker, mute = false;
 
-let playlist = [
+const playlist = [
     {
         image: '../img/save_your_tears_album.png',
         audio: '../audio/The Weeknd - Save Your Tears.mp3',
@@ -41,7 +41,7 @@ let playlist = [
     }
 ]
 
-let musicPlayer = {
+const musicPlayer = {
     getDuration: () => trackLength.innerText = musicPlayer.handleTrackLength(audio.currentTime),
     
     handlePlayPause: () => {

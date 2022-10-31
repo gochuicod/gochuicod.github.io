@@ -1,6 +1,1 @@
-let generateNumber = () => {
-    document.querySelector(".max-num").value;
-    const max_num = parseInt(document.querySelector(".max-num").value);
-    let test = Math.floor(Math.random() * max_num);
-    document.querySelector(".generated").innerText = `${test}`;
-}
+const generateNumber = () => document.querySelector(".generated").innerText = `${Math.floor(Math.random() * parseInt(document.querySelector(".max-num").value))}`;

@@ -1,10 +1,5 @@
-let a = document.querySelector(".c-radius"), output = document.querySelector(".pc-output"), err = document.querySelector(".errorInfo");
-
-window.onload = () => {
-    output.style.display = "none";
-}
-
-let perimeterCircle = () => {
+const a = document.querySelector(".c-radius"), output = document.querySelector(".pc-output"), err = document.querySelector(".errorInfo");
+const perimeterCircle = () => {
     let radius = parseFloat(a.value);
     let pc_output = 2 * Math.PI * radius;
     if(!isNaN(radius) || a.value !== ""){
@@ -24,6 +19,5 @@ let perimeterCircle = () => {
     }
 }
 
-document.addEventListener('keyup', (e) => {
-    if(a === document.activeElement) perimeterCircle();
-});
+window.onload = () => output.style.display = "none";
+document.addEventListener('keyup', () => a === document.activeElement ? perimeterCircle() : false);

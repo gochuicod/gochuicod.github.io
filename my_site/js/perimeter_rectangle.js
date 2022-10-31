@@ -1,10 +1,5 @@
-let a = document.querySelector(".pr-length"), b = document.querySelector(".pr-width"), output = document.querySelector(".pr-output"), err = document.querySelector(".errorInfo");
-
-window.onload = () => {
-    output.style.display = "none";
-}
-
-let perimeterRectangle = () => {
+const a = document.querySelector(".pr-length"), b = document.querySelector(".pr-width"), output = document.querySelector(".pr-output"), err = document.querySelector(".errorInfo");
+const perimeterRectangle = () => {
     let length = parseFloat(a.value), width = parseFloat(b.value);
     let pr_output = 2 * (length + width);
     if((!isNaN(length)) && (!isNaN(width))){
@@ -24,6 +19,5 @@ let perimeterRectangle = () => {
     }
 }
 
-document.addEventListener('keyup', (e) => {
-    if(a === document.activeElement || b === document.activeElement) perimeterRectangle();
-});
+window.onload = () => output.style.display = "none";
+document.addEventListener('keyup', () => a === document.activeElement || b === document.activeElement ? perimeterRectangle() : false);

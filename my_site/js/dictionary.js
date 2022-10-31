@@ -1,5 +1,5 @@
-let search = document.querySelector(".search");
-let dictionary = {
+const search = document.querySelector(".search");
+const dictionary = {
     dWord: document.querySelector(".dictionaryWord"),
     dWordPhonetic: document.querySelector(".dictionaryWordPhonetic"),
     dPOSNoun: document.querySelector(".dictionaryPOSNoun"),

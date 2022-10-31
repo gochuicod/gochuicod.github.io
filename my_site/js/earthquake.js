@@ -1,5 +1,5 @@
-let search = document.querySelector(".search");
-let earthquake = {
+const search = document.querySelector(".search");
+const earthquake = {
     loader: document.querySelector(".loader"),
     csb: document.querySelector(".clearSearchButton"),
     dataField: document.querySelector(".dataField"),

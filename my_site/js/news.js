@@ -1,6 +1,5 @@
-let search = document.querySelector(".search");
-
-let news = {
+const search = document.querySelector(".search");
+const news = {
     "apiKey" : "pub_70389bf171921c24be39e3edb3a22947157f",
     "noDesc" : "No Description",
     csb: document.querySelector(".clearSearchButton"),
