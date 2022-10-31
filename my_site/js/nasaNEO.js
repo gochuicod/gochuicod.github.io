@@ -1,17 +1,18 @@
 let todaysDate = new Date(), tyear = todaysDate.getFullYear(), tmonth = todaysDate.getUTCMonth()+1, tdate = todaysDate.getUTCDate();
-let loader = document.querySelector(".loader");
 
 let nasaNEO = {
+    loader: document.querySelector(".loader"),
+    dataField: document.querySelector(".dataField"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
     fetchNasaData: function() {
-        document.querySelector(".dataField").style.display = "none";
-        loader.style.display = "block";
+        this.dataField.style.display = "none";
+        this.loader.style.display = "block";
         fetch(
             `https://api.nasa.gov/neo/rest/v1/feed?start_date=${tyear}-${tmonth}-${tdate}&end_date=${tyear}-${tmonth}-${tdate}&api_key=${this.apiKey}`
         ).then((response) => response.json()).then((data) => this.displayNasaNEO(data));
     },
     displayNasaNEO: function(data){
-        this.removeAllChildNodes(document.querySelector(".dataField"));
+        this.removeAllChildNodes(this.dataField);
         let NEOTodaysDate = `${tyear}-${this.getMonth2Digits(tmonth)}-${this.getDay2Digits(tdate)}`;
         let instances = [];
         
@@ -26,8 +27,8 @@ let nasaNEO = {
             document.querySelector(`.neoAsteroidEstDiameter${index}`).innerText = `Estimated Maximum Diameter ${parseFloat(instances[index].estimated_diameter.kilometers.estimated_diameter_max).toFixed(2)} km`;
             document.querySelector(`.neoAsteroidHazardous${index}`).innerText = `Hazardous: ${(instances[index].is_potentially_hazardous_asteroid) ? "Yes" : "No"}`;
         });
-        loader.style.display = "none";
-        document.querySelector(".dataField").style.display = "block";
+        this.loader.style.display = "none";
+        this.dataField.style.display = "block";
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     prepareNEOData: index => {

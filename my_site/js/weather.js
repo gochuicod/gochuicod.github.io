@@ -13,24 +13,20 @@ let weather = {
         });
     },
     displayWeather: function(data){
-        const { name, clouds, sys, dt } = data;
-        const { temp, humidity, feels_like } = data.main;
-        const { speed } = data.wind;
         const { lat, lon } = data.coord;
-        let sunrise = new Date(sys.sunrise*1000), sunset = new Date(sys.sunset*1000), ct = new Date(dt*1000);
         weather.invalidKeyword.style.display = "none";
-        document.querySelector(".city").innerText = name;
-        document.querySelector(".temperature").innerText = `${temp}°C`;
+        document.querySelector(".city").innerText = data.name;
+        document.querySelector(".temperature").innerText = `${data.main.temp}°C`;
         document.querySelector(".description").innerText = data.weather[0].description;
-        document.querySelector(".humidity").innerText = `Humidity: ${humidity}%`;
-        document.querySelector(".windspeed").innerText = `Wind Speed: ${speed} km/h`;
+        document.querySelector(".humidity").innerText = `Humidity: ${data.main.humidity}%`;
+        document.querySelector(".windspeed").innerText = `Wind Speed: ${data.wind.speed} km/h`;
         document.querySelector(".weather").classList.remove("loading");
-        document.querySelector(".cloudcover").innerText = `Cloud Cover: ${clouds.all}%`;
-        document.querySelector(".feels_like").innerText = `Feels like: ${feels_like}°C`;
+        document.querySelector(".cloudcover").innerText = `Cloud Cover: ${data.clouds.all}%`;
+        document.querySelector(".feels_like").innerText = `Feels like: ${data.main.feels_like}°C`;
         document.querySelector(".icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.querySelector(".sunrise").innerText = `Sunrise: ${sunrise.toLocaleTimeString()}`;
-        document.querySelector(".sunset").innerText = `Sunset: ${sunset.toLocaleTimeString()}`;
-        document.querySelector(".current_time").innerText = `As of ${ct.toLocaleTimeString()}`;
+        document.querySelector(".sunrise").innerText = `Sunrise: ${new Date(data.sys.sunrise*1000).toLocaleTimeString()}`;
+        document.querySelector(".sunset").innerText = `Sunset: ${new Date(data.sys.sunset*1000).toLocaleTimeString()}`;
+        document.querySelector(".current_time").innerText = `As of ${new Date(data.dt*1000).toLocaleTimeString()}`;
         
         fetch(
             `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${weather.apiKey}`
@@ -41,7 +37,6 @@ let weather = {
     },
     displayPollutionData: function(airPollutionData){ document.querySelector(".airquality").innerText = `Air Quality: ${weather.definePollutionQuality(airPollutionData)}`; },
     displayPredictionData: function(predictionData){
-        console.log(predictionData);
         weather.removeAllChildNodes(document.querySelector(".forecastDataThreeHrs"));
         weather.removeAllChildNodes(document.querySelector(".forecastDataSixDays"));
         document.querySelector(".forecastDataSixDays").style.display = "none";
@@ -287,18 +282,17 @@ let weather = {
         FD6D.append(outerDiv);
     },
     hideElement: tag => tag.style.display = "none",
-    showElement: tag => tag.style.display = "block"
-}
-
-let showHourly = () => {
-    if(document.querySelector(".forecasttitle").innerText == "24 Hour"){
-        document.querySelector(".forecastDataThreeHrs").style.display="none";
-        document.querySelector(".forecastDataSixDays").style.display="block";
-        document.querySelector(".forecasttitle").innerText = "Seven-Day";
-    } else {
-        document.querySelector(".forecasttitle").innerText = "24 Hour";
-        document.querySelector(".forecastDataThreeHrs").style.display="block";
-        document.querySelector(".forecastDataSixDays").style.display="none";
+    showElement: tag => tag.style.display = "block",
+    showHourly: () => {
+        if(document.querySelector(".forecasttitle").innerText == "24 Hour"){
+            document.querySelector(".forecastDataThreeHrs").style.display="none";
+            document.querySelector(".forecastDataSixDays").style.display="block";
+            document.querySelector(".forecasttitle").innerText = "Seven-Day";
+        } else {
+            document.querySelector(".forecasttitle").innerText = "24 Hour";
+            document.querySelector(".forecastDataThreeHrs").style.display="block";
+            document.querySelector(".forecastDataSixDays").style.display="none";
+        }
     }
 }
 

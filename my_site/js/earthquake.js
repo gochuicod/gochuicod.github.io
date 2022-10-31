@@ -1,8 +1,9 @@
-let query = () => earthquake.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
-let loader = document.querySelector(".loader");
-
+let search = document.querySelector(".search");
 let earthquake = {
+    loader: document.querySelector(".loader"),
+    csb: document.querySelector(".clearSearchButton"),
+    dataField: document.querySelector(".dataField"),
+    generated: document.querySelector(".generated"),
     fetchEarthquakeData: function(magnitude){
         let pastSevenDaysDate = new Date(); pastSevenDaysDate.setDate(pastSevenDaysDate.getDate() - 1);
         let presentDayDate = new Date(); end_date_input = presentDayDate.toISOString().split('T')[0];
@@ -11,9 +12,11 @@ let earthquake = {
         ).then((response) => response.json()).then((data) => this.displayEarthquakeData(data));
     },
     displayEarthquakeData: function(data){
-        this.removeAllChildNodes(document.querySelector(".dataField"));
+        this.removeAllChildNodes(this.dataField);
         let alertLevelInf = "Alert Level: ", magnitudeInf = "Magnitude: ", intensityInf = "Intensity: ";
-        var dailyData = [];
+        let dailyData = [];
+
+        this.generated.innerText = `Update as of ${new Date(data.metadata.generated).toLocaleTimeString()}`;
 
         for(let i = 0; i < data.features.length; this.addItems(i), i++);
         for(let i = 0; i < data.features.length; i++){
@@ -26,7 +29,7 @@ let earthquake = {
             });
         }
         
-        dailyData.sort((a,b) => a.magnitude.localeCompare(b.magnitude));
+        dailyData.sort((a,b) => b.magnitude.localeCompare(a.magnitude));
 
         dailyData.forEach((element, index, array) => {
             document.querySelector(`.eq${index}Location`).innerText = element.loc;
@@ -35,11 +38,11 @@ let earthquake = {
             document.querySelector(`.eq${index}Magnitude`).innerText = element.magnitude;
             document.querySelector(`.eq${index}Intensity`).innerText = element.intensity;
         });
-        loader.style.display = "none";
-        document.querySelector(".dataField").style.display = "block";
+        this.loader.style.display = "none";
+        this.dataField.style.display = "block";
     },
-    isNull: (item) => (item != null) ? item : '--',
-    addItems: (index) => {
+    isNull: item => (item != null) ? item : '--',
+    addItems: index => {
         let group = document.createElement("div");
         group.setAttribute('class',`group${index} shadow rounded-custom mb-3 p-3 fw-light fs-7`);
 
@@ -72,19 +75,20 @@ let earthquake = {
     },
     search: function() {
         this.fetchEarthquakeData(search.value);
-        document.querySelector(".dataField").style.display = "none";
-        loader.style.display = "block";
+        this.dataField.style.display = "none";
+        this.loader.style.display = "block";
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
 }
 
-earthquake.fetchEarthquakeData(4);
 search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? earthquake.search() : ""; });
 document.addEventListener("keyup", (e) => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+    if(search.value.length > 0) earthquake.csb.style.display = "block";
+    if(search.value.length == 0) earthquake.csb.style.display = "none";
     if(e.key === "Escape" && document.activeElement) search.blur();
 });
 
-csb.style.display = "none";
+earthquake.fetchEarthquakeData(4);
+earthquake.csb.style.display = "none";

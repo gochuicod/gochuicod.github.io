@@ -1,37 +1,39 @@
-let title = document.querySelector(".APODTitle"), date = document.querySelector(".APODDate"), desc = document.querySelector(".APODExplanation"), img = document.querySelector(".APODImg");
-let copyright = document.querySelector(".APODCopyright");
-let search = document.querySelector(".search"), csb = document.querySelector(".clearSearchButton");
-let query = () => nasaAPOD.fetchNasaData(search.value), todaysDate = new Date();
-let clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-let loader = document.querySelector(".loader");
-
+let search = document.querySelector(".search");
 let nasaAPOD = {
+    copyright: document.querySelector(".APODCopyright"),
+    loader: document.querySelector(".loader"),
+    csb: document.querySelector(".clearSearchButton"),
+    title: document.querySelector(".APODTitle"),
+    date: document.querySelector(".APODDate"),
+    desc: document.querySelector(".APODExplanation"),
+    img: document.querySelector(".APODImg"),
+    nasaAPOD: document.querySelector(".nasaAPOD"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
     fetchNasaData: function(inputDate) {
-        document.querySelector(".nasaAPOD").style.display = "none";
-        loader.style.display = "block";
+        this.nasaAPOD.style.display = "none";
+        this.loader.style.display = "block";
         fetch(
             `https://api.nasa.gov/planetary/apod?api_key=${this.apiKey}&date=${inputDate}`
         ).then((response) => response.json()).then((data) => this.displayNasaAPOD(data)); 
     },
     displayNasaAPOD: function(data) {
         if(data.code == 404) {
-            title.innerText = `${data.msg}`; desc.style.display = "none";
-            date.style.display = "none"; img.style.display = "none";
+            this.title.innerText = `${data.msg}`; this.desc.style.display = "none";
+            this.date.style.display = "none"; this.img.style.display = "none";
         } else {
             if(data.title == undefined){
-                title.innerText = "Invalid Date Format"; date.style.display = "none"; desc.style.display = "none"; img.style.display = "none"; copyright.style.display = "none";
+                this.title.innerText = "Invalid Date Format"; this.date.style.display = "none"; this.desc.style.display = "none"; this.img.style.display = "none"; this.copyright.style.display = "none";
             } else {
                 let apodDate = new Date(data.date);
-                date.style.display = "block"; desc.style.display = "block"; img.style.display = "block";
-                title.innerText = data.title; desc.innerText = data.explanation; img.src = data.url;
-                date.innerText = `${this.defineMonth(apodDate.getMonth())} ${apodDate.getDate()} ${this.defineDay(apodDate.getDay())} ${apodDate.getFullYear()}`;
-                copyright.innerText = data.copyright;
-                copyright.style.display = "block";
+                this.date.style.display = "block"; this.desc.style.display = "block"; this.img.style.display = "block";
+                this.title.innerText = data.title; this.desc.innerText = data.explanation; this.img.src = data.url;
+                this.date.innerText = `${this.defineMonth(apodDate.getMonth())} ${apodDate.getDate()} ${this.defineDay(apodDate.getDay())} ${apodDate.getFullYear()}`;
+                this.copyright.innerText = data.copyright;
+                data.copyright ? this.copyright.style.display = "block" : this.copyright.style.display = "none";
             }
         }
-        loader.style.display = "none";
-        document.querySelector(".nasaAPOD").style.display = "block";
+        this.loader.style.display = "none";
+        this.nasaAPOD.style.display = "block";
     },
     defineDay: APODDay => {
         let days = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
@@ -50,18 +52,20 @@ let nasaAPOD = {
                 break;
             }
         }
-    }
+    },
+    search: function() { this.fetchNasaData(search.value) },
+    clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
 }
 
-search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? nasaAPOD.fetchNasaData(search.value) : ""; });
+search.addEventListener("keyup", e => e.key === "Enter" ? nasaAPOD.fetchNasaData(search.value) : false);
 document.addEventListener("keyup", (e) => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+    if(search.value.length > 0) nasaAPOD.csb.style.display = "block";
+    if(search.value.length == 0) nasaAPOD.csb.style.display = "none";
     if(e.key === "Escape" && document.activeElement) search.blur();
 });
 
-nasaAPOD.fetchNasaData(`${todaysDate.getFullYear()}-${todaysDate.getUTCMonth()+1}-${todaysDate.getUTCDate()}`);
+nasaAPOD.fetchNasaData(`${new Date().getFullYear()}-${new Date().getUTCMonth()+1}-${new Date().getUTCDate()}`);
 
-img.style.display = "none";
-csb.style.display = "none";
+nasaAPOD.img.style.display = "none";
+nasaAPOD.csb.style.display = "none";

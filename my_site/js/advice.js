@@ -1,37 +1,49 @@
-let query = () => advice.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
-let loader = document.querySelector(".loader");
+let search = document.querySelector(".search");
 
 let advice = {
+    adviceField: document.querySelector(".adviceField"),
+    invalidSearch: document.querySelector(".invalidSearch"),
+    csb: document.querySelector(".clearSearchButton"),
+    loader: document.querySelector(".loader"),
     fetchAdviceData: function(query){
         fetch(
             `https://api.adviceslip.com/advice/search/${query}`
         ).then((response) => response.json()).then((data) => this.displayAdviceData(data));
     },
     displayAdviceData: function(data){
-        this.removeAllChildNodes(document.querySelector(".adviceField"));
-        for(let i = 0; i < data.slips.length; this.addAdvice(i), i++);
-
-        let adviceDataNodes = [];
-
-        for(let i = 0; i < data.slips.length; i++){
-            adviceDataNodes.push({
-                desc: data.slips[i].advice,
-                date: data.slips[i].date
+        if(data.message){
+            this.invalidSearch.innerText = data.message.text;
+            this.invalidSearch.removeAttribute("hidden");
+            this.loader.style.display = "none";
+        } else {
+            this.invalidSearch.setAttribute("hidden","hidden");
+            this.removeAllChildNodes(document.querySelector(".adviceField"));
+            for(let i = 0; i < data.slips.length; this.addAdvice(i), i++);
+    
+            let adviceDataNodes = [];
+    
+            for(let i = 0; i < data.slips.length; i++){
+                adviceDataNodes.push({
+                    desc: data.slips[i].advice,
+                    date: data.slips[i].date
+                });
+            }
+    
+            adviceDataNodes.forEach((element,index,array) => {
+                document.querySelector(`.adviceDesc${index}`).innerText = `"${element.desc}"`;
+                document.querySelector(`.adviceDate${index}`).innerText = `Date: ${element.date}`;
             });
+            this.loader.style.display = "none";
+            this.adviceField.style.display = "block";
         }
 
-        adviceDataNodes.forEach((element,index,array) => {
-            document.querySelector(`.adviceDesc${index}`).innerText = `"${element.desc}"`;
-            document.querySelector(`.adviceDate${index}`).innerText = `Date: ${element.date}`;
-        });
-        loader.style.display = "none";
-        document.querySelector(".adviceField").style.display = "block";
     },
-    search: () => {
-        this.fetchAdviceData(search.value);
-        document.querySelector(".adviceField").style.display = "none";
-        loader.style.display = "block";
+    search: function() {
+        if(search.value !== ""){
+            this.fetchAdviceData(search.value);
+            this.adviceField.style.display = "none";
+            this.loader.style.display = "block";
+        }
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     addAdvice: index => {
@@ -55,16 +67,17 @@ let advice = {
         outerDiv.append(innerDiv1);
         outerDiv.append(innerDiv2);
         adviceField.append(outerDiv);
-    }
+    },
+    clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
 }
 
-search.addEventListener("keyup", e => advice.search());
+search.addEventListener("keyup", e => e.key === "Enter" ? advice.search() : false);
 document.addEventListener("keyup", e => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+    if(search.value.length > 0) advice.csb.style.display = "block";
+    if(search.value.length == 0) advice.csb.style.display = "none";
     if(e.key === "Escape" && document.activeElement) search.blur();
 });
 
 advice.fetchAdviceData("good");
-csb.style.display = "none";
+advice.csb.style.display = "none";

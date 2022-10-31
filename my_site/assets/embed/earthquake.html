@@ -14,18 +14,24 @@
 
     <div class="container">
 
-      <div class="d-flex flex-row justify-content-center mb-1">
+      <div class="d-flex justify-content-center mb-1">
         <span class="fw-light fs-8"><span class="fw-bolder">Earthquake</span> data sourced from <span class="fst-italic">USGS</span></span>
       </div>
-      <div class="d-flex flex-row justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="input-group w-50">
           <input type="search" class="search form-control border border-end-0 rounded-custom" placeholder="Magnitude">
-          <button class="clearSearchButton btn bg-white border border-start-0 border-end-0 hide-glow" type="button" onclick="clearSearch()"><i class="bi bi-x-circle"></i></button>
-          <button class="btn border hide-glow bg-white rounded-custom" type="button" onclick="query()"><i class="bi bi-search"></i></button>
+          <button class="clearSearchButton btn bg-white border border-start-0 border-end-0 hide-glow" type="button" onclick="earthquake.clearSearch()"><i class="bi bi-x-circle"></i></button>
+          <button class="btn border hide-glow bg-white rounded-custom" type="button" onclick="earthquake.search()"><i class="bi bi-search"></i></button>
         </div>
       </div>
-      <div class="d-flex flex-row justify-content-center my-3">
-        <span class="fw-bold fs-6">Earthquakes in the past 24 hours</span>
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <span class="fw-bold fs-6 me-2">Earthquakes in the past 24 hours</span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <span class="fw-light fs-6"></span>
+      </div>
+      <div class="d-flex justify-content-center mb-3">
+        <span class="generated fw-light fs-small"></span>
       </div>
       <div class="loader mt-5"></div>
       <div class="dataField"></div>

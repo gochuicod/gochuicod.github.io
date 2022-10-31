@@ -30,6 +30,9 @@ body::before {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.hover-pointer:hover {
+  cursor: pointer;
+}
 
 
 .fs-7 { font-size: 0.9em; }

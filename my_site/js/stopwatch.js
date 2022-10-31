@@ -1,35 +1,34 @@
-// Stopwatch
-let stopwatch_minutes = 0, stopwatch_seconds = 0, stopwatch_ms = 0, stopwatch_stopwatch;
+let init, initiate = () => init = setInterval(stopwatch.start,10);
+let stopwatch = {
+    stopwatchMinute: document.querySelector(".stopwatch-minute"),
+    stopwatchSecond: document.querySelector(".stopwatch-second"),
+    stopwatchMillisecond: document.querySelector(".stopwatch-millisecond"),
+    stopwatchStart: document.querySelector(".stopwatch-start"),
+    stopwatchStop: document.querySelector(".stopwatch-stop"),
+    stopwatchReset: document.querySelector(".stopwatch-reset"),
+    minutes: 60,
+    seconds: 55,
+    milliseconds: 0,
 
-let stopwatch_start = () => {
-    stopwatch_stopwatch = setInterval(stopwatch_time, 10);
-    document.getElementById("stopwatch-start").disabled = true;
-}
-let stopwatch_stop = () => {
-    clearInterval(stopwatch_stopwatch);
-    document.getElementById("stopwatch-start").disabled = false;
-}
-let stopwatch_reset = () => {
-    clearInterval(stopwatch_stopwatch);
-    stopwatch_minutes = 0; stopwatch_seconds = 0; stopwatch_ms = 0;
-    document.getElementById("stopwatch-minute").innerText = `${stopwatch_minutes}m`;
-    document.getElementById("stopwatch-second").innerText = `${stopwatch_seconds}s`;
-    document.getElementById("stopwatch-millisecond").innerText = `${stopwatch_ms}`;
-    document.getElementById("stopwatch-start").disabled = false;
-}
-
-let stopwatch_time = () => {
-    if(stopwatch_minutes === 60){
-        stopwatch_minutes = 0; stopwatch_seconds = 0;
-    } else {
-        if(stopwatch_ms !== 100){
-            document.getElementById("stopwatch-minute").innerText = `${stopwatch_minutes}m`;
-            document.getElementById("stopwatch-second").innerText = `${stopwatch_seconds}s`;
-            document.getElementById("stopwatch-millisecond").innerText = `${stopwatch_ms}`;
-            stopwatch_ms++;
+    start: () => {
+        stopwatch.stopwatchStart.disabled = true;
+        if(stopwatch.milliseconds !== 100){
+            stopwatch.stopwatchMinute.innerText = `${stopwatch.minutes}m`;
+            stopwatch.stopwatchSecond.innerText = `${stopwatch.seconds}s`;
+            stopwatch.stopwatchMillisecond.innerText = `${stopwatch.milliseconds++}`;
         } else {
-            if(stopwatch_seconds === 59){ stopwatch_minutes++; stopwatch_seconds = -1; }
-            stopwatch_seconds++; stopwatch_ms = 0;
+            if(stopwatch.seconds === 59){ stopwatch.minutes++; stopwatch.seconds = -1; }
+            stopwatch.seconds++; stopwatch.milliseconds = 0;
         }
+    },
+    
+    stop: () => { clearInterval(init); stopwatch.stopwatchStart.disabled = false; },
+    reset: () => {
+        stopwatch.stop();
+        stopwatch.stopwatchStart.disabled = false;
+        stopwatch.minutes= 0; stopwatch.seconds = 0; stopwatch.milliseconds = 0;
+        stopwatch.stopwatchMinute.innerText = `${stopwatch.minutes}m`;
+        stopwatch.stopwatchSecond.innerText = `${stopwatch.seconds}s`;
+        stopwatch.stopwatchMillisecond.innerText = `${stopwatch.milliseconds}`;
     }
 }

@@ -1,59 +1,48 @@
-let timer_minutes = 0, timer_seconds = 0, timer_ms = 0, timer_timer;
+let init, initiate = () => init = setInterval(timer.start,10)
 
-let timer_start = () => {
-    timer_timer = setInterval(timer_time, 10);
-    document.getElementById("timer-start").disabled = true;
-}
+let timer = {
+    timerMinute: document.querySelector(".timer-minute"),
+    timerSecond: document.querySelector(".timer-second"),
+    timerMillisecond: document.querySelector(".timer-millisecond"),
+    timerStart: document.querySelector(".timer-start"),
+    timerStop: document.querySelector(".timer-stop"),
+    timerReset: document.querySelector(".timer-reset"),
+    minutes: 0,
+    seconds: 0,
+    milliseconds: 100,
+    disableToggle: true,
+    
+    start: () => {
+        timer.timerStart.disabled = true;
+        if(timer.minutes >= 0){
+            if(timer.seconds >= 0){
+                if(timer.milliseconds >= 0){
+                    timer.timerMinute.innerText = `${timer.minutes}m`;
+                    timer.timerSecond.innerText = `${timer.seconds}s`;
+                    timer.timerMillisecond.innerText = `${timer.milliseconds--}`;
+                } else { timer.milliseconds = 100; timer.seconds--; }
+            } else { timer.seconds = 59; timer.minutes--; }
+        } else { timer.reset(); }
+    },
 
-let timer_stop = () => {
-    clearInterval(timer_timer);
-    document.getElementById("timer-start").disabled = false;
-}
+    stop: () => { clearInterval(init); timer.timerStart.disabled = false; },
+    reset: () => {
+        timer.stop();
+        timer.minutes = 0; timer.seconds = 0, timer.milliseconds = 0;
+        timer.timerMinute.innerText = `${timer.minutes}m`;
+        timer.timerSecond.innerText = `${timer.seconds}s`;
+        timer.timerMillisecond.innerText = timer.milliseconds;
+    },
 
-let timer_reset = () => {
-    clearInterval(timer_timer);
-    timer_minutes = 0; timer_seconds = 0; timer_ms = 0;
-    document.getElementById("timer-start").disabled = false;
-    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
-    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
-    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
-}
-
-let timer_time = () => {
-    if(timer_minutes >= 0){
-        if(timer_seconds >= 0){
-            if(timer_ms >= 0){
-                document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
-                document.getElementById("timer-second").innerText = `${timer_seconds}s`;
-                document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
-                timer_ms--;
-            } else { timer_ms = 100; timer_seconds--; }
-        } else { timer_seconds = 59; timer_minutes--; }
-    } else { timer_reset(); }
-}
-
-document.getElementById("timer-add1").onclick = () => { add_one(); }
-document.getElementById("timer-add5").onclick = () => { add_five(); }
-document.getElementById("timer-add5-seconds").onclick = () => { add_five_seconds(); }
-let add_one = () => {
-    if(timer_minutes > 59) timer_minutes = 0; timer_minutes++;
-    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
-    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
-    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
-}
-
-let add_five = () => {
-    if(timer_minutes > 59) timer_minutes = 0; timer_minutes += 5;
-    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
-    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
-    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
-}
-
-let add_five_seconds = () => {
-    if(timer_seconds > 59) { timer_minutes++; timer_seconds = 0; }
-    if(timer_minutes > 59) timer_minutes = 0; 
-    timer_seconds += 5;
-    document.getElementById("timer-minute").innerText = `${timer_minutes}m`;
-    document.getElementById("timer-second").innerText = `${timer_seconds}s`;
-    document.getElementById("timer-millisecond").innerText = `${timer_ms}`;
+    handleAddOneMinute: () => timer.timerMinute.innerText = `${++timer.minutes}m`,
+    handleAddFiveMinutes: () => timer.timerMinute.innerText = `${timer.minutes+=5}m`,
+    handleAddFiveSeconds: () => {
+        if(timer.seconds > 58) {
+            timer.seconds = 0;
+            timer.minutes++;
+            timer.timerSecond.innerText = `${timer.seconds}s`;
+            timer.timerMinute.innerText = `${timer.minutes}m`;
+        }
+        timer.timerSecond.innerText = `${timer.seconds+=5}s`;
+    },
 }

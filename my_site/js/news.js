@@ -1,17 +1,16 @@
-let query = () => news.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
-let loader = document.querySelector(".loader");
+let search = document.querySelector(".search");
 
 let news = {
     "apiKey" : "pub_70389bf171921c24be39e3edb3a22947157f",
     "noDesc" : "No Description",
+    csb: document.querySelector(".clearSearchButton"),
+    loader: document.querySelector(".loader"),
     fetchNewsData: function(keyword){
         fetch(
             `https://newsdata.io/api/1/news?apikey=${this.apiKey}&q=${keyword}&language=en`
         ).then((response) => response.json()).then((data) => this.displayNewsData(data));
     },
     displayNewsData: function(data){
-        console.log(data);
         for(let i = 0; i < data.results.length; this.addNewsSection(i), i++);
 
         let dataNodes = [];
@@ -28,7 +27,7 @@ let news = {
             });
         }
         
-        loader.style.display = "none";
+        this.loader.style.display = "none";
 
         dataNodes.forEach((element,index,array) => {
             document.querySelector(`.newsTitle${index}`).innerText = element.title;
@@ -50,10 +49,10 @@ let news = {
             document.querySelector(`.newsSource${index}`).href = element.link;
         });
     },
-    search: () => {
+    search: function() {
         this.fetchNewsData(search.value);
         this.removeAllChildNodes(document.querySelector(".newsField"));
-        loader.style.display = "block";
+        this.loader.style.display = "block";
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     addNewsSection: index => {
@@ -109,16 +108,17 @@ let news = {
         outerDiv.append(innerDiv7);
 
         newsField.append(outerDiv);
-    }
+    },
+    clearSearch: () => { search.value = ""; search.focus(); advice.csb.style.display = "none"; }
 }
 
-search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? news.search() : ""; });
-document.addEventListener("keyup", (e) => {
+search.addEventListener("keyup", e => e.key === "Enter" ? news.search() : false);
+document.addEventListener("keyup", e => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+    if(search.value.length > 0) news.csb.style.display = "block";
+    if(search.value.length == 0) news.csb.style.display = "none";
     if(e.key === "Escape" && document.activeElement) search.blur();
 });
 
 news.fetchNewsData("Philippines");
-csb.style.display = "none";
+news.csb.style.display = "none";

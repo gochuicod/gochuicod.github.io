@@ -1,8 +1,9 @@
-let query = () => covid.search(), clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-let csb = document.querySelector(".clearSearchButton"), search = document.querySelector(".search");
-let loader = document.querySelector(".loader");
+let search = document.querySelector(".search");
 
 let covid = {
+    csb: document.querySelector(".clearSearchButton"),
+    loader: document.querySelector(".loader"),
+    covidLocTotal: document.querySelector(".covidLocTotal"),
     fetchCovidData: function(country){
         fetch(
             `https://coronavirus.m.pipedream.net/`
@@ -26,7 +27,7 @@ let covid = {
         document.querySelector(".covidTotalConf").innerText = `${this.numberWithCommas(totalConfirmed.toString())}`;
         document.querySelector(".covidTotalDeaths").innerText = `${this.numberWithCommas(totalDeaths.toString())}`;
         document.querySelector(".covidTotalFatRatio").innerText = `${this.numberWithCommas(((totalDeaths/totalConfirmed) * 100).toFixed(2))}%`;
-        document.querySelector(".covidLocTotal").style.display = "block";
+        this.covidLocTotal.style.display = "block";
 
         if(countryData.length != 1){
             for(let i = 0; i < countryData.length; this.addItems(i), i++);
@@ -50,19 +51,17 @@ let covid = {
                 document.querySelector(`.covidLUpdate${index}`).innerText = element.update;
             });
         }
-        loader.style.display = "none";
-        document.querySelector(".covidLocTotal").style.display = "block";
+        this.loader.style.display = "none";
+        this.covidLocTotal.style.display = "block";
     },
     search: function() {
         this.fetchCovidData(search.value);
-        document.querySelector(".covidLocTotal").style.display = "none";
-        loader.style.display = "block";
+        this.covidLocTotal.style.display = "none";
+        this.loader.style.display = "block";
     },
-    removeAllChildNodes: (parent) => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    numberWithCommas: (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    },
-    addItems: (index) => {
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
+    numberWithCommas: number => { return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); },
+    addItems: index => {
         let cdf = document.querySelector(".covidDataField");
 
         let mainDiv = document.createElement("div");
@@ -97,19 +96,18 @@ let covid = {
 
         cdf.append(mainDiv);
     },
-    capitalize: (text) => {
-        return text.replace(/\b\w/g , (m) => { return m.toUpperCase(); } );
-    }
+    capitalize: text => { return text.replace(/\b\w/g , (m) => { return m.toUpperCase(); } ); },
+    clearSearch: () => { search.value = ""; search.focus(); covid.csb.style.display = "none"; }
 }
 
-search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? covid.search() : ""; });
-document.addEventListener("keyup", (e) => {
+search.addEventListener("keyup", e => e.key === "Enter" ? covid.search() : false);
+document.addEventListener("keyup", e => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+    if(search.value.length > 0) covid.csb.style.display = "block";
+    if(search.value.length == 0) covid.csb.style.display = "none";
     if(e.key === "Escape" && document.activeElement) search.blur();
 });
 
-document.querySelector(".covidLocTotal").style.display = "none";
+covid.covidLocTotal.style.display = "none";
 covid.fetchCovidData("philippines");
-csb.style.display = "none";
+covid.csb.style.display = "none";
