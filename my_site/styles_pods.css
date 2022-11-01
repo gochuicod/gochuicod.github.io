@@ -33,6 +33,11 @@ body::before {
 .hover-pointer:hover {
   cursor: pointer;
 }
+.external-link{
+  position: fixed;
+  top: 0%;
+  right: 0%;
+}
 
 
 .fs-7 { font-size: 0.9em; }
