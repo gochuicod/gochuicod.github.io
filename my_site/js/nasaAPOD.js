@@ -9,14 +9,11 @@ const nasaAPOD = {
     img: document.querySelector(".APODImg"),
     nasaAPOD: document.querySelector(".nasaAPOD"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
-    fetchNasaData: function(inputDate) {
+    fetchNasaData: async function(inputDate) {
         this.nasaAPOD.style.display = "none";
         this.loader.style.display = "block";
-        fetch(
-            `https://api.nasa.gov/planetary/apod?api_key=${this.apiKey}&date=${inputDate}`
-        ).then((response) => response.json()).then((data) => this.displayNasaAPOD(data)); 
-    },
-    displayNasaAPOD: function(data) {
+        const fetchData = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.apiKey}&date=${inputDate}`)
+        const data = await fetchData.json()
         if(data.code == 404) {
             this.title.innerText = `${data.msg}`; this.desc.style.display = "none";
             this.date.style.display = "none"; this.img.style.display = "none";

@@ -4,12 +4,9 @@ const advice = {
     invalidSearch: document.querySelector(".invalidSearch"),
     csb: document.querySelector(".clearSearchButton"),
     loader: document.querySelector(".loader"),
-    fetchAdviceData: function(query){
-        fetch(
-            `https://api.adviceslip.com/advice/search/${query}`
-        ).then((response) => response.json()).then((data) => this.displayAdviceData(data));
-    },
-    displayAdviceData: function(data){
+    fetchAdviceData: async function(query){
+        const sample = await fetch(`https://api.adviceslip.com/advice/search/${query}`)
+        const data = await sample.json()
         if(data.message){
             this.invalidSearch.innerText = data.message.text;
             this.invalidSearch.removeAttribute("hidden");
@@ -35,7 +32,6 @@ const advice = {
             this.loader.style.display = "none";
             this.adviceField.style.display = "block";
         }
-
     },
     search: function() {
         if(search.value !== ""){

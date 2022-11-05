@@ -3,20 +3,20 @@ const covid = {
     csb: document.querySelector(".clearSearchButton"),
     loader: document.querySelector(".loader"),
     covidLocTotal: document.querySelector(".covidLocTotal"),
-    fetchCovidData: function(country){
-        fetch(
-            `https://coronavirus.m.pipedream.net/`
-        ).then((response) => response.json()).then((data) => this.displayCovidData(data,this.capitalize(country.toLowerCase())));
-    },
-    displayCovidData: function(data,country){
+    fetchCovidData: async function(country){
+        const fetchData = await fetch(`https://coronavirus.m.pipedream.net/`)
+        const data = await fetchData.json()
         this.removeAllChildNodes(document.querySelector(".covidDataField"));
         let countryData = [], countryDataSpecificLoc = [], totalConfirmed = 0, totalDeaths = 0;
         
         for(let i = 0; i < data.rawData.length; i++){
             if(data.rawData[i].Country_Region == country) countryData.push(data.rawData[i]);
         }
+        countryData.sort((a,b) => parseInt(b.Confirmed) - parseInt(a.Confirmed))
+        console.log(countryData);
         for(let i = 0; i < countryData.length; totalConfirmed += parseInt(countryData[i].Confirmed), i++);
         for(let i = 0; i < countryData.length; totalDeaths += parseInt(countryData[i].Deaths), i++);
+
 
         document.querySelector(".covidGlobalConf").innerText = `${this.numberWithCommas(data.summaryStats.global.confirmed)}`;
         document.querySelector(".covidGlobalDeaths").innerText = `${this.numberWithCommas(data.summaryStats.global.deaths)}`;
@@ -108,5 +108,5 @@ document.addEventListener("keyup", e => {
 });
 
 covid.covidLocTotal.style.display = "none";
-covid.fetchCovidData("philippines");
+covid.fetchCovidData("Japan");
 covid.csb.style.display = "none";

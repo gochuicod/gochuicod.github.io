@@ -16,12 +16,9 @@ const dictionary = {
     dictionaryField: document.querySelector(".dictionaryField"),
     csb: document.querySelector(".clearSearchButton"),
     loader: document.querySelector(".loader"),
-    fetchDictionaryData: function(word){
-        fetch(
-            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-        ).then((response) => response.json()).then((data) => this.displayDictionaryData(data));
-    },
-    displayDictionaryData: function(data){
+    fetchDictionaryData: async function(word){
+        const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+        const data = await fetchData.json()
         if(data.title){
             this.dWarning.style.display = "block";
             this.dWarning.innerText = data.title; this.dWord.style.display = "none";
@@ -36,7 +33,7 @@ const dictionary = {
             this.dPOSVerb.style.display = "block"; this.dPOSVerbMeaning.style.display = "block"; 
             this.dPOSAdj.style.display = "block"; this.dPOSAdjMeaning.style.display = "block";
             this.dSource.style.display = "block";
-
+    
             this.dWord.innerText = data[0].word; this.dWord.style.display = "block";
             if(data[0].phonetic == undefined) this.dWordPhonetic.style.display = "none";
             else {
@@ -60,7 +57,7 @@ const dictionary = {
             } else {
                 this.dPOSVerb.style.display = "none"; this.dPOSVerbMeaning.style.display = "none"; this.dPOSVerbExample.style.display = "none";
             }
-
+    
             if(data[0].meanings.length > 2){
                 this.dPOSAdj.style.display = "block"; this.dPOSAdjMeaning.style.display = "block";
                 this.dPOSAdj.innerText = `${data[0].meanings[2].partOfSpeech}`; this.dPOSAdjMeaning.innerText = `- ${data[0].meanings[2].definitions[0].definition}`;

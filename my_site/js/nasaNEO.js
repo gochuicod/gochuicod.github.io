@@ -3,14 +3,11 @@ const nasaNEO = {
     loader: document.querySelector(".loader"),
     dataField: document.querySelector(".dataField"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
-    fetchNasaData: function() {
+    fetchNasaData: async function() {
         this.dataField.style.display = "none";
         this.loader.style.display = "block";
-        fetch(
-            `https://api.nasa.gov/neo/rest/v1/feed?start_date=${tyear}-${tmonth}-${tdate}&end_date=${tyear}-${tmonth}-${tdate}&api_key=${this.apiKey}`
-        ).then((response) => response.json()).then((data) => this.displayNasaNEO(data));
-    },
-    displayNasaNEO: function(data){
+        const fetchData = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${tyear}-${tmonth}-${tdate}&end_date=${tyear}-${tmonth}-${tdate}&api_key=${this.apiKey}`)
+        const data = await fetchData.json()
         this.removeAllChildNodes(this.dataField);
         let NEOTodaysDate = `${tyear}-${this.getMonth2Digits(tmonth)}-${this.getDay2Digits(tdate)}`;
         let instances = [];

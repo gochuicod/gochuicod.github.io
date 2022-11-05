@@ -4,16 +4,13 @@ const news = {
     "noDesc" : "No Description",
     csb: document.querySelector(".clearSearchButton"),
     loader: document.querySelector(".loader"),
-    fetchNewsData: function(keyword){
-        fetch(
-            `https://newsdata.io/api/1/news?apikey=${this.apiKey}&q=${keyword}&language=en`
-        ).then((response) => response.json()).then((data) => this.displayNewsData(data));
-    },
-    displayNewsData: function(data){
+    fetchNewsData: async function(keyword){
+        const fetchData = await fetch(`https://newsdata.io/api/1/news?apikey=${this.apiKey}&q=${keyword}&language=en`)
+        const data = await fetchData.json()
         for(let i = 0; i < data.results.length; this.addNewsSection(i), i++);
-
+    
         let dataNodes = [];
-
+    
         for(let i = 0; i < data.results.length; i++){
             dataNodes.push({
                 title: `${data.results[i].title}`,
@@ -27,7 +24,7 @@ const news = {
         }
         
         this.loader.style.display = "none";
-
+    
         dataNodes.forEach((element,index,array) => {
             document.querySelector(`.newsTitle${index}`).innerText = element.title;
             if(data.results[index].image_url == null) document.querySelector(`.newsImg${index}`).style.display = "none";
@@ -35,15 +32,15 @@ const news = {
                 document.querySelector(`.newsImg${index}`).style.display = "block";
                 document.querySelector(`.newsImg${index}`).src = element.img;
             }
-
+    
             if(data.results[index].creator == null) document.querySelector(`.newsCreator${index}`).innerText = "Author: --";
             else document.querySelector(`.newsCreator${index}`).innerText = element.creator;
-
+    
             document.querySelector(`.newsPublished${index}`).innerText = element.published;
             document.querySelector(`.newsCountry${index}`).innerText = element.country;
             if(data.results[index].description == null) document.querySelector(`.newsDesc${index}`).innerText = this.noDesc;
             else document.querySelector(`.newsDesc${index}`).innerText = element.desc;
-
+    
             document.querySelector(`.newsSource${index}`).innerText = "News Source";
             document.querySelector(`.newsSource${index}`).href = element.link;
         });

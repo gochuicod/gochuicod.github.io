@@ -4,20 +4,17 @@ const earthquake = {
     csb: document.querySelector(".clearSearchButton"),
     dataField: document.querySelector(".dataField"),
     generated: document.querySelector(".generated"),
-    fetchEarthquakeData: function(magnitude){
+    fetchEarthquakeData: async function(magnitude){
         let pastSevenDaysDate = new Date(); pastSevenDaysDate.setDate(pastSevenDaysDate.getDate() - 1);
         let presentDayDate = new Date(); end_date_input = presentDayDate.toISOString().split('T')[0];
-        fetch(
-            `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${pastSevenDaysDate.toISOString().split('T')[0]}&endtime=${end_date_input}&minmagnitude=${magnitude}`
-        ).then((response) => response.json()).then((data) => this.displayEarthquakeData(data));
-    },
-    displayEarthquakeData: function(data){
+        const fetchData = await fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${pastSevenDaysDate.toISOString().split('T')[0]}&endtime=${end_date_input}&minmagnitude=${magnitude}`)
+        const data = await fetchData.json()
         this.removeAllChildNodes(this.dataField);
         let alertLevelInf = "Alert Level: ", magnitudeInf = "Magnitude: ", intensityInf = "Intensity: ";
         let dailyData = [];
-
+    
         this.generated.innerText = `Update as of ${new Date(data.metadata.generated).toLocaleTimeString()}`;
-
+    
         for(let i = 0; i < data.features.length; this.addItems(i), i++);
         for(let i = 0; i < data.features.length; i++){
             dailyData.push({
@@ -29,8 +26,8 @@ const earthquake = {
             });
         }
         
-        dailyData.sort((a,b) => b.magnitude.localeCompare(a.magnitude));
-
+        dailyData.sort((a,b) => a.magnitude.localeCompare(b.magnitude));
+    
         dailyData.forEach((element, index, array) => {
             document.querySelector(`.eq${index}Location`).innerText = element.loc;
             document.querySelector(`.eq${index}Time`).innerText = element.time;
