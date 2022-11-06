@@ -9,18 +9,18 @@ const dictionary = {
         const data = await fetchData.json()
         if(data.title){
             this.word.innerHTML = data.title;
-            this.loader.style.display = "none";
+            this.hide(this.loader)
             this.removeAllChildNodes(this.dictionaryContent)
         } else {
-            this.loader.style.display = "none";
-            this.dictionaryContent.style.display = "block";
+            this.hide(this.loader)
+            this.show(this.dictionaryContent)
             let meanings = [];
             data.forEach(item => {
                 item.meanings.forEach(item => {
                     meanings.push(`<i>${item.partOfSpeech}</i><br>`)
                     item.definitions.forEach((item,index) => {
-                        meanings.push(`${index+1}.&emsp;${item.definition}<br>`)
-                        if(item.example) meanings.push(`<span class="d-flex justify-content-center shadow rounded mb-3"><i>"${item.example}"</i></span>`)
+                        meanings.push(`<span class="d-flex">${index+1}.&emsp;${item.definition}</span>`)
+                        if(item.example) meanings.push(`<span class="d-flex text-secondary ms-4">"${item.example}"</span>`)
                     })
                     if(item.synonyms.length != 0) meanings.push('<i class="text-success">Similar:</i>')
                     item.synonyms.forEach(item => {
@@ -38,13 +38,15 @@ const dictionary = {
         }
     },
     search: function() {
-        this.fetchDictionaryData(this.searchBtn.value);
+        this.fetchDictionaryData(this.searchBtn.value)
         this.removeAllChildNodes(this.word)
-        this.loader.style.display = "block";
-        this.dictionaryContent.style.display = "none";
+        this.show(this.loader)
+        this.hide(this.dictionaryContent)
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; }
+    clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; },
+    show: function(element) { element.style.display = "block" },
+    hide: function(element) { element.style.display = "none" }
 }
 
 dictionary.searchBtn.addEventListener("keyup", e => e.key === "Enter" ? dictionary.search() : false);
@@ -55,5 +57,5 @@ document.addEventListener("keyup", e => {
     if(e.key === "Escape" && document.activeElement) dictionary.searchBtn.blur();
 });
 
-dictionary.fetchDictionaryData("short");
+dictionary.fetchDictionaryData("free");
 dictionary.csb.style.display = "none";
