@@ -8,6 +8,7 @@ const dictionary = {
         const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         const data = await fetchData.json()
         this.loader.style.display = "none"
+        this.word.style.display = "block";
         this.dictionaryContent.style.display = "block";
         let meanings = [];
         data.forEach(item => {
@@ -30,6 +31,7 @@ const dictionary = {
         this.fetchDictionaryData(this.searchBtn.value);
         this.dictionaryContent.style.display = "none";
         this.loader.style.display = "block";
+        this.word.style.display = "none";
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; }
