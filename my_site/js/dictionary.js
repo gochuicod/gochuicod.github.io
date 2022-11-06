@@ -15,15 +15,19 @@ const dictionary = {
             this.loader.style.display = "none";
             this.dictionaryContent.style.display = "block";
             let meanings = [];
-            console.log(data);
             data.forEach(item => {
                 item.meanings.forEach(item => {
                     meanings.push(`<i>${item.partOfSpeech}</i><br>`)
-                    
-                    item.definitions.forEach((item,index) => meanings.push(`${index+1}.&emsp;${item.definition}<br>`))
-                    
-                    if(item.synonyms.length != 0) meanings.push('<i>Similar:</i>')
-                    item.synonyms.forEach((item,index) => {
+                    item.definitions.forEach((item,index) => {
+                        meanings.push(`${index+1}.&emsp;${item.definition}<br>`)
+                        if(item.example) meanings.push(`<span class="d-flex justify-content-center shadow rounded mb-3"><i>"${item.example}"</i></span>`)
+                    })
+                    if(item.synonyms.length != 0) meanings.push('<i class="text-success">Similar:</i>')
+                    item.synonyms.forEach(item => {
+                        meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
+                    })
+                    if(item.antonyms.length != 0) meanings.push('<br><i class="text-danger">Opposite:</i>')
+                    item.antonyms.forEach(item => {
                         meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
                     })
                     meanings.push(`<br><br>`)
@@ -51,5 +55,5 @@ document.addEventListener("keyup", e => {
     if(e.key === "Escape" && document.activeElement) dictionary.searchBtn.blur();
 });
 
-dictionary.fetchDictionaryData("dictionary");
+dictionary.fetchDictionaryData("short");
 dictionary.csb.style.display = "none";
