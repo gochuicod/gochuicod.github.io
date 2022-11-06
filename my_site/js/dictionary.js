@@ -7,16 +7,15 @@ const dictionary = {
     fetchDictionaryData: async function(word) {
         const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         const data = await fetchData.json()
-        this.loader.style.display = "none"
-        this.word.style.display = "block";
+        this.loader.style.display = "none";
         this.dictionaryContent.style.display = "block";
         let meanings = [];
         data.forEach(item => {
             item.meanings.forEach(item => {
                 meanings.push(`<i>${item.partOfSpeech}</i><br>`)
-
+                
                 item.definitions.forEach((item,index) => meanings.push(`${index+1}.&emsp;${item.definition}<br>`))
-
+                
                 if(item.synonyms.length != 0) meanings.push('<i>Similar:</i>')
                 item.synonyms.forEach((item,index) => {
                     meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
@@ -29,9 +28,9 @@ const dictionary = {
     },
     search: function() {
         this.fetchDictionaryData(this.searchBtn.value);
-        this.dictionaryContent.style.display = "none";
+        this.removeAllChildNodes(this.word)
         this.loader.style.display = "block";
-        this.word.style.display = "none";
+        this.dictionaryContent.style.display = "none";
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; }
