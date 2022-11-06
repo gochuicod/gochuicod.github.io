@@ -26,7 +26,8 @@ const nasaAPOD = {
                 this.title.innerText = data.title; this.desc.innerText = data.explanation; this.img.src = data.url;
                 this.date.innerText = `${this.defineMonth(apodDate.getMonth())} ${apodDate.getDate()} ${this.defineDay(apodDate.getDay())} ${apodDate.getFullYear()}`;
                 this.copyright.innerText = data.copyright;
-                data.copyright ? this.copyright.style.display = "block" : this.copyright.style.display = "none";
+                if(data.copyright) this.copyright.style.display = "block"
+                else this.copyright.style.display = "none";
             }
         }
         this.loader.style.display = "none";
@@ -34,21 +35,11 @@ const nasaAPOD = {
     },
     defineDay: APODDay => {
         let days = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
-        for(let i = 0; i < days.length; i++){
-            if(APODDay == i){
-                return days[i];
-                break;
-            }
-        }
+        return days.find((item,index) => { return APODDay == index })
     },
     defineMonth: APODMonth => {
         let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-        for(let i = 0; i < months.length; i++){
-            if(APODMonth == i) {
-                return months[i];
-                break;
-            }
-        }
+        return months.find((item,index) => { return APODMonth == index })
     },
     search: function() { this.fetchNasaData(search.value) },
     clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
