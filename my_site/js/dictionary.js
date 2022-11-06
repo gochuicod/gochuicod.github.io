@@ -23,7 +23,7 @@ const dictionary = {
                 meanings.push(`<br><br>`)
             })
         })
-        this.word.innerHTML = `<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>  ${data[0].phonetic}`
+        this.word.innerHTML = `<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>  ${(data[0].phonetic) ? data[0].phonetic : ''}`
         this.dictionaryContent.innerHTML = meanings.join("\n")
     },
     search: function() {
