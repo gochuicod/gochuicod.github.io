@@ -7,24 +7,31 @@ const dictionary = {
     fetchDictionaryData: async function(word) {
         const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         const data = await fetchData.json()
-        this.loader.style.display = "none";
-        this.dictionaryContent.style.display = "block";
-        let meanings = [];
-        data.forEach(item => {
-            item.meanings.forEach(item => {
-                meanings.push(`<i>${item.partOfSpeech}</i><br>`)
-                
-                item.definitions.forEach((item,index) => meanings.push(`${index+1}.&emsp;${item.definition}<br>`))
-                
-                if(item.synonyms.length != 0) meanings.push('<i>Similar:</i>')
-                item.synonyms.forEach((item,index) => {
-                    meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
+        if(data.title){
+            this.word.innerHTML = data.title;
+            this.loader.style.display = "none";
+            this.removeAllChildNodes(this.dictionaryContent)
+        } else {
+            this.loader.style.display = "none";
+            this.dictionaryContent.style.display = "block";
+            let meanings = [];
+            console.log(data);
+            data.forEach(item => {
+                item.meanings.forEach(item => {
+                    meanings.push(`<i>${item.partOfSpeech}</i><br>`)
+                    
+                    item.definitions.forEach((item,index) => meanings.push(`${index+1}.&emsp;${item.definition}<br>`))
+                    
+                    if(item.synonyms.length != 0) meanings.push('<i>Similar:</i>')
+                    item.synonyms.forEach((item,index) => {
+                        meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
+                    })
+                    meanings.push(`<br><br>`)
                 })
-                meanings.push(`<br><br>`)
             })
-        })
-        this.word.innerHTML = `<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>  ${(data[0].phonetic) ? data[0].phonetic : ''}`
-        this.dictionaryContent.innerHTML = meanings.join("\n")
+            this.word.innerHTML = `<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>  ${(data[0].phonetic) ? data[0].phonetic : ''}`
+            this.dictionaryContent.innerHTML = meanings.join("\n")
+        }
     },
     search: function() {
         this.fetchDictionaryData(this.searchBtn.value);
