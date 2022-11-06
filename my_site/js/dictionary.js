@@ -19,7 +19,7 @@ const dictionary = {
 
                 if(item.synonyms.length != 0) meanings.push('<i>Similar:</i>')
                 item.synonyms.forEach((item,index) => {
-                    meanings.push(`<span class="rounded bg-dark text-light px-1" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
+                    meanings.push(`<span class="rounded bg-dark text-light px-1 hover-pointer" onclick="dictionary.fetchDictionaryData('${item}')">${item}</span>`)
                 })
                 meanings.push(`<br><br>`)
             })
