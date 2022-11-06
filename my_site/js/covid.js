@@ -8,12 +8,9 @@ const covid = {
         const data = await fetchData.json()
         this.removeAllChildNodes(document.querySelector(".covidDataField"));
         let countryData = [], countryDataSpecificLoc = [], totalConfirmed = 0, totalDeaths = 0;
-        
-        for(let i = 0; i < data.rawData.length; i++){
-            if(data.rawData[i].Country_Region == country) countryData.push(data.rawData[i]);
-        }
+
+        data.rawData.forEach(item => { if(item.Country_Region == country) countryData.push(item); })
         countryData.sort((a,b) => parseInt(b.Confirmed) - parseInt(a.Confirmed))
-        console.log(countryData);
         for(let i = 0; i < countryData.length; totalConfirmed += parseInt(countryData[i].Confirmed), i++);
         for(let i = 0; i < countryData.length; totalDeaths += parseInt(countryData[i].Deaths), i++);
 
@@ -30,18 +27,17 @@ const covid = {
 
         if(countryData.length != 1){
             for(let i = 0; i < countryData.length; this.addItems(i), i++);
-            for(let i = 0; i < countryData.length; i++){
+            countryData.forEach(item => {
                 countryDataSpecificLoc.push({
-                    loc: countryData[i].Combined_Key,
-                    confirmed: `Confirmed: ${this.numberWithCommas(countryData[i].Confirmed)}`,
-                    deaths: `Deaths: ${this.numberWithCommas(countryData[i].Deaths)}`,
-                    fatalityratio: `Fatality Ratio: ${(countryData[i].Case_Fatality_Ratio * 1).toFixed(2)}%`,
-                    incidentrate: `Incident Rate: ${this.numberWithCommas(Math.floor(countryData[i].Incident_Rate))}`,
-                    update: `Update as of ${countryData[0].Last_Update}`
-                });
-            }
-
-            countryDataSpecificLoc.forEach((element,index,array) => {
+                    loc: item.Combined_Key,
+                    confirmed: `Confirmed: ${this.numberWithCommas(item.Confirmed)}`,
+                    deaths: `Deaths: ${this.numberWithCommas(item.Deaths)}`,
+                    fatalityratio: `Fatality Ratio: ${(item.Case_Fatality_Ratio * 1).toFixed(2)}%`,
+                    incidentrate: `Incident Rate: ${this.numberWithCommas(Math.floor(item.Incident_Rate))}`,
+                    update: `Update as of ${item.Last_Update}`
+                })
+            })
+            countryDataSpecificLoc.forEach((element,index) => {
                 document.querySelector(`.covidLoc${index}`).innerText = element.loc;
                 document.querySelector(`.covidConf${index}`).innerText = element.confirmed;
                 document.querySelector(`.covidDeaths${index}`).innerText = element.deaths;

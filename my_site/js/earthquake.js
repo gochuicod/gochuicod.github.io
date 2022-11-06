@@ -6,29 +6,27 @@ const earthquake = {
     generated: document.querySelector(".generated"),
     fetchEarthquakeData: async function(magnitude){
         let pastSevenDaysDate = new Date(); pastSevenDaysDate.setDate(pastSevenDaysDate.getDate() - 1);
-        let presentDayDate = new Date(); end_date_input = presentDayDate.toISOString().split('T')[0];
+        let presentDayDate = new Date(), end_date_input = presentDayDate.toISOString().split('T')[0];
         const fetchData = await fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${pastSevenDaysDate.toISOString().split('T')[0]}&endtime=${end_date_input}&minmagnitude=${magnitude}`)
         const data = await fetchData.json()
         this.removeAllChildNodes(this.dataField);
-        let alertLevelInf = "Alert Level: ", magnitudeInf = "Magnitude: ", intensityInf = "Intensity: ";
         let dailyData = [];
-    
+
         this.generated.innerText = `Update as of ${new Date(data.metadata.generated).toLocaleTimeString()}`;
     
         for(let i = 0; i < data.features.length; this.addItems(i), i++);
-        for(let i = 0; i < data.features.length; i++){
+        for(let property of data.features){
             dailyData.push({
-                time: `${new Date(data.features[i].properties.time).toLocaleString()}`,
-                loc: `${this.isNull(data.features[i].properties.place)}`,
-                alertType: `${alertLevelInf}${this.isNull(data.features[i].properties.alert)}`,
-                magnitude: `${magnitudeInf}${this.isNull(data.features[i].properties.mag)}`,
-                intensity: `${intensityInf}${this.isNull(data.features[i].properties.mmi)}`
+                time: new Date(property.properties.time).toLocaleString(),
+                loc: this.isNull(property.properties.place),
+                alertType: `Alert Level: ${this.isNull(property.properties.alert)}`,
+                magnitude: `Magnitude: ${this.isNull(property.properties.mag)}`,
+                intensity: `Intensity: ${this.isNull(property.properties.mmi)}`,
             });
         }
         
         dailyData.sort((a,b) => a.magnitude.localeCompare(b.magnitude));
-    
-        dailyData.forEach((element, index, array) => {
+        dailyData.forEach((element, index) => {
             document.querySelector(`.eq${index}Location`).innerText = element.loc;
             document.querySelector(`.eq${index}Time`).innerText = element.time;
             document.querySelector(`.eq${index}AlertType`).innerText = element.alertType;
@@ -44,7 +42,7 @@ const earthquake = {
         group.setAttribute('class',`group${index} shadow rounded-custom mb-3 p-3 fw-light fs-7`);
 
         let outerDiv1 = document.createElement("div"), loc = document.createElement("span");
-        outerDiv1.setAttribute('class','d-flex flex-row justify-content-center text-center');
+        outerDiv1.setAttribute('class','d-flex flex-row justify-content-center mb-3');
         loc.setAttribute('class',`eq${index}Location fw-bold`);
         
         let outerDiv2 = document.createElement("div"), time = document.createElement("span"), alertType = document.createElement("span");
@@ -79,7 +77,7 @@ const earthquake = {
     clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
 }
 
-search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? earthquake.search() : ""; });
+search.addEventListener("keyup", (e) => { if(key === "Enter") earthquake.search() });
 document.addEventListener("keyup", (e) => {
     if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
     if(search.value.length > 0) earthquake.csb.style.display = "block";
