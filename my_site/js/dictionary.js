@@ -32,7 +32,7 @@ const dictionary = {
         this.loader.style.display = "block";
     },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
+    clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; }
 }
 
 dictionary.searchBtn.addEventListener("keyup", e => e.key === "Enter" ? dictionary.search() : false);
