@@ -136,7 +136,7 @@ section:nth-child(even) {
 }
 
 img {
-  object-fit: cover;
+  object-fit: fill;
   width: 225px;
   height: 175px;
   border-radius: 10px;
@@ -171,8 +171,9 @@ img {
     max-width: 40rem;
   }
   img{
-    width: 330px;
-    height: 175px;
+    width: auto;
+    height: auto;
+    object-fit: fill;
   }
   .menu-btn{
     font-size: .9rem;
