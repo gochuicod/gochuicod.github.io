@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root{
   --intp-jollibee-red: rgb(227,24,55);
@@ -13,6 +14,7 @@
   --intp-gold-3: rgb(200,160,60);
   --intp-white-1: rgb(255,255,255);
   --intp-fstyle-roboto: 'Roboto', sans-serif;
+  --intp-fstyle-nunito: 'Nunito', sans-serif;
 }
 
 input,
@@ -25,11 +27,13 @@ a {
 
 .jollibee{
   color: var(--intp-jollibee-red);
+  font-weight: bold;
 }
 
 body{
   background-color: var(--intp-white-1);
-  font-family: var(--intp-fstyle-roboto);
+  font-family: var(--intp-fstyle-nunito);
+  /* font-family: var(--intp-fstyle-roboto); */
 }
 
 .d-flex{
@@ -110,6 +114,10 @@ section:nth-child(even) {
   animation: .7s ease-in 0s 1 slideInFromRight;
 }
 
+.item-enter{
+  animation: .5s linear 0s 1 slideInFromLeft;
+}
+
 .ruler {
   width: 5rem;
   height: 0.25rem;
@@ -129,10 +137,10 @@ section:nth-child(even) {
 
 .menu-item {
   display: grid;
-  gap: 1rem 2rem;
   max-width: 25rem;
   background-color: var(--intp-gold-1);
   padding: .5rem;
+  border: 2px solid var(--intp-gold-3);
 }
 
 img {
@@ -167,7 +175,6 @@ img {
 @media screen and (max-width: 767px) {
   .menu-item{
     grid-template-columns: 330px;
-    gap: 1rem;
     max-width: 40rem;
   }
   img{

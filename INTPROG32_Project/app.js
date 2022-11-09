@@ -99,20 +99,20 @@ const menu = {
     addItem: function(element){
         this.items.push(`
             <div class="menu-item rounded shadow">
-                <img src="${element.img}">
+                <img class="item-enter" src="${element.img}">
                 <div class="item-description">
                     <header>
-                        <span>${element.title}</span>
-                        <span class="text-gold">${element.price}</span>
+                        <span class="item-enter">${element.title}</span>
+                        <span class="item-enter text-gold">${element.price}</span>
                     </header>
-                    <p class="item-text">${element.desc}</p>
+                    <p class="item-enter item-text">${element.desc}</p>
                 </div>
             </div>
         `);
     }
 }
 
-menu.all.addEventListener("click", () => menu.main("all"))
+menu.all.addEventListener("click", () => menu.main('all'))
 menu.breakfast.addEventListener("click", () => menu.main("breakfast"))
 menu.lunch.addEventListener("click", () => menu.main("lunch"))
 menu.beverages.addEventListener("click", () => menu.main("beverages"))
