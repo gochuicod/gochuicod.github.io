@@ -15,6 +15,14 @@
   --intp-fstyle-roboto: 'Roboto', sans-serif;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .jollibee{
   color: var(--intp-jollibee-red);
 }
@@ -62,6 +70,7 @@ body{
   border-radius: 10px;
   padding: .5rem .25rem .5rem .25rem;
   background-color: var(--intp-white-1);
+  color: black;
   border: transparent;
   cursor: pointer;
   transition: all ease 0.4s;
@@ -169,15 +178,15 @@ img {
     font-size: .9rem;
     border-radius: 10px;
     padding: .5rem .25rem .5rem .25rem;
-    background-color: var(--intp-gray-1);
-    border-color: var(--intp-gray-2);
+    background-color: var(--intp-white-1);
+    border-color: transparent;
     cursor: pointer;
     transition: all ease 0.4s;
   }
   
   .menu-btn:hover{
-    background-color: var(--intp-gray-3);
-    color: var(--intp-white-1);
+    background-color: var(--intp-jollibee-red);
+    color: black;
   }
   .mx-3{
     margin-left: .5rem;
