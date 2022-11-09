@@ -98,14 +98,14 @@ const menu = {
     },
     addItem: function(element){
         this.items.push(`
-            <div class="menu-item">
+            <div class="menu-item rounded shadow">
                 <img src="${element.img}">
                 <div class="item-description">
                     <header>
                         <span>${element.title}</span>
                         <span class="text-gold">${element.price}</span>
                     </header>
-                    <p class="">${element.desc}</p>
+                    <p class="item-text">${element.desc}</p>
                 </div>
             </div>
         `);
