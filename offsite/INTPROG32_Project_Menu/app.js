@@ -7,7 +7,7 @@ const menu = {
     displayMenu: document.querySelector(".displayMenu"),
     items: [],
     arr:['all','breakfast','lunch','beverages','dinner'],
-    i: 0,
+    i: 1,
     menuList: [
         {
             id: 1,
@@ -120,9 +120,10 @@ menu.lunch.addEventListener("click", () => { menu.main("lunch"); clearInterval(l
 menu.beverages.addEventListener("click", () => { menu.main("beverages"); clearInterval(loop)})
 menu.dinner.addEventListener("click", () => { menu.main("dinner"); clearInterval(loop)})
 
-
+menu.all.click(); menu.all.focus();
 let loop = setInterval(()=>{
     if(menu.i == menu.arr.length) menu.i = 0;
     menu.main(`${menu.arr[menu.i]}`)
+    document.querySelector(`.${menu.arr[menu.i]}`).focus();
     menu.i++;
 },5000);
