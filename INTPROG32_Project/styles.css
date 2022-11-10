@@ -33,7 +33,6 @@ a {
 body{
   background-color: var(--intp-white-1);
   font-family: var(--intp-fstyle-nunito);
-  /* font-family: var(--intp-fstyle-roboto); */
 }
 
 .d-flex{
@@ -80,8 +79,9 @@ body{
   transition: all ease 0.4s;
 }
 
-.menu-btn:hover{
+.menu-btn:hover, .menu-btn:focus{
   background-color: var(--intp-jollibee-red);
+  outline: none;
 }
 
 .px-2{
@@ -89,12 +89,12 @@ body{
   padding-right: 1rem;
 }
 
-@keyframes slideInFromRight {
+@keyframes fade-in {
   0% {
-    transform: translateX(100%);
+    opacity: 0%;
   }
   100% {
-    transform: translateX(0);
+    opacity: 100%;
   }
 }
 @keyframes slideInFromLeft {
@@ -106,16 +106,18 @@ body{
   }
 }
 
-section:nth-child(odd) {
-  animation: .7s ease-in 0s 1 slideInFromLeft;
+section {
+  animation: fade-in 2s ease;
 }
 
-section:nth-child(even) {
-  animation: .7s ease-in 0s 1 slideInFromRight;
+@keyframes zoom-in {
+  0%{ transform: scale(0.5,0.5); }
+  100%{ transform: scale(1,1); }  
 }
 
 .item-enter{
-  animation: .5s linear 0s 1 slideInFromLeft;
+  animation: zoom-in 1s ease;
+  transform: scale(1);
 }
 
 .ruler {

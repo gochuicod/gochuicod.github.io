@@ -98,7 +98,7 @@ const menu = {
     },
     addItem: function(element){
         this.items.push(`
-            <div class="menu-item rounded shadow">
+            <div class="item-enter menu-item rounded shadow">
                 <img class="item-enter" src="${element.img}">
                 <div class="item-description">
                     <header>
@@ -118,4 +118,6 @@ menu.lunch.addEventListener("click", () => menu.main("lunch"))
 menu.beverages.addEventListener("click", () => menu.main("beverages"))
 menu.dinner.addEventListener("click", () => menu.main("dinner"))
 
-menu.all.click();
+setTimeout(()=>{
+    menu.main('all'); menu.all.focus();
+},1200)
