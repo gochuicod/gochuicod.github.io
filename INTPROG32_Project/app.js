@@ -6,6 +6,8 @@ const menu = {
     dinner: document.querySelector(".dinner"),
     displayMenu: document.querySelector(".displayMenu"),
     items: [],
+    arr:['all','breakfast','lunch','beverages','dinner'],
+    i: 0,
     menuList: [
         {
             id: 1,
@@ -112,12 +114,15 @@ const menu = {
     }
 }
 
-menu.all.addEventListener("click", () => menu.main('all'))
-menu.breakfast.addEventListener("click", () => menu.main("breakfast"))
-menu.lunch.addEventListener("click", () => menu.main("lunch"))
-menu.beverages.addEventListener("click", () => menu.main("beverages"))
-menu.dinner.addEventListener("click", () => menu.main("dinner"))
+menu.all.addEventListener("click", () =>  { menu.main('all'); clearInterval(loop) })
+menu.breakfast.addEventListener("click", () => { menu.main('breakfast'); clearInterval(loop) })
+menu.lunch.addEventListener("click", () => { menu.main("lunch"); clearInterval(loop) })
+menu.beverages.addEventListener("click", () => { menu.main("beverages"); clearInterval(loop)})
+menu.dinner.addEventListener("click", () => { menu.main("dinner"); clearInterval(loop)})
 
-setTimeout(()=>{
-    menu.main('all'); menu.all.focus();
-},1200)
+
+let loop = setInterval(()=>{
+    if(menu.i == menu.arr.length) menu.i = 0;
+    menu.main(`${menu.arr[menu.i]}`)
+    menu.i++;
+},5000);
