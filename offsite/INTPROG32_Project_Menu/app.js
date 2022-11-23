@@ -5,6 +5,7 @@ const menu = {
     beverages: document.querySelector(".beverages"),
     dinner: document.querySelector(".dinner"),
     displayMenu: document.querySelector(".displayMenu"),
+    itemEnter: document.querySelector(".item-enter"),
     items: [],
     arr:['all','breakfast','lunch','beverages','dinner'],
     i: 1,
@@ -92,6 +93,7 @@ const menu = {
     ],
     main: function(value){
         this.items = [];
+        this.displayMenu.style.gridTemplateColumns = "";
         this.menuList.forEach(element => {
             if(value == 'all') this.addItem(element)
             if(element.category == value) this.addItem(element);
@@ -100,8 +102,10 @@ const menu = {
     },
     addItem: function(element){
         this.items.push(`
-            <div class="item-enter menu-item rounded shadow">
-                <img class="item-enter" src="${element.img}">
+            <div class="item-enter menu-item rounded shadow" onclick="menu.focusItem(this)">
+                <div class="d-flex justify-content-center">
+                    <img class="item-enter" src="${element.img}">
+                </div>
                 <div class="item-description">
                     <header>
                         <span class="item-enter">${element.title}</span>
@@ -111,7 +115,15 @@ const menu = {
                 </div>
             </div>
         `);
-    }
+    },
+    focusItem: function(data) {
+        for(let child of this.displayMenu.children) this.hide(child)
+        this.displayMenu.style.gridTemplateColumns = "1fr";
+        clearInterval(loop);
+        this.show(data);
+    },
+    show: element => element.style.display = "block",
+    hide: element => element.style.display = "none",
 }
 
 menu.all.addEventListener("click", () =>  { menu.main('all'); clearInterval(loop) })
