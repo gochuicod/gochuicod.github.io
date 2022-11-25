@@ -6,6 +6,7 @@ const menu = {
     dinner: document.querySelector(".dinner"),
     displayMenu: document.querySelector(".displayMenu"),
     itemEnter: document.querySelector(".item-enter"),
+    modal: document.querySelector(".modal"),
     items: [],
     arr:['all','breakfast','lunch','beverages','dinner'],
     i: 1,
@@ -15,7 +16,7 @@ const menu = {
             title: `Longganisa`,
             category: `breakfast`,
             price: `₱181.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/b303a189-6093-4fb8-9e02-848da4b28beb.png`,
+            img: `./images/longganisa.png`,
             desc: `2 pieces of mildly seasoned longganisa served with garlic rice and fried egg.`
         },
         {
@@ -23,7 +24,7 @@ const menu = {
             title: `Chicken Sandwich w/ Fries & Drink`,
             category: `lunch`,
             price: `₱211.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/34667c53-e5fa-492a-ab6d-85574329ba35.png`,
+            img: `./images/chickenswfriesndrink.png`,
             desc: `Crunchy. Large. Delicious. - 100% Real Chicken in a Sandwich.`
         },
         {
@@ -31,7 +32,7 @@ const menu = {
             title: `Coke Float`,
             category: `beverages`,
             price: `₱52.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/8d6c4226-3ff6-41aa-8402-1ac0fa642a13.png`,
+            img: `./images/cokefloat.png`,
             desc: `Coke soda topped with creamy vanilla soft serve and rich, indulgent chocolate syrup`
         },
         {
@@ -39,7 +40,7 @@ const menu = {
             title: `1 - pc. Breakfast Chickenjoy`,
             category: `breakfast`,
             price: `₱186.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/614362fb-11f5-4c35-a47b-99a99a10bb4b.png`,
+            img: `./images/bfastchickenjoy.png`,
             desc: `Philippines' best-tasting crispylicious, juicylicious Chickenjoy that is crispy on the outside, tender and juicy on the inside with garlic rice and fried egg.`
         },
         {
@@ -47,7 +48,7 @@ const menu = {
             title: `Jolly Spaghetti w/ Burger Steak`,
             category: `lunch`,
             price: `₱144.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/fb883e2a-d994-4470-9277-2172ff8d5b02.png`,
+            img: `./images/jollyspagwithburgersteak.png`,
             desc: `The meatiest, cheesiest and sweet-sarap spaghetti! Freshly prepared noodles topped with Jollibee's signature meaty spaghetti sauce, hotdog chunks and creamy grated cheese, paired with our Beefy-Saucy Burger Steak.`
         },
         {
@@ -55,7 +56,7 @@ const menu = {
             title: `Sarsi`,
             category: `beverages`,
             price: `₱53.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/88cca511-30bd-4359-a878-15b26a76a427.png`,
+            img: `./images/sarsi.png`,
             desc: `Refreshing, ice-cold Sarsi to perfectly match your favorite meal`
         },
         {
@@ -63,7 +64,7 @@ const menu = {
             title: `Bacon, Egg, & Cheese Sandwich`,
             category: `breakfast`,
             price: `₱112.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/9db3a1fc-c5ac-44e2-aac8-13b01eaec02e.png`,
+            img: `./images/baconeggcheesesw.png`,
             desc: `Crispy bacon, cheese, and fried egg sandwiched between two soft buns.`
         },
         {
@@ -71,7 +72,7 @@ const menu = {
             title: `1 - pc. Chickenjoy w/ Burger Steak & Half Jolly Spaghetti Super Meal`,
             category: `lunch`,
             price: '₱211.00',
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/20900c60-45db-4e5b-b430-4528e0245b77.png`,
+            img: `./images/chickenjoyburgersteakhalfjollyspagsupermeal.png`,
             desc: `Your Jollibee favorites in one Supermeal: 1pc Chickenjoy with Burger Steak and Half Jolly Spaghetti, with rice and drink.`
         },
         {
@@ -79,7 +80,7 @@ const menu = {
             title: `Pineapple Juice`,
             category: `beverages`,
             price: `₱64.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/deac9ade-a160-44e9-8ecd-77b4aedd02af.png`,
+            img: `./images/pineapplejuice.png`,
             desc: `Natural pineapple juice drink for those looking for a healthy alternative`
         },
         {
@@ -87,7 +88,7 @@ const menu = {
             title: `1 - pc. Chickenjoy Solo`,
             category: `dinner`,
             price: `₱109.00`,
-            img: `https://jb-ph-cdn.tillster.com/menu-images/prod/1af8b6ba-35f9-49ab-bb6f-dc0e57ebc2de.png`,
+            img: `./images/chickenjoysolo.png`,
             desc: `Philippines’ best-tasting crispylicious, juicylicious Chickenjoy that is crispy on the outside, tender and juicy on the inside.`
         }
     ],
@@ -117,13 +118,21 @@ const menu = {
         `);
     },
     focusItem: function(data) {
-        for(let child of this.displayMenu.children) this.hide(child)
-        this.displayMenu.style.gridTemplateColumns = "1fr";
-        clearInterval(loop);
-        this.show(data);
+        let clone = data.cloneNode(true)
+        clone.classList.add("modal-content")
+        clone.style.gridTemplateColumns = "1fr"
+        clone.children[1].children[1].style.fontSize = "1.5rem"
+        clone.children[1].children[0].children[1].style.fontSize = "1.5rem"
+        clone.children[1].children[0].children[0].style.fontSize = "1.5rem"
+        clone.children[0].children[0].style.width = "150%"
+        clone.children[0].children[0].style.height = "auto"
+        clearInterval(loop)
+        this.removeAllChildNodes(this.modal)
+        this.modal.append(clone)
+        this.modal.style.display = "flex"
     },
-    show: element => element.style.display = "block",
-    hide: element => element.style.display = "none",
+    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild) },
+    hide: element => element.style.display = "none"
 }
 
 menu.all.addEventListener("click", () =>  { menu.main('all'); clearInterval(loop) })
@@ -134,8 +143,10 @@ menu.dinner.addEventListener("click", () => { menu.main("dinner"); clearInterval
 
 menu.all.click(); menu.all.focus();
 let loop = setInterval(()=>{
-    if(menu.i == menu.arr.length) menu.i = 0;
+    if(menu.i == menu.arr.length) menu.i = 0
     menu.main(`${menu.arr[menu.i]}`)
-    document.querySelector(`.${menu.arr[menu.i]}`).focus();
-    menu.i++;
+    document.querySelector(`.${menu.arr[menu.i]}`).focus()
+    menu.i++
 },5000);
+
+window.onclick = e => e.target == menu.modal ? menu.hide(menu.modal) : false;
