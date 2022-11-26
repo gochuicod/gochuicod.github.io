@@ -103,7 +103,7 @@ const menu = {
     },
     addItem: function(element){
         this.items.push(`
-            <div class="item-enter menu-item rounded shadow" onclick="menu.focusItem(this)">
+            <div class="item-enter menu-item rounded shadow prevent-select" onclick="menu.focusItem(this)">
                 <div class="d-flex justify-content-center">
                     <img class="item-enter" src="${element.img}">
                 </div>
