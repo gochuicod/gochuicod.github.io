@@ -271,8 +271,8 @@ $(document).on("keyup", e => {
 
 $(".search").on("keyup", e => {
     if(e.key === "Enter") weather.search();
-    if($(".search").val().length > 0) advice.show($(".clearSearchButton"));
-    if($(".search").val().length == 0) advice.hide($(".clearSearchButton"))
+    if($(".search").val().length > 0) weather.show($(".clearSearchButton"));
+    if($(".search").val().length == 0) weather.hide($(".clearSearchButton"))
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
 

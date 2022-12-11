@@ -21,7 +21,7 @@ const advice = {
             }
     
             adviceDataNodes.forEach((element,index,array) => {
-                $(`.adviceDesc${index}`).text(`${element.desc}"`);
+                $(`.adviceDesc${index}`).text(`"${element.desc}"`);
                 $(`.adviceDate${index}`).text(`Date: ${element.date}`);
             });
             this.hide($(".loader"))

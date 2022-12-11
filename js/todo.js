@@ -58,7 +58,7 @@ const todo = {
 }
 
 $(window).on("load", () => todo.allStorage());
-$("#title").on('keyup', e => {
-    if(e.key === 'Enter') todo.addItem();
+$(".title").on('keyup', e => {
+    if(e.key === "Enter") todo.addItem();
     if(e.key === "Escape") $("#title").trigger("blur");
 });
