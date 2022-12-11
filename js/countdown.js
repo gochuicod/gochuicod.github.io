@@ -1,23 +1,19 @@
 const christmasCountdown = {
-    countDown: document.querySelector(".countDown"),
-    countDownText: document.querySelector(".countDownText"),
-    monthVal: 0,
-    totalMonthVal: 0,
+    months: [31,28,31,30,31,30,31,31,30,31,30,24],
     switch: true,
-    months: [31,28,31,30,31,30,31,31,30,31,30,25],
     
-    isLeapYear: year => { return year % 400 == 0 || year % 4 == 0 ? true : false },
-    
-    start: () => {
-        christmasCountdown.totalMonthVal = 0; christmasCountdown.monthVal = 0;
-        for(let i = 0; i < new Date().getMonth(); christmasCountdown.monthVal += christmasCountdown.months[i], i++);
-        for(let j = 0; j < christmasCountdown.months.length; christmasCountdown.totalMonthVal += christmasCountdown.months[j], j++);
+    start: function() {
+        let totalMonthVal = 0, monthVal = 0;
+        for(let i = 0; i < new Date().getMonth(); monthVal += christmasCountdown.months[i], i++);
+        for(let j = 0; j < christmasCountdown.months.length; totalMonthVal += christmasCountdown.months[j], j++);
         
         let a = new Date();
         christmasCountdown.isLeapYear(a.getYear()) ? a.getDate()++ : a.getDate();
-        christmasCountdown.countDown.innerText = `${christmasCountdown.isLessThan(59-a.getSeconds(),59-a.getMinutes(),23-a.getHours(),
-            (christmasCountdown.totalMonthVal - (christmasCountdown.monthVal + a.getDate())))}`;
+        $(".countDown").text(`${christmasCountdown.isLessThan(59-a.getSeconds(),59-a.getMinutes(),23-a.getHours(),
+            (totalMonthVal - (monthVal + a.getDate())))}`);
     },
+
+    isLeapYear: year => { return year % 400 == 0 || year % 4 == 0 ? true : false },
         
     isLessThan: (seconds,minutes,hours,days) => {
         if(seconds < 10) seconds = `0${seconds}`;
@@ -27,19 +23,19 @@ const christmasCountdown = {
         return `${days}:${hours}:${minutes}:${seconds}`;
     },
         
-    handleSwitch: () => {
-        if(christmasCountdown.switch) {
-            christmasCountdown.countDownText.innerText = "New Year"
-            christmasCountdown.countDownText.setAttribute("class","countDownText link-danger hover-pointer text-decoration-none");
-            christmasCountdown.months[christmasCountdown.months.length-1] = 31;
-            christmasCountdown.switch = false;
+    handleSwitch: function() {
+        if(this.switch) {
+            $(".countDownText").text("New Year");
+            $(".countDownText").removeClass("link-warning").addClass("link-danger")
+            this.months[this.months.length-1] = 31;
+            this.switch = false;
         } else {
-            christmasCountdown.countDownText.innerText = "Christmas"
-            christmasCountdown.countDownText.setAttribute("class","countDownText link-warning hover-pointer text-decoration-none");
-            christmasCountdown.months[christmasCountdown.months.length-1] = 25;
-            christmasCountdown.switch = true;
+            $(".countDownText").text("Christmas");
+            $(".countDownText").removeClass("link-danger").addClass("link-warning")
+            this.months[this.months.length-1] = 24;
+            this.switch = true;
         }
     }
 }
 
-window.onload = () => setInterval(christmasCountdown.start,1000);
+setInterval(christmasCountdown.start,1000)

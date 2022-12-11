@@ -1,23 +1,25 @@
-const a = document.querySelector(".c-radius"), output = document.querySelector(".pc-output"), err = document.querySelector(".errorInfo");
-const perimeterCircle = () => {
-    let radius = parseFloat(a.value);
-    let pc_output = 2 * Math.PI * radius;
-    if(!isNaN(radius) || a.value !== ""){
-        if(radius > 0){
-            err.style.display = "none";
-            output.style.display = "block";
-            output.innerText = `${pc_output}`;
+const perimeterCircle = {
+    process: function() {
+        let radius = $(".c-radius").val();
+        if(!isNaN(radius) || $(".c-radius").val() !== ""){
+            if(radius > 0){
+                this.hide($(".errorInfo"))
+                this.show($(".pc-output"))
+                $(".pc-output").text(`${2*Math.PI*radius}`)
+            } else {
+                this.show($(".pc-output"))
+                $(".pc-output").text("?")
+                $(".errorInfo").text("Values must be positive!")
+                this.show($(".errorInfo"))
+            }
         } else {
-            output.style.display = "block";
-            output.innerText = "?";
-            err.innerText = "Values must be positive!";
-            err.style.display = "block";
+            this.hide($(".errorInfo"))
+            this.hide($(".pc-output"))
         }
-    } else {
-        err.style.display = "none";
-        output.style.display = "none";
-    }
+    },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-window.onload = () => output.style.display = "none";
-document.addEventListener('keyup', () => a === document.activeElement ? perimeterCircle() : false);
+$(window).on("load", () => perimeterCircle.hide($(".pc-output")))
+$(".c-radius").on("keyup", () => perimeterCircle.process())

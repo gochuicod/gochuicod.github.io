@@ -1,14 +1,12 @@
 const todaysDate = new Date(), tyear = todaysDate.getFullYear(), tmonth = todaysDate.getUTCMonth()+1, tdate = todaysDate.getUTCDate();
 const nasaNEO = {
-    loader: document.querySelector(".loader"),
-    dataField: document.querySelector(".dataField"),
     "apiKey":"eQZ3IIL7svBQW6UnJDE4mPu5uAJfRjx8QsziOrOS",
     fetchNasaData: async function() {
-        this.dataField.style.display = "none";
-        this.loader.style.display = "block";
+        this.hide($(".dataField"))
+        this.show($(".loader"))
         const fetchData = await fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${tyear}-${tmonth}-${tdate}&end_date=${tyear}-${tmonth}-${tdate}&api_key=${this.apiKey}`)
         const data = await fetchData.json()
-        this.removeAllChildNodes(this.dataField);
+        $(".dataField").empty();
         let NEOTodaysDate = `${tyear}-${this.getMonth2Digits(tmonth)}-${this.getDay2Digits(tdate)}`;
         let instances = [];
         
@@ -16,48 +14,42 @@ const nasaNEO = {
         for(let i = 0; i < data.element_count; instances.push(data.near_earth_objects[NEOTodaysDate][i]), i++);
         
         instances.forEach((element,index,array) => {
-            document.querySelector(`.neoAsteroidName${index}`).innerText = `Name: ${instances[index].name}`;
-            document.querySelector(`.neoAsteroidCloseApproach${index}`).innerText = `Close Approach: ${instances[index].close_approach_data[0].close_approach_date_full}`;
-            document.querySelector(`.neoAsteroidMissDistance${index}`).innerText = `Miss Distance: ${parseFloat(instances[index].close_approach_data[0].miss_distance.kilometers).toFixed(2)} km`
-            document.querySelector(`.neoAsteroidRelativeVelocity${index}`).innerText = `Relative Velocity ${parseFloat(instances[index].close_approach_data[0].relative_velocity.kilometers_per_second).toFixed(2)} km/h`;
-            document.querySelector(`.neoAsteroidEstDiameter${index}`).innerText = `Estimated Maximum Diameter ${parseFloat(instances[index].estimated_diameter.kilometers.estimated_diameter_max).toFixed(2)} km`;
-            document.querySelector(`.neoAsteroidHazardous${index}`).innerText = `Hazardous: ${(instances[index].is_potentially_hazardous_asteroid) ? "Yes" : "No"}`;
+            $(`.neoAsteroidName${index}`).text(`Name: ${instances[index].name}`);
+            $(`.neoAsteroidCloseApproach${index}`).text(`Close Approach: ${instances[index].close_approach_data[0].close_approach_date_full}`);
+            $(`.neoAsteroidMissDistance${index}`).text(`Miss Distance: ${parseFloat(instances[index].close_approach_data[0].miss_distance.kilometers).toFixed(2)} km`);
+            $(`.neoAsteroidRelativeVelocity${index}`).text(`Relative Velocity ${parseFloat(instances[index].close_approach_data[0].relative_velocity.kilometers_per_second).toFixed(2)} km/h`);
+            $(`.neoAsteroidEstDiameter${index}`).text(`Estimated Maximum Diameter ${parseFloat(instances[index].estimated_diameter.kilometers.estimated_diameter_max).toFixed(2)} km`);
+            $(`.neoAsteroidHazardous${index}`).text(`Hazardous: ${(instances[index].is_potentially_hazardous_asteroid) ? "Yes" : "No"}`);
         });
-        this.loader.style.display = "none";
-        this.dataField.style.display = "block";
+        this.hide($(".loader"))
+        this.show($(".dataField"))
     },
-    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     prepareNEOData: index => {
-        let dataField = document.querySelector(".dataField");
+        let outerDiv = $("<div></div>");
+        outerDiv.attr('class',`neoAsteroid${index} shadow rounded-custom mb-3 ps-4 py-3`);
 
-        let outerDiv = document.createElement("div");
-        outerDiv.setAttribute('class',`neoAsteroid${index} shadow rounded-custom mb-3 ps-4 py-3`);
+        let innerDiv1 = $("<div></div>"), innerDiv2 = $("<div></div>");
+        let innerDiv3 = $("<div></div>"), innerDiv4 = $("<div></div>");
+        let innerDiv5 = $("<div></div>"), innerDiv6 = $("<div></div>");
+        innerDiv1.attr('class','d-flex justify-content-start');
+        innerDiv2.attr('class','d-flex justify-content-start');
+        innerDiv3.attr('class','d-flex justify-content-start');
+        innerDiv4.attr('class','d-flex justify-content-start');
+        innerDiv5.attr('class','d-flex justify-content-start');
+        innerDiv6.attr('class','d-flex justify-content-start');
 
-        let innerDiv1 = document.createElement("div");
-        let innerDiv2 = document.createElement("div");
-        let innerDiv3 = document.createElement("div");
-        let innerDiv4 = document.createElement("div");
-        let innerDiv5 = document.createElement("div");
-        let innerDiv6 = document.createElement("div");
-        innerDiv1.setAttribute('class','d-flex flex-row justify-content-start');
-        innerDiv2.setAttribute('class','d-flex flex-row justify-content-start');
-        innerDiv3.setAttribute('class','d-flex flex-row justify-content-start');
-        innerDiv4.setAttribute('class','d-flex flex-row justify-content-start');
-        innerDiv5.setAttribute('class','d-flex flex-row justify-content-start');
-        innerDiv6.setAttribute('class','d-flex flex-row justify-content-start');
-
-        let innerDiv1Span = document.createElement("span");
-        let innerDiv2Span = document.createElement("span");
-        let innerDiv3Span = document.createElement("span");
-        let innerDiv4Span = document.createElement("span");
-        let innerDiv5Span = document.createElement("span");
-        let innerDiv6Span = document.createElement("span");
-        innerDiv1Span.setAttribute('class',`neoAsteroidName${index}`);
-        innerDiv2Span.setAttribute('class',`neoAsteroidCloseApproach${index}`);
-        innerDiv3Span.setAttribute('class',`neoAsteroidMissDistance${index}`);
-        innerDiv4Span.setAttribute('class',`neoAsteroidRelativeVelocity${index}`);
-        innerDiv5Span.setAttribute('class',`neoAsteroidEstDiameter${index}`);
-        innerDiv6Span.setAttribute('class',`neoAsteroidHazardous${index}`);
+        let innerDiv1Span = $("<span></span>");
+        let innerDiv2Span = $("<span></span>");
+        let innerDiv3Span = $("<span></span>");
+        let innerDiv4Span = $("<span></span>");
+        let innerDiv5Span = $("<span></span>");
+        let innerDiv6Span = $("<span></span>");
+        innerDiv1Span.attr('class',`neoAsteroidName${index}`);
+        innerDiv2Span.attr('class',`neoAsteroidCloseApproach${index}`);
+        innerDiv3Span.attr('class',`neoAsteroidMissDistance${index}`);
+        innerDiv4Span.attr('class',`neoAsteroidRelativeVelocity${index}`);
+        innerDiv5Span.attr('class',`neoAsteroidEstDiameter${index}`);
+        innerDiv6Span.attr('class',`neoAsteroidHazardous${index}`);
         
         innerDiv1.append(innerDiv1Span);
         innerDiv2.append(innerDiv2Span);
@@ -73,16 +65,12 @@ const nasaNEO = {
         outerDiv.append(innerDiv5);
         outerDiv.append(innerDiv6);
 
-        dataField.append(outerDiv);
+        $(".dataField").append(outerDiv);
     },
-    getMonth2Digits: month => {
-        if(month < 10) return `0${month}`;
-        return month;
-    },
-    getDay2Digits: date => {
-        if(date < 10) return `0${date}`;
-        return date;
-    }
+    getMonth2Digits: month => month < 10 ? `0${month}` : month,
+    getDay2Digits: date => date < 10 ? `0${date}` : date,
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
 nasaNEO.fetchNasaData();

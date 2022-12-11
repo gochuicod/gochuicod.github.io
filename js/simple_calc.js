@@ -1,11 +1,10 @@
 const textArea = {
     equation: [],
-    output: document.querySelector(".txtArea"),
-    append: character => { textArea.equation.push(character); textArea.updateTextArea(); },
-    equals: () => textArea.output.value = `${textArea.evaluate(textArea.equation.join(""))}`,
-    updateTextArea: () => textArea.output.value = `${textArea.equation.join("")}`,
-    evaluate: fn => { return new Function('return ' + fn)(); },
-    clearArea: () => { textArea.equation.splice(0,textArea.equation.length); textArea.updateTextArea(); }
+    append: function(character) { this.equation.push(character); this.updateTextArea(); },
+    equals: function() { $(".txtArea").val(this.evaluate(this.equation.join(""))) },
+    updateTextArea: function() { $(".txtArea").val(`${this.equation.join("")}`) },
+    evaluate: function(fn) { return new Function('return ' + fn)(); },
+    clearArea: function() { this.equation.splice(0,this.equation.length); this.updateTextArea(); }
 }
 
 document.addEventListener("keydown", e => {

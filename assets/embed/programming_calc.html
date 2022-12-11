@@ -11,31 +11,33 @@
     <link href="../../styles_pods.css" rel="stylesheet">
   </head>
   <body class="light-mode-bg-1 light-mode-color-1">
-    <div class="d-flex flex-row justify-content-center">
-      <p class="fw-bold h3">Base 10 Converter</p>
-    </div>
-    <div class="container p-3 my-4 shadow rounded-custom w-75">
-      <div class="d-flex flex-row justify-content-start">
-          <p class="binary fw-light h6"></p>
-      </div>
-      <div class="d-flex flex-row justify-content-start">
-          <p class="octal fw-light h6"></p>
-      </div>
-      <div class="d-flex flex-row justify-content-start">
-          <p class="hex fw-light h6"></p>
-      </div>
-      <div class="d-flex flex-row justify-content-center">
-        <span class="max fw-bold text-danger"></span>
-      </div>
-    </div>
-    <div class="d-flex flex-row justify-content-center">
-      <div class="input-group mb-3 w-75">
-        <input type="number" class="convert form-control text-center rounded-custom shadow border-0" placeholder="Max Value (4095)" min="0" max="4095"></input>
-        <button class="btn btn-warning rounded-custom shadow" type="button" id="btnConvert" onclick="convert()">Convert</button>
-      </div>
-    </div>
+    <main>
+      <!-- This section is for the pod title -->
+      <section class="mb-4">
+        <div class="d-flex justify-content-center">
+          <p class="fw-bold h3">Base 10 Converter</p>
+        </div>
+      </section>
+
+      <!-- This section is for the main program -->
+      <section>
+        <div class="container px-4">
+          <div class="shadow rounded-custom mb-3 p-4">
+                <p class="fw-light fs-5">Binary: <span class=" fs-4 binary fw-bold"></span></p>
+                <p class="fw-light fs-5">Octal:  <span class="fs-4 octal fw-bold"></span></p>
+                <p class="fw-light fs-5">Hex: <span class="fs-4 hex fw-bold"></span></p>
+              <span class="max fw-bold text-danger"></span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="input-group mb-3">
+              <input type="number" class="convert form-control text-center rounded-custom shadow border-0" placeholder="Max Value (4095)" min="0" max="4095"></input>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
-  <script src="../../js/programming_calc.js"></script>
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/programming_calc.js"></script>
 </html>

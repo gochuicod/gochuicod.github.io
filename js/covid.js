@@ -1,12 +1,8 @@
-const search = document.querySelector(".search");
 const covid = {
-    csb: document.querySelector(".clearSearchButton"),
-    loader: document.querySelector(".loader"),
-    covidLocTotal: document.querySelector(".covidLocTotal"),
     fetchCovidData: async function(country){
         const fetchData = await fetch(`https://coronavirus.m.pipedream.net/`)
         const data = await fetchData.json()
-        this.removeAllChildNodes(document.querySelector(".covidDataField"));
+        $(".covidDataField").empty();
         let countryData = [], countryDataSpecificLoc = [], totalConfirmed = 0, totalDeaths = 0;
 
         data.rawData.forEach(item => { if(item.Country_Region == country) countryData.push(item); })
@@ -15,15 +11,14 @@ const covid = {
         for(let i = 0; i < countryData.length; totalDeaths += parseInt(countryData[i].Deaths), i++);
 
 
-        document.querySelector(".covidGlobalConf").innerText = `${this.numberWithCommas(data.summaryStats.global.confirmed)}`;
-        document.querySelector(".covidGlobalDeaths").innerText = `${this.numberWithCommas(data.summaryStats.global.deaths)}`;
-        document.querySelector(".covidGlobalFatality").innerText = `${((data.summaryStats.global.deaths/data.summaryStats.global.confirmed) * 100).toFixed(2)}%`;
+        $(".covidGlobalConf").text(`${this.numberWithCommas(data.summaryStats.global.confirmed)}`);
+        $(".covidGlobalDeaths").text(`${this.numberWithCommas(data.summaryStats.global.deaths)}`);
+        $(".covidGlobalFatality").text(`${((data.summaryStats.global.deaths/data.summaryStats.global.confirmed) * 100).toFixed(2)}%`);
 
-        document.querySelector(".covidLoc").innerText = `${countryData[0].Country_Region} Covid-19 Cases`;
-        document.querySelector(".covidTotalConf").innerText = `${this.numberWithCommas(totalConfirmed.toString())}`;
-        document.querySelector(".covidTotalDeaths").innerText = `${this.numberWithCommas(totalDeaths.toString())}`;
-        document.querySelector(".covidTotalFatRatio").innerText = `${this.numberWithCommas(((totalDeaths/totalConfirmed) * 100).toFixed(2))}%`;
-        this.covidLocTotal.style.display = "block";
+        $(".covidLoc").text(`${countryData[0].Country_Region} Covid-19 Cases`);
+        $(".covidTotalConf").text(`${this.numberWithCommas(totalConfirmed.toString())}`);
+        $(".covidTotalDeaths").text(`${this.numberWithCommas(totalDeaths.toString())}`);
+        $(".covidTotalFatRatio").text(`${this.numberWithCommas(((totalDeaths/totalConfirmed) * 100).toFixed(2))}%`);
 
         if(countryData.length != 1){
             for(let i = 0; i < countryData.length; this.addItems(i), i++);
@@ -38,71 +33,73 @@ const covid = {
                 })
             })
             countryDataSpecificLoc.forEach((element,index) => {
-                document.querySelector(`.covidLoc${index}`).innerText = element.loc;
-                document.querySelector(`.covidConf${index}`).innerText = element.confirmed;
-                document.querySelector(`.covidDeaths${index}`).innerText = element.deaths;
-                document.querySelector(`.covidFat${index}`).innerText = element.fatalityratio;
-                document.querySelector(`.covidInci${index}`).innerText = element.incidentrate;
-                document.querySelector(`.covidLUpdate${index}`).innerText = element.update;
+                $(`.covidLoc${index}`).text(element.loc);
+                $(`.covidConf${index}`).text(element.confirmed);
+                $(`.covidDeaths${index}`).text(element.deaths);
+                $(`.covidFat${index}`).text(element.fatalityratio);
+                $(`.covidInci${index}`).text(element.incidentrate);
+                $(`.covidLUpdate${index}`).text(element.update);
             });
         }
-        this.loader.style.display = "none";
-        this.covidLocTotal.style.display = "block";
+        this.hide($(".loader"));
+        this.show($(".covidLocTotal"));
     },
     search: function() {
-        this.fetchCovidData(search.value);
-        this.covidLocTotal.style.display = "none";
-        this.loader.style.display = "block";
+        this.fetchCovidData($(".search").val());
+        this.hide($(".covidLocTotal"));
+        this.show($(".loader"));
     },
-    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     numberWithCommas: number => { return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); },
     addItems: index => {
-        let cdf = document.querySelector(".covidDataField");
+        let mainDiv = $("<div></div>");
+        mainDiv.attr('class','covidData0 shadow rounded-custom p-2 fw-light fs-7 mb-3');
 
-        let mainDiv = document.createElement("div");
-        mainDiv.setAttribute('class','covidData0 shadow rounded-custom p-2 fw-light fs-7 mb-3');
-
-        let div1 = document.createElement("div");
-        div1.setAttribute('class','d-flex flex-row justify-content-center mb-3 text-center');
-        let span1 = document.createElement("span");
-        span1.setAttribute('class',`covidLoc${index} fw-bold fs-6`);
+        let div1 = $("<div></div>");
+        div1.attr('class','d-flex flex-row justify-content-center mb-3 text-center');
+        let span1 = $("<span></span>");
+        span1.attr('class',`covidLoc${index} fw-bold fs-6`);
         div1.append(span1);
 
-        let div2 = document.createElement("div");
-        div2.setAttribute('class','d-flex flex-row justify-content-between');
-        let span2 = document.createElement("span"), span3 = document.createElement("span");
-        span2.setAttribute('class',`covidConf${index}`); span3.setAttribute('class',`covidDeaths${index}`);
+        let div2 = $("<div></div>");
+        div2.attr('class','d-flex flex-row justify-content-between');
+        let span2 = $("<span></span>"), span3 = $("<span></span>");
+        span2.attr('class',`covidConf${index}`); span3.attr('class',`covidDeaths${index}`);
         div2.append(span2); div2.append(span3);
 
-        let div3 = document.createElement("div");
-        div3.setAttribute('class','d-flex flex-row justify-content-between');
-        let span4 = document.createElement("span"), span5 = document.createElement("span");
-        span4.setAttribute('class',`covidFat${index}`); span5.setAttribute('class',`covidInci${index}`);
+        let div3 = $("<div></div>");
+        div3.attr('class','d-flex flex-row justify-content-between');
+        let span4 = $("<span></span>"), span5 = $("<span></span>");
+        span4.attr('class',`covidFat${index}`); span5.attr('class',`covidInci${index}`);
         div3.append(span4); div3.append(span5);
 
-        let div4 = document.createElement("div");
-        div4.setAttribute('class','d-flex flex-row justify-content-center mt-3');
-        let span6 = document.createElement("span");
-        span6.setAttribute('class',`covidLUpdate${index} fw-lighter fs-8`);
+        let div4 = $("<div></div>");
+        div4.attr('class','d-flex flex-row justify-content-center mt-3');
+        let span6 = $("<span></span>");
+        span6.attr('class',`covidLUpdate${index} fw-lighter fs-8`);
         div4.append(span6);
 
         mainDiv.append(div1); mainDiv.append(div2);
         mainDiv.append(div3); mainDiv.append(div4);
 
-        cdf.append(mainDiv);
+        $(".covidDataField").append(mainDiv);
     },
     capitalize: text => { return text.replace(/\b\w/g , (m) => { return m.toUpperCase(); } ); },
-    clearSearch: () => { search.value = ""; search.focus(); covid.csb.style.display = "none"; }
+    clearSearch: () => { $(".search").val(""); $(".search").trigger("focus"); this.hide($(".clearSearchButton")); },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-search.addEventListener("keyup", e => e.key === "Enter" ? covid.search() : false);
-document.addEventListener("keyup", e => {
-    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) covid.csb.style.display = "block";
-    if(search.value.length == 0) covid.csb.style.display = "none";
-    if(e.key === "Escape" && document.activeElement) search.blur();
+$(document).on("keyup", e => {
+    if(e.ctrlKey && e.altKey && e.key == "/") $(".search").trigger("focus");
 });
 
-covid.covidLocTotal.style.display = "none";
+$(".search").on("keyup", e => {
+    if(e.key === "Enter") covid.search();
+    if($(".search").val().length > 0) covid.show($(".clearSearchButton"));
+    if($(".search").val().length == 0) covid.hide($(".clearSearchButton"));
+    if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
+})
+
+covid.hide($(".covidLocTotal"))
 covid.fetchCovidData("Japan");
-covid.csb.style.display = "none";
+covid.hide($(".clearSearchButton"))

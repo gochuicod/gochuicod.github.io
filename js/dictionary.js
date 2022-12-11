@@ -1,19 +1,17 @@
 const dictionary = {
-    csb: document.querySelector(".clearSearchButton"),
-    loader: document.querySelector(".loader"),
-    searchBtn: document.querySelector(".search"),
-    dictionaryContent: document.querySelector(".dictionary-content"),
-    word: document.querySelector(".word"),
     fetchDictionaryData: async function(word) {
+        this.show($(".loader"));
+        this.hide($(".word").children());
+        this.hide($(".dictionary-content"));
         const fetchData = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         const data = await fetchData.json()
         if(data.title){
-            this.word.innerHTML = data.title;
-            this.hide(this.loader)
-            this.removeAllChildNodes(this.dictionaryContent)
+            $(".word").html(`<p>${data.title}</p>`);
+            this.hide($(".loader"))
+            $("dictionary-content").empty()
         } else {
-            this.hide(this.loader)
-            this.show(this.dictionaryContent)
+            this.hide($(".loader"))
+            this.show($(".dictionary-content"))
             let meanings = [];
             data.forEach(item => {
                 item.meanings.forEach(item => {
@@ -33,29 +31,26 @@ const dictionary = {
                     meanings.push(`<br><br>`)
                 })
             })
-            this.word.innerHTML = `<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>  ${(data[0].phonetic) ? data[0].phonetic : ''}`
-            this.dictionaryContent.innerHTML = meanings.join("\n")
+            $(".word").html(`<b>${(data[0].word).charAt(0).toUpperCase()}${(data[0].word).substring(1).toLowerCase()}</b>&nbsp;&nbsp;<p>${(data[0].phonetic) ? data[0].phonetic : ''}</p>`);
+            $(".dictionary-content").html(meanings.join("\n"));
         }
     },
-    search: function() {
-        this.fetchDictionaryData(this.searchBtn.value)
-        this.removeAllChildNodes(this.word)
-        this.show(this.loader)
-        this.hide(this.dictionaryContent)
-    },
-    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    clearSearch: function() { this.searchBtn.value = ""; this.searchBtn.focus(); this.csb.style.display = "none"; },
-    show: function(element) { element.style.display = "block" },
-    hide: function(element) { element.style.display = "none" }
+    search: function() { this.fetchDictionaryData($(".search").val()); },
+    clearSearch: function() { $(".search").val(""); $(".search").trigger("focus"); this.hide($(".clearSearchButton")); },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-dictionary.searchBtn.addEventListener("keyup", e => e.key === "Enter" ? dictionary.search() : false);
-document.addEventListener("keyup", e => {
-    if(e.ctrlKey && e.altKey && e.key == "/") dictionary.searchBtn.focus();
-    if(dictionary.searchBtn.value.length > 0) dictionary.csb.style.display = "block";
-    if(dictionary.searchBtn.value.length == 0) dictionary.csb.style.display = "none";
-    if(e.key === "Escape" && document.activeElement) dictionary.searchBtn.blur();
+$(document).on("keyup", e => {
+    if(e.ctrlKey && e.altKey && e.key == "/") $(".search").trigger("focus");
 });
 
+$(".search").on("keyup", e => {
+    if(e.key === "Enter") dictionary.search();
+    if($(".search").val().length > 0) dictionary.show($(".clearSearchButton"));
+    if($(".search").val().length == 0) dictionary.hide($(".clearSearchButton"));
+    if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
+})
+
 dictionary.fetchDictionaryData("free");
-dictionary.csb.style.display = "none";
+dictionary.hide($(".clearSearchButton"));

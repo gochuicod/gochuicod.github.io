@@ -1,6 +1,3 @@
-let dropDown = document.querySelector(".searchItems"), searchBox = document.querySelector(".searchbox");
-let exampleModal = document.querySelector(".exampleModal"), title = document.querySelector(".title");
-let textarea = document.querySelector(".txtarea"), searchInterval, indexItem;
 const pages = [
     {
         pageName: "home",
@@ -24,59 +21,62 @@ const pages = [
     }
 ];
 
-let clearList = parent => {
-    // clears entire dropdown
-    while(parent.firstChild) parent.removeChild(parent.firstChild);
-}
-
 let createListItem = iteration => {
     // this creates a list and appends everything
-    let a = document.createElement("a");
-    a.setAttribute("class","dropdown-item py-1 link-primary fw-bold");
-    a.setAttribute("href",`${pages[iteration].pageLink}`);
-    a.innerText = `${pages[iteration].pageName.toLowerCase()}`;
-    dropDown.append(a);
+    let a = $("<a></a>");
+    a.attr("class","dropdown-item py-1 link-primary fw-bold");
+    a.attr("href",`${pages[iteration].pageLink}`);
+    a.text(`${pages[iteration].pageName.toLowerCase()}`);
+    $(".searchItems").append(a);
 }
 
 let listItems = () => {
     // this builds the entire dropdown when texts match
-    clearList(dropDown);
+    $(".searchItems").empty()
     let tempArray = [], arrayForSBLength = [];
-    for(let i = 0; i < pages.length; tempArray.push(pages[i].pageName), i++);
-    for(let j = 0; j < tempArray.length; arrayForSBLength[j] = tempArray[j].substring(0,searchBox.value.length),j++);
-    for(let k = 0; k < pages.length; k++){
-        if(((searchBox.value).toLowerCase()).localeCompare(arrayForSBLength[k].toLowerCase()) == 0){
-            createListItem(k); dropDown.style.display = "block";
+    for(let item of pages) tempArray.push(item.pageName)
+    tempArray.forEach((item,index) => arrayForSBLength[index] = tempArray[index].substring(0,$(".searchbox").val().length))
+    pages.forEach((item,index) => {
+        if($(".searchbox").val().toLowerCase() === arrayForSBLength[index].toLowerCase()) {
+            createListItem(index); show($(".searchItems"))
         }
-    }
+    })
     tempArray.splice(0,tempArray.length);
     arrayForSBLength.splice(0,arrayForSBLength.length);
 }
 
-searchBox.addEventListener('keydown', (e) => {
-    // lists items every time user enters key
-    if(e.key === "Enter") { e.preventDefault(); self.location = `${dropDown.firstChild.getAttribute("href")}`; }
-});
+let show = element => $(element).css("display","block")
+let hide = element => $(element).css("display","none")
 
-document.addEventListener("click", (event) => {
-    let isClickInsideElement = searchBox.contains(event.target);
-    if(!isClickInsideElement){
-        dropDown.style.display = "none";
-        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted");
-    } else searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted rounded-0 rounded-top");
-});
+$(".searchbox").on("keydown", e => {
+    if(e.key === "Enter") {
+        e.preventDefault();
+        if($(".searchItems").children().first().attr("href") !== undefined) self.location = `${$(".searchItems").children().first().attr("href")}`
+        else $(".pageNotFound").modal("show")
+    }
+})
 
-document.addEventListener("keyup", (e) => {
-    if(e.ctrlKey && e.key.toLowerCase() === "y") self.location = `${pages[0].pageLink}`;
-    if(e.key === "Escape" && searchBox === document.activeElement) {
-        dropDown.style.display = "none";
-        searchBox.blur();
-        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted");
+$(document).on("click", e => {
+    if(!$(".searchbox").is(":focus")) {
+        hide($(".searchItems"))
+        $(".searchbox").attr("class","searchbox form-control shadow-none border border-1 border-muted")
+    } else $(".searchbox").attr("class","searchbox form-control shadow-none border border-1 border-muted rounded-0 rounded-top")
+})
+
+$(".searchbox").on("keyup", e => {
+    listItems();
+    if(e.key === "Escape") {
+        hide($(".searchItems"));
+        $(".searchbox").trigger("blur")
+        $(".searchbox").attr("class","searchbox form-control shadow-none border border-1 border-muted")
     }
-    if(e.key === "?" && searchBox !== document.activeElement && exampleModal !== document.activeElement && textarea !== document.activeElement && title !== document.activeElement) $("#modalHelp").modal("show");
-    if(e.key === "/"  && exampleModal !== document.activeElement && textarea !== document.activeElement && title !== document.activeElement){
-        e.preventDefault(); searchBox.focus(); 
-        searchBox.setAttribute("class","form-control shadow-none border border-1 border-muted rounded-0 rounded-top");
+})
+
+$(document).on("keyup", e => {
+    if(e.ctrlKey && e.key.toLowerCase() === "y") self.location = `${pages[0].pageLink}`
+    if(e.key === "?") $("#modalHelp").modal("show")
+    if(e.key === "/") {
+        e.preventDefault(); $(".searchbox").trigger("focus")
+        $(".searchbox").attr("class","searchbox form-control shadow-none border border-1 border-muted rounded-0 rounded-top")
     }
-    if(searchBox === document.activeElement) listItems();
-});
+})

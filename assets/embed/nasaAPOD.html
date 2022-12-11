@@ -11,10 +11,10 @@
     <link href="../../styles_pods.css" rel="stylesheet" />
   </head>
   <body class="scrollbar-hidden light-mode-bg-1 light-mode-color-1">
-    <div class="d-flex flex-row justify-content-center mb-1">
+    <div class="d-flex justify-content-center mb-1">
       <span class="fw-light fs-8"><span class="fw-bolder">APOD </span>data sourced from <span class="fst-italic">NASA</span></span>
     </div>
-    <div class="d-flex flex-row justify-content-center">
+    <div class="d-flex justify-content-center">
       <div class="input-group w-75">
         <input type="search" class="search form-control border border-end-0 rounded-custom text-center" placeholder="Enter Date (YYYY-MM-DD)">
         <button class="clearSearchButton btn bg-white border border-start-0 border-end-0 hide-glow" type="button" onclick="nasaAPOD.clearSearch()"><i class="bi bi-x-circle"></i></button>
@@ -23,27 +23,27 @@
     </div>
     <div class="loader mt-5"></div>
     <div class="nasaAPOD">
-      <div class="d-flex flex-row justify-content-center my-3">
+      <div class="d-flex justify-content-center my-3">
         <span class="fw-bold fs-6">Astronomy Picture of the Day</span>
       </div>
-      <div class="d-flex flex-row justify-content-center">
+      <div class="d-flex justify-content-center">
         <span class="APODTitle fs-7"></span>
       </div>
-      <div class="d-flex flex-row justify-content-center mx-1">
+      <div class="d-flex justify-content-center mx-1">
         <div class="APODDate fs-8 fst-italic"></div>
       </div>
-      <div class="d-flex flex-row justify-content-center mb-3">
+      <div class="d-flex justify-content-center mb-3">
         <div class="APODCopyright fs-8 fw-bold"></div>
       </div>
-      <div class="d-flex flex-row justify-content-center">
+      <div class="d-flex justify-content-center">
         <img class="APODImg rounded-custom shadow unselectable" src="" width="95%" height="100%" oncontextmenu="return false;">
       </div>
-      <div class="d-flex flex-row justify-content-center mx-3 my-3 lh-lg fs-7">
+      <div class="d-flex justify-content-center mx-3 my-3 lh-lg fs-7">
         <div class="APODExplanation text-justify"></div>
       </div>
     </div>
   </body>
-  <script src="../../js/nasaAPOD.js"></script>
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/nasaAPOD.js"></script>
 </html>

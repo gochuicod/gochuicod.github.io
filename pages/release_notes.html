@@ -79,6 +79,23 @@
         </div>
       </div>
 
+      <!-- Modal: Page Not Found -->
+      <div class="pageNotFound modal fade unselectable" tabindex="-1" aria-labelledby="help" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-custom scrollbar-hidden">
+            <div class="modal-header">
+                <span class="m-auto fs-4">Error 404</span>
+            </div>
+            <div class="modal-body text-center">
+              <div class="d-flex justify-content-center fs-2"><span class="text-danger">Page Not Found</span></div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-sm btn-warning fw-bold m-auto" onclick="$('.pageNotFound').modal('hide')">DISMISS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section>
         <div class="container my-4 pt-2 rounded-custom" style="width: 95%">
           <div class="d-flex flex-row justify-content-center">
@@ -357,8 +374,8 @@
     </footer>
   </div>
 
-  <script src="../js/searchPages.js"></script>
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/searchPages.js"></script>
 </body>
 </html>

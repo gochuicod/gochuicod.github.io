@@ -1,5 +1,5 @@
 let count = 0;
 
-document.querySelector(".add").onclick = () => document.querySelector(".currentCount").innerText = ++count;
-document.querySelector('.deduct').onclick = () => document.querySelector(".currentCount").innerText = --count;
-document.querySelector('.reset').onclick = () => document.querySelector(".currentCount").innerText = count = 0;
+$(".add").on("click", () => $(".currentCount").text(++count));
+$(".deduct").on("click", () => $(".currentCount").text(--count));
+$(".reset").on("click", () => { count = 0; $(".currentCount").text(count); });

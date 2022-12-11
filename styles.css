@@ -41,7 +41,7 @@ main::before {
 .scrollbar-hidden::-webkit-scrollbar{ display: none; }
 .scrollbar-hidden { -ms-overflow-style: none; scrollbar-width: none; }
 .hide-glow:focus { outline:none; box-shadow: none; border: 1px solid #ced4da; }
-.unselectable { user-drag: none; user-select: none; -moz-user-select: none; -webkit-user-drag: none; -webkit-user-select: none; -ms-user-select: none; }
+.unselectable { user-select: none; -moz-user-select: none; -webkit-user-drag: none; -webkit-user-select: none; -ms-user-select: none; }
 .text-justify { text-align: justify; }
 
 .dark-mode-bg-1 { background-color: #191919; }

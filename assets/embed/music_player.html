@@ -15,7 +15,7 @@
       <div class="container w-75">
         <div class="d-flex justify-content-center">
           <img class="imgAlbumCover rounded shadow-sm" src="../img/save_your_tears_album.png" height="145" width="190">
-          <audio class="audioInput" src="../audio/The Weeknd - Save Your Tears.mp3"></audio>
+          <audio src="../audio/The Weeknd - Save Your Tears.mp3"></audio>
         </div>
         <div class="d-flex justify-content-center mt-2">
           <span class="musicTitle fs-5">Save Your Tears</span>
@@ -30,18 +30,18 @@
         </div>
         <div class="d-flex justify-content-center align-items-center">
           <span class="trackLength">0:00</span>
-          <input class="trackSeek form-range mx-2" type="range" value="0" min="0" max="0" onchange="musicPlayer.handleSeek(this.value)">
+          <input class="trackSeek form-range mx-2" type="range" value="0" min="0" max="0" onchange="musicPlayer.handleSeek(this)">
           <span class="trackCurrentLength">0:00</span>
         </div>
         <div class="d-flex justify-content-center align-items-center">
           <a class="text-dark" onclick="musicPlayer.handleVolumeMute()"><i class="trackVolIcon bi bi-volume-up-fill"></i></a>
-          <input class="trackVol form-range mx-2" type="range" value="100" min="0" max="100" onchange="musicPlayer.handleVolume(audio.volume = this.value/100)">
+          <input class="trackVol form-range mx-2" type="range" value="100" min="0" max="100" onchange="musicPlayer.handleVolume(this.value/100)">
           <span class="trackVolText">100</span>
         </div>
       </div>
     </section>
   </body>
-  <script src="../../js/music_player.js"></script>
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/music_player.js"></script>
 </html>

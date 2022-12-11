@@ -1,19 +1,14 @@
-const search = document.querySelector(".search");
 const advice = {
-    adviceField: document.querySelector(".adviceField"),
-    invalidSearch: document.querySelector(".invalidSearch"),
-    csb: document.querySelector(".clearSearchButton"),
-    loader: document.querySelector(".loader"),
     fetchAdviceData: async function(query){
         const sample = await fetch(`https://api.adviceslip.com/advice/search/${query}`)
         const data = await sample.json()
         if(data.message){
-            this.invalidSearch.innerText = data.message.text;
-            this.invalidSearch.removeAttribute("hidden");
-            this.loader.style.display = "none";
+            this.hide($(".loader"))
+            this.show($(".invalidSearch"))
+            $(".invalidSearch").text(`${data.message.text}`);
         } else {
-            this.invalidSearch.setAttribute("hidden","hidden");
-            this.removeAllChildNodes(document.querySelector(".adviceField"));
+            this.hide($(".invalidSearch"))
+            $(".adviceField").empty();
             for(let i = 0; i < data.slips.length; this.addAdvice(i), i++);
     
             let adviceDataNodes = [];
@@ -26,53 +21,56 @@ const advice = {
             }
     
             adviceDataNodes.forEach((element,index,array) => {
-                document.querySelector(`.adviceDesc${index}`).innerText = `"${element.desc}"`;
-                document.querySelector(`.adviceDate${index}`).innerText = `Date: ${element.date}`;
+                $(`.adviceDesc${index}`).text(`${element.desc}"`);
+                $(`.adviceDate${index}`).text(`Date: ${element.date}`);
             });
-            this.loader.style.display = "none";
-            this.adviceField.style.display = "block";
+            this.hide($(".loader"))
+            this.show($(".adviceField"))
         }
     },
     search: function() {
-        if(search.value !== ""){
-            this.fetchAdviceData(search.value);
-            this.adviceField.style.display = "none";
-            this.loader.style.display = "block";
+        if($(".search").val() !== ""){
+            this.fetchAdviceData($(".search").val());
+            this.hide($(".adviceField"))
+            this.show($(".loader"))
         }
     },
-    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     addAdvice: index => {
-        let adviceField = document.querySelector(".adviceField");
+        let outerDiv = $("<div></div>");
+        outerDiv.attr('class',`advice${index} rounded-custom shadow p-4 mb-4 text-center`);
 
-        let outerDiv = document.createElement("div");
-        outerDiv.setAttribute('class',`advice${index} rounded-custom shadow p-4 mb-4 text-center`);
-
-        let innerDiv1 = document.createElement("div");
-        innerDiv1.setAttribute('class','d-flex flex-row justify-content-center');
-        let innerDiv1Span = document.createElement("span");
-        innerDiv1Span.setAttribute('class',`adviceDesc${index} fst-italic`);
+        let innerDiv1 = $("<div></div>");
+        innerDiv1.attr('class','d-flex flex-row justify-content-center');
+        let innerDiv1Span = $("<span></span>");
+        innerDiv1Span.attr('class',`adviceDesc${index} fst-italic`);
         innerDiv1.append(innerDiv1Span);
 
-        let innerDiv2 = document.createElement("div");
-        innerDiv2.setAttribute('class','d-flex flex-row justify-content-center');
-        let innerDiv2Span = document.createElement("span");
-        innerDiv2Span.setAttribute('class',`adviceDate${index} fw-lighter fs-8`);
+        let innerDiv2 = $("<div></div>");
+        innerDiv2.attr('class','d-flex flex-row justify-content-center');
+        let innerDiv2Span = $("<div></div>");
+        innerDiv2Span.attr('class',`adviceDate${index} fw-lighter fs-8`);
         innerDiv2.append(innerDiv2Span);
 
         outerDiv.append(innerDiv1);
         outerDiv.append(innerDiv2);
-        adviceField.append(outerDiv);
+        $(".adviceField").append(outerDiv);
     },
-    clearSearch: function() { search.value = ""; search.focus(); this.csb.style.display = "none"; }
+    clearSearch: function() { $(".search").val(""); $(".search").trigger("focus"); this.hide($(".clearSearchButton")) },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-search.addEventListener("keyup", e => e.key === "Enter" ? advice.search() : false);
-document.addEventListener("keyup", e => {
-    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(search.value.length > 0) advice.csb.style.display = "block";
-    if(search.value.length == 0) advice.csb.style.display = "none";
-    if(e.key === "Escape" && document.activeElement) search.blur();
+$(document).on("keyup", e => {
+    if(e.ctrlKey && e.altKey && e.key == "/") $(".search").trigger("focus");
 });
 
+$(".search").on("keyup", e => {
+    if(e.key === "Enter") advice.search();
+    if($(".search").val().length > 0) advice.show($(".clearSearchButton"));
+    if($(".search").val().length == 0) advice.hide($(".clearSearchButton"))
+    if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
+})
+
 advice.fetchAdviceData("good");
-advice.csb.style.display = "none";
+advice.hide($(".invalidSearch"))
+advice.hide($(".clearSearchButton"));

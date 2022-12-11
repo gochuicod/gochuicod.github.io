@@ -1,14 +1,15 @@
-let choices = ["Rock","Paper","Scissors"];
-
-let rock = () => {
-    document.querySelector(".player").innerText = `Rock`;
-    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
-}
-let paper = () => {
-    document.querySelector(".player").innerText = `Paper`;
-    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
-}
-let scissors = () => {
-    document.querySelector(".player").innerText = `Scissors`;
-    document.querySelector(".computer").innerText = `${choices[Math.floor(Math.random()*3)]}`;
+const rockPaperScissors = {
+    choices: ["Rock","Paper","Scissors"],
+    rock: function() {
+        $(".player").text("Rock")
+        $(".computer").text(this.choices[Math.floor(Math.random()*3)])
+    },
+    paper: function() {
+        $(".player").text("Paper")
+        $(".computer").text(this.choices[Math.floor(Math.random()*3)]);
+    },
+    scissors: function() {
+        $(".player").text("Scissors");
+        $(".computer").text(this.choices[Math.floor(Math.random()*3)]);
+    }
 }

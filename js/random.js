@@ -1,1 +1,1 @@
-const generateNumber = () => document.querySelector(".generated").innerText = `${Math.floor(Math.random() * parseInt(document.querySelector(".max-num").value))}`;
+const generateNumber = () => $(".generated").text(`${(Math.ceil(Math.random() * $(".max-num").val()))}`);

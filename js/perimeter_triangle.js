@@ -1,38 +1,38 @@
-let a = document.querySelector(".sidea"), b = document.querySelector(".sideb"), c = document.querySelector(".base"), output = document.querySelector(".pt-output"), err = document.querySelector(".errorInfo");
-let perimeterTriangle = () => {
-    let sideA = parseFloat(a.value), sideB = parseFloat(b.value), base = parseFloat(c.value);
-    if((isNaN(sideA) || a.value == "") || (isNaN(sideB) || b.value == "") || (isNaN(base) || c.value == "")){
-        hideOutput(); hideError();
-    } else {
-        if(sideA.toFixed(2) < 0.01 || sideB.toFixed(2) < 0.01 || base.toFixed(2) < 0.01){
-            showOutput("?"); showError(); err.innerText = "Values must be positive!";
-        } else {
-            let pt_output = sideA + base + sideB;
-            if((sideA + base) > sideB && (base + sideB) > sideA && (sideA + sideB) > base) showOutput(pt_output);
-            else {
-                showOutput("?");
-                if((sideA + base) <= sideB){
-                    showError(); err.innerText = "Side A plus Base must be greater than Side B";
-                }
-                if((base + sideB) <= sideA){
-                    showError(); err.innerText = "Base plus Side B must be greater than Side A";
-                }
-                if((sideA + sideB) <= base){
-                    showError(); err.innerText = "Side A plus Side B must be greater than Base";
+const perimeterTriangle = {
+    process: function() {
+        let sideA = parseFloat($(".sidea").val()), sideB = parseFloat($(".sideb").val()), base = parseFloat($(".base").val());
+            if(sideA.toFixed(2) < 0 || sideB.toFixed(2) < 0 || base.toFixed(2) < 0){
+                $(".pt-output").text("?")
+                this.show($(".errorInfo"))
+                $(".errorInfo").text("Values must be positive!")
+            } else {
+                if((sideA + base) > sideB && (base + sideB) > sideA && (sideA + sideB) > base){
+                    this.hide($(".errorInfo"))
+                    this.show($(".pt-output"))
+                    $(".pt-output").text(sideA+base+sideB)
+                } else {
+                    this.show($(".pt-output"))
+                    $(".pt-output").text("?")
+                    if((sideA + base) <= sideB){
+                        this.show($(".errorInfo"))
+                        $(".errorInfo").text("Side A plus Base must be greater than Side B");
+                    }
+                    if((base + sideB) <= sideA){
+                        this.show($(".errorInfo"))
+                        $(".errorInfo").text("Base plus Side B must be greater than Side A");
+                    }
+                    if((sideA + sideB) <= base){
+                        this.show($(".errorInfo"))
+                        $(".errorInfo").text("Side A plus Side B must be greater than Base");
+                    }
                 }
             }
-        }
-    }
+    },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-let showError = () => err.style.display = "block";
-let hideError = () => err.style.display = "none";
-let showOutput = item => { 
-    hideError();
-    output.style.display = "block";
-    output.innerText = `${item}`;
-}
-let hideOutput = () => output.style.display = "none";
-
-window.onload = () => output.style.display = "none";
-document.addEventListener('keyup', () => a === document.activeElement || b === document.activeElement || c === document.activeElement ? perimeterTriangle() : false);
+$(window).on("load", () => perimeterTriangle.hide($(".pt-output")))
+$(".sidea").on("keyup", () => perimeterTriangle.process())
+$(".sideb").on("keyup", () => perimeterTriangle.process())
+$(".base").on("keyup", () => perimeterTriangle.process())

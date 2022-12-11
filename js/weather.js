@@ -4,43 +4,43 @@ const weather = {
     invalidKeyword: document.querySelector(".invalidKeyword"),
     fetchWeather: function(city){
         fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weather.apiKey}`
-        ).then((response) => response.json()).then((data) => weather.displayWeather(data)).catch((error) => {
-            weather.showElement(weather.invalidKeyword); weather.invalidKeyword.innerText = "Invalid Keyword";
-            weather.hideElement(document.querySelector(".weather"));
-            weather.hideElement(loader);
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
+        ).then((response) => response.json()).then((data) => this.displayWeather(data)).catch((error) => {
+            this.show($(".invalidKeyword")); $(".invalidKeyword").text("Invalid Keyword");
+            this.hide($(".weather"));
+            this.hide($(".loader"));
         });
     },
     displayWeather: function(data){
         const { lat, lon } = data.coord;
-        weather.invalidKeyword.style.display = "none";
-        document.querySelector(".city").innerText = data.name;
-        document.querySelector(".temperature").innerText = `${data.main.temp}°C`;
-        document.querySelector(".description").innerText = data.weather[0].description;
-        document.querySelector(".humidity").innerText = `Humidity: ${data.main.humidity}%`;
-        document.querySelector(".windspeed").innerText = `Wind Speed: ${data.wind.speed} km/h`;
-        document.querySelector(".weather").classList.remove("loading");
-        document.querySelector(".cloudcover").innerText = `Cloud Cover: ${data.clouds.all}%`;
-        document.querySelector(".feels_like").innerText = `Feels like: ${data.main.feels_like}°C`;
-        document.querySelector(".icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        document.querySelector(".sunrise").innerText = `Sunrise: ${new Date(data.sys.sunrise*1000).toLocaleTimeString()}`;
-        document.querySelector(".sunset").innerText = `Sunset: ${new Date(data.sys.sunset*1000).toLocaleTimeString()}`;
-        document.querySelector(".current_time").innerText = `As of ${new Date(data.dt*1000).toLocaleTimeString()}`;
+        this.hide($(".invalidKeyword"));
+        $(".city").text(data.name);
+        $(".temperature").text(`${data.main.temp}°C`);
+        $(".description").text(data.weather[0].description);
+        $(".humidity").text(`Humidity: ${data.main.humidity}%`);
+        $(".windspeed").text(`Wind Speed: ${data.wind.speed} km/h`);
+        $(".weather").removeClass("loading");
+        $(".cloudcover").text(`Cloud Cover: ${data.clouds.all}%`);
+        $(".feels_like").text(`Feels like: ${data.main.feels_like}°C`);
+        $(".icon").attr("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+        $(".sunrise").text(`Sunrise: ${new Date(data.sys.sunrise*1000).toLocaleTimeString()}`);
+        $(".sunset").text(`Sunset: ${new Date(data.sys.sunset*1000).toLocaleTimeString()}`);
+        $(".current_time").text(`As of ${new Date(data.dt*1000).toLocaleTimeString()}`);
         
         fetch(
-            `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${weather.apiKey}`
-        ).then(response => response.json()).then(airPollutionData => weather.displayPollutionData(airPollutionData));
+            `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${this.apiKey}`
+        ).then(response => response.json()).then(airPollutionData => this.displayPollutionData(airPollutionData));
         fetch(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${weather.apiKey}`
-        ).then(response => response.json()).then(predictionData => weather.displayPredictionData(predictionData));
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${this.apiKey}`
+        ).then(response => response.json()).then(predictionData => this.displayPredictionData(predictionData));
     },
-    displayPollutionData: function(airPollutionData){ document.querySelector(".airquality").innerText = `Air Quality: ${weather.definePollutionQuality(airPollutionData)}`; },
+    displayPollutionData: function(airPollutionData){ $(".airquality").text(`Air Quality: ${this.definePollutionQuality(airPollutionData)}`) },
     displayPredictionData: function(predictionData){
-        weather.removeAllChildNodes(document.querySelector(".forecastDataThreeHrs"));
-        weather.removeAllChildNodes(document.querySelector(".forecastDataSixDays"));
-        document.querySelector(".forecastDataSixDays").style.display = "none";
-        for(let i = 0; i < 24; weather.addThreeHrForecast(i), i++);
-        for(let i = 0; i < 7; weather.addSixDayForecast(i), i++);
+        $(".forecastDataThreeHrs").empty();
+        $(".forecastDataSixDays").empty();
+        this.hide($(".forecastDataSixDays"))
+        for(let i = 0; i < 24; this.addThreeHrForecast(i), i++);
+        for(let i = 0; i < 7; this.addSixDayForecast(i), i++);
         
         let hourlyData = [], dates = [];
 
@@ -58,14 +58,14 @@ const weather = {
             });
         }
         hourlyData.forEach((element, index, array) => {
-            document.querySelector(`.d${index}Hourly`).src = element.icon;
-            document.querySelector(`.d${index}HourlyDesc`).innerText = element.desc;
-            document.querySelector(`.d${index}HourlyTime`).innerText = element.time;
-            document.querySelector(`.d${index}HourlyTemp`).innerText = element.temp;
-            document.querySelector(`.d${index}HourlyClouds`).innerText = element.clouds;
-            document.querySelector(`.d${index}HourlyPop`).innerText = element.pop;
-            document.querySelector(`.d${index}HourlyUvi`).innerText = element.uvi;
-            document.querySelector(`.d${index}HourlyHumidity`).innerText = element.humidity;
+            $(`.d${index}Hourly`).attr("src",element.icon);
+            $(`.d${index}HourlyDesc`).text(element.desc);
+            $(`.d${index}HourlyTime`).text(element.time);
+            $(`.d${index}HourlyTemp`).text(element.temp);
+            $(`.d${index}HourlyClouds`).text(element.clouds);
+            $(`.d${index}HourlyPop`).text(element.pop);
+            $(`.d${index}HourlyUvi`).text(element.uvi);
+            $(`.d${index}HourlyHumidity`).text(element.humidity);
         });
         
         for(let i = 0; i < 7; i++){
@@ -85,36 +85,32 @@ const weather = {
         }
 
         dates.forEach((element, index, array) => {
-            document.querySelector(`.d${index}DOTW`).innerText = element.dotw;
-            document.querySelector(`.d${index}Icon`).src = element.icon;
-            document.querySelector(`.d${index}Desc`).innerText = element.desc;
-            document.querySelector(`.d${index}Temp`).innerText = element.temp;
-            document.querySelector(`.d${index}Humidity`).innerText = element.humidity;
-            document.querySelector(`.d${index}Clouds`).innerText = element.clouds;
-            document.querySelector(`.d${index}Pop`).innerText = element.pop;
-            document.querySelector(`.d${index}Sunrise`).innerText = element.sunrise;
-            document.querySelector(`.d${index}Sunset`).innerText = element.sunset;
-            document.querySelector(`.d${index}MoonPhase`).innerText = element.moonphase;
+            $(`.d${index}DOTW`).text(element.dotw);
+            $(`.d${index}Icon`).attr("src",element.icon);
+            $(`.d${index}Desc`).text(element.desc);
+            $(`.d${index}Temp`).text(element.temp);
+            $(`.d${index}Humidity`).text(element.humidity);
+            $(`.d${index}Clouds`).text(element.clouds);
+            $(`.d${index}Pop`).text(element.pop);
+            $(`.d${index}Sunrise`).text(element.sunrise);
+            $(`.d${index}Sunset`).text(element.sunset);
+            $(`.d${index}MoonPhase`).text(element.moonphase);
             
-            if(predictionData.daily[index].rain == undefined) document.querySelector(`.d${index}Rain`).innerText = "- -";
-            else document.querySelector(`.d${index}Rain`).innerText = element.rain;
+            if(predictionData.daily[index].rain == undefined) $(`.d${index}Rain`).text("- -");
+            else $(`.d${index}Rain`).text(element.rain);
         });
-        weather.hideElement(loader);
-        weather.showElement(document.querySelector(".weather"));
+        this.hide($(".loader"));
+        this.show($(".weather"));
     },
-    search: () => {
-        weather.fetchWeather(document.querySelector(".search").value);
-        weather.hideElement(document.querySelector(".weather"));
-        weather.showElement(loader);
+    search: function() {
+        this.fetchWeather($(".search").val());
+        this.hide($(".weather"));
+        this.show($(".loader"));
     },
-    removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
     defineDay: predictionDataDay => {
         let days = ["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"];
         for(let i = 0; i < days.length; i++){
-            if(predictionDataDay == i){
-                return days[i];
-                break;
-            }
+            if(predictionDataDay == i) return days[i];
         }
     },
     defineUVIQuality: value => {
@@ -143,43 +139,33 @@ const weather = {
         else return "Waning Crescent";
     },
     addThreeHrForecast: index => {
-        let ThreeHF = document.querySelector(".forecastDataThreeHrs");
+        let outerDiv = $("<div></div>"), innerDiv1 = $("<div></div>"), innerDiv2 = $("<div></div>");
+        let innerDiv3 = $("<div></div>"), innerDiv4 = $("<div></div>"), innerDiv5 = $("<div></div>");
+        let innerDiv6 = $("<div></div>"), innerDiv7 = $("<div></div>"), innerDiv8 = $("<div></div>");
+        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>"), innerDiv3Span = $("<span></span>");
+        let innerDiv4Span = $("<span></span>"), innerDiv5Span = $("<span></span>"), innerDiv6Span = $("<span></span>");
+        let innerDiv7Span = $("<span></span>"), innerDiv8Span = $("<span></span>");
 
-        let outerDiv = document.createElement("div");
-        let innerDiv1 = document.createElement("div");
-        let innerDiv2 = document.createElement("div");
-        let innerDiv3 = document.createElement("div");
-        let innerDiv4 = document.createElement("div");
-        let innerDiv5 = document.createElement("div");
-        let innerDiv6 = document.createElement("div");
-        let innerDiv7 = document.createElement("div");
-        let innerDiv8 = document.createElement("div");
-        let innerDiv1Img = document.createElement("img");
-        let innerDiv2Span = document.createElement("span");
-        let innerDiv3Span = document.createElement("span");
-        let innerDiv4Span = document.createElement("span");
-        let innerDiv5Span = document.createElement("span");
-        let innerDiv6Span = document.createElement("span");
-        let innerDiv7Span = document.createElement("span");
-        let innerDiv8Span = document.createElement("span");
-
-        outerDiv.setAttribute('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
-        innerDiv1.setAttribute('class','col-6');
-        innerDiv2.setAttribute('class','col-6');
-        innerDiv3.setAttribute('class','col-6');
-        innerDiv4.setAttribute('class','col-6');
-        innerDiv5.setAttribute('class','col-6');
-        innerDiv6.setAttribute('class','col-6');
-        innerDiv7.setAttribute('class','col-6');
-        innerDiv8.setAttribute('class','col-6');
-        innerDiv1Img.setAttribute('src',''); innerDiv1Img.setAttribute('alt',''); innerDiv1Img.setAttribute('class',`d${index}Hourly unselectable`); innerDiv1Img.setAttribute('oncontextmenu','return false;');
-        innerDiv2Span.setAttribute('class',`d${index}HourlyTime fw-bold`);
-        innerDiv3Span.setAttribute('class',`d${index}HourlyTemp`);
-        innerDiv4Span.setAttribute('class',`d${index}HourlyHumidity`);
-        innerDiv5Span.setAttribute('class',`d${index}HourlyDesc`);
-        innerDiv6Span.setAttribute('class',`d${index}HourlyClouds`);
-        innerDiv7Span.setAttribute('class',`d${index}HourlyUvi`);
-        innerDiv8Span.setAttribute('class',`d${index}HourlyPop`);
+        outerDiv.attr('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
+        innerDiv1.attr('class','col-6');
+        innerDiv2.attr('class','col-6');
+        innerDiv3.attr('class','col-6');
+        innerDiv4.attr('class','col-6');
+        innerDiv5.attr('class','col-6');
+        innerDiv6.attr('class','col-6');
+        innerDiv7.attr('class','col-6');
+        innerDiv8.attr('class','col-6');
+        innerDiv1Img.attr('src','');
+        innerDiv1Img.attr('alt','');
+        innerDiv1Img.attr('class',`d${index}Hourly unselectable`);
+        innerDiv1Img.attr('oncontextmenu','return false;');
+        innerDiv2Span.attr('class',`d${index}HourlyTime fw-bold`);
+        innerDiv3Span.attr('class',`d${index}HourlyTemp`);
+        innerDiv4Span.attr('class',`d${index}HourlyHumidity`);
+        innerDiv5Span.attr('class',`d${index}HourlyDesc`);
+        innerDiv6Span.attr('class',`d${index}HourlyClouds`);
+        innerDiv7Span.attr('class',`d${index}HourlyUvi`);
+        innerDiv8Span.attr('class',`d${index}HourlyPop`);
 
         innerDiv1.append(innerDiv1Img);
         innerDiv2.append(innerDiv2Span);
@@ -198,62 +184,46 @@ const weather = {
         outerDiv.append(innerDiv7);
         outerDiv.append(innerDiv8);
 
-        ThreeHF.append(outerDiv);
+        $(".forecastDataThreeHrs").append(outerDiv);
     },
     addSixDayForecast: index => {
-        let FD6D = document.querySelector(".forecastDataSixDays");
-        let outerDiv = document.createElement("div");
-        let innerDiv1 = document.createElement("div");
-        let innerDiv2 = document.createElement("div");
-        let innerDiv3 = document.createElement("div");
-        let innerDiv4 = document.createElement("div");
-        let innerDiv5 = document.createElement("div");
-        let innerDiv6 = document.createElement("div");
-        let innerDiv7 = document.createElement("div");
-        let innerDiv8 = document.createElement("div");
-        let innerDiv9 = document.createElement("div");
-        let innerDiv10 = document.createElement("div");
-        let innerDiv11 = document.createElement("div");
-        let innerDiv1Img = document.createElement("img");
-        let innerDiv2Span = document.createElement("span");
-        let innerDiv3Span = document.createElement("span");
-        let innerDiv4Span = document.createElement("span");
-        let innerDiv5Span = document.createElement("span");
-        let innerDiv6Span = document.createElement("span");
-        let innerDiv7Span = document.createElement("span");
-        let innerDiv8Span = document.createElement("span");
-        let innerDiv9Span = document.createElement("span");
-        let innerDiv10Span = document.createElement("span");
-        let innerDiv11Span = document.createElement("span");
+        let outerDiv = $("<div></div>"), innerDiv1 = $("<div></div>"), innerDiv2 = $("<div></div>");
+        let innerDiv3 = $("<div></div>"), innerDiv4 = $("<div></div>"), innerDiv5 = $("<div></div>");
+        let innerDiv6 = $("<div></div>"), innerDiv7 = $("<div></div>"), innerDiv8 = $("<div></div>");
+        let innerDiv9 = $("<div></div>"), innerDiv10 = $("<div></div>"), innerDiv11 = $("<div></div>");
+        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>"), innerDiv3Span = $("<span></span>");
+        let innerDiv4Span = $("<span></span>"), innerDiv5Span = $("<span></span>"), innerDiv6Span = $("<span></span>")
+        let innerDiv7Span = $("<span></span>"), innerDiv8Span = $("<span></span>"), innerDiv9Span = $("<span></span>");
+        let innerDiv10Span = $("<span></span>"), innerDiv11Span = $("<span></span>");
 
-        outerDiv.setAttribute('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
-        innerDiv1.setAttribute('class','col-6');
-        innerDiv2.setAttribute('class','col-6');
-        innerDiv3.setAttribute('class','col-6');
-        innerDiv4.setAttribute('class','col-6');
-        innerDiv5.setAttribute('class','col-6');
-        innerDiv6.setAttribute('class','col-6');
-        innerDiv7.setAttribute('class','col-6');
-        innerDiv8.setAttribute('class','col-6');
-        innerDiv9.setAttribute('class','col-6');
-        innerDiv10.setAttribute('class','col-6');
-        innerDiv11.setAttribute('class','col-12 mt-3');
+        outerDiv.attr('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
+        innerDiv1.attr('class','col-6');
+        innerDiv2.attr('class','col-6');
+        innerDiv3.attr('class','col-6');
+        innerDiv4.attr('class','col-6');
+        innerDiv5.attr('class','col-6');
+        innerDiv6.attr('class','col-6');
+        innerDiv7.attr('class','col-6');
+        innerDiv8.attr('class','col-6');
+        innerDiv9.attr('class','col-6');
+        innerDiv10.attr('class','col-6');
+        innerDiv11.attr('class','col-12 mt-3');
 
-        innerDiv1Img.setAttribute('src','');
-        innerDiv1Img.setAttribute('alt','');
-        innerDiv1Img.setAttribute('class',`d${index}Icon unselectable`);
-        innerDiv1Img.setAttribute('oncontextmenu','return false;');
+        innerDiv1Img.attr('src','');
+        innerDiv1Img.attr('alt','');
+        innerDiv1Img.attr('class',`d${index}Icon unselectable`);
+        innerDiv1Img.attr('oncontextmenu','return false;');
         
-        innerDiv2Span.setAttribute('class',`d${index}DOTW fw-bold`);
-        innerDiv3Span.setAttribute('class',`d${index}Temp`);
-        innerDiv4Span.setAttribute('class',`d${index}Humidity`);
-        innerDiv5Span.setAttribute('class',`d${index}Desc`);
-        innerDiv6Span.setAttribute('class',`d${index}Clouds`);
-        innerDiv7Span.setAttribute('class',`d${index}Rain`);
-        innerDiv8Span.setAttribute('class',`d${index}Pop`);
-        innerDiv9Span.setAttribute('class',`d${index}Sunrise`);
-        innerDiv10Span.setAttribute('class',`d${index}Sunset`);
-        innerDiv11Span.setAttribute('class',`d${index}MoonPhase`);
+        innerDiv2Span.attr('class',`d${index}DOTW fw-bold`);
+        innerDiv3Span.attr('class',`d${index}Temp`);
+        innerDiv4Span.attr('class',`d${index}Humidity`);
+        innerDiv5Span.attr('class',`d${index}Desc`);
+        innerDiv6Span.attr('class',`d${index}Clouds`);
+        innerDiv7Span.attr('class',`d${index}Rain`);
+        innerDiv8Span.attr('class',`d${index}Pop`);
+        innerDiv9Span.attr('class',`d${index}Sunrise`);
+        innerDiv10Span.attr('class',`d${index}Sunset`);
+        innerDiv11Span.attr('class',`d${index}MoonPhase`);
 
         innerDiv1.append(innerDiv1Img);
         innerDiv2.append(innerDiv2Span);
@@ -278,32 +248,33 @@ const weather = {
         outerDiv.append(innerDiv10);
         outerDiv.append(innerDiv11);
 
-        FD6D.append(outerDiv);
+        $(".forecastDataSixDays").append(outerDiv);
     },
-    hideElement: tag => tag.style.display = "none",
-    showElement: tag => tag.style.display = "block",
-    showHourly: () => {
-        if(document.querySelector(".forecasttitle").innerText == "24 Hour"){
-            document.querySelector(".forecastDataThreeHrs").style.display="none";
-            document.querySelector(".forecastDataSixDays").style.display="block";
-            document.querySelector(".forecasttitle").innerText = "Seven-Day";
+    showHourly: function() {
+        if($(".forecasttitle").text() == "24 Hour"){
+            this.hide($(".forecastDataThreeHrs"))
+            this.show($(".forecastDataSixDays"))
+            $(".forecasttitle").text("Seven-Day");
         } else {
-            document.querySelector(".forecasttitle").innerText = "24 Hour";
-            document.querySelector(".forecastDataThreeHrs").style.display="block";
-            document.querySelector(".forecastDataSixDays").style.display="none";
+            $(".forecasttitle").text("24 Hour");
+            this.show($(".forecastDataThreeHrs"))
+            this.hide($(".forecastDataSixDays"))
         }
-    }
+    },
+    show: element => $(element).css("display","block"),
+    hide: element => $(element).css("display","none")
 }
 
-let query = () => weather.search(), search = document.querySelector(".search"), csb = document.querySelector(".clearSearchButton");
-let clearSearch = () => { search.value = ""; search.focus(); csb.style.display = "none"; };
-search.addEventListener("keyup", (e) => { let x = e.key === "Enter" ? weather.search() : ""});
-document.addEventListener("keyup", (e) => {
-    if(e.ctrlKey && e.altKey && e.key == "/") search.focus();
-    if(e.key === "Escape" && document.activeElement) search.blur();
-    if(search.value.length > 0) csb.style.display = "block";
-    if(search.value.length == 0) csb.style.display = "none";
+$(document).on("keyup", e => {
+    if(e.ctrlKey && e.altKey && e.key == "/") $(".search").trigger("focus");
 });
 
+$(".search").on("keyup", e => {
+    if(e.key === "Enter") weather.search();
+    if($(".search").val().length > 0) advice.show($(".clearSearchButton"));
+    if($(".search").val().length == 0) advice.hide($(".clearSearchButton"))
+    if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
+})
+
 weather.fetchWeather("Cebu");
-csb.style.display = "none";
+weather.hide($(".clearSearchButton"))
