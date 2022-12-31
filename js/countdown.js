@@ -9,8 +9,8 @@ const christmasCountdown = {
         
         let a = new Date();
         christmasCountdown.isLeapYear(a.getYear()) ? a.getDate()++ : a.getDate();
-        $(".countDown").text(`${christmasCountdown.isLessThan(59-a.getSeconds(),59-a.getMinutes(),23-a.getHours(),
-            (totalMonthVal - (monthVal + a.getDate())))}`);
+        if(!christmasCountdown.switch) $(".countDown").text(`${christmasCountdown.isLessThan(59-a.getSeconds(),59-a.getMinutes(),23-a.getHours(),(totalMonthVal - (monthVal + a.getDate())))}`);
+        else $(".countDown").text(`${christmasCountdown.isLessThan(59-a.getSeconds(),59-a.getMinutes(),23-a.getHours(),(totalMonthVal))}`);
     },
 
     isLeapYear: year => { return year % 400 == 0 || year % 4 == 0 ? true : false },
