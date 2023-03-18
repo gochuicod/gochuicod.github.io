@@ -39,8 +39,8 @@ const weather = {
         $(".forecastDataThreeHrs").empty();
         $(".forecastDataSixDays").empty();
         this.hide($(".forecastDataSixDays"))
-        for(let i = 0; i < 24; this.addThreeHrForecast(i), i++);
-        for(let i = 0; i < 7; this.addSixDayForecast(i), i++);
+        for(let i = 0; i < 24; this.addHourlyForecast(i), i++);
+        for(let i = 0; i < 7; this.addDailyForecast(i), i++);
         
         let hourlyData = [], dates = [];
 
@@ -138,13 +138,17 @@ const weather = {
         else if(value == 0.75) return "Last Quarter";
         else return "Waning Crescent";
     },
-    addThreeHrForecast: index => {
+    addHourlyForecast: index => {
         let outerDiv = $("<div></div>"), innerDiv1 = $("<div></div>"), innerDiv2 = $("<div></div>");
         let innerDiv3 = $("<div></div>"), innerDiv4 = $("<div></div>"), innerDiv5 = $("<div></div>");
         let innerDiv6 = $("<div></div>"), innerDiv7 = $("<div></div>"), innerDiv8 = $("<div></div>");
-        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>"), innerDiv3Span = $("<span></span>");
-        let innerDiv4Span = $("<span></span>"), innerDiv5Span = $("<span></span>"), innerDiv6Span = $("<span></span>");
-        let innerDiv7Span = $("<span></span>"), innerDiv8Span = $("<span></span>");
+        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>");
+        let innerDiv3Span = $("<span></span>"), innerDiv3Icon = $("<i></i>");
+        let innerDiv4Span = $("<span></span>"), innerDiv4Icon = $("<i></i>");
+        let innerDiv5Span = $("<span></span>");
+        let innerDiv6Span = $("<span></span>"), innerDiv6Icon = $("<i></i>");
+        let innerDiv7Span = $("<span></span>"), innerDiv7Icon = $("<i></i>");
+        let innerDiv8Span = $("<span></span>"), innerDiv8Icon = $("<i></i>");
 
         outerDiv.attr('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
         innerDiv1.attr('class','col-6');
@@ -161,19 +165,29 @@ const weather = {
         innerDiv1Img.attr('oncontextmenu','return false;');
         innerDiv2Span.attr('class',`d${index}HourlyTime fw-bold`);
         innerDiv3Span.attr('class',`d${index}HourlyTemp`);
+        innerDiv3Icon.attr('class',`bi bi-droplet me-2`);
         innerDiv4Span.attr('class',`d${index}HourlyHumidity`);
+        innerDiv4Icon.attr('class',`bi bi-water me-2`);
         innerDiv5Span.attr('class',`d${index}HourlyDesc`);
         innerDiv6Span.attr('class',`d${index}HourlyClouds`);
+        innerDiv6Icon.attr('class',`bi bi-clouds me-2`);
         innerDiv7Span.attr('class',`d${index}HourlyUvi`);
+        innerDiv7Icon.attr('class',`bi bi-sun me-2`);
         innerDiv8Span.attr('class',`d${index}HourlyPop`);
+        innerDiv8Icon.attr('class',`bi bi-cloud-drizzle me-2`);
 
         innerDiv1.append(innerDiv1Img);
         innerDiv2.append(innerDiv2Span);
+        innerDiv3.append(innerDiv3Icon);
         innerDiv3.append(innerDiv3Span);
+        innerDiv4.append(innerDiv4Icon);
         innerDiv4.append(innerDiv4Span);
         innerDiv5.append(innerDiv5Span);
+        innerDiv6.append(innerDiv6Icon);
         innerDiv6.append(innerDiv6Span);
+        innerDiv7.append(innerDiv7Icon);
         innerDiv7.append(innerDiv7Span);
+        innerDiv8.append(innerDiv8Icon);
         innerDiv8.append(innerDiv8Span);
         outerDiv.append(innerDiv1);
         outerDiv.append(innerDiv2);
@@ -186,15 +200,21 @@ const weather = {
 
         $(".forecastDataThreeHrs").append(outerDiv);
     },
-    addSixDayForecast: index => {
+    addDailyForecast: index => {
         let outerDiv = $("<div></div>"), innerDiv1 = $("<div></div>"), innerDiv2 = $("<div></div>");
         let innerDiv3 = $("<div></div>"), innerDiv4 = $("<div></div>"), innerDiv5 = $("<div></div>");
         let innerDiv6 = $("<div></div>"), innerDiv7 = $("<div></div>"), innerDiv8 = $("<div></div>");
         let innerDiv9 = $("<div></div>"), innerDiv10 = $("<div></div>"), innerDiv11 = $("<div></div>");
-        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>"), innerDiv3Span = $("<span></span>");
-        let innerDiv4Span = $("<span></span>"), innerDiv5Span = $("<span></span>"), innerDiv6Span = $("<span></span>")
-        let innerDiv7Span = $("<span></span>"), innerDiv8Span = $("<span></span>"), innerDiv9Span = $("<span></span>");
-        let innerDiv10Span = $("<span></span>"), innerDiv11Span = $("<span></span>");
+        let innerDiv1Img = $("<img>"), innerDiv2Span = $("<span></span>");
+        let innerDiv3Span = $("<span></span>"), innerDiv3Icon = $("<i></i>");
+        let innerDiv4Span = $("<span></span>"), innerDiv4Icon = $("<i></i>");
+        let innerDiv5Span = $("<span></span>");
+        let innerDiv6Span = $("<span></span>"), innerDiv6Icon = $("<i></i>");
+        let innerDiv7Span = $("<span></span>"), innerDiv7Icon = $("<i></i>");
+        let innerDiv8Span = $("<span></span>"), innerDiv8Icon = $("<i></i>");
+        let innerDiv9Span = $("<span></span>"), innerDiv9Icon = $("<i></i>");
+        let innerDiv10Span = $("<span></span>"), innerDiv10Icon = $("<i></i>");
+        let innerDiv11Span = $("<span></span>"), innerDiv11Icon = $("<i></i>");
 
         outerDiv.attr('class','row text-center align-items-center shadow bg-white rounded-custom mb-3 pb-4');
         innerDiv1.attr('class','col-6');
@@ -213,28 +233,44 @@ const weather = {
         innerDiv1Img.attr('alt','');
         innerDiv1Img.attr('class',`d${index}Icon unselectable`);
         innerDiv1Img.attr('oncontextmenu','return false;');
-        
         innerDiv2Span.attr('class',`d${index}DOTW fw-bold`);
+
         innerDiv3Span.attr('class',`d${index}Temp`);
+        innerDiv3Icon.attr('class',`bi bi-thermometer me-2`);
         innerDiv4Span.attr('class',`d${index}Humidity`);
+        innerDiv4Icon.attr('class',`bi bi-droplet me-2`);
         innerDiv5Span.attr('class',`d${index}Desc`);
         innerDiv6Span.attr('class',`d${index}Clouds`);
+        innerDiv6Icon.attr('class',`bi bi-clouds me-2`);
         innerDiv7Span.attr('class',`d${index}Rain`);
+        innerDiv7Icon.attr('class',`bi bi-water me-2`);
         innerDiv8Span.attr('class',`d${index}Pop`);
+        innerDiv8Icon.attr('class',`bi bi-cloud-drizzle me-2`);
         innerDiv9Span.attr('class',`d${index}Sunrise`);
+        innerDiv9Icon.attr('class',`bi bi-sunrise me-2`);
         innerDiv10Span.attr('class',`d${index}Sunset`);
+        innerDiv10Icon.attr('class',`bi bi-sunset me-2`);
         innerDiv11Span.attr('class',`d${index}MoonPhase`);
+        innerDiv11Icon.attr('class',`bi bi-moon me-2`);
 
         innerDiv1.append(innerDiv1Img);
         innerDiv2.append(innerDiv2Span);
+        innerDiv3.append(innerDiv3Icon);
         innerDiv3.append(innerDiv3Span);
+        innerDiv4.append(innerDiv4Icon);
         innerDiv4.append(innerDiv4Span);
         innerDiv5.append(innerDiv5Span);
+        innerDiv6.append(innerDiv6Icon);
         innerDiv6.append(innerDiv6Span);
+        innerDiv7.append(innerDiv7Icon);
         innerDiv7.append(innerDiv7Span);
+        innerDiv8.append(innerDiv8Icon);
         innerDiv8.append(innerDiv8Span);
+        innerDiv9.append(innerDiv9Icon);
         innerDiv9.append(innerDiv9Span);
+        innerDiv10.append(innerDiv10Icon);
         innerDiv10.append(innerDiv10Span);
+        innerDiv11.append(innerDiv11Icon);
         innerDiv11.append(innerDiv11Span);
         outerDiv.append(innerDiv1);
         outerDiv.append(innerDiv2);
@@ -272,9 +308,12 @@ $(document).on("keyup", e => {
 $(".search").on("keyup", e => {
     if(e.key === "Enter") weather.search();
     if($(".search").val().length > 0) weather.show($(".clearSearchButton"));
-    if($(".search").val().length == 0) weather.hide($(".clearSearchButton"))
+    if($(".search").val().length == 0) weather.hide($(".clearSearchButton"));
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
+
+let query = () => weather.search();
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); weather.hide($(".clearSearchButton")); }
 
 weather.fetchWeather("Cebu");
 weather.hide($(".clearSearchButton"))

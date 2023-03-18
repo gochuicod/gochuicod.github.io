@@ -69,7 +69,6 @@ const earthquake = {
     },
     search: function() { this.fetchEarthquakeData($(".search").val()); },
     removeAllChildNodes: parent => { while(parent.firstChild) parent.removeChild(parent.firstChild); },
-    clearSearch: function() { search.value = ""; search.focus(); this.hide($(".clearSearchButton")); },
     show: element => $(element).css("display","block"),
     hide: element => $(element).css("display","none")
 }
@@ -84,6 +83,9 @@ $(".search").on("keyup", e => {
     if($(".search").val().length == 0) earthquake.hide($(".clearSearchButton"));
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
+
+let query = () => earthquake.search();
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); earthquake.hide($(".clearSearchButton")); }
 
 earthquake.fetchEarthquakeData(4);
 earthquake.hide($(".clearSearchButton"));

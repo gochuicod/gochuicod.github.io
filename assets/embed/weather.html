@@ -17,10 +17,11 @@
           <span class="fw-light fs-8"><span class="fw-bolder">Weather</span> data sourced from <span class="fst-italic">openweathermap</span></span>
         </div>
         <div class="d-flex flex-row justify-content-center">
-          <div class="input-group w-75">
-            <input type="search" class="search form-control border border-end-0 rounded-custom" placeholder="Search weather...">
-            <button class="clearSearchButton btn bg-white border border-start-0 border-end-0 hide-glow" type="button" onclick="clearSearch()"><i class="bi bi-x-circle"></i></button>
-            <button class="btn border hide-glow bg-white rounded-custom" type="button" onclick="query()"><i class="bi bi-search"></i></button>
+          <div class="input-group w-75 align-items-center">
+            <i class="bi bi-geo-alt border-0 fs-4 text-secondary me-1"></i>
+            <input type="search" class="search form-control border-0" placeholder="Search weather">
+            <button class="clearSearchButton btn border-0 hide-glow" type="button" onclick="clearSearch()"><i class="bi bi-x-circle"></i></button>
+            <button class="btn" type="button" onclick="query()"><i class="bi bi-search text-secondary"></i></button>
           </div>
         </div>
         <div class="fw-light fs-7 mt-2">
@@ -42,20 +43,44 @@
               <span class="temperature fw-bold fs-5"></span>
             </div>
             <div class="d-flex flex-row justify-content-between">
-              <span class="cloudcover"></span>
-              <span class="current_time"></span>
+              <div>
+                <i class="bi bi-clouds me-2"></i>
+                <span class="fst-normal cloudcover"></span>
+              </div>
+              <div>
+                <span class="fst-normal current_time me-2"></span>
+                <i class="bi bi-clock"></i>
+              </div>
             </div>
             <div class="d-flex flex-row justify-content-between">
-              <span class="humidity"></span>
-              <span class="feels_like"></span>
+              <div>
+                <i class="bi bi-water me-2"></i>
+                <span class="fst-normal humidity"></span>
+              </div>
+              <div>
+                <span class="fst-normal feels_like me-2"></span>
+                <i class="bi bi-thermometer"></i>
+              </div>
             </div>
             <div class="d-flex flex-row justify-content-between">
-              <span class="airquality"></span>
-              <span class="windspeed"></span>
+              <div>
+                <i class="bi bi-lungs me-2"></i>
+                <span class="fst-normal airquality"></span>
+              </div>
+              <div>
+                <span class="fst-normal windspeed me-2"></span>
+                <i class="bi bi-wind"></i>
+              </div>
             </div>
             <div class="d-flex flex-row justify-content-between">
-              <span class="sunrise"></span>
-              <span class="sunset"></span>
+              <div>
+                <i class="bi bi-sunrise me-2"></i>
+                <span class="fst-normal sunrise"></span>
+              </div>
+              <div>
+                <span class="fst-normal sunset me-2"></span>
+                <i class="bi bi-sunset"></i>
+              </div>
             </div>
           </div>
           <div class="container fs-7 fw-light">

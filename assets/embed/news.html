@@ -17,10 +17,11 @@
           <span class="fw-light fs-8"><span class="fw-bolder">News</span> data sourced from <span class="fst-italic">Newsdata.io</span></span>
         </div>
         <div class="d-flex justify-content-center">
-          <div class="input-group w-75">
-            <input type="search" class="search form-control border border-end-0 rounded-custom" placeholder="Search news...">
-            <button class="clearSearchButton btn bg-white border border-start-0 border-end-0 hide-glow" type="button" onclick="news.clearSearch()"><i class="bi bi-x-circle"></i></button>
-            <button class="btn border hide-glow bg-white rounded-custom" type="button" onclick="news.search()"><i class="bi bi-search"></i></button>
+          <div class="input-group w-75 align-items-center">
+            <i class="bi bi-newspaper border-0 fs-4 text-secondary me-1"></i>
+            <input type="search" class="search form-control border-0" placeholder="Search news">
+            <button class="clearSearchButton btn border-0 hide-glow" type="button" onclick="clearSearch()"><i class="bi bi-x-circle"></i></button>
+            <button class="btn" type="button" onclick="query()"><i class="bi bi-search text-secondary"></i></button>
           </div>
         </div>
         <div class="loader mt-5"></div>

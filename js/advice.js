@@ -71,6 +71,9 @@ $(".search").on("keyup", e => {
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
 
+let query = () => advice.search();
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); advice.hide($(".clearSearchButton")); }
+
 advice.fetchAdviceData("good");
 advice.hide($(".invalidSearch"))
 advice.hide($(".clearSearchButton"));

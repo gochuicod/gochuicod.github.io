@@ -33,8 +33,6 @@ const nasaAPOD = {
         let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         return months.find((item,index) => { return APODMonth == index })
     },
-    search: function() { this.fetchNasaData($(".search").val()) },
-    clearSearch: function() { $(".search").val(""); $(".search").trigger("focus"); this.hide($(".clearSearchButton")); },
     show: element => $(element).css("display","block"),
     hide: element => $(element).css("display","none")
 }
@@ -49,6 +47,9 @@ $(".search").on("keyup", e => {
     if($(".search").val().length == 0) nasaAPOD.hide($(".clearSearchButton"));
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
+
+let query = () => nasaAPOD.fetchNasaData($(".search").val());
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); nasaAPOD.hide($(".clearSearchButton")); };
 
 nasaAPOD.fetchNasaData(`${new Date().getFullYear()}-${new Date().getUTCMonth()+1}-${new Date().getUTCDate()}`);
 nasaAPOD.hide($(".APODImg"))

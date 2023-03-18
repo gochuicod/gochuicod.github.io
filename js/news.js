@@ -84,7 +84,6 @@ const news = {
 
         $(".newsField").append(outerDiv);
     },
-    clearSearch: () => { $(".search").val(""); $(".search").trigger("focus"); this.hide(".clearSearchButton") },
     show: element => $(element).css("display","block"),
     hide: element => $(element).css("display","none")
 }
@@ -99,6 +98,9 @@ $(".search").on("keyup", e => {
     if($(".search").val().length == 0) news.hide($(".clearSearchButton"))
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
+
+let query = () => news.search();
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); news.hide($(".clearSearchButton")); }
 
 news.fetchNewsData("Philippines");
 news.hide(".clearSearchButton")

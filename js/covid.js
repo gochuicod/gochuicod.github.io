@@ -100,6 +100,9 @@ $(".search").on("keyup", e => {
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
 
+let query = () => covid.search();
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); covid.hide($(".clearSearchButton")); }
+
 covid.hide($(".covidLocTotal"))
 covid.fetchCovidData("Japan");
 covid.hide($(".clearSearchButton"))

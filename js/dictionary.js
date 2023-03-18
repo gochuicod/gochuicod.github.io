@@ -35,8 +35,6 @@ const dictionary = {
             $(".dictionary-content").html(meanings.join("\n"));
         }
     },
-    search: function() { this.fetchDictionaryData($(".search").val()); },
-    clearSearch: function() { $(".search").val(""); $(".search").trigger("focus"); this.hide($(".clearSearchButton")); },
     show: element => $(element).css("display","block"),
     hide: element => $(element).css("display","none")
 }
@@ -51,6 +49,9 @@ $(".search").on("keyup", e => {
     if($(".search").val().length == 0) dictionary.hide($(".clearSearchButton"));
     if(e.key === "Escape" && document.activeElement) $(".search").trigger("blur");
 })
+
+let query = () => dictionary.fetchDictionaryData($(".search").val());
+let clearSearch = () => { $(".search").val(""); $(".search").trigger("focus"); dictionary.hide($(".clearSearchButton")); };
 
 dictionary.fetchDictionaryData("free");
 dictionary.hide($(".clearSearchButton"));
