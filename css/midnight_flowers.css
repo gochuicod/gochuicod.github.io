@@ -14,6 +14,10 @@ body {
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+    min-height: 70vh;
+  }
 }
 .night {
   position: fixed;
